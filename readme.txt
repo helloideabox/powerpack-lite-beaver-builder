@@ -1,112 +1,90 @@
 === PowerPack Lite for Beaver Builder ===
-Contributors: justinbusa, RobbyMcCullough, billyyoung, hinampaksh, diegoliv, webmandesign, eugenealegiojo, helgatheviking, ozancanakli
-Tags: beaver builder, page builder, page builder plugin, design, wysiwyg, home page builder, template builder, layout builder, landing page builder, website builder, site builder, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
+Contributors: ideaboxcreations, puneetsahalot, ibachal
+Tags: beaver builder, powerpack, beaver addons, page builder, page builder plugin, design, wysiwyg, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
 Requires at least: 3.6
 Tested up to: 4.5
 Stable tag: trunk
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The best drag and drop WordPress Page Builder. Easily build beautiful home pages, professional landing pages, and more with Beaver Builder.
+PowerPack Lite for Beaver Builder adds row separators, gradient background, overlay effects, column shadows and round corner settings to Beaver Builder.
 
 == Description ==
 
-= What Is The Beaver Builder WordPress Page Builder? =
+= What Is PowerPack for Beaver Builder =
 
-Beaver Builder is a flexible drag and drop page builder that works on the front end of your WordPress website. Whether you're a beginner or a professional, you're going to love taking control of your website. Stop writing HTML or wrestling with confusing shortcodes. With Beaver Builder, building beautiful, professional WordPress pages is as easy as dragging and dropping.
+PowerPack extends the functionality of Beaver Builder with its custom, creative and unique modules. There are 30+ easy to use, drag & drop design elements that will speed up your website development process without the need of writing code. It's also packed with lead generation modules like Call to action buttons, popup box, banner creator and much more. With PowerPack you can build stunning websites in a few hours with zero coding.
 
-If you haven't already, watch the video below or [try out the demo](https://www.wpbeaverbuilder.com/go/demo?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Beaver Builder Live Demo") to see it in action!
+Head over to our [website](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "PowerPack for Beaver Builder Demo") to explore the PowerPack.
 
-[vimeo https://vimeo.com/122546222]
 
 > **Premium Support**
 >
-> The Beaver Builder team provides very limited support on the WordPress.org forums. Please feel free to post questions or bug reports, but for _timely_ support, we recommend purchasing a Beaver Builder license.
+> The PowerPack team tries to answer all questions at the earliest on the WordPress.org forums. Please feel free to post questions or bug reports, but for quick support, we recommend purchasing a PowerPack license.
 >
-> Along with access to our expert support team, there are many time-saving features in the premium versions which make it a great value for any serious WordPress user. [**Get a license today.**](https://www.wpbeaverbuilder.com/pricing/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "Beaver Builder Premium Support")
+> Along with the great support, there are 30+ custom modules that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack for Beaver Builder Premium Version")
 >
-> You can also reference our [Knowledge Base](https://wpbeaverbuilder.com/knowledge-base/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-kb-link "Beaver Builder Knowledge Base"), or try asking the Beaver Builder community for help in either [Facebook](https://www.wpbeaverbuilder.com/go/beaver-builders-fb?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-fb-link "Beaver Builders on Facebook") or [Slack](https://www.wpbeaverbuilder.com/go/beaver-builders-slack?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-slack-link "Beaver Builders on Slack"). Keep in mind, these are all folks just like you who are volunteering their time.
 
-= Join our Growing Community =
 
-There is a huge colony (_yeah, that's the term for a group of beavers_) of "Beaver Builders" that would love to get to know you! If you have questions, a project to show off, or you would like to meet and network with other Beaver Builder users, you'll feel right at home in the [Beaver Builders Facebook Group](https://www.wpbeaverbuilder.com/go/beaver-builders-fb?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-fb-link "Beaver Builders on Facebook") or the [Beaver Builders Slack Channel](https://www.wpbeaverbuilder.com/go/beaver-builders-slack?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-slack-link "Beaver Builders on Slack"). Come on by and say hello.
+= Join our Facebook Group =
 
-= Page Builder Features =
+We have an active Facebook Group where we keep posting updates and also help our users with any questions they may have. We are sure, you will love the group, you can showcase the websites that you build or come, say "Hello" to us! [PowerPack for Beaver Builder Facebook Group](https://facebook.com/groups/beaveraddons/ "PowerPack on Facebook").
 
-*   Content Modules: HTML, Photo, Text Editor, Audio, Video, & Sidebar.
-*   Full-width, column-based layouts.
-*   Lightweight and semantic markup for maximum performance.
-*   Photo, color, and video row backgrounds.
-*   Mobile-friendly, responsive layouts.
-*   Add your own CSS classes and IDs.
-*   Use WordPress Widgets and shortcodes.
-*   Works with Pages, Posts, and Custom Post Types.
-*   A friendly and supportive community.
+= PowerPack Lite Features =
+
+*   Row Separators: Tilt, Big Triangle, Triangle Left, Triangle Right, Small Triangle. Use these to add nice section breaks on your site. Check the [demo here](https://wpbeaveraddons.com/demo/row-separators/).
+*   Expandable Row.
+*   Down Arrow Navigation.
+*   Column Effects: Column shadow & round corners.
+*   Fast loading, valid markup.
+*   Gradient Background option for Rows & Columns.
+*   Completely mobile responsive.
+*   Translation Ready.
 
 = Premium Features =
 
-*   Additional modules: Contact Form, Tabs, Slider, Pricing Table, Map, Blog Posts, Subscribe Form, Social Icons, and many more.
-*   Expert support from our world-class support team.
-*   Beautiful pre-made layout templates.
-*   Save, export, and reuse full-page layouts, rows, and modules.
-*   Build your own custom modules.
+*   30+ powerful modules - Contact Form, Tabs, Content Grid, Popup Box, Testimonials, One Page Navigation, Headings, Dual Button, Logo Grid etc. Get the complete list [here](https://wpbeaveraddons.com/).
+*   1-Click Preview.
+*   Enhanced Search for modules.
+*   White Label Branding.
+*   Unlimited usage on client and personal websites.
+*   Expert support.
+*   Lifetime Package available.
 
-Come by [the Beaver Builder Homepage](https://www.wpbeaverbuilder.com/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "Beaver Builder Homepage") to learn more about what our premium features can do for you!
+Visit [the PowerPack Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "PowerPack Homepage") to explore our easy-to-use custom modules.
 
-= People REALLY LOVE Beaver Builder =
+= See, what our users have got to say about the PowerPack =
 
-Don't just take our word for it, here are a few testimonials from happy users and customers.
+Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
-"Simply put, it is the best page builder in the WordPress ecosystem. There is no close second." - WP Crafter
+"PowerPack is a fantastic add-on for Beaver Builder. It is full of value and is backed by a team who really care about their product. I think PowerPack should be part of every Beaver Builder's toolkit." - Dynamik Beaver
 
-"Complete design freedom with no coding and it is all fully responsive as well." - skyboro
+"The PowerPack Add-on for Beaver Builder is a steal! So much functionality in one plugin and it keeps getting better! The team at IdeaBox continues to amaze and deliver. This is a fabulous addition to my developer toolbox." - Gretchen Cawthon
 
-"Easy to use, fast to get started, real product depth, great support." - David Bressler
+"PowerPack is a welcome addition to the tools we can use to make websites easier for our clients to edit. " - Jeff Weese
 
-= Modules And Widgets =
+"I can rely on these tools to be robust and reliable, not only for my use, but for my clients websites. So simple, so stunning, so reliable. WIN WIN WIN!" - Chantal Marie
 
-We've loaded Beaver Builder up with a flexible set of content modules to aid you in building stunning layouts and landing pages within an intuitive drag and drop system. Beaver Builder also supports core and third party WordPress widgets and shortcodes, so you can use Beaver Builder with all your _other_ favorite plugins!
-
-= A WordPress Page Builder That Works With Your Theme =
-
-Yep, that's right! Beaver Builder was designed to work with almost any WordPress theme. Try Beaver Builder on your existing website today, or consider upgrading and using Beaver Builder's outstanding framework theme (available in Pro and Agency packages) for your next project.
-
-= A WordPress Page Builder That's 100% Mobile Friendly =
-
-Every part of a Beaver Builder layout or landing page is fully responsive and looks gorgeous on any screen size. Responsive web design has never been easier.
-
-= A WordPress Page Builder That's Optimized For Performance =
-
-We've designed Beaver Builder to create layouts and landing pages that load quickly. Many page builders load in an ungodly number of scripts and stylesheets to every page on your site. Not Beaver Builder! It only loads the assets needed for a given layout or landing page.
 
 == Installation ==
 
-1. Install Beaver Builder either via the WordPress plugin directory or by uploading the files to your server at wp-content/plugins.
+1. Install PowerPack Lite either via the WordPress plugin directory or by uploading the files to your server at wp-content/plugins.
 
-2. After activating Beaver Builder, navigate to the settings page at Settings > Page Builder to configure the post types you would like it to work with.
+2. Activate the PowerPack
 
-3. A _Page Builder_ tab will appear on the Edit Page/Post area. Also, a _Page Builder_ option will appear in the WordPress Admin Bar on the front end of your website.
-
-For more information, please visit our [Knowledge Base](https://www.wpbeaverbuilder.com/documentation/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-install-kb-link "Beaver Builder Knowledge Base"). Keep in mind that not all features described in the knowledge base are available in this version of the Beaver Builder plugin.
 
 == Frequently Asked Questions ==
+*   What's the requirement for using PowerPack? - You need Beaver Builder Lite or Premium version active for PowerPack to work.
+*   Will the PowerPack slow down my site? - Absolutely no! It delivers the code only on pages where you use it.
+*   Do I need coding experience to use the PowerPack? - Not at all! All the modules and settings are easy to use with drag & drop interface.
 
-
-For information on using Beaver Builder, please visit our [Knowledge Base](https://www.wpbeaverbuilder.com/knowledge-base/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-faq-kb-link "Beaver Builder Knowledge Base").
-
-For general questions or questions about purchasing a license, check out our [Frequently Asked Questions](https://www.wpbeaverbuilder.com/frequently-asked-questions/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-faq-link "Beaver Builder FAQs") page.
 
 == Screenshots ==
 
-1. Starting Beaver Builder from the backend.
-2. Starting Beaver Builder from the front end.
-3. The main editing interface.
-4. Editing basic text.
-
-== Changelog ==
-
-Visit our [changelog page](https://www.wpbeaverbuilder.com/change-logs/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-changelog-page "Beaver Builder Changelog") for up-to-date information on what has been going on with the development of Beaver Builder.
-
-== Upgrade Notice ==
-
-Visit our [changelog page](https://www.wpbeaverbuilder.com/change-logs/?utm_medium=bb-lite&utm_source=repo-readme&utm_campaign=repo-upgrade-page) for up-to-date information on what has been going on with the development of Beaver Builder.
+1. Row effects settings
+2. Row effects demo
+3. Column effects settings
+4. Column effects demo
+5. Content Grid - Premium Module Demo
+6. Info Box - Premium Module Demo
+7. Dual Button & Logo Grid - Premium Module Demo

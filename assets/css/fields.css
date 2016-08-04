@@ -5,6 +5,10 @@
     width: 650px;
 }
 
+.fl-builder-lightbox .fl-lightbox .input-small {
+    width: 46px !important;
+}
+
 /* Restore BB's styling */
 .bb-powerpack .fl-builder-bar-content,
 .bb-powerpack .fl-builder-panel,
