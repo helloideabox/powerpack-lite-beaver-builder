@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: PowerPack Lite for Beaver Builder
- * Plugin URI: https://wpbeaveraddons.com
- * Description: The most powerful, flexible, and light-weight add-on for Beaver Builder.
+ * Plugin URI: https://www.wpbeaveraddons.com
+ * Description: A set of custom, creative, unique modules for Beaver Builder to speed up your web design and development process.
  * Version: 1.0.0
  * Author: Team IdeaBox - WP Beaver Addons
- * Author URI: https://wpbeaveraddons.com
+ * Author URI: https://www.wpbeaveraddons.com
  * Copyright: (c) 2016 IdeaBox Creations
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,11 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 final class BB_PowerPack_Lite {
+
 	/**
      * Holds the class object.
      *
      * @since 1.0.0
-     *
      * @var object
      */
     public static $instance;
@@ -33,38 +33,95 @@ final class BB_PowerPack_Lite {
 	 *
 	 * @since 1.0.0
 	 */
-	public function __construct() {
-		register_activation_hook( __FILE__, array( $this, 'plugin_activation' ) );
-		add_action( 'init', array( $this, 'load_files' ) );
-		add_action( 'plugins_loaded', array( $this, 'function_files' ) );
-		add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
+	public function __construct()
+	{
+
+		$pro_dirname   = 'bbpowerpack';
+		$pro_active    = is_plugin_active( $pro_dirname . '/bb-powerpack.php' );
+		$plugin_dirname = basename( dirname( dirname( __FILE__ ) ) );
+
+		if ( class_exists( 'BB_PowerPack' ) || ( $plugin_dirname != $pro_dirname && $pro_active ) ) {
+			add_action( 'admin_notices', array( $this, 'admin_notices' ) );
+			add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
+			return;
+		}
+
+		$this->define_constants();
+
+		/* Hooks */
+		$this->init_hooks();
+
+		/* Classes */
+		require_once 'classes/class-admin-settings.php';
+		require_once 'classes/class-module-fields.php';
+
+		/* Includes */
+		require_once 'includes/helper-functions.php';
+	}
+
+	/**
+	 * Define PowerPack constants.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	private function define_constants()
+	{
+		define( 'BB_POWERPACK_VER', '1.0.0' );
+		define( 'BB_POWERPACK_DIR', plugin_dir_path( __FILE__ ) );
+		define( 'BB_POWERPACK_URL', plugins_url( '/', __FILE__ ) );
+		define( 'BB_POWERPACK_PATH', plugin_basename( __FILE__ ) );
+		define( 'BB_POWERPACK_CAT', __('PowerPack Modules', 'bb-powerpack') );
+	}
+
+	/**
+	 * Initializes actions and filters.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public function init_hooks()
+	{
+		add_action( 'init', array( $this, 'load_modules' ) );
+		add_action( 'plugins_loaded', array( $this, 'loader' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ), 100 );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
+		add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
 	}
 
 	/**
 	 * Load language files.
 	 *
-	 * @since 1.1.4
-	 *
-	 * @return null
+	 * @since 1.0.0
+	 * @return void
 	 */
 
-	public function bb_powerpack_textdomain() {
+	public function load_textdomain()
+	{
     	load_plugin_textdomain( 'bb-powerpack', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
-
 	/**
-	 * Modules and Fields.
+	 * Include modules.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return null
+	 * @return void
 	 */
-	public function load_files() {
-		if ( class_exists( 'FLBuilder' ) && ! class_exists( 'BB_PowerPack' ) ) {
-			require_once 'fields.php';
+	public function load_modules()
+	{
+		if ( class_exists( 'FLBuilder' ) ) {
+
+			/* Modules */
+			require_once 'modules/pp-heading/pp-heading.php';
+			require_once 'modules/pp-dual-button/pp-dual-button.php';
+			require_once 'modules/pp-spacer/pp-spacer.php';
+			require_once 'modules/pp-iconlist/pp-iconlist.php';
+
+			/* Form Modules */
+			if ( class_exists( 'WPCF7_ContactForm' ) ) {
+				require_once 'modules/pp-contact-form-7/pp-contact-form-7.php';
+			}
 		}
 	}
 
@@ -72,17 +129,38 @@ final class BB_PowerPack_Lite {
 	 * Include row and column setting extendor.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return null
+	 * @return void
 	 */
-	public function function_files() {
+	public function loader()
+	{
+		if ( !is_admin() && class_exists( 'FLBuilder' ) ) {
 
-		if ( class_exists( 'FLBuilder' ) && ! class_exists( 'BB_PowerPack' ) ) {
-			require_once 'extensions/row.php';
-			require_once 'extensions/column.php';
+			$extensions = BB_PowerPack_Admin_Settings::get_enabled_extensions();
+
+			/* Extend row settings */
+			if ( isset( $extensions['row'] ) && count( $extensions['row'] ) > 0 ) {
+		        require_once 'includes/row.php';
+		    }
+
+			/* Extend column settings */
+			if ( isset( $extensions['col'] ) && count( $extensions['col'] ) > 0 ) {
+		        require_once 'includes/column.php';
+		    }
 		}
 
-		$this->bb_powerpack_textdomain();
+		$this->load_textdomain();
+	}
+
+	/**
+	 * Custom scripts.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function load_scripts()
+	{
+		wp_enqueue_style( 'animate', plugins_url( 'assets/css/animate.min.css', __FILE__ ), array(), rand() );
 	}
 
 	/**
@@ -90,9 +168,10 @@ final class BB_PowerPack_Lite {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return null
+	 * @return void
 	 */
-	public function admin_notices() {
+	public function admin_notices()
+	{
 		if ( ! is_admin() ) {
 			return;
 		}
@@ -102,9 +181,10 @@ final class BB_PowerPack_Lite {
 		else if ( ! current_user_can( 'update_core' ) ) {
 			return;
 		}
+
 		if ( !is_plugin_active( 'bb-plugin/fl-builder.php' ) ) {
 			if ( !is_plugin_active( 'beaver-builder-lite-version/fl-builder.php' ) ) {
-				echo sprintf('<div class="notice notice-error"><p>%s</p></div>', __('Please install and activate <a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">Beaver Builder Lite</a> or <a href="https://www.wpbeaverbuilder.com/pricing/" target="_blank">Beaver Builder Pro</a> to use PowerPack add-on.', 'bb-powerpack'));
+				echo sprintf('<div class="notice notice-error"><p>%s</p></div>', __('Please install and activate <a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">Beaver Builder Lite</a> or <a href="https://www.wpbeaverbuilder.com/pricing/" target="_blank">Beaver Builder Pro / Agency</a> to use PowerPack add-on.', 'bb-powerpack'));
 			}
 		}
 		if ( class_exists( 'BB_PowerPack' ) ) {
@@ -120,26 +200,14 @@ final class BB_PowerPack_Lite {
 	}
 
 	/**
-	 * Check for PowerPack pro version.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return null
-	 */
-	function plugin_activation() {
-		/* Create transient data */
-    	set_transient( 'bb-powerpack-lite-admin-notices', true, 0 );
-	}
-
-
-	/**
 	 * Add CSS class to body.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return array Array of CSS classes for body tag.
+	 * @return array $classes Array of body CSS classes.
 	 */
-	public function body_class( $classes ) {
+	public function body_class( $classes )
+	{
 		if ( class_exists( 'FLBuilder' ) && class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
 			$classes[] = 'bb-powerpack';
 		}
@@ -152,16 +220,15 @@ final class BB_PowerPack_Lite {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return object The BB_PowerPack object.
+	 * @return object The BB_PowerPack_Lite object.
 	 */
-	public static function get_instance() {
-
+	public static function get_instance()
+	{
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof BB_PowerPack_Lite ) ) {
 			self::$instance = new BB_PowerPack_Lite();
 		}
 
 		return self::$instance;
-
 	}
 
 }
