@@ -249,6 +249,12 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
                     self::update_option( 'bb_powerpack_quick_preview', 2 );
                 }
 
+                if ( isset( $_POST['bb_powerpack_search_box'] ) ) {
+                    self::update_option( 'bb_powerpack_search_box', 1 );
+                } else {
+                    self::update_option( 'bb_powerpack_search_box', 2 );
+                }
+
                 if ( isset( $_POST['bb_powerpack_extensions'] ) && is_array( $_POST['bb_powerpack_extensions'] ) ) {
                     self::update_option( 'bb_powerpack_extensions', $_POST['bb_powerpack_extensions'] );
                 }

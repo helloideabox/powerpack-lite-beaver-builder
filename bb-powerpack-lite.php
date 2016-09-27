@@ -35,17 +35,6 @@ final class BB_PowerPack_Lite {
 	 */
 	public function __construct()
 	{
-
-		$pro_dirname   = 'bbpowerpack';
-		$pro_active    = is_plugin_active( $pro_dirname . '/bb-powerpack.php' );
-		$plugin_dirname = basename( dirname( dirname( __FILE__ ) ) );
-
-		if ( class_exists( 'BB_PowerPack' ) || ( $plugin_dirname != $pro_dirname && $pro_active ) ) {
-			add_action( 'admin_notices', array( $this, 'admin_notices' ) );
-			add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
-			return;
-		}
-
 		$this->define_constants();
 
 		/* Hooks */
@@ -53,7 +42,6 @@ final class BB_PowerPack_Lite {
 
 		/* Classes */
 		require_once 'classes/class-admin-settings.php';
-		require_once 'classes/class-module-fields.php';
 
 		/* Includes */
 		require_once 'includes/helper-functions.php';
@@ -67,6 +55,7 @@ final class BB_PowerPack_Lite {
 	 */
 	private function define_constants()
 	{
+		define( 'BB_POWERPACK_LITE', true );
 		define( 'BB_POWERPACK_VER', '1.0.0' );
 		define( 'BB_POWERPACK_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'BB_POWERPACK_URL', plugins_url( '/', __FILE__ ) );
@@ -135,14 +124,20 @@ final class BB_PowerPack_Lite {
 	{
 		if ( !is_admin() && class_exists( 'FLBuilder' ) ) {
 
+			// Fields
+			require_once 'classes/class-module-fields.php';
+
+			// Panel functions
+			require_once 'includes/panel-functions.php';
+
 			$extensions = BB_PowerPack_Admin_Settings::get_enabled_extensions();
 
-			/* Extend row settings */
+			// Extend row settings
 			if ( isset( $extensions['row'] ) && count( $extensions['row'] ) > 0 ) {
 		        require_once 'includes/row.php';
 		    }
 
-			/* Extend column settings */
+			// Extend column settings
 			if ( isset( $extensions['col'] ) && count( $extensions['col'] ) > 0 ) {
 		        require_once 'includes/column.php';
 		    }
@@ -160,7 +155,13 @@ final class BB_PowerPack_Lite {
 	 */
 	public function load_scripts()
 	{
-		wp_enqueue_style( 'animate', plugins_url( 'assets/css/animate.min.css', __FILE__ ), array(), rand() );
+		wp_enqueue_style( 'animate', BB_POWERPACK_URL . 'assets/css/animate.min.css', array(), rand() );
+		if ( class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
+			wp_enqueue_style( 'pp-fields-style', BB_POWERPACK_URL . 'assets/css/fields.css', array(), rand() );
+			wp_enqueue_script( 'pp-fields-script', BB_POWERPACK_URL . 'assets/js/fields.js', array( 'jquery' ), rand(), true );
+			wp_enqueue_style( 'pp-panel-style', BB_POWERPACK_URL . 'assets/css/panel.css', array(), rand() );
+	        wp_enqueue_script( 'pp-panel-script', BB_POWERPACK_URL . 'assets/js/panel.js', array( 'jquery' ), rand(), true );
+		}
 	}
 
 	/**
@@ -210,6 +211,9 @@ final class BB_PowerPack_Lite {
 	{
 		if ( class_exists( 'FLBuilder' ) && class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
 			$classes[] = 'bb-powerpack';
+			if ( pp_panel_search() == 1 ) {
+				$classes[] = 'bb-powerpack-search-enabled';
+			}
 		}
 
 		return $classes;

@@ -5,9 +5,6 @@ function pp_row_render_css( $extensions ) {
     if ( array_key_exists( 'separators', $extensions['row'] ) || in_array( 'separators', $extensions['row'] ) ) {
         add_filter( 'fl_builder_render_css', 'pp_row_separators_css', 10, 3 );
     }
-    if ( array_key_exists( 'downarrow', $extensions['row'] ) || in_array( 'downarrow', $extensions['row'] ) ) {
-        add_filter( 'fl_builder_render_css', 'pp_row_downarrow_css', 10, 3 );
-    }
 }
 
 function pp_row_separators_css( $css, $nodes, $global_settings ) {
@@ -201,58 +198,6 @@ function pp_row_separators_css( $css, $nodes, $global_settings ) {
                         height: <?php echo $row->settings->separator_height_mobile_bottom; ?>px;
                     }
                 <?php } ?>
-            }
-        <?php } ?>
-
-        <?php
-        $css .= ob_get_clean();
-    }
-
-    return $css;
-}
-
-function pp_row_downarrow_css( $css, $nodes, $global_settings ) {
-    foreach ( $nodes['rows'] as $row ) {
-        ob_start();
-        ?>
-
-        <?php if ( $row->settings->enable_down_arrow == 'yes' ) { ?>
-            .fl-node-<?php echo $row->node; ?> .pp-down-arrow-container {
-                margin-top: <?php echo $row->settings->da_arrow_margin['top']; ?>px;
-            }
-            .fl-node-<?php echo $row->node; ?> .pp-down-arrow-wrap {
-                text-align: center;
-                position: absolute;
-                width: 100%;
-                left: 0;
-                bottom: <?php echo $row->settings->da_arrow_margin['bottom']; ?>px;
-                z-index: 1;
-            }
-            .fl-node-<?php echo $row->node; ?> .pp-down-arrow-wrap .pp-down-arrow {
-                display: inline-block;
-                background-color: <?php echo '' != $row->settings->da_arrow_bg['primary'] ? '#'.$row->settings->da_arrow_bg['primary'] : 'transparent'; ?>;
-                border: <?php echo $row->settings->da_arrow_border; ?>px solid <?php echo '#'.$row->settings->da_arrow_border_color['primary']; ?>;
-                border-radius: <?php echo $row->settings->da_arrow_radius; ?>px;
-                line-height: 0;
-                cursor: pointer;
-                padding: <?php echo $row->settings->da_arrow_padding; ?>px;
-            }
-            .fl-node-<?php echo $row->node; ?> .pp-down-arrow-wrap .pp-down-arrow:hover {
-                background-color: <?php echo '' != $row->settings->da_arrow_bg['secondary'] ? '#'.$row->settings->da_arrow_bg['secondary'] : 'transparent'; ?>;
-                border-color: <?php echo '#'.$row->settings->da_arrow_border_color['secondary']; ?>;
-            }
-            .fl-node-<?php echo $row->node; ?> .pp-down-arrow-wrap .pp-down-arrow svg {
-                width: 45px;
-	            height: 45px;
-            }
-            .fl-node-<?php echo $row->node; ?> .pp-down-arrow-wrap .pp-down-arrow svg path {
-                stroke: <?php echo '#'.$row->settings->da_arrow_color['primary']; ?>;
-	            fill: <?php echo '#'.$row->settings->da_arrow_color['primary']; ?>;
-	            stroke-width: <?php echo 'bold' == $row->settings->da_arrow_weight ? 2 : 0; ?>px;
-            }
-            .fl-node-<?php echo $row->node; ?> .pp-down-arrow-wrap .pp-down-arrow:hover svg path {
-                stroke: <?php echo '#'.$row->settings->da_arrow_color['secondary']; ?>;
-	            fill: <?php echo '#'.$row->settings->da_arrow_color['secondary']; ?>;
             }
         <?php } ?>
 

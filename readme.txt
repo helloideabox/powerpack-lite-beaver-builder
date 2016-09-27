@@ -1,13 +1,13 @@
 === PowerPack Lite for Beaver Builder ===
 Contributors: ideaboxcreations, puneetsahalot, ibachal
-Tags: beaver builder, beaver builder addon, row separator, beaver builder modules, powerpack, beaver addons, page builder, page builder plugin, design, wysiwyg, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
+Tags: beaver builder, beaver builder addon, beaver builder templates, row separator, beaver builder modules, powerpack, beaver addons, page builder, page builder plugin, design, wysiwyg, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
 Requires at least: 3.6
 Tested up to: 4.6.1
 Stable tag: trunk
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, modules and page templates.
+PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, modules and templates.
 
 == Description ==
 
@@ -58,7 +58,7 @@ You can join us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons on
 *   Expert support.
 *   Lifetime Package available.
 
-Visit [the PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "PowerPack Homepage") to explore our easy-to-use custom modules.
+Visit [the PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "PowerPack Homepage") to explore our easy-to-use custom modules and templates.
 
 = See, what our users have got to say about the PowerPack =
 
@@ -88,11 +88,9 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 == Screenshots ==
 
-1. Row Separators.
-2. Contact Form 7 - Custom styling.
-3. Dual Button Call to Action.
-4. Smart Headings Module
-5. Content Grid - Premium Module Demo
-6. Team Member - Premium Module Demo
-7. Logo Grid - Premium Module Demo
-8. Travel Page - Premium Page Template
+1. Smart Headings, Dual Button, Contact Form 7 - Custom styling.
+2. Row Separators.
+3. Content Grid - Premium Module Demo
+4. Team Member - Premium Module Demo
+5. Logo Grid - Premium Module Demo
+6. Travel Page - Premium Page Template
