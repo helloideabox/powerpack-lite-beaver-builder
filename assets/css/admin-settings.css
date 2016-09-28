@@ -144,7 +144,7 @@
 .pp-page-templates-grid .pp-page-template .pp-module-content {
     text-align: center;
     padding: 40px;
-    min-height: 260px;
+    min-height: 300px;
     background: #fff;
 }
 .pp-page-templates-grid .pp-page-template .pp-module-content .pp-module-count span {
@@ -342,5 +342,8 @@
     }
     .pp-page-templates-grid .pp-page-template:nth-child(3n) {
         margin-right: 2%;
+    }
+    .pp-page-templates-grid .pp-page-template.pp-modules .pp-module-content {
+        min-height: 260px;
     }
 }
