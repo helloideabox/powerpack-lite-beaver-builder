@@ -673,7 +673,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                 'fields'        => array(
                     'pro_desc'      => array(
                         'type'          => 'pp-separator',
-                        'default'       => __('More options are available in <a href="https://wpbeaveraddons.com/pricing/" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack')
+                        'default'       => __('More options are available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack')
                     )
                 )
             ),

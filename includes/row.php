@@ -11,7 +11,6 @@ function pp_row_settings_init() {
     pp_row_render_css( $extensions );
 
     if ( array_key_exists( 'separators', $extensions['row'] ) || in_array( 'separators', $extensions['row'] ) ) {
-        add_action( 'fl_builder_before_render_row', 'pp_before_render_row' );
         add_action( 'fl_builder_before_render_row_bg', 'pp_output_before_row_bg' );
     }
 }
@@ -134,65 +133,6 @@ function pp_row_separator_html( $type, $position, $color, $height, $shadow ) {
     </div>
     <?php
     return ob_get_clean();
-}
-
-/**
- * Fallback for row position.
- */
-function pp_before_render_row( $row ) {
-    if ( isset( $row->settings->enable_separator ) && 'no' == $row->settings->enable_separator && 'none' != $row->settings->separator_type ) {
-        $row_settings = FLBuilderModel::get_node_settings( $row );
-        $row_settings->separator_type = 'none';
-    }
-    if ( isset( $row->settings->enable_separator ) && 'yes' == $row->settings->enable_separator &&  'none' != $row->settings->separator_type ) {
-        if ( 'bottom' == $row->settings->separator_position ) {
-
-            // Get row settings.
-            $row_settings = FLBuilderModel::get_node_settings( $row );
-            $template_post_id 	= FLBuilderModel::is_node_global( $row );
-
-            // Add top separator setting to bottom.
-            $row_settings->separator_type_bottom            = $row_settings->separator_type;
-            $row_settings->separator_type                   = 'none';
-            $row_settings->separator_color_bottom           = $row_settings->separator_color;
-            $row_settings->separator_shadow_bottom          = $row_settings->separator_shadow;
-            $row_settings->separator_height_bottom          = $row_settings->separator_height;
-            $row_settings->separator_tablet_bottom          = $row_settings->separator_tablet;
-            $row_settings->separator_tablet                 = 'no';
-            $row_settings->separator_height_tablet_bottom   = $row_settings->separator_height_tablet;
-            $row_settings->separator_height_tablet          = '';
-            $row_settings->separator_mobile_bottom          = $row_settings->separator_mobile;
-            $row_settings->separator_mobile                 = 'no';
-            $row_settings->separator_height_mobile_bottom   = $row_settings->separator_height_mobile;
-            $row_settings->separator_height_mobile          = '';
-            $row_settings->separator_position               = 'top';
-
-            // Get layout data.
-            $data = FLBuilderModel::get_layout_data();
-            // Replace row settings with new settings.
-    		$data[$row->node]->settings = $row_settings;
-    		// Update the layout data.
-    		FLBuilderModel::update_layout_data($data);
-
-            // Save settings for global rows.
-            if ( $template_post_id && ! FLBuilderModel::is_post_node_template() ) {
-
-    			// Get the template data.
-    			$template_data = FLBuilderModel::get_layout_data( 'published', $template_post_id );
-
-    			// Update the template node settings.
-    			$template_data[ $row->template_node_id ]->settings = $row_settings;
-
-    			// Save the template data.
-    			FLBuilderModel::update_layout_data( $template_data, 'published', $template_post_id );
-    			FLBuilderModel::update_layout_data( $template_data, 'draft', $template_post_id );
-
-    			// Delete the template asset cache.
-    			FLBuilderModel::delete_all_asset_cache( $template_post_id );
-    			FLBuilderModel::delete_node_template_asset_cache( $template_post_id );
-    		}
-        }
-    }
 }
 
 /**

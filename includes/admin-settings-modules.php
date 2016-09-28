@@ -30,7 +30,7 @@
 <div class="pp-page-templates">
 
     <h2><?php _e('Unlock these set of Modules'); ?></h2>
-    <p><?php _e('Get access to all of these modules. <a href="https://wpbeaveraddons.com/pricing/" target="_blank">Updgrade to PowerPack Pro</a>.'); ?></p>
+    <p><?php _e('Get access to all of these modules. <a href="'.BB_POWERPACK_PRO.'" target="_blank">Updgrade to PowerPack Pro</a>.'); ?></p>
 
     <div class="pp-page-templates-grid wp-clearfix">
 
@@ -44,7 +44,7 @@
                 </div>
                 <div class="pp-template-actions">
                     <a class="button button-secondary pp-view-demo" href="https://wpbeaveraddons.com/demo/" target="_blank"><?php _e('View Demo', 'bb-powerpack'); ?></a>
-                    <a class="button button-primary pp-btn-upgrade" href="https://wpbeaveraddons.com/pricing/" target="_blank"><?php _e('Upgrade Now', 'bb-powerpack'); ?></a>
+                    <a class="button button-primary pp-btn-upgrade" href="<?php echo BB_POWERPACK_PRO; ?>" target="_blank"><?php _e('Upgrade Now', 'bb-powerpack'); ?></a>
                 </div>
             </div>
 

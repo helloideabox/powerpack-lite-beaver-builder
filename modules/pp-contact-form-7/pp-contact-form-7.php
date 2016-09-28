@@ -754,7 +754,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 'fields'        => array(
                     'pro_desc'      => array(
                         'type'          => 'pp-separator',
-                        'default'       => __('Typography options are available in <a href="https://wpbeaveraddons.com/pricing/" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack')
+                        'default'       => __('Typography options are available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack')
                     )
                 )
             ),

@@ -56,6 +56,7 @@ final class BB_PowerPack_Lite {
 	private function define_constants()
 	{
 		define( 'BB_POWERPACK_LITE', true );
+		define( 'BB_POWERPACK_PRO', 'https://wpbeaveraddons.com/upgrade/' );
 		define( 'BB_POWERPACK_VER', '1.0.0' );
 		define( 'BB_POWERPACK_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'BB_POWERPACK_URL', plugins_url( '/', __FILE__ ) );
