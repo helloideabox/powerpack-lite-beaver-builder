@@ -13,22 +13,22 @@ PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, mo
 
 = What Is PowerPack for Beaver Builder? =
 
-PowerPack for Beaver Builder is a built by [Beaver Addons](https://wpbeaveraddons.com). It extends the functionality of Beaver Builder with its custom, creative and unique modules. There are 35+ easy to use, drag & drop design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code. It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack Beaver Builder addon you can build stunning websites in a few hours with zero coding.
+PowerPack for Beaver Builder is built by [Beaver Addons](https://wpbeaveraddons.com). It extends the functionality of Beaver Builder with its custom, creative and unique modules. There are 35+ easy to use, drag & drop design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code. It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack Beaver Builder addon you can build stunning websites in a few hours with zero coding.
 
-Head over to [PowerPack Beaver Builder addon website](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "PowerPack for Beaver Builder") to explore the addon.
+Head over to [PowerPack Beaver Builder addon website](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "PowerPack Beaver Builder addon") to explore the addon.
 
 
 > **Premium Support**
 >
-> The PowerPack Beaver Builder addon team tries to answer all questions at the earliest on the WordPress.org forums. Please feel free to post questions or bug reports, but for quick support, we recommend purchasing a PowerPack license.
+> PowerPack Beaver Builder addon team tries to answer all questions at the earliest on the WordPress.org forums. Please feel free to post questions or bug reports, but for quick support, we recommend purchasing a PowerPack license.
 >
-> Along with the great support, there are 35+ custom modules, pre-made sections and beautifully designed page template sets that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack for Beaver Builder Premium Version")
+> Along with the great support, there are 35+ custom modules, pre-made sections and beautifully designed page template sets that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack Premium version for Beaver Builder")
 >
 
 
 = Join our Facebook Group =
 
-We have an active Facebook Group where we keep posting updates and also help our users with any questions they may have. We are sure, you will love the group, you can showcase the websites that you build or come, say "Hello" to us! [PowerPack for Beaver Builder Facebook Group](https://facebook.com/groups/beaveraddons/ "PowerPack on Facebook").
+We have an active Facebook Group where we keep posting updates and also help our users with any questions they may have. We are sure, you will love the group, you can showcase the websites that you build or come, say "Hello" to us! [PowerPack for Beaver Builder Facebook Group](https://facebook.com/groups/beaveraddons/ "Beaver Addons on Facebook").
 
 = Follow us on Twitter =
 
@@ -49,7 +49,7 @@ You can join us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons on
 
 = Premium Features =
 
-*   35+ powerful modules - Contact Form, Tabs, Content Grid, Popup Box, Testimonials, One Page Navigation, Headings, Dual Button, Logo Grid etc. Get the complete list [here](https://wpbeaveraddons.com/demo/).
+*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Testimonials, One Page Navigation, Headings, Dual Button, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/).
 *   120+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/).
 *   1-Click Preview.
 *   Enhanced Search for modules.
@@ -58,7 +58,7 @@ You can join us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons on
 *   Expert support.
 *   Lifetime Package available.
 
-Visit [the PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "PowerPack Homepage") to explore our easy-to-use custom modules and templates.
+Visit [the PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "Beaver Addons Homepage") to explore our easy-to-use custom modules and templates.
 
 = See, what our users have got to say about the PowerPack =
 
@@ -77,7 +77,7 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 1. Install PowerPack Lite either via the WordPress plugin directory or by uploading the files to your server at wp-content/plugins.
 
-2. Activate the PowerPack
+2. Activate PowerPack Lite
 
 
 == Frequently Asked Questions ==
