@@ -20,7 +20,7 @@ Head over to [PowerPack Beaver Builder addon website](https://wpbeaveraddons.com
 
 > **Premium Support**
 >
-> PowerPack Beaver Builder addon team tries to answer all questions at the earliest on the WordPress.org forums. Please feel free to post questions or bug reports, but for quick support, we recommend purchasing a PowerPack license.
+> Beaver Addons team tries to answer all questions at the earliest on the WordPress.org forums. Please feel free to post questions or bug reports, but for quick support, we recommend purchasing a PowerPack license.
 >
 > Along with the great support, there are 35+ custom modules, pre-made sections and beautifully designed page template sets that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack Premium version for Beaver Builder")
 >
@@ -28,7 +28,7 @@ Head over to [PowerPack Beaver Builder addon website](https://wpbeaveraddons.com
 
 = Join our Facebook Group =
 
-We have an active Facebook Group where we keep posting updates and also help our users with any questions they may have. We are sure, you will love the group, you can showcase the websites that you build or come, say "Hello" to us! [PowerPack for Beaver Builder Facebook Group](https://facebook.com/groups/beaveraddons/ "Beaver Addons on Facebook").
+We have an active Facebook Group where we keep posting updates and also help our users with any questions they may have. We are sure, you will love the group, you can showcase the websites that you build or come, say "Hello" to us! [Beaver Addons Facebook Group](https://facebook.com/groups/beaveraddons/ "Beaver Addons on Facebook").
 
 = Follow us on Twitter =
 
@@ -93,4 +93,10 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 3. Content Grid - Premium Module Demo
 4. Team Member - Premium Module Demo
 5. Logo Grid - Premium Module Demo
-6. Travel Page - Premium Page Template
+6. Templates - Premium Page Template
+
+
+== Changelog ==
+
+= 1.0.0 - September 28, 2016 =
+*   Initial Release
