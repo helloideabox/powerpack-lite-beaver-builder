@@ -1,5 +1,5 @@
 === PowerPack Lite for Beaver Builder ===
-Contributors: ideaboxcreations, puneetsahalot, ibachal
+Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder addon, beaver builder templates, row separator, beaver builder modules, powerpack, beaver addons, page builder, page builder plugin, design, wysiwyg, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
 Requires at least: 3.6
 Tested up to: 4.6.1
@@ -32,7 +32,7 @@ We have an active Facebook Group where we keep posting updates and also help our
 
 = Follow us on Twitter =
 
-You can join us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons on Twitter").
+You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons on Twitter").
 
 = PowerPack Lite Features =
 
@@ -58,15 +58,15 @@ You can join us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons on
 *   Expert support.
 *   Lifetime Package available.
 
-Visit [the PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "Beaver Addons Homepage") to explore our easy-to-use custom modules and templates.
+Visit [PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "Beaver Addons Homepage") to explore our easy-to-use custom modules and templates.
 
-= See, what our users have got to say about the PowerPack =
+= See, what our users have got to say about PowerPack =
 
 Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 "PowerPack is a fantastic add-on for Beaver Builder. It is full of value and is backed by a team who really care about their product. I think PowerPack should be part of every Beaver Builder's toolkit." - Dynamik Beaver
 
-"The PowerPack Add-on for Beaver Builder is a steal! So much functionality in one plugin and it keeps getting better! The team at IdeaBox continues to amaze and deliver. This is a fabulous addition to my developer toolbox." - Gretchen Cawthon
+"PowerPack Add-on for Beaver Builder is a steal! So much functionality in one plugin and it keeps getting better! The team at IdeaBox continues to amaze and deliver. This is a fabulous addition to my developer toolbox." - Gretchen Cawthon
 
 "PowerPack is a welcome addition to the tools we can use to make websites easier for our clients to edit. " - Jeff Weese
 
@@ -82,8 +82,8 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 == Frequently Asked Questions ==
 *   What's the requirement for using PowerPack? - You need Beaver Builder Lite or Premium (Version 1.8 or higher) active for PowerPack to work.
-*   Will the PowerPack slow down my site? - Absolutely no! It delivers the code only on pages where you use it.
-*   Do I need coding experience to use the PowerPack? - Not at all! All the modules and settings are easy to use with drag & drop interface.
+*   Will PowerPack slow down my site? - Absolutely no! It delivers the code only on pages where you use it.
+*   Do I need coding experience to use PowerPack? - Not at all! All the modules and settings are easy to use with drag & drop interface.
 
 
 == Screenshots ==
