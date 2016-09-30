@@ -1,6 +1,6 @@
 === PowerPack Lite for Beaver Builder ===
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
-Tags: beaver builder, beaver builder addon, beaver builder templates, row separator, beaver builder modules, powerpack, beaver addons, page builder, page builder plugin, design, wysiwyg, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
+Tags: beaver builder, beaver builder addon, beaver builder templates, row separator, beaver builder modules, powerpack, beaver addons, page builder, page builder plugin, beaver builder extensions, one page, modal popup, lightbox, design, wysiwyg, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
 Requires at least: 3.6
 Tested up to: 4.6.1
 Stable tag: trunk
