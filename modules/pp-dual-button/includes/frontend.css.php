@@ -67,30 +67,6 @@
 .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-2 .custom_icon {
     <?php if($settings->button_2_custom_icon_width) { ?>width:<?php echo $settings->button_2_custom_icon_width; ?>px;<?php } ?>
 }
-.fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-divider {
-    <?php if($settings->divider_size['divider_width']) { ?>width:<?php echo $settings->divider_size['divider_width']; ?>px;<?php } ?>
-    <?php if($settings->divider_size['divider_height']) { ?>height:<?php echo $settings->divider_size['divider_height']; ?>px;<?php } ?>
-    <?php if($settings->divider_color['secondary']) { ?>background-color:#<?php echo $settings->divider_color['secondary']; ?>;<?php } ?>
-    <?php if($settings->divider_border_color) { ?>border-color: #<?php echo $settings->divider_border_color; ?>;<?php } ?>
-    <?php if($settings->divider_border_style) { ?>border-style: <?php echo $settings->divider_border_style; ?>;<?php } ?>
-    <?php if($settings->divider_border_width) { ?>border-width: <?php echo $settings->divider_border_width; ?>px;<?php } ?>
-    <?php if($settings->divider_border_radius) { ?>border-radius: <?php echo $settings->divider_border_radius; ?>px;<?php } ?>
-
-}
-.fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-divider .pp-divider-inner {
-    <?php if($settings->divider_color['primary']) { ?>color:#<?php echo $settings->divider_color['primary']; ?>;<?php } ?>
-    <?php if($settings->divider_font_size) { ?>font-size: <?php echo $settings->divider_font_size; ?>px;<?php } ?>
-    <?php if($settings->divider_options == 'custom_image') { ?>
-        font-size: 0;
-    <?php } ?>
-}
-.fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-divider .pp-divider-inner img {
-    <?php if($settings->divider_border_radius) { ?>border-radius: <?php echo $settings->divider_border_radius; ?>px;<?php } ?>
-    <?php if($settings->divider_options == 'custom_image') { ?>
-        <?php if($settings->divider_image_size >= 0) { ?>height: <?php echo $settings->divider_image_size; ?>px;<?php } ?>
-        <?php if($settings->divider_image_size >= 0) { ?>width: <?php echo $settings->divider_image_size; ?>px;<?php } ?>
-    <?php } ?>
-}
 <?php if( $settings->button_alignment == 'none' ) { ?>
     .fl-node-<?php echo $id; ?> .pp-dual-button-content {
         text-align: center;
