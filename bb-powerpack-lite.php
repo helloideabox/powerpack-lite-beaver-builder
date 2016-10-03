@@ -107,6 +107,7 @@ final class BB_PowerPack_Lite {
 			require_once 'modules/pp-dual-button/pp-dual-button.php';
 			require_once 'modules/pp-spacer/pp-spacer.php';
 			require_once 'modules/pp-iconlist/pp-iconlist.php';
+			require_once 'modules/pp-infobox/pp-infobox.php';
 
 			/* Form Modules */
 			if ( class_exists( 'WPCF7_ContactForm' ) ) {

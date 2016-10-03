@@ -220,7 +220,7 @@ class PP_Fields {
     public function _separator( $name, $value, $field, $settings )
     {
         if ( '' != $value ) { ?>
-            <p class="pp-field-desc"><?php echo $value; ?>
+            <p class="pp-field-desc" style="<?php echo isset($field['style']) ? $field['style'] : ''; ?>"><?php echo $value; ?>
         <?php } ?>
         <div class="pp-field-separator" style="height: 1px; background: <?php echo isset($field['color']) ? '#'.$field['color'] : '#ddd'; ?>;"></div>
         <?php
