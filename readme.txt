@@ -13,16 +13,16 @@ PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, mo
 
 = What Is PowerPack for Beaver Builder? =
 
-PowerPack for Beaver Builder is built by [Beaver Addons](https://wpbeaveraddons.com). It extends the functionality of Beaver Builder with its custom, creative and unique modules. There are 35+ easy to use, drag & drop design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code. It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack Beaver Builder addon you can build stunning websites in a few hours with zero coding.
+PowerPack for Beaver Builder is built by [Beaver Addons](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link). It extends the functionality of Beaver Builder with its custom, creative and unique modules. There are 35+ easy to use, drag & drop design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code. It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack Beaver Builder addon you can build stunning websites in a few hours with zero coding.
 
-Head over to [PowerPack Beaver Builder addon website](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "PowerPack Beaver Builder addon") to explore the addon.
+Head over to [PowerPack Beaver Builder addon website](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "PowerPack Beaver Builder addon") to explore the addon.
 
 
 > **Premium Support**
 >
 > Beaver Addons team tries to answer all questions at the earliest on the WordPress.org forums. Please feel free to post questions or bug reports, but for quick support, we recommend purchasing a PowerPack license.
 >
-> Along with the great support, there are 35+ custom modules, pre-made sections and beautifully designed page template sets that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack Premium version for Beaver Builder")
+> Along with the great support, there are 35+ custom modules, pre-made sections and beautifully designed page template sets that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack Premium version for Beaver Builder")
 >
 
 
@@ -36,11 +36,11 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 
 = PowerPack Lite Features =
 
-*   Row Separators: Tilt, Big Triangle, Triangle Left, Triangle Right, Small Triangle. Use these to add nice section breaks on your site. Check the [demo here](https://wpbeaveraddons.com/demo/row-separators/).
+*   Row Separators: Tilt, Big Triangle, Triangle Left, Triangle Right, Small Triangle. Use these to add nice section breaks on your site. Check the [demo here](https://wpbeaveraddons.com/demo/row-separators/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Row Separators Demo").
 *   Column Effects: Round corners.
-*   Contact Form 7 Module: Style your CF7 forms from front end with easy to use design options. No custom code required.
-*   Dual Button: Create beautiful call to action dual buttons.
-*   Heading: Write and create attention grabbing headlines with Smart Headings module.
+*   Contact Form 7 Module: Style your CF7 forms from front end with easy to use design options. No custom code required. Check the [demo here](https://wpbeaveraddons.com/demo/forms/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Forms Demo").
+*   Dual Button: Create beautiful call to action dual buttons. Check the [demo here](https://wpbeaveraddons.com/demo/buttons/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Buttons Demo").
+*   Heading: Write and create attention grabbing headlines with Smart Headings module. Check the [demo here](https://wpbeaveraddons.com/demo/headings/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Headings Demo").
 *   Iconlist: Create list items with over 2000 font icons for bullet points.
 *   Spacer: Manage extra spacing between various elements on desktop and mobile devices efficiently with this module.
 *   Fast loading, valid markup, SEO friendly.
@@ -94,6 +94,8 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 4. Team Member - Premium Module Demo
 5. Logo Grid - Premium Module Demo
 6. Templates - Premium Page Template
+7. Row Separators settings
+8. Contact Form 7 module settings
 
 
 == Changelog ==
