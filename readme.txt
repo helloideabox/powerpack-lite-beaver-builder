@@ -98,6 +98,8 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 6. Templates - Premium Page Template
 7. Row Separators settings
 8. Contact Form 7 module settings
+9. Info Box
+10. Info List
 
 
 == Changelog ==
