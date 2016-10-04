@@ -37,6 +37,8 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 = PowerPack Lite Features =
 
 *   Row Separators: Tilt, Big Triangle, Triangle Left, Triangle Right, Small Triangle. Use these to add nice section breaks on your site. Check the [demo here](https://wpbeaveraddons.com/demo/row-separators/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Row Separators Demo").
+*   Info Box: Create content blocks with icon, heading, description, and call-to-action button/link. Check the [demo here](https://wpbeaveraddons.com/demo/info-box/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Info Box Demo").
+*   Info List: Create list items with icon fonts, heading, description, and call-to-action button/link. Check the [demo here](https://wpbeaveraddons.com/demo/info-list/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Info List Demo").
 *   Column Effects: Round corners.
 *   Contact Form 7 Module: Style your CF7 forms from front end with easy to use design options. No custom code required. Check the [demo here](https://wpbeaveraddons.com/demo/forms/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Forms Demo").
 *   Dual Button: Create beautiful call to action dual buttons. Check the [demo here](https://wpbeaveraddons.com/demo/buttons/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Buttons Demo").
@@ -100,5 +102,8 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 == Changelog ==
 
-= 1.0.0 - September 28, 2016 =
+= 1.0.1 - October 4, 2016 =
+*   Added new modules: Info Box, Info List
+
+= 1.0.0 - September 30, 2016 =
 *   Initial Release

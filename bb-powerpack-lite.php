@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: PowerPack Lite for Beaver Builder
- * Plugin URI: https://www.wpbeaveraddons.com
+ * Plugin URI: https://wpbeaveraddons.com
  * Description: A set of custom, creative, unique modules for Beaver Builder to speed up your web design and development process.
- * Version: 1.0.0
- * Author: Team IdeaBox - WP Beaver Addons
- * Author URI: https://www.wpbeaveraddons.com
+ * Version: 1.0.1
+ * Author: Beaver Addons
+ * Author URI: https://wpbeaveraddons.com
  * Copyright: (c) 2016 IdeaBox Creations
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -56,8 +56,8 @@ final class BB_PowerPack_Lite {
 	private function define_constants()
 	{
 		define( 'BB_POWERPACK_LITE', true );
-		define( 'BB_POWERPACK_PRO', 'https://wpbeaveraddons.com/upgrade/' );
-		define( 'BB_POWERPACK_VER', '1.0.0' );
+		define( 'BB_POWERPACK_PRO', 'https://wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=module-settings&utm_campaign=module-settings' );
+		define( 'BB_POWERPACK_VER', '1.0.1' );
 		define( 'BB_POWERPACK_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'BB_POWERPACK_URL', plugins_url( '/', __FILE__ ) );
 		define( 'BB_POWERPACK_PATH', plugin_basename( __FILE__ ) );
@@ -108,6 +108,7 @@ final class BB_PowerPack_Lite {
 			require_once 'modules/pp-spacer/pp-spacer.php';
 			require_once 'modules/pp-iconlist/pp-iconlist.php';
 			require_once 'modules/pp-infobox/pp-infobox.php';
+			require_once 'modules/pp-infolist/pp-infolist.php';
 
 			/* Form Modules */
 			if ( class_exists( 'WPCF7_ContactForm' ) ) {
