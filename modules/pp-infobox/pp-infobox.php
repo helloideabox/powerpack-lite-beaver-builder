@@ -82,7 +82,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'default'   => 'icon',
                         'options'   => array(
                             'icon'      => __('Icon', 'bb-powerpack'),
-                            'image'      => __('Image', 'bb-powerpack'),
+                            'image'      => __('Image (Pro)', 'bb-powerpack'),
                         ),
                         'toggle'        => array(
                             'icon'      => array(
@@ -90,18 +90,19 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                                 'fields'        => array('icon_select', 'icon_color', 'icon_font_size', 'icon_color_hover', 'icon_background', 'icon_background_hover', 'icon_width'),
                             ),
                             'image'      => array(
-                                'fields'        => array('image_select', 'image_width'),
+                                'fields'        => array('pro_desc_4'),
                             ),
                         ),
+                    ),
+                    'pro_desc_4'      => array(
+                        'type'          => 'pp-separator',
+                        'default'       => __('This option is available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack'),
+                        'color'         => 'ffffff',
+                        'style'         => 'background: #fffce4; padding: 10px; border: 1px solid #fff388;'
                     ),
                     'icon_select'       => array(
                         'type'      => 'icon',
                         'label'     => __('Icon', 'bb-powerpack'),
-                        'show_remove'   => true
-                    ),
-                    'image_select'       => array(
-                        'type'      => 'photo',
-                        'label'     => __('Image Icon', 'bb-powerpack'),
                         'show_remove'   => true
                     ),
                 ),
@@ -409,39 +410,6 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                             ),
                         )
                     ),
-                    'image_width'    => array(
-						'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '3',
-                        'default'     => '100',
-						'label'         => __('Icon Size', 'bb-powerpack'),
-						'description'   => _x( 'px', 'bb-powerpack' ),
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'rules'           => array(
-                                array(
-                                    'selector'      => '.pp-infobox-image',
-                                    'property'     => 'width',
-                                    'unit'          => 'px'
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-image',
-                                    'property'     => 'height',
-                                    'unit'          => 'px'
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-image img',
-                                    'property'     => 'width',
-                                    'unit'          => 'px'
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-image img',
-                                    'property'     => 'height',
-                                    'unit'          => 'px'
-                                ),
-                            ),
-                        )
-					),
                 ),
             ),
             'icon_colors'   => array(

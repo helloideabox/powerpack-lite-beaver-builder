@@ -40,10 +40,6 @@ $infobox_class = 'pp-infobox-wrap';
 								<span class="pp-icon <?php echo $settings->icon_select; ?>"></span>
 							</div>
 						</div>
-					<?php } else { ?>
-						<div class="pp-infobox-image">
-							<img src="<?php echo $settings->image_select_src; ?>">
-						</div>
 					<?php } ?>
 				</div>
 				<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
@@ -78,10 +74,6 @@ $infobox_class = 'pp-infobox-wrap';
 							<div class="pp-infobox-icon-inner">
 								<span class="pp-icon <?php echo $settings->icon_select; ?>"></span>
 							</div>
-						</div>
-					<?php } else { ?>
-						<div class="pp-infobox-image">
-							<img src="<?php echo $settings->image_select_src; ?>">
 						</div>
 					<?php } ?>
 				</div>

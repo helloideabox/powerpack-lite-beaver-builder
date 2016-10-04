@@ -1,13 +1,11 @@
 .fl-node-<?php echo $id; ?> .pp-infobox-title-wrapper .pp-infobox-title {
 	<?php if( $settings->title_color ) { ?>color: #<?php echo $settings->title_color; ?>;<?php } ?>
-	<?php if( $settings->title_font['family'] != 'Default' ) { ?><?php FLBuilderFonts::font_css( $settings->title_font ); ?><?php } ?>
 	<?php if( $settings->title_font_size ) { ?>font-size: <?php echo $settings->title_font_size; ?>px;<?php } ?>
 	margin-top: <?php echo $settings->title_margin['top']; ?>px;
 	margin-bottom: <?php echo $settings->title_margin['bottom']; ?>px;
 }
 .fl-node-<?php echo $id; ?> .pp-infobox-description {
 	<?php if( $settings->text_color ) { ?>color: #<?php echo $settings->text_color; ?>;<?php } ?>
-	<?php if( $settings->text_font['family'] != 'Default' ) { ?><?php FLBuilderFonts::font_css( $settings->text_font ); ?><?php } ?>
 	<?php if( $settings->text_font_size ) { ?>font-size: <?php echo $settings->text_font_size; ?>px;<?php } ?>
 	margin-top: <?php echo $settings->text_margin['top']; ?>px;
 	margin-bottom: <?php echo $settings->text_margin['bottom']; ?>px;
@@ -46,28 +44,6 @@
 		<?php if( $settings->icon_color_hover ) { ?>color: #<?php echo $settings->icon_color_hover; ?>;<?php } ?>
 	}
 <?php } ?>
-<?php if( $settings->icon_type == 'image' ) { ?>
-	.fl-node-<?php echo $id; ?> .pp-infobox-image {
-		<?php if( $settings->image_width ) { ?>height: <?php echo $settings->image_width; ?>px;<?php } ?>
-		<?php if( $settings->image_width ) { ?>width: <?php echo $settings->image_width; ?>px;<?php } ?>
-	}
-	.fl-node-<?php echo $id; ?> .pp-infobox-image img {
-		<?php if( $settings->icon_border_radius ) { ?>border-radius: <?php echo $settings->icon_border_radius; ?>px;<?php } ?>
-		<?php if( $settings->show_border == 'yes' ) { ?>
-			<?php if( $settings->icon_border_color ) { ?>border-color: #<?php echo $settings->icon_border_color; ?>;<?php } ?>
-			<?php if( $settings->icon_border_style ) { ?>border-style: <?php echo $settings->icon_border_style; ?>;<?php } ?>
-			<?php if( $settings->icon_border_width ) { ?>border-width: <?php echo $settings->icon_border_width; ?>px;<?php } ?>
-		<?php } ?>
-		<?php if( $settings->image_width ) { ?>height: <?php echo $settings->image_width; ?>px;<?php } ?>
-		<?php if( $settings->icon_box_size ) { ?>padding: <?php echo $settings->icon_box_size; ?>px;<?php } ?>
-		<?php if( $settings->image_width ) { ?>width: <?php echo $settings->image_width; ?>px;<?php } ?>
-	}
-	.fl-node-<?php echo $id; ?> .pp-infobox:hover .pp-infobox-image img {
-		<?php if( $settings->show_border == 'yes' ) { ?>
-			<?php if( $settings->icon_border_color_hover ) { ?>border-color: #<?php echo $settings->icon_border_color_hover; ?>;<?php } ?>
-		<?php } ?>
-	}
-<?php } ?>
 
 .fl-node-<?php echo $id; ?> .pp-infobox {
 	<?php if( $settings->box_background ) { ?>background: #<?php echo $settings->box_background; ?>;<?php } ?>
@@ -91,7 +67,6 @@
 <?php if( $settings->pp_infobox_link_type == 'read_more' ) { ?>
 	.fl-node-<?php echo $id; ?> .pp-infobox .pp-more-link {
 		<?php if( $settings->pp_infobox_read_more_color ) { ?>color: #<?php echo $settings->pp_infobox_read_more_color; ?>;<?php } ?>
-		<?php if( $settings->pp_infobox_read_more_font['family'] != 'Default' ) { ?><?php FLBuilderFonts::font_css( $settings->pp_infobox_read_more_font ); ?>;<?php } ?>
 		<?php if( $settings->pp_infobox_read_more_font_size ) { ?>font-size: <?php echo $settings->pp_infobox_read_more_font_size; ?>px;<?php } ?>
 		margin-top: <?php echo $settings->read_more_margin['top']; ?>px;
 		margin-bottom: <?php echo $settings->read_more_margin['bottom']; ?>px;
