@@ -258,7 +258,7 @@ span.pp-switch-button {
     text-align: center;
     height: 100%;
     vertical-align: middle;
-    line-height: 25px;
+    line-height: 25px !important;
     border: 1px solid #ddd;
     border-right: 0;
     cursor: pointer;
