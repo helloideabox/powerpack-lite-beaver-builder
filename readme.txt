@@ -1,8 +1,8 @@
 === PowerPack Lite for Beaver Builder ===
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
-Tags: beaver builder, beaver builder addon, beaver builder templates, row separator, beaver builder modules, powerpack, beaver addons, page builder, page builder plugin, beaver builder extensions, one page, modal popup, lightbox, design, wysiwyg, front-end builder, drag and drop builder, editor, front-end editor, page layout, visual builder
+Tags: beaver builder, beaver builder addon, beaver addon, beaver addons, beaver builder add ons, beaver builder extensions, beaver builder custom modules, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder page templates, beaver builder pro, beaver power, beaver pack, powerpack, row separator, business hours, page builder plugin, fancy heading, modal popup, lightbox, page builder addon, front-end builder, drag and drop builder, icon list, front-end editor, page layout, dual button
 Requires at least: 3.6
-Tested up to: 4.6.1
+Tested up to: 4.7
 Stable tag: trunk
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,6 +44,8 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 *   Dual Button: Create beautiful call to action dual buttons. Check the [demo here](https://wpbeaveraddons.com/demo/buttons/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Buttons Demo").
 *   Heading: Write and create attention grabbing headlines with Smart Headings module. Check the [demo here](https://wpbeaveraddons.com/demo/headings/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Headings Demo").
 *   Iconlist: Create list items with over 2000 font icons for bullet points.
+*   Fancy Heading: Create beautiful clipping to image heading, animated heading with gradient, color, flip options.
+*   Business Hours: Display opening and closing hours with various styling options.
 *   Spacer: Manage extra spacing between various elements on desktop and mobile devices efficiently with this module.
 *   Fast loading, valid markup, SEO friendly.
 *   Completely mobile responsive.
@@ -51,7 +53,7 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 
 = Premium Features =
 
-*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Testimonials, One Page Navigation, Headings, Dual Button, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/).
+*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/).
 *   120+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/).
 *   1-Click Preview.
 *   Enhanced Search for modules.
@@ -103,6 +105,12 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 
 == Changelog ==
+
+= 1.0.3 - December 26, 2016 =
+*   Added new module: Business Hours
+
+= 1.0.2 - November 25, 2016 =
+*   Added new module: Fancy Heading
 
 = 1.0.1 - October 4, 2016 =
 *   Added new modules: Info Box, Info List
