@@ -109,6 +109,7 @@ final class BB_PowerPack_Lite {
 			require_once 'modules/pp-infobox/pp-infobox.php';
 			require_once 'modules/pp-infolist/pp-infolist.php';
 			require_once 'modules/pp-fancy-heading/pp-fancy-heading.php';
+			require_once 'modules/pp-business-hours/pp-business-hours.php';
 
 			/* Form Modules */
 			if ( class_exists( 'WPCF7_ContactForm' ) ) {
