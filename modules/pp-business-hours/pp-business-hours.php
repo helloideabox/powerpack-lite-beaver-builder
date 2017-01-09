@@ -26,57 +26,6 @@ class PPBusinessHoursModule extends FLBuilderModule {
 
         $this->add_css('font-awesome');
     }
-
-    /**
-     * Returns long day format.
-     *
-     * @since 1.2.2
-     * @param string $day
-     * @return mixed
-     */
-    public function long_day_format( $day = '' )
-    {
-        $days = array(
-            'Sunday'        => __('Sunday', 'bb-powerpack'),
-            'Monday'        => __('Monday', 'bb-powerpack'),
-            'Tuesday'       => __('Tuesday', 'bb-powerpack'),
-            'Wednesday'     => __('Wednesday', 'bb-powerpack'),
-            'Thursday'      => __('Thursday', 'bb-powerpack'),
-            'Friday'        => __('Friday', 'bb-powerpack'),
-            'Saturday'      => __('Saturday', 'bb-powerpack'),
-        );
-
-        if ( isset( $days[$day] ) ) {
-            return $days[$day];
-        }
-        else {
-            return $days;
-        }
-    }
-
-    /**
-     * Returns short day format.
-     *
-     * @since 1.2.2
-     * @param string $day
-     * @return string
-     */
-    public function short_day_format( $day )
-    {
-        $days = array(
-            'Sunday'        => __('Sun', 'bb-powerpack'),
-            'Monday'        => __('Mon', 'bb-powerpack'),
-            'Tuesday'       => __('Tue', 'bb-powerpack'),
-            'Wednesday'     => __('Wed', 'bb-powerpack'),
-            'Thursday'      => __('Thu', 'bb-powerpack'),
-            'Friday'        => __('Fri', 'bb-powerpack'),
-            'Saturday'      => __('Sat', 'bb-powerpack'),
-        );
-
-        if ( isset( $days[$day] ) ) {
-            return $days[$day];
-        }
-    }
 }
 
 /**
@@ -678,7 +627,7 @@ FLBuilder::register_settings_form('bh_settings_form', array(
                             'type'          => 'select',
                             'label'         => __( 'Day', 'bb-powerpack' ),
                             'default'       => 'Monday',
-                            'options'       => PPBusinessHoursModule::long_day_format()
+                            'options'       => pp_long_day_format()
                         ),
                         'day_format'    => array(
                             'type'          => 'pp-switch',

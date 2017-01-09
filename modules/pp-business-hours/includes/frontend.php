@@ -15,7 +15,7 @@
 			$highlight = ' pp-highlight-row';
 		}
 
-		$title 			= 'short' === $bhRow->day_format ? $module->short_day_format($bhRow->title) . '.' : $module->long_day_format($bhRow->title);
+		$title 			= 'short' === $bhRow->day_format ? pp_short_day_format($bhRow->title) . '.' : pp_long_day_format($bhRow->title);
 		$opening_hours 	= '';
 		$closing_hours 	= '';
 
