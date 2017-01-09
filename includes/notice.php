@@ -3,6 +3,7 @@
  * Notice
  *
  * Notice related functionality goes in this file.
+ * Copyright 2016 Matt Cromwell | https://github.com/mathetos/demo-delayed-admin-notice-plugin
  *
  * @since   1.0.0
  * @package bb-powerpack-lite
