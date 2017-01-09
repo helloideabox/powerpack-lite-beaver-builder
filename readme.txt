@@ -1,21 +1,25 @@
 === PowerPack Lite for Beaver Builder ===
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
-Tags: beaver builder, beaver builder addon, beaver addon, beaver addons, beaver builder add ons, beaver builder extensions, beaver builder custom modules, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder page templates, beaver builder pro, beaver power, beaver pack, powerpack, row separator, business hours, page builder plugin, fancy heading, modal popup, lightbox, page builder addon, front-end builder, drag and drop builder, icon list, front-end editor, page layout, dual button
+Tags: beaver builder, beaver builder addon, beaver addon, beaver addons, beaver builder add ons, beaver builder extension, beaver builder custom modules, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder page templates, beaver builder plugin, beaver builder pro, beaver builder powerpack, column separator, row separator, expandable row, beaver builder business hours, page builder plugin, beaver builder heading, modal popup, page builder addon, drag and drop, icon list, dual button, schema, plugin, powerpack for beaver builder, beaver builder popup, beaver builder theme
 Requires at least: 3.6
 Tested up to: 4.7
 Stable tag: trunk
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, modules and templates.
+PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, unique modules and templates.
 
 == Description ==
 
 = What Is PowerPack for Beaver Builder? =
 
-PowerPack for Beaver Builder is built by [Beaver Addons](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link). It extends the functionality of Beaver Builder with its custom, creative and unique modules. There are 35+ easy to use, drag & drop design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code. It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack Beaver Builder addon you can build stunning websites in a few hours with zero coding.
+PowerPack for Beaver Builder is built by [Beaver Addons](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link). It extends the functionality of Beaver Builder with its custom, creative and unique modules.
 
-Head over to [PowerPack Beaver Builder addon website](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "PowerPack Beaver Builder addon") to explore the addon.
+There are 35+ easy to use, drag & drop design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code.
+
+It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack for Beaver Builder, you can build stunning websites in a few hours with zero coding.
+
+Head over to [PowerPack for Beaver Builder website](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "PowerPack Beaver Builder addon") to explore the addon.
 
 
 > **Premium Support**
@@ -34,7 +38,7 @@ We have an active Facebook Group where we keep posting updates and also help our
 
 You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons on Twitter").
 
-= PowerPack Lite Features =
+= PowerPack Lite for Beaver Builder Features =
 
 *   Row Separators: Tilt, Big Triangle, Triangle Left, Triangle Right, Small Triangle. Use these to add nice section breaks on your site. Check the [demo here](https://wpbeaveraddons.com/demo/row-separators/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Row Separators Demo").
 *   Info Box: Create content blocks with icon, heading, description, and call-to-action button/link. Check the [demo here](https://wpbeaveraddons.com/demo/info-box/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Info Box Demo").
@@ -53,18 +57,21 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 
 = Premium Features =
 
-*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/).
-*   120+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/).
-*   1-Click Preview.
+*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
+*   120+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates for Beaver Builder. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
+*   Toggle between Greyscale and Colored row templates.
+*   Dynamic template library in backend.
+*   1-Click Preview on frontend for Beaver Builder.
 *   Enhanced Search for modules.
+*   Multisite support.
 *   White Label Branding.
 *   Unlimited usage on client and personal websites.
 *   Expert support.
 *   Lifetime Package available.
 
-Visit [PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "Beaver Addons Homepage") to explore our easy-to-use custom modules and templates.
+Visit [PowerPack Beaver Builder addon Homepage](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "Beaver Addons Homepage") to explore our easy-to-use custom modules. Explore Beaver Builder templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link "Beaver Builder Page Templates").
 
-= See, what our users have got to say about PowerPack =
+= See, what our users have got to say about PowerPack for Beaver Builder =
 
 Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
@@ -76,6 +83,8 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 "I can rely on these tools to be robust and reliable, not only for my use, but for my clients websites. So simple, so stunning, so reliable. WIN WIN WIN!" - Chantal Marie
 
+"PowerPack certainly lives up to its name by extending Beaver Builder with extremely well thought out features, carefully crafted into a quality product" - Ian Thompson
+
 
 == Installation ==
 
@@ -85,9 +94,14 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 
 == Frequently Asked Questions ==
-*   What's the requirement for using PowerPack? - You need Beaver Builder Lite or Premium (Version 1.8 or higher) active for PowerPack to work.
-*   Will PowerPack slow down my site? - Absolutely no! It delivers the code only on pages where you use it.
-*   Do I need coding experience to use PowerPack? - Not at all! All the modules and settings are easy to use with drag & drop interface.
+= What's the requirement for using PowerPack for Beaver Builder? =
+You need Beaver Builder Lite or Premium (Version 1.8 or higher) active for PowerPack to work.
+
+= Will PowerPack for Beaver Builder slow down my site? =
+Absolutely no! It delivers the code only on pages where you use it.
+
+= Do I need coding experience to use PowerPack for Beaver Builder? =
+Not at all! All the modules and settings are easy to use with drag & drop interface.
 
 
 == Screenshots ==
@@ -106,6 +120,10 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 == Changelog ==
 
+= 1.0.4 - December 31, 2016 =
+*   Enhancement: Added schema markup in Business Hours module
+*   Fix: Spacing issue in Business Hours module
+
 = 1.0.3 - December 26, 2016 =
 *   Added new module: Business Hours
 
@@ -117,3 +135,8 @@ Here are some testimonials from our Happy Customers and Beaver Builder experts.
 
 = 1.0.0 - September 30, 2016 =
 *   Initial Release
+
+== Upgrade Notice ==
+
+= 1.0.4 =
+Added schema markup in Business Hours module

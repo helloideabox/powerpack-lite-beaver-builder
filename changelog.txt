@@ -1,3 +1,8 @@
+== 1.0.4 ==
+*   Release date: December 31, 2016
+*   Enhancement: Added schema markup in Business Hours module
+*   Fix: Spacing issue in Business Hours module
+
 == 1.0.3 ==
 *   Release date: December 26, 2016
 *   Added new module: Business Hours

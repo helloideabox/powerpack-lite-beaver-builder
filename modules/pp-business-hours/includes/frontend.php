@@ -14,37 +14,31 @@
 		if( $bhRow->highlight == 'yes' ) {
 			$highlight = ' pp-highlight-row';
 		}
+
+		$title 			= 'short' === $bhRow->day_format ? $module->short_day_format($bhRow->title) . '.' : $module->long_day_format($bhRow->title);
+		$opening_hours 	= '';
+		$closing_hours 	= '';
+
 		?>
-		<div class="pp-bh-row clearfix pp-bh-row-<?php echo $i; ?><?php echo $status; ?><?php echo $highlight; ?>">
+		<div itemprop="openingHoursSpecification" itemtype="https://schema.org/OpeningHoursSpecification" class="pp-bh-row clearfix pp-bh-row-<?php echo $i; ?><?php echo $status; ?><?php echo $highlight; ?>">
 			<div class="pp-bh-title">
-				<?php echo $bhRow->title; ?>
+				<link itemprop="dayOfWeek" href="http://schema.org/<?php echo $bhRow->title; ?>" /><?php echo $title; ?>
 			</div>
 			<div class="pp-bh-timing">
 				<?php if( $bhRow->status == 'close' ) {
 					echo $bhRow->status_text;
 				} else {
 					if ( is_object( $bhRow->start_time ) ) {
-						echo $bhRow->start_time->hours;
-						echo ':';
-						echo $bhRow->start_time->minutes . '&nbsp;';
-						echo $bhRow->start_time->day_period;
-						echo ' - ';
-						echo $bhRow->end_time->hours;
-						echo ':';
-						echo $bhRow->end_time->minutes . '&nbsp;';
-						echo $bhRow->end_time->day_period;
+						$opening_hours = $bhRow->start_time->hours . ':' . $bhRow->start_time->minutes . ' ' . $bhRow->start_time->day_period;
+						$closing_hours = $bhRow->end_time->hours . ':' . $bhRow->end_time->minutes . ' ' . $bhRow->end_time->day_period;
 					}
 					if ( is_array( $bhRow->start_time ) ) {
-						echo $bhRow->start_time['hours'];
-						echo ':';
-						echo $bhRow->start_time['minutes'] . '&nbsp;';
-						echo $bhRow->start_time['day_period'];
-						echo ' - ';
-						echo $bhRow->end_time['hours'];
-						echo ':';
-						echo $bhRow->end_time['minutes'] . '&nbsp;';
-						echo $bhRow->end_time['day_period'];
+						$opening_hours = $bhRow->start_time['hours'] . ':' . $bhRow->start_time['minutes'] . '&nbsp;' . $bhRow->start_time['day_period'];
+						$closing_hours = $bhRow->end_time['hours'] . ':' . $bhRow->end_time['minutes'] . '&nbsp;' . $bhRow->end_time['day_period'];
 					}
+					echo '<time itemprop="opens" content="'.date("H:i", strtotime($opening_hours)).'">' . $opening_hours . '</time>';
+					echo ' - ';
+					echo '<time itemprop="closes" content="'.date("H:i", strtotime($closing_hours)).'">' . $closing_hours . '</time>';
 				} ?>
 			</div>
 		</div>
