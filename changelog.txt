@@ -1,3 +1,7 @@
+== 1.0.5 ==
+*   Release date: January 9, 2017
+*   Fix: PHP warning in Business Hours module
+
 == 1.0.4 ==
 *   Release date: December 31, 2016
 *   Enhancement: Added schema markup in Business Hours module
