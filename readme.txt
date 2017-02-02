@@ -121,7 +121,8 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
-= 1.0.5 - January 9, 2017 =
+= 1.0.5 - February 2, 2017 =
+*   New: Added gradient as a row background option
 *   Fix: PHP warning in Business Hours module
 
 = 1.0.4 - December 31, 2016 =
