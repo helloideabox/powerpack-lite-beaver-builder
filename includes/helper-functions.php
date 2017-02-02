@@ -8,6 +8,7 @@ function pp_extensions()
     $extensions = array(
         'row'       => array(
             'separators'    => __('Separators', 'bb-powerpack'),
+            'gradient'      => __('Gradient', 'bb-powerpack'),
         ),
         'col'       => array(
             'corners'       => __('Round Corners', 'bb-powerpack'),
