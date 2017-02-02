@@ -41,6 +41,7 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 = PowerPack Lite for Beaver Builder Features =
 
 *   Row Separators: Tilt, Big Triangle, Triangle Left, Triangle Right, Small Triangle. Use these to add nice section breaks on your site. Check the [demo here](https://wpbeaveraddons.com/demo/row-separators/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Row Separators Demo").
+*   Row Gradient Background: Check the [demo here](https://wpbeaveraddons.com/demo/row-effects/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Row Gradient Effects").
 *   Info Box: Create content blocks with icon, heading, description, and call-to-action button/link. Check the [demo here](https://wpbeaveraddons.com/demo/info-box/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Info Box Demo").
 *   Info List: Create list items with icon fonts, heading, description, and call-to-action button/link. Check the [demo here](https://wpbeaveraddons.com/demo/info-list/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Info List Demo").
 *   Column Effects: Round corners.
@@ -57,7 +58,7 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 
 = Premium Features =
 
-*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
+*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Pricing Tables, Restaurant Menu, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
 *   120+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates for Beaver Builder. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
 *   Toggle between Greyscale and Colored row templates.
 *   Dynamic template library in backend.
