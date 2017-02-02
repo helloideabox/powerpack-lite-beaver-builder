@@ -2,9 +2,77 @@
 
 function pp_row_register_settings( $extensions ) {
 
+    if ( array_key_exists( 'gradient', $extensions['row'] ) || in_array( 'gradient', $extensions['row'] ) ) {
+        add_filter( 'fl_builder_register_settings_form', 'pp_row_gradient', 10, 2 );
+    }
     if ( array_key_exists( 'separators', $extensions['row'] ) || in_array( 'separators', $extensions['row'] ) ) {
         add_filter( 'fl_builder_register_settings_form', 'pp_row_separators', 10, 2 );
     }
+}
+
+/** Gradient */
+function pp_row_gradient( $form, $id ) {
+
+    if ( 'row' != $id ) {
+        return $form;
+    }
+
+    $border_section = $form['tabs']['style']['sections']['border'];
+    unset( $form['tabs']['style']['sections']['border'] );
+
+    $form['tabs']['style']['sections']['background']['fields']['bg_type']['options']['pp_gradient'] = __('Gradient', 'bb-powerpack');
+    $form['tabs']['style']['sections']['background']['fields']['bg_type']['toggle']['pp_gradient'] = array(
+        'sections'  => array('pp_row_gradient')
+    );
+    $form['tabs']['style']['sections']['pp_row_gradient'] = array(
+        'title'     => __('Gradient', 'bb-powerpack'),
+        'fields'    => array(
+            'gradient_type' => array(
+                'type'      => 'pp-switch',
+                'label'     => __('Gradient Type', 'bb-powerpack'),
+                'default'   => 'linear',
+                'options'   => array(
+                    'linear'    => __('Linear', 'bb-powerpack'),
+                    'radial'    => __('Radial', 'bb-powerpack'),
+                ),
+                'toggle'    => array(
+                    'linear'    => array(
+                        'fields'    => array('linear_direction')
+                    ),
+                ),
+            ),
+            'gradient_color'    => array(
+                'type'      => 'pp-color',
+                'label'     => __('Colors', 'bb-powerpack'),
+                'show_reset'    => true,
+                'default'   => array(
+                    'primary'   => 'd81660',
+                    'secondary' => '7d22bd',
+                ),
+                'options'   => array(
+                    'primary'   => __('Primary', 'bb-powerpack'),
+                    'secondary'   => __('Secondary', 'bb-powerpack'),
+                ),
+            ),
+            'linear_direction'  => array(
+                'type'      => 'select',
+                'label'     => __('Gradient Direction', 'bb-powerpack'),
+                'default'   => 'bottom',
+                'options'   => array(
+                    'bottom' => __('Top to Bottom', 'bb-powerpack'),
+                    'right' => __('Left to Right', 'bb-powerpack'),
+                    'top_right_diagonal' => __('Bottom Left to Top Right', 'bb-powerpack'),
+                    'top_left_diagonal' => __('Bottom Right to Top Left', 'bb-powerpack'),
+                    'bottom_right_diagonal' => __('Top Left to Bottom Right', 'bb-powerpack'),
+                    'bottom_left_diagonal' => __('Top Right to Bottom Left', 'bb-powerpack'),
+                ),
+            ),
+        )
+    );
+
+    $form['tabs']['style']['sections']['border'] = $border_section;
+
+    return $form;
 }
 
 /** Separator */
