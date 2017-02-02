@@ -1,6 +1,6 @@
 === PowerPack Lite for Beaver Builder ===
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
-Tags: beaver builder, beaver builder addon, beaver addon, beaver addons, beaver builder add ons, beaver builder extension, beaver builder custom modules, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder page templates, beaver builder plugin, beaver builder pro, beaver builder powerpack, column separator, row separator, expandable row, beaver builder business hours, page builder plugin, beaver builder heading, modal popup, page builder addon, drag and drop, icon list, dual button, schema, plugin, powerpack for beaver builder, beaver builder popup, beaver builder theme
+Tags: beaver builder, beaver builder addon, beaver addon, beaver addons, beaver builder add ons, beaver builder extension, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder plugin, beaver builder powerpack
 Requires at least: 3.6
 Tested up to: 4.7
 Stable tag: trunk
