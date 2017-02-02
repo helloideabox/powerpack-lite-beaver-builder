@@ -1,9 +1,6 @@
-== 1.0.6 ==
+== 1.0.5 ==
 *   Release date: February 2, 2017
 *   New: Added gradient as a row background option
-
-== 1.0.5 ==
-*   Release date: January 9, 2017
 *   Fix: PHP warning in Business Hours module
 
 == 1.0.4 ==
