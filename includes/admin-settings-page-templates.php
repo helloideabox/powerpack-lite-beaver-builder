@@ -23,7 +23,7 @@
             <div class="pp-more-title">
                 <a href="https://wpbeaveraddons.com/page-templates/utm_medium=powerpack-lite&utm_source=page-templates-page&utm_campaign=template-library" target="_blank">
                     <h2><?php _e( '+60 More', 'bb-powerpack' ); ?></h2>
-                    <h4><?php _e( 'Browse our Template Library!' ); ?></h4>
+                    <h4><?php _e( 'Browse the Template Library!' ); ?></h4>
                 </a>
             </div>
         </div>
