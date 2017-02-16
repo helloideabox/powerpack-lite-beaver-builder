@@ -18,6 +18,16 @@
 
         <?php endforeach; ?>
 
+        <div class="pp-page-template pp-page-template-cta">
+            <a href="https://wpbeaveraddons.com/page-templates/utm_medium=powerpack-lite&utm_source=page-templates-page&utm_campaign=template-library" class="pp-template-more" target="_blank"></a>
+            <div class="pp-more-title">
+                <a href="https://wpbeaveraddons.com/page-templates/utm_medium=powerpack-lite&utm_source=page-templates-page&utm_campaign=template-library" target="_blank">
+                    <h2><?php _e( '+60 More', 'bb-powerpack' ); ?></h2>
+                    <h4><?php _e( 'Browse our Template Library!' ); ?></h4>
+                </a>
+            </div>
+        </div>
+
     </div>
 
 </div>
@@ -44,7 +54,7 @@
         e.stopPropagation();
     });
 
-    jQuery(document).on('click', '.pp-page-template', function(e) {
+    jQuery(document).on('click', '.pp-page-template:not(.pp-page-template-cta)', function(e) {
 
         e.preventDefault();
 

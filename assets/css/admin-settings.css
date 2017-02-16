@@ -38,6 +38,43 @@
     display: block;
     padding-top: 66.66666%;
 }
+.pp-page-templates-grid .pp-page-template-cta .pp-template-more {
+    background: #33bbe2 !important;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.pp-page-templates-grid .pp-page-template-cta .pp-template-more:after {
+    content: "";
+    display: block;
+    padding-top: 79%;
+}
+.pp-page-templates-grid .pp-page-template-cta a {
+    display: block;
+    text-decoration: none !important;
+    color: #fff !important;
+    border: 0 !important;
+    outline: 0 !important;
+}
+.pp-page-templates-grid .pp-page-template-cta .pp-more-title h2 {
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+}
+.pp-page-templates-grid .pp-page-template-cta .pp-more-title h4 {
+    font-size: 14px;
+    color: #fff;
+}
+.pp-page-templates-grid .pp-page-template-cta .pp-more-title {
+    position: absolute;
+    top: 35%;
+    right: 20%;
+    left: 20%;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    padding: 15px 12px;
+    text-align: center;
+}
 .pp-page-templates-grid .pp-page-template .pp-template-screenshot img {
     height: auto;
     position: absolute;
