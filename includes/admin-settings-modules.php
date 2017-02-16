@@ -8,7 +8,7 @@
         'creative'  => array(
             'name'      => __('Creative Modules', 'bb-powerpack'),
             'desc'      => __('PowerPack\'s creative content modules can let you build beautiful websites. Whether you want to build a magazine layout or a portfolio site, we have got you covered.', 'bb-powerpack'),
-            'count'     => 9
+            'count'     => 10
         ),
         'lead_gen'  => array(
             'name'      => __('Lead Generation Modules', 'bb-powerpack'),
