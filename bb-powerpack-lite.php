@@ -35,7 +35,10 @@ final class BB_PowerPack_Lite {
 	 */
 	public function __construct()
 	{
+		/* Constants */
 		$this->define_constants();
+
+		require_once 'includes/sdk/pp_freemius.php';
 
 		/* Hooks */
 		$this->init_hooks();
@@ -242,7 +245,7 @@ final class BB_PowerPack_Lite {
 }
 
 include('includes/notice.php');
-if ( function_exists( 'pp_lite_set_review_trigger_date' ) ) {
+if ( ! function_exists( 'pp_lite_set_review_trigger_date' ) ) {
     register_activation_hook( __FILE__,  'pp_lite_set_review_trigger_date' );
     /**
      * Set Trigger Date.
@@ -250,6 +253,12 @@ if ( function_exists( 'pp_lite_set_review_trigger_date' ) ) {
      * @since  1.0.0
      */
     function pp_lite_set_review_trigger_date() {
+
+		delete_option( 'fs_accounts' );
+		delete_option( 'fs_active_plugins' );
+		delete_option( 'fs_api_cache' );
+		delete_option( 'fs_debug_mode' );
+
         // Number of days you want the notice delayed by.
         $delayindays = 30;
         // Create timestamp for when plugin was activated.
