@@ -245,29 +245,21 @@ final class BB_PowerPack_Lite {
 }
 
 include('includes/notice.php');
-if ( ! function_exists( 'pp_lite_set_review_trigger_date' ) ) {
-    register_activation_hook( __FILE__,  'pp_lite_set_review_trigger_date' );
-    /**
-     * Set Trigger Date.
-     *
-     * @since  1.0.0
-     */
-    function pp_lite_set_review_trigger_date() {
-
-		delete_option( 'fs_accounts' );
-		delete_option( 'fs_active_plugins' );
-		delete_option( 'fs_api_cache' );
-		delete_option( 'fs_debug_mode' );
-
-        // Number of days you want the notice delayed by.
-        $delayindays = 30;
-        // Create timestamp for when plugin was activated.
-        $triggerdate = mktime( 0, 0, 0, date('m')  , date('d') + $delayindays, date('Y') );
-        // If our option doesn't exist already, we'll create it with today's timestamp.
-        if ( ! get_option( 'pp_lite_activation_date' ) ) {
-            add_option( 'pp_lite_activation_date', $triggerdate, '', 'yes' );
-        }
-    }
+register_activation_hook( __FILE__,  'pp_lite_set_review_trigger_date' );
+/**
+ * Set Trigger Date.
+ *
+ * @since  1.0.0
+ */
+function pp_lite_set_review_trigger_date() {
+	// Number of days you want the notice delayed by.
+	$delayindays = 30;
+	// Create timestamp for when plugin was activated.
+	$triggerdate = mktime( 0, 0, 0, date('m')  , date('d') + $delayindays, date('Y') );
+	// If our option doesn't exist already, we'll create it with today's timestamp.
+	if ( ! get_option( 'pp_lite_activation_date' ) ) {
+		add_option( 'pp_lite_activation_date', $triggerdate, '', 'yes' );
+	}
 }
 
 // Load the PowerPack class.
