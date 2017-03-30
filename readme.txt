@@ -1,6 +1,6 @@
 === PowerPack Lite for Beaver Builder ===
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
-Tags: beaver builder, beaver builder addon, beaver addon, beaver addons, beaver builder add ons, beaver builder extension, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder plugin, beaver builder powerpack
+Tags: beaver builder, beaver builder addon, beaver addons, beaver builder add ons, beaver builder extension, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder plugin, beaver builder powerpack, power pack
 Requires at least: 3.6
 Tested up to: 4.7.2
 Stable tag: trunk
