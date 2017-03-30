@@ -51,6 +51,7 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 *   Iconlist: Create list items with over 2000 font icons for bullet points.
 *   Fancy Heading: Create beautiful clipping to image heading, animated heading with gradient, color, flip options.
 *   Business Hours: Display opening and closing hours with various styling options.
+*   Divider: Add line, icon, image divider/separators between modules, rows.
 *   Spacer: Manage extra spacing between various elements on desktop and mobile devices efficiently with this module.
 *   Fast loading, valid markup, SEO friendly.
 *   Completely mobile responsive.
@@ -121,6 +122,9 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+= 1.0.6 - March 30, 2017 =
+*   New: Added Divider module
+
 = 1.0.5 - February 2, 2017 =
 *   New: Added gradient as a row background option
 *   Fix: PHP warning in Business Hours module
@@ -143,5 +147,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.0.4 =
-Added schema markup in Business Hours module
+= 1.0.6 =
+Added Divider module
