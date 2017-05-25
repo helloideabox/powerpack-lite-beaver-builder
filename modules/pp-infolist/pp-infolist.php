@@ -443,6 +443,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                             'type'      => 'text',
                             'label'     => '',
                             'default'     => '',
+                            'connections'   => array( 'string', 'html', 'url' ),
                             'preview'       => array(
     							'type'          => 'text',
     							'selector'      => '.pp-infolist-title h3'
@@ -459,6 +460,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                             'default'   => '',
                             'media_buttons' => false,
                             'rows'      => 4,
+                            'connections'   => array( 'string', 'html', 'url' ),
                             'preview'   => array(
     							'type'       => 'text',
     							'selector'   => '.pp-infolist-description'
@@ -495,6 +497,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                             'type'          => 'link',
     						'label'         => __('Link', 'bb-powerpack'),
     						'placeholder'   => __( 'http://www.example.com', 'bb-powerpack' ),
+                            'connections'   => array( 'url' ),
     						'preview'       => array(
     							'type'          => 'none'
     						)
