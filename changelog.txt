@@ -1,3 +1,8 @@
+== 1.0.7 ==
+*   Release date: May 25, 2017
+*   New: Added field connections
+*   Fix: CSS fixes in Business Hours module
+
 == 1.0.6 ==
 *   Release date: March 30, 2017
 *   New: Added Divider module
