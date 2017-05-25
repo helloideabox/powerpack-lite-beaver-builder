@@ -113,6 +113,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                     'title'     => array(
                         'type'      => 'text',
                         'label'     => '',
+                        'connections'   => array( 'string', 'html', 'url' ),
                         'preview'       => array(
 							'type'          => 'text',
 							'selector'      => '.pp-infobox-title-wrapper .pp-infobox-title'
@@ -129,6 +130,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'default'     => '',
                         'media_buttons' => false,
                         'rows'      => 4,
+                        'connections'   => array( 'string', 'html', 'url' ),
                         'preview'       => array(
 							'type'          => 'text',
 							'selector'      => '.pp-infobox-description'
@@ -197,6 +199,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'type'          => 'link',
 						'label'         => __('Link', 'bb-powerpack'),
 						'placeholder'   => __( 'http://www.example.com', 'bb-powerpack' ),
+                        'connections'   => array( 'url' ),
 						'preview'       => array(
 							'type'          => 'none'
 						)
