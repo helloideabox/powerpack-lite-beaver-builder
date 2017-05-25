@@ -661,7 +661,7 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 							'default'		=>array(
 								'hours'			=> '01',
 								'minutes'		=> '00',
-								'day_period'	=> 'am'
+								'day_period'	=> __('am', 'bb-powerpack')
 							)
 						),
 						'end_time' => array(
@@ -670,7 +670,7 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 							'default'		=>array(
 								'hours'			=> '01',
 								'minutes'		=> '00',
-								'day_period'	=> 'am'
+								'day_period'	=> __('am', 'bb-powerpack')
 							)
 						),
 						'status_text'       => array(

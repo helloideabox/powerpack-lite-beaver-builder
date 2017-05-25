@@ -71,6 +71,7 @@
    <?php if( $settings->timing_color ) { ?>
 	   color: #<?php echo $settings->timing_color; ?>
    <?php } ?>
+   text-align: right;
 }
 
 .fl-node-<?php echo $id; ?> .pp-business-hours-content .pp-bh-row.pp-closed .pp-bh-timing {

@@ -36,9 +36,9 @@
 						$opening_hours = $bhRow->start_time['hours'] . ':' . $bhRow->start_time['minutes'] . '&nbsp;' . $bhRow->start_time['day_period'];
 						$closing_hours = $bhRow->end_time['hours'] . ':' . $bhRow->end_time['minutes'] . '&nbsp;' . $bhRow->end_time['day_period'];
 					}
-					echo '<time itemprop="opens" content="'.date("H:i", strtotime($opening_hours)).'">' . $opening_hours . '</time>';
+					echo '<time itemprop="opens" content="'.date("g:i A", strtotime($opening_hours)).'">' . date("g:i A", strtotime($opening_hours)) . '</time>';
 					echo ' - ';
-					echo '<time itemprop="closes" content="'.date("H:i", strtotime($closing_hours)).'">' . $closing_hours . '</time>';
+					echo '<time itemprop="closes" content="'.date("g:i A", strtotime($closing_hours)).'">' . date("g:i A", strtotime($closing_hours)) . '</time>';
 				} ?>
 			</div>
 		</div>
