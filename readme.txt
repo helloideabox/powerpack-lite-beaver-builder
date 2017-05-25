@@ -2,7 +2,7 @@
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 4.7.3
+Tested up to: 4.7.5
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,8 +61,8 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 
 = Premium Features =
 
-*   35+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Pricing Tables, Restaurant Menu, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
-*   120+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates for Beaver Builder. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
+*   50+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Pricing Tables, Restaurant Menu, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
+*   200+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates for Beaver Builder. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
 *   Toggle between Greyscale and Colored row templates.
 *   Dynamic template library in backend.
 *   1-Click Preview on frontend for Beaver Builder.
@@ -124,6 +124,10 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+= 1.0.7 - May 25, 2017 =
+*   New: Added field connections
+*   Fix: CSS fixes in Business Hours module
+
 = 1.0.6 - March 30, 2017 =
 *   New: Added Divider module
 
@@ -149,5 +153,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.0.6 =
-Added Divider module
+= 1.0.7 =
+Added field connections
