@@ -71,6 +71,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_link_1'          => array(
 						'type'          => 'link',
 						'label'         => __('Link', 'bb-powerpack'),
+                        'connections'   => array( 'url' ),
 					),
 					'link_target_1'   => array(
 						'type'          => 'pp-switch',
@@ -108,6 +109,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_custom_icon_1'     => array(
                         'type'              => 'photo',
                         'label'         => __('Custom Image', 'bb-powerpack'),
+                        'connections'   => array( 'photo' ),
                     ),
                     'button_1_icon_aligment'       => array(
                         'type'          => 'pp-switch',
@@ -175,6 +177,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_link_2'          => array(
 						'type'          => 'link',
 						'label'         => __('Link', 'bb-powerpack'),
+                        'connections'   => array( 'url' ),
 					),
 					'link_target_2'   => array(
 						'type'          => 'pp-switch',
@@ -212,6 +215,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_custom_icon_2'     => array(
                         'type'              => 'photo',
                         'label'         => __('Custom Image', 'bb-powerpack'),
+                        'connections'   => array( 'photo' ),
                     ),
                     'button_2_icon_aligment'       => array(
                         'type'          => 'pp-switch',
