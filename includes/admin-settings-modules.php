@@ -30,7 +30,7 @@
 <div class="pp-page-templates">
 
     <h2><?php _e('Unlock these set of Modules', 'bb-powerpack'); ?></h2>
-    <p><?php _e('Get access to all of these modules. <a href="'.BB_POWERPACK_PRO.'" target="_blank">Updgrade to PowerPack Pro</a>.', 'bb-powerpack'); ?></p>
+    <p><?php _e('Get access to all of these modules. <a href="'.BB_POWERPACK_PRO.'" target="_blank">Upgrade to PowerPack Pro</a>.', 'bb-powerpack'); ?></p>
 
     <div class="pp-page-templates-grid wp-clearfix">
 

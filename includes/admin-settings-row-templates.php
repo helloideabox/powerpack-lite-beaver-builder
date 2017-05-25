@@ -1,7 +1,7 @@
 <div class="pp-page-templates">
 
     <h2><?php _e('Unlock Row Templates'); ?></h2>
-    <p><?php _e('Get access to premium row templates. <a href="'.BB_POWERPACK_PRO.'" target="_blank">Updgrade to PowerPack Pro</a>.'); ?></p>
+    <p><?php _e('Get access to premium row templates. <a href="'.BB_POWERPACK_PRO.'" target="_blank">Upgrade to PowerPack Pro</a>.'); ?></p>
 
     <div class="pp-page-templates-grid wp-clearfix">
 
