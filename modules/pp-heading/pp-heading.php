@@ -42,6 +42,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'label'         => __('Title', 'bb-powerpack'),
                         'class'         => '',
                         'default'       => __('Main Heading', 'bb-powerpack'),
+                        'connections'   => array( 'string', 'html', 'url' ),
                         'preview'       => array(
                             'type'      => 'text',
                             'selector'  => '.pp-heading-content .pp-heading .heading-title span',
@@ -81,6 +82,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'default'               => __('Sub Heading', 'bb-powerpack'),
                         'rows'                  => '6',
                         'media_buttons'         => false,
+                        'connections'            => array( 'string', 'html', 'url' ),
                         'preview'               => array(
                             'type'                  => 'text',
                             'selector'              => '.pp-heading-content .pp-sub-heading'
