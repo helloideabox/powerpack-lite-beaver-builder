@@ -48,6 +48,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                         'label'         => __('Custom Title', 'bb-powerpack'),
                         'default'       => '',
                         'description'   => '',
+                        'connections'   => array('string'),
 						'preview'       => array(
                             'type'      => 'text',
                             'selector'  => '.pp-cf7-form-title'
@@ -59,6 +60,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                         'default'           => '',
                         'placeholder'       => __('', 'bb-powerpack'),
                         'rows'              => '6',
+                        'connections'       => array('string', 'html'),
                         'preview'           => array(
                             'type'          => 'text',
                             'selector'      => '.pp-cf7-form-description'
