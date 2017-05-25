@@ -39,6 +39,7 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                         'type'          => 'text',
                         'label'         => __('Title', 'bb-powerpack'),
                         'default'       => __('AWESOME TITLE!', 'bb-powerpack'),
+                        'connections'   => array( 'string', 'html', 'url' ),
                         'preview'         => array(
                             'type'             => 'text',
                             'selector'         => '.pp-fancy-heading-title',
