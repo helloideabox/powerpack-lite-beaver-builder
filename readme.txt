@@ -1,11 +1,13 @@
 === PowerPack Lite for Beaver Builder ===
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
-Tags: beaver builder, beaver builder addon, beaver addons, beaver builder add ons, beaver builder extension, beaver builder free, beaver builder lite, beaver builder templates, beaver builder modules, beaver builder plugin, beaver builder powerpack, power pack
+Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 4.7.2
+Tested up to: 4.7.3
 Stable tag: trunk
-License: GPL2+
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+URL : https://wordpress.org/plugins/powerpack-addon-for-beaver-builder/
 
 PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, unique modules and templates.
 

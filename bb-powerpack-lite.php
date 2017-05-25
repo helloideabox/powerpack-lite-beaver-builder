@@ -4,7 +4,7 @@
  * Plugin URI: https://wpbeaveraddons.com
  * Description: A set of custom, creative, unique modules for Beaver Builder to speed up your web design and development process.
  * Version: 1.0.6
- * Author: Team IdeaBox - Beaver Addons
+ * Author: Beaver Addons
  * Author URI: https://wpbeaveraddons.com
  * Copyright: (c) 2016 IdeaBox Creations
  * License: GNU General Public License v2.0
