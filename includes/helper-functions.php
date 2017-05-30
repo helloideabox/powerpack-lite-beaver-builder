@@ -169,3 +169,30 @@ function pp_short_day_format( $day )
 		return $days[$day];
 	}
 }
+
+/**
+ * Returns badges data.
+ *
+ * @since 1.0.8
+ * @param int $number
+ * @return array
+ */
+function pp_modules_badges( $number = '' )
+{
+    $badges = array(
+        1 => __('Unique & Popular', 'bb-powerpack'),
+        2 => __('Unique', 'bb-powerpack'),
+        3 => __('Popular', 'bb-powerpack'),
+        4 => __('Coming Soon', 'bb-powerpack')
+    );
+
+    if ( ! $number || empty( $number ) ) {
+        return $badges;
+    }
+
+    $number = absint( $number );
+
+    if ( isset( $badges[$number] ) ) {
+        return $badges[$number];
+    }
+}
