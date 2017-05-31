@@ -178,6 +178,45 @@
 }
 
 /* Modules */
+.pp-wrap {
+    max-width: 1230px;
+}
+.pp-upgrade-msg {
+    margin-top: 20px;
+}
+h2.pp-modules-category {
+    font-size: 15px;
+}
+.pp-modules-list {
+    margin-top: 30px;
+}
+.pp-modules-list .pp-modules {
+    margin-bottom: 40px;
+}
+.pp-modules-list .pp-module {
+    display: inline-block;
+    min-width: 290px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.pp-modules-list .pp-module a {
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+}
+.pp-modules-list .pp-module a:after {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
 .pp-page-templates-grid .pp-page-template .pp-module-content {
     text-align: center;
     padding: 40px;
