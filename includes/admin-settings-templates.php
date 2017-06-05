@@ -12,8 +12,7 @@
     $navigate = ( isset( $_REQUEST['navigate'] ) && ! empty( $_REQUEST['navigate'] ) ) ? $_REQUEST['navigate'] : 'page-templates';
     $template_type = ( $navigate == 'page-templates' ) ? 'page' : 'row';
     $template_categories = pp_templates_categories( $template_type );
-    $activated_templates = self::get_enabled_templates( $template_type );
-    $activated_templates = is_array( $activated_templates ) ? $activated_templates : array();
+    $activated_templates = array();
 ?>
 
 <div class="pp-page-templates">
@@ -59,21 +58,6 @@
                 <li><a href="<?php echo self::get_form_action( '&tab=templates&navigate=page-templates&filter='.$filter_key ); ?>" class="" data-filter="<?php echo $filter_key; ?>"><?php echo $filter_name; ?></a><span>|</span></li>
             <?php endforeach; ?>
         </ul>
-        <ul class="filter-sublinks filter-row-templates" <?php echo ( 'row-templates' !== $navigate ) ? 'style="display:none;"' : ''; ?>>
-            <li class="filter-label"><strong><?php esc_html_e( 'Mode: ', 'bb-powerpack' ); ?></strong></li>
-            <li>
-                <label>
-                    <input type="radio" name="bb_powerpack_row_templates_type" value="1" <?php echo self::get_option('bb_powerpack_row_templates_type') == 1 ? 'checked="checked"' : ''; ?> />
-                    <?php esc_html_e( 'Greyscale', 'bb-powerpack' ); ?>
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="radio" name="bb_powerpack_row_templates_type" value="2" <?php echo self::get_option('bb_powerpack_row_templates_type') == 2 ? 'checked="checked"' : ''; ?> />
-                    <?php esc_html_e( 'Color', 'bb-powerpack' ); ?>
-                </label>
-            </li>
-        </ul>
         <div class="pp-refresh-panel">
             <a href="<?php echo self::get_form_action( '&tab=templates&navigate='.$navigate.'&refresh=1' ); ?>" class="button button-primary"><?php esc_html_e( 'Reload', 'bb-powerpack' ); ?></a>
         </div>
@@ -85,16 +69,15 @@
 
             <?php foreach ( $template_categories as $cat => $info ) : $preview = pp_templates_preview_src( $template_type, $cat ); ?>
 
-                <div class="pp-template pp-<?php echo $template_type; ?>-template<?php echo in_array( $cat, $activated_templates ) ? ' active' : ''; ?><?php echo !empty( $preview ) ? ' pp-preview-enabled' : ''; ?>" data-filter="<?php echo $info['type']; ?>">
-                    <div class="pp-template-screenshot"><img src="<?php echo pp_get_template_screenshot_url( $template_type, $cat ); ?>" data-color="<?php echo pp_get_template_screenshot_url( $template_type, $cat, 'color' ); ?>" data-greyscale="<?php echo pp_get_template_screenshot_url( $template_type, $cat, 'greyscale' ); ?>" /></div>
+                <div class="pp-template pp-<?php echo $template_type; ?>-template<?php echo !empty( $preview ) ? ' pp-preview-enabled' : ''; ?>" data-filter="<?php echo $info['type']; ?>">
+                    <div class="pp-template-screenshot"><img src="<?php echo pp_get_template_screenshot_url( $template_type, $cat ); ?>" /></div>
                     <?php if ( !empty( $preview ) ) { ?>
                     <span class="pp-template-preview" data-preview-src="<?php echo $preview; ?>" data-template-cat="<?php echo $cat; ?>"><?php esc_html_e( 'Preview', 'bb-powerpack' ); ?></span>
                     <?php } ?>
-                    <h2 class="pp-template-category"><span><?php echo in_array( $cat, $activated_templates ) ? esc_html__( 'Active: ', 'bb-powerpack' ) : ''; ?></span> <?php esc_html_e( $info['title'], 'bb-powerpack' ); ?> <?php echo isset( $info['count'] ) ? '- ' . $info['count'] : ''; ?></h2>
+                    <h2 class="pp-template-category"><span></span> <?php esc_html_e( $info['title'], 'bb-powerpack' ); ?> <?php echo isset( $info['count'] ) ? '- ' . $info['count'] : ''; ?></h2>
                     <div class="pp-template-actions">
                         <span class="ajax-spinner"><img src="<?php echo admin_url( 'images/loading.gif' ); ?>" class="loader-image" /></span>
-                        <a class="button button-primary pp-activate-template" href="<?php echo self::get_form_action( '&tab=templates&action=pp_activate_template&pp_template_cat=' . $cat ); ?>" data-template-type="<?php echo $template_type; ?>" data-template-cat="<?php echo $cat; ?>"><?php esc_html_e('Activate', 'bb-powerpack'); ?></a>
-                        <a class="button button-secondary pp-deactivate-template" href="<?php echo self::get_form_action( '&tab=templates&action=pp_deactivate_template&pp_template_cat=' . $cat ); ?>" data-template-type="<?php echo $template_type; ?>" data-template-cat="<?php echo $cat; ?>"><?php esc_html_e('Deactivate', 'bb-powerpack'); ?></a>
+                        <a class="button button-primary" href="<?php echo BB_POWERPACK_PRO; ?>" target="_blank"><?php esc_html_e('Upgrade Now', 'bb-powerpack'); ?></a>
                     </div>
                 </div>
 
@@ -119,8 +102,7 @@
         </div>
         <div class="pp-template-actions">
             <span class="ajax-spinner"><img src="<?php echo admin_url( 'images/loading.gif' ); ?>" class="loader-image" /></span>
-            <a class="button button-primary pp-activate-template" href="<?php echo self::get_form_action( '&tab=templates&action=pp_activate_template&pp_template_cat=' ); ?>" data-template-type="<?php echo $template_type; ?>" data-template-cat=""><?php esc_html_e('Activate', 'bb-powerpack'); ?></a>
-            <a class="button button-secondary pp-deactivate-template" href="<?php echo self::get_form_action( '&tab=templates&action=pp_deactivate_template&pp_template_cat=' ); ?>" data-template-type="<?php echo $template_type; ?>" data-template-cat=""><?php esc_html_e('Deactivate', 'bb-powerpack'); ?></a>
+            <a class="button button-primary" href="<?php echo BB_POWERPACK_PRO; ?>" target="_blank"><?php esc_html_e('Upgrade Now', 'bb-powerpack'); ?></a>
         </div>
     </div>
 </div>
@@ -153,47 +135,6 @@
                 $('.pp-template:not([data-filter="'+filter+'"])').fadeOut();
             }
 
-            // if ( history.pushState ) {
-            //     e.preventDefault();
-            //     var filter = $(this).data('filter');
-            //     var url = document.location.href.split('&filter')[0];
-            //     url = url + '&filter=' + filter;
-            //     window.history.pushState({path:url},'',url);
-            // }
-        });
-
-        /* Color mode - Row Templates */
-        $('input[name="bb_powerpack_row_templates_type"]').on('change', function() {
-
-            $('.pp-page-templates-grid').addClass('overlay-active');
-
-            var scheme = parseInt( $(this).val() );
-
-            $('input[name="bb_powerpack_row_templates_type"]').attr( 'disabled', 'disabled' );
-
-            jQuery.ajax({
-                url: '<?php echo admin_url( 'admin-ajax.php' ); ?>',
-                type: 'post',
-                data: {
-                    action: 'pp_save_template_scheme',
-                    pp_template_scheme: scheme
-                },
-                success: function(response) {
-                    console.log(response);
-
-                    $('.pp-page-templates-grid').removeClass('overlay-active');
-                    $('input[name="bb_powerpack_row_templates_type"]').removeAttr('disabled');
-
-                    $('.pp-template:not(.active) .pp-template-screenshot img').each(function() {
-                        var $this = $(this);
-                        if( scheme === 1 ){
-                            $(this).attr('src', $this.data('greyscale') );
-                        } else {
-                            $(this).attr('src', $this.data('color') );
-                        }
-                    });
-                }
-            });
         });
 
         /* Search */

@@ -17,8 +17,7 @@ $current_tab = isset( $_REQUEST['tab'] ) ? $_REQUEST['tab'] : 'extensions';
                 <a href="<?php echo self::get_form_action( '&tab=extensions' ); ?>" class="nav-tab<?php echo ( $current_tab == 'extensions' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Extensions', 'bb-powerpack' ); ?></a>
             <?php } ?>
             <a href="<?php echo self::get_form_action( '&tab=modules' ); ?>" class="nav-tab<?php echo ( $current_tab == 'modules' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Modules', 'bb-powerpack' ); ?></a>
-            <a href="<?php echo self::get_form_action( '&tab=row-templates' ); ?>" class="nav-tab<?php echo ( $current_tab == 'row-templates' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Row Templates', 'bb-powerpack' ); ?></a>
-            <a href="<?php echo self::get_form_action( '&tab=page-templates' ); ?>" class="nav-tab<?php echo ( $current_tab == 'page-templates' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Page Templates', 'bb-powerpack' ); ?></a>
+            <a href="<?php echo self::get_form_action( '&tab=templates' ); ?>" class="nav-tab<?php echo ( $current_tab == 'templates' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Templates', 'bb-powerpack' ); ?></a>
         </h2>
 
         <?php
@@ -30,11 +29,8 @@ $current_tab = isset( $_REQUEST['tab'] ) ? $_REQUEST['tab'] : 'extensions';
             if ( 'modules' == $current_tab ) {
                 include BB_POWERPACK_DIR . 'includes/admin-settings-modules.php';
             }
-            if ( 'row-templates' == $current_tab ) {
-                include BB_POWERPACK_DIR . 'includes/admin-settings-row-templates.php';
-            }
-            if ( 'page-templates' == $current_tab ) {
-                include BB_POWERPACK_DIR . 'includes/admin-settings-page-templates.php';
+            if ( 'templates' == $current_tab ) {
+                include BB_POWERPACK_DIR . 'includes/admin-settings-templates.php';
             }
 
         ?>

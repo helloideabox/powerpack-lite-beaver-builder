@@ -16,6 +16,22 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
     	 */
     	static public $errors = array();
 
+        /**
+         * Holds the templates.
+         *
+         * @since 1.1.8
+         * @var array
+         */
+    	static public $templates = array();
+
+        /**
+         * Holds the templates count.
+         *
+         * @since 1.1.8
+         * @var array
+         */
+    	static public $templates_count;
+
     	/**
     	 * Initializes the admin settings.
     	 *
@@ -24,6 +40,10 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
     	 */
     	static public function init()
     	{
+            self::$templates_count = array(
+                'page'  => 0,
+                'row'   => 0,
+            );
     		add_action( 'plugins_loaded', __CLASS__ . '::init_hooks' );
     	}
 
@@ -294,7 +314,6 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
 
             return $enabled_extensions;
         }
-
     }
 
     BB_PowerPack_Admin_Settings::init();

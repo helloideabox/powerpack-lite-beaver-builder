@@ -45,54 +45,114 @@ function pp_row_templates_categories()
 }
 
 /**
- * Page templates categories
+ * Templates categories
  */
-function pp_page_templates_categories()
+function pp_templates_categories( $type )
 {
-    $cats = array(
-        'pp-dentist'            => __('Dentist', 'bb-powerpack'),
-        'pp-wedd-photography'   => __('Wedding Photography', 'bb-powerpack'),
-        'pp-charity'            => __('Charity', 'bb-powerpack'),
-        'pp-gym'                => __('Fitness - Gym', 'bb-powerpack'),
-        'pp-travel'             => __('Travel', 'bb-powerpack'),
-        'pp-yoga'               => __('Yoga', 'bb-powerpack'),
-        'pp-sales-funnel'       => __('Sales Funnel', 'bb-powerpack'),
-        'pp-agency-1'           => __('Agency 1', 'bb-powerpack'),
-        'pp-agency-2'           => __('Agency 2', 'bb-powerpack'),
-    );
+	$templates = pp_get_template_data( $type );
+	$data = array();
 
-    asort($cats);
+	if ( is_array( $templates ) ) {
+		foreach ( $templates as $cat => $info ) {
+			$data[$cat] = array(
+				'title'		=> $info['name'],
+				'type'		=> $info['type'],
+			);
+			if ( isset( $info['count'] ) ) {
+				$data[$cat]['count'] = $info['count'];
+			}
+		}
 
-    return $cats;
+    	ksort($data);
+	}
+
+    return $data;
+}
+
+/**
+ * Templates filters
+ */
+function pp_template_filters()
+{
+	$filters = array(
+		'all'				=> __( 'All', 'bb-powerpack' ),
+		'home'				=> __( 'Home', 'bb-powerpack' ),
+		'about'				=> __( 'About', 'bb-powerpack' ),
+		'contact'			=> __( 'Contact', 'bb-powerpack' ),
+		'landing'			=> __( 'Landing', 'bb-powerpack' ),
+		'sales'				=> __( 'Sales', 'bb-powerpack' ),
+		'coming-soon'		=> __( 'Coming Soon', 'bb-powerpack' ),
+	);
+
+	return $filters;
+}
+
+function pp_get_template_data( $type )
+{
+    $file = "https://wpbeaveraddons.com/page-templates/template-data/?show={$type}&export";
+	$data = @file_get_contents( $file );
+	if ( $data ) {
+		$data = json_decode( $data, true );
+	}
+
+    BB_PowerPack_Admin_Settings::$templates = $data;
+	BB_PowerPack_Admin_Settings::$templates_count[$type] = count( $data );
+
+	return $data;
 }
 
 /**
  * Templates demo source URL
  */
-function pp_page_templates_preview_src( $cat = '' )
+function pp_templates_preview_src( $type = 'page', $category = '' )
 {
-    $url = 'https://ib.wpbeaveraddons.com/powerpack-templates-demo/';
-    $preview = array(
-        'pp-dentist'            => $url . 'dentist-home/',
-        'pp-wedd-photography'   => $url . 'wedding-photography-home/',
-        'pp-charity'            => $url . 'charity-home/',
-        'pp-gym'                => $url . 'fitness-home/',
-        'pp-travel'             => $url . 'travel-home/',
-        'pp-yoga'               => $url . 'yoga-home/',
-        'pp-sales-funnel'       => $url . 'mini-squeeze-1-lead-gen/',
-        'pp-agency-1'           => $url . 'agency-1-home/',
-        'pp-agency-2'           => $url . 'agency-2-home/',
-    );
+    $url = 'https://wpbeaveraddons.com/page-templates/';
 
-    if ( '' == $cat ) {
-        return $preview;
+    $templates = BB_PowerPack_Admin_Settings::$templates;
+
+    if ( ! is_array( $templates ) || ! count( $templates ) > 0 ) {
+        $templates = pp_get_template_data( $type );
+    }
+    
+	$data = array();
+
+	if ( is_array( $templates ) ) {
+
+		foreach ( $templates as $cat => $info ) {
+			$data[$cat] = $info['slug'];
+		}
+
+	}
+
+    if ( '' == $category ) {
+        return $data;
     }
 
-    if ( isset( $preview[$cat] ) ) {
-        return $preview[$cat];
+    if ( isset( $data[$category] ) ) {
+        return $data[$category];
     }
 
     return $url;
+}
+
+function pp_get_template_screenshot_url( $type, $category, $mode = '' )
+{
+	$url = 'https://s3.amazonaws.com/ppbeaver/assets/400x400/';
+	$scheme = 'color';
+
+	if ( ( $type == 'page' || $scheme == 'color' ) && $mode == '' ) {
+		return $url . $category . '.jpg';
+	}
+
+	if ( $mode == 'color' ) {
+		return $url . $category . '.jpg';
+	}
+
+	if ( $mode == 'greyscale' ) {
+		return $url . 'greyscale/' . $category . '.jpg';
+	}
+
+	return $url . $scheme . '/' . $category . '.jpg';
 }
 
 /**
