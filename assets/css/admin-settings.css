@@ -204,6 +204,7 @@ h2.pp-modules-category {
     padding: 18px 15px;
     text-decoration: none;
     outline: none !important;
+    box-shadow: none !important;
 }
 .pp-modules-list .pp-module a:hover {
     background: #fafafa;

@@ -91,7 +91,7 @@ $modules = array(
 ?>
 
 <div class="pp-wrap">
-    <p class="pp-upgrade-msg"><strong><?php _e('Upgrade to PowerPack Pro to unlock these set of modules', 'bb-powerpack'); ?></strong> &nbsp;<a href="<?php echo BB_POWERPACK_PRO; ?>" target="_blank" class="button button-primary"><?php _e('Upgrade Now', 'bb-powerpack'); ?></a></p>
+    <p class="pp-upgrade-msg"><strong><?php _e('Upgrade to PowerPack Pro to get these set of modules', 'bb-powerpack'); ?></strong> &nbsp;<a href="<?php echo BB_POWERPACK_PRO; ?>" target="_blank" class="button button-primary"><?php _e('Upgrade Now', 'bb-powerpack'); ?></a></p>
     <div class="pp-modules-list wp-clearfix">
         <?php foreach( $modules as $category => $list ) : ?>
             <div class="pp-column">
