@@ -54,7 +54,6 @@ $modules = array(
             array('title' => __('Formidable Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
             array('title' => __('Ninja Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
             array('title' => __('Caldera Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
-            array('title' => __('Subscribe Form', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/subscribe-form/'),
         )
     ),
     'creative'  => array(
@@ -71,7 +70,7 @@ $modules = array(
             array('title' => __('3D Slider', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
             array('title' => __('Gallery', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
             array('title' => __('Gallery Carousel', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
-            array('title' => __('Filterable Gallery', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('Filterable Gallery', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
             array('title' => __('Spacer', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
         )
     ),
@@ -93,14 +92,16 @@ $modules = array(
 
 <div class="pp-wrap">
     <p class="pp-upgrade-msg"><strong><?php _e('Upgrade to PowerPack Pro to unlock these set of modules', 'bb-powerpack'); ?></strong> &nbsp;<a href="<?php echo BB_POWERPACK_PRO; ?>" target="_blank" class="button button-primary"><?php _e('Upgrade Now', 'bb-powerpack'); ?></a></p>
-    <div class="pp-modules-list">
+    <div class="pp-modules-list wp-clearfix">
         <?php foreach( $modules as $category => $list ) : ?>
-            <h2 class="pp-modules-category"><?php echo $list['name']; ?></h2>
-            <ul class="pp-modules">
-                <?php foreach ( $list['modules'] as $module ) : ?>
-                    <li class="pp-module pp-badge-<?php echo $module['badge']; ?>"><a href="<?php echo $module['demo']; ?>" target="_blank"><?php echo $module['title']; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
+            <div class="pp-column">
+                <h2 class="pp-modules-category"><?php echo $list['name']; ?> <span class="pp-modules-count"><?php echo count($list['modules']); ?></span></h2>
+                <ul class="pp-modules">
+                    <?php foreach ( $list['modules'] as $module ) : ?>
+                        <li class="pp-module pp-badge-<?php echo $module['badge']; ?>"><a href="<?php echo $module['demo']; ?>" target="_blank"><?php echo $module['title']; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         <?php endforeach; ?>
     </div>
 </div>

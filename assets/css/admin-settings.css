@@ -153,9 +153,6 @@
 }
 
 /* Modules */
-.pp-wrap {
-    max-width: 1230px;
-}
 .pp-upgrade-msg {
     margin-top: 20px;
 }
@@ -165,13 +162,27 @@ h2.pp-modules-category {
 .pp-modules-list {
     margin-top: 30px;
 }
+.pp-modules-list .pp-column {
+    width: 290px;
+    float: left;
+    margin-right: 20px;
+}
+.pp-modules-list span.pp-modules-count {
+    background: #989898;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    margin-left: 4px;
+    vertical-align: top;
+}
 .pp-modules-list .pp-modules {
     margin-bottom: 40px;
 }
 .pp-modules-list .pp-module {
-    display: inline-block;
-    min-width: 290px;
-    margin-right: 10px;
+    display: block;
+    max-width: 100%;
+    margin-right: 0;
     margin-bottom: 10px;
 }
 .pp-modules-list .pp-module a {
@@ -190,6 +201,7 @@ h2.pp-modules-category {
     padding: 0px 5px;
     border-radius: 3px;
     text-transform: uppercase;
+    float: right;
 }
 
 .pp-page-templates-grid .pp-page-template .pp-module-content {
