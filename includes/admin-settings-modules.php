@@ -34,6 +34,24 @@ $modules = array(
             array('title' => __('Social Icons', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
         )
     ),
+    'creative'  => array(
+        'name'      => __('Creative Modules', 'bb-powerpack'),
+        'modules'   => array(
+            array('title' => __('Logo Carousel', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/logo-grid-carousel/'),
+            array('title' => __('Dot Navigation', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/dot-navigation/'),
+            array('title' => __('Highlight Box', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/highlight-box/'),
+            array('title' => __('Smart Banner', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/smart-banner/'),
+            array('title' => __('Hover Cards', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/hover-cards/'),
+            array('title' => __('Flip Box', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/flip-box/'),
+            array('title' => __('Fancy Heading', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/fancy-heading/'),
+            array('title' => __('Divider', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/line-separator/'),
+            array('title' => __('3D Slider', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('Gallery', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('Gallery Carousel', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('Filterable Gallery', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('Spacer', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+        )
+    ),
     'lead_gen'  => array(
         'name'      => __('Lead Generation Modules', 'bb-powerpack'),
         'modules'   => array(
@@ -54,24 +72,6 @@ $modules = array(
             array('title' => __('Formidable Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
             array('title' => __('Ninja Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
             array('title' => __('Caldera Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
-        )
-    ),
-    'creative'  => array(
-        'name'      => __('Creative Modules', 'bb-powerpack'),
-        'modules'   => array(
-            array('title' => __('Logo Carousel', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/logo-grid-carousel/'),
-            array('title' => __('Dot Navigation', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/dot-navigation/'),
-            array('title' => __('Highlight Box', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/highlight-box/'),
-            array('title' => __('Smart Banner', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/smart-banner/'),
-            array('title' => __('Hover Cards', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/hover-cards/'),
-            array('title' => __('Flip Box', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/flip-box/'),
-            array('title' => __('Fancy Heading', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/fancy-heading/'),
-            array('title' => __('Divider', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/line-separator/'),
-            array('title' => __('3D Slider', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
-            array('title' => __('Gallery', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
-            array('title' => __('Gallery Carousel', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
-            array('title' => __('Filterable Gallery', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
-            array('title' => __('Spacer', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
         )
     ),
     'extensions'    => array(
@@ -124,3 +124,9 @@ $modules = array(
     background: #2196f3;
 }
 </style>
+
+<script>
+jQuery('.pp-modules-list .pp-modules-category').on('click', function() {
+    jQuery(this).next().slideToggle('fast');
+});
+</script>
