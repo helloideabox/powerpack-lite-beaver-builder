@@ -16,7 +16,8 @@ class PPSpacerModule extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Spacer', 'bb-powerpack'),
             'description'   => __('Spacer module.', 'bb-powerpack'),
-            'category'		=> BB_POWERPACK_CAT,
+            'group'         => 'PowerPack Modules',
+            'category'		=> pp_get_modules_cat( 'creative' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-spacer/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-spacer/',
             'editor_export' => true, // Defaults to true and can be omitted.

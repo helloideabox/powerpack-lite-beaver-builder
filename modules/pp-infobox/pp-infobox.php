@@ -16,7 +16,8 @@ class PPInfoBoxModule extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Info Box', 'bb-powerpack'),
             'description'   => __('Addon to display info box.', 'bb-powerpack'),
-            'category'		=> BB_POWERPACK_CAT,
+            'group'         => 'PowerPack Modules',
+            'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-infobox/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-infobox/',
             'editor_export' => true, // Defaults to true and can be omitted.

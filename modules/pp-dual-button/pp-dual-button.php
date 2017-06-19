@@ -16,7 +16,8 @@ class PPDualButtonModule extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Dual Button', 'bb-powerpack'),
             'description'   => __('A module for Dual Button.', 'bb-powerpack'),
-            'category'		=> BB_POWERPACK_CAT,
+            'group'         => 'PowerPack Modules',
+            'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-dual-button/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-dual-button/',
             'editor_export' => true, // Defaults to true and can be omitted.

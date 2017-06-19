@@ -16,7 +16,8 @@ class PPInfoListModule extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Info List', 'bb-powerpack'),
             'description'   => __('Addon to display info list.', 'bb-powerpack'),
-            'category'		=> BB_POWERPACK_CAT,
+            'group'         => 'PowerPack Modules',
+            'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-infolist/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-infolist/',
             'editor_export' => true, // Defaults to true and can be omitted.

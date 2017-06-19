@@ -1,3 +1,8 @@
+== 1.0.8 ==
+*   Release date: June 19, 2017
+*   Enhancement: Added BB 2.0 support
+*   Enhancement: Updated admin settings panel
+
 == 1.0.7 ==
 *   Release date: May 25, 2017
 *   New: Added field connections

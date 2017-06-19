@@ -16,7 +16,8 @@ class PPLineSeparatorModule extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Divider', 'bb-powerpack'),
             'description'   => __('Addon to add dividers in the row.', 'bb-powerpack'),
-            'category'		=> BB_POWERPACK_CAT,
+            'group'         => 'PowerPack Modules',
+            'category'		=> pp_get_modules_cat( 'creative' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-line-separator/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-line-separator/',
             'editor_export' => true, // Defaults to true and can be omitted.
