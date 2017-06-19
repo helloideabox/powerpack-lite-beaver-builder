@@ -113,7 +113,7 @@ function pp_templates_preview_src( $type = 'page', $category = '' )
     if ( ! is_array( $templates ) || ! count( $templates ) > 0 ) {
         $templates = pp_get_template_data( $type );
     }
-    
+
 	$data = array();
 
 	if ( is_array( $templates ) ) {
@@ -255,4 +255,35 @@ function pp_modules_badges( $number = '' )
     if ( isset( $badges[$number] ) ) {
         return $badges[$number];
     }
+}
+
+function pp_get_modules_categories( $cat = '' )
+{
+	$cats = array(
+		'creative'		=> __('Creative Modules', 'bb-powerpack'),
+		'content'		=> __('Content Modules', 'bb-powerpack'),
+		'lead_gen'		=> __('Lead Generation Modules', 'bb-powerpack'),
+		'form_style'	=> __('Form Styler Modules', 'bb-powerpack')
+	);
+
+	if ( empty( $cat ) ) {
+		return $cats;
+	}
+
+	if ( isset( $cats[$cat] ) ) {
+		return $cats[$cat];
+	} else {
+		return $cat;
+	}
+}
+
+/**
+ * Returns modules category name for Beaver Builder 2.0 compatibility.
+ *
+ * @since 1.3
+ * @return string
+ */
+function pp_get_modules_cat( $cat )
+{
+	return class_exists( 'FLBuilderUIContentPanel' ) ? pp_get_modules_categories( $cat ) : BB_POWERPACK_CAT;
 }
