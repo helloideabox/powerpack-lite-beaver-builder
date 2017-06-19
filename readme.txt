@@ -2,7 +2,7 @@
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 4.7.5
+Tested up to: 4.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
