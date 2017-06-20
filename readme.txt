@@ -17,7 +17,7 @@ PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, un
 
 PowerPack for Beaver Builder is built by [Beaver Addons](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link). It extends the functionality of Beaver Builder with its custom, creative and unique modules.
 
-There are 35+ easy to use, drag & drop design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code.
+There are 40+ easy to use, drag & drop modules, 200+ design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code.
 
 It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack for Beaver Builder, you can build stunning websites in a few hours with zero coding.
 
