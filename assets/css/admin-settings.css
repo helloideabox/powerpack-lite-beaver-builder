@@ -205,6 +205,7 @@ h2.pp-modules-category {
     text-decoration: none;
     outline: none !important;
     box-shadow: none !important;
+    position: relative;
 }
 .pp-modules-list .pp-module a:hover {
     background: #fafafa;
@@ -222,11 +223,18 @@ h2.pp-modules-category {
     width: 0px;
     height: 10px;
     text-indent: -9999px;
+    position: absolute;
+    right: 12px;
 }
 .pp-modules-list .pp-module a:hover:after {
     width: auto;
     height: auto;
     text-indent: 0;
+}
+
+.pp-modules-list .pp-module a span.pp-module-status {
+    font-style: italic;
+    color: #8c8c8c;
 }
 
 .pp-page-templates-grid .pp-page-template .pp-module-content {
