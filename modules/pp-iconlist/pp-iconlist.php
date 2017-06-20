@@ -13,8 +13,8 @@ class PPIconListModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Icon List', 'bb-powerpack'),
-            'description'   => __('Addon to display icon/number list.', 'bb-powerpack'),
+            'name'          => __('Icon / Number List', 'bb-powerpack'),
+            'description'   => __('Display icon/number list.', 'bb-powerpack'),
             'group'         => 'PowerPack Modules',
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-iconlist/',
@@ -145,6 +145,10 @@ FLBuilder::register_module('PPIconListModule', array(
                         'label'             => __('Hover Color', 'bb-powerpack'),
                         'default'           => '111111',
                     ),
+                    'field_separator_0' => array(
+                        'type'              => 'pp-separator',
+                        'color'             => 'eeeeee'
+                    ),
                     'icon_border_type'  => array(
                         'type'              => 'pp-switch',
                         'label'             => __('Border Type', 'bb-powerpack'),
@@ -179,6 +183,10 @@ FLBuilder::register_module('PPIconListModule', array(
                         'type'                      => 'color',
                         'label'                     => __('Border Hover Color', 'bb-powerpack'),
                         'default'                   => ''
+                    ),
+                    'field_separator_1' => array(
+                        'type'              => 'pp-separator',
+                        'color'             => 'eeeeee'
                     ),
                     'icon_size'     => array(
                         'type'          => 'text',
@@ -247,6 +255,19 @@ FLBuilder::register_module('PPIconListModule', array(
                             'property'      => 'font-size',
                             'selector'      => '.pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-text',
                             'unit'          => 'px'
+                        )
+                    ),
+                    'text_line_height'  => array(
+                        'type'              => 'text',
+                        'label'             => __('Line Height', 'bb-powerpack'),
+                        'default'           => '1.4',
+                        'size'              => 5,
+                        'maxlength'         => 3,
+                        'preview'           => array(
+                            'type'              => 'css',
+                            'property'          => 'line-height',
+                            'selector'          => '.pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-text',
+                            'unit'              => 'em'
                         )
                     ),
                     'text_color'    => array(

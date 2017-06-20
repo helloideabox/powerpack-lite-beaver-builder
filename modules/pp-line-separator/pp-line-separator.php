@@ -32,6 +32,30 @@ class PPLineSeparatorModule extends FLBuilderModule {
         // Already registered
 		$this->add_css('font-awesome');
     }
+
+    /**
+     * Use this method to work with settings data before
+     * it is saved. You must return the settings object.
+     *
+     * @method update
+     * @param $settings {object}
+     */
+    public function update($settings)
+    {
+        return $settings;
+    }
+
+    /**
+     * This method will be called by the builder
+     * right before the module is deleted.
+     *
+     * @method delete
+     */
+    public function delete()
+    {
+
+    }
+
 }
 
 /**

@@ -1,7 +1,9 @@
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item {
+	display: table;
 	margin-bottom: <?php echo $settings->item_margin; ?>px;
 }
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-icon {
+	float: left;
 	margin-right: <?php echo $settings->icon_space; ?>px;
 	background-color: #<?php echo $settings->icon_bg; ?>;
 	color: #<?php echo $settings->icon_color; ?>;
@@ -31,8 +33,10 @@
 	<?php if( $settings->text_font['family'] != 'Default' ) { FLBuilderFonts::font_css( $settings->text_font ); } ?>
 }
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-text {
+	display: table-cell;
 	color: #<?php echo $settings->text_color; ?>;
 	<?php if( $settings->text_font['family'] != 'Default' ) { FLBuilderFonts::font_css( $settings->text_font ); } ?>
 	font-size: <?php echo $settings->text_size; ?>px;
+	line-height: <?php echo $settings->text_line_height; ?>;
 	vertical-align: middle;
 }

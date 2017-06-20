@@ -17,7 +17,7 @@ class PPContactForm7Module extends FLBuilderModule {
             'name'          => __('Contact Form 7', 'bb-powerpack'),
             'description'   => __('A module for Contact Form 7.', 'bb-powerpack'),
             'group'         => 'PowerPack Modules',
-            'category'		=> pp_get_modules_cat( 'lead_gen' ),
+            'category'		=> pp_get_modules_cat( 'form_style' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-contact-form-7/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-contact-form-7/',
             'editor_export' => true, // Defaults to true and can be omitted.
@@ -36,7 +36,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
         'title'         => __('Form', 'bb-powerpack'), // Tab title
         'sections'      => array( // Tab Sections
             'select_form'       => array( // Section
-                'title'         => __('', 'bb-powerpack'), // Section Title
+                'title'         => '', // Section Title
                 'fields'        => array( // Section Fields
                     'select_form_field' => array(
                         'type'          => 'select',
@@ -59,7 +59,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                         'type'              => 'textarea',
                         'label'             => __('Custom Description', 'bb-powerpack'),
                         'default'           => '',
-                        'placeholder'       => __('', 'bb-powerpack'),
+                        'placeholder'       => '',
                         'rows'              => '6',
                         'connections'       => array('string', 'html'),
                         'preview'           => array(
@@ -243,7 +243,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'input_field_text_color'    => array(
                         'type'                      => 'color',
                         'label'                     => __('Text Color', 'bb-powerpack'),
-                        'default'                   => '333333',
+                        'default'                   => '',
                         'show_reset'                => true,
                         'preview'                   => array(
                             'type'                      => 'css',
@@ -254,7 +254,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'input_field_bg_color'  => array(
                         'type'                  => 'color',
                         'label'                 => __('Background Color', 'bb-powerpack'),
-                        'default'               => 'ffffff',
+                        'default'               => '',
                         'show_reset'            => true,
                         'preview'               => array(
                             'type'                  => 'css',
@@ -267,6 +267,18 @@ FLBuilder::register_module('PPContactForm7Module', array(
             'input_sizes'               => array(
                 'title'                     => __('Sizes & Padding', 'bb-powerpack'),
                 'fields'                    => array(
+					'input_width'              => array(
+						'type'                      => 'text',
+						'label'                     => __('Input Width', 'bb-powerpack'),
+						'description'               => '%',
+						'class'                     => 'bb-gf-input input-small',
+						'preview'                   => array(
+							'type'                      => 'css',
+							'selector'                  => '.pp-cf7-content input.wpcf7-text, .pp-cf7-content .wpcf7-quiz, .pp-cf7-content .wpcf7-number, .pp-cf7-content .wpcf7-date, .pp-cf7-content .wpcf7-file',
+							'property'                  => 'width',
+							'unit'                      => '%'
+						),
+					),
                     'input_height'              => array(
                         'type'                      => 'text',
                         'label'                     => __('Input Height', 'bb-powerpack'),
@@ -352,7 +364,8 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'input_field_border_color'  => array(
                         'type'                      => 'color',
                         'label'                     => __('Border Color', 'bb-powerpack'),
-                        'default'                   => '333333',
+                        'default'                   => '',
+                        'show_reset'                => true,
                         'preview'                   => array(
                             'type'                      => 'css',
                             'selector'                  => '.pp-cf7-content input.wpcf7-text, .pp-cf7-content .wpcf7-textarea, .pp-cf7-content .wpcf7-quiz, .pp-cf7-content .wpcf7-number, .pp-cf7-content .wpcf7-date,.pp-cf7-content .wpcf7-file',
@@ -362,7 +375,8 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'input_field_border_focus'  => array(
                         'type'                      => 'color',
                         'label'                     => __('Border Color Focus', 'bb-powerpack'),
-                        'default'                   => '333333',
+                        'default'                   => '',
+                        'show_reset'                => true,
                     ),
                     'input_field_border_position'   => array(
                         'type'                          => 'select',
@@ -665,7 +679,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                         'label'                         => __('Validation Error Font Size', 'bb-powerpack'),
                         'description'                   => 'px',
                         'class'                         => 'bb-gf-input input-small',
-                        'default'                       => 13,
+                        'default'                       => '',
                         'preview'                       => array(
                             'type'                          => 'css',
                             'selector'                      => '.wpcf7-response-output',
@@ -723,7 +737,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					'validation_message'   => array(
                         'type'                 => 'pp-switch',
                         'label'                => __('Error Field Message', 'bb-powerpack'),
-                        'default'              => 'block',
+                        'default'              => 'true',
                         'options'              => array(
                             'block'            => __('Show', 'bb-powerpack'),
                             'none'             => __('Hide', 'bb-powerpack'),
@@ -752,13 +766,217 @@ FLBuilder::register_module('PPContactForm7Module', array(
     'form_typography'       => array( // Tab
         'title'         => __('Typography', 'bb-powerpack'), // Tab title
         'sections'      => array( // Tab Sections
-            'section_desc'  => array(
-                'title'         => '',
-                'fields'        => array(
-                    'pro_desc'      => array(
-                        'type'          => 'pp-separator',
-                        'default'       => __('Typography options are available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack')
-                    )
+            'title_typography'       => array( // Section
+                'title'         => __('Title', 'bb-powerpack'), // Section Title
+                'fields'        => array( // Section Fields
+                    'title_font_family' => array(
+                        'type'          => 'font',
+                        'default'		=> array(
+                            'family'		=> 'Default',
+                            'weight'		=> 300
+                        ),
+                        'label'         => __('Font', 'bb-powerpack'),
+                        'preview'         => array(
+                            'type'            => 'font',
+                            'selector'        => '.pp-cf7-form-title'
+                        )
+                    ),
+                    'title_font_size'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Font Size', 'bb-powerpack'),
+                        'description'   => 'px',
+                        'class'         => 'bb-gf-input input-small',
+                        'default'       => '',
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-form-title',
+                            'property'  => 'font-size',
+                            'unit'      => 'px'
+                        )
+                    ),
+                    'title_color'       => array(
+                        'type'          => 'color',
+                        'label'         => __('Color', 'bb-powerpack'),
+                        'default'       => '',
+                        'show_reset'    => true,
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-form-title',
+                            'property'  => 'color'
+                        )
+                    ),
+                    'title_alignment'    => array(
+                        'type'                      => 'pp-switch',
+                        'label'                     => __('Alignment', 'bb-powerpack'),
+                        'default'                   => 'left',
+                        'options'                   => array(
+                            'left'                  => __('Left', 'bb-powerpack'),
+                            'center'                => __('Center', 'bb-powerpack'),
+                            'right'                 => __('Right', 'bb-powerpack'),
+                        ),
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-form-title',
+                            'property'  => 'text-align'
+                        )
+                    ),
+                )
+            ),
+            'description_typography'    => array(
+                'title'     => __('Description', 'bb-powerpack'),
+                'fields'    => array(
+                    'description_font_family' => array(
+                        'type'          => 'font',
+                        'default'		=> array(
+                            'family'		=> 'Default',
+                            'weight'		=> 300
+                        ),
+                        'label'         => __('Font', 'bb-powerpack'),
+                        'preview'         => array(
+                            'type'            => 'font',
+                            'selector'        => '.pp-cf7-form-description'
+                        )
+                    ),
+                    'description_font_size'    => array(
+                        'type'                 => 'text',
+                        'label'                => __('Font Size', 'bb-powerpack'),
+                        'description'          => 'px',
+                        'class'                => 'bb-gf-input input-small',
+                        'default'              => '',
+                        'preview'              => array(
+                            'type'             => 'css',
+                            'selector'         => '.pp-cf7-form-description',
+                            'property'         => 'font-size',
+                            'unit'             => 'px'
+                        )
+                    ),
+                    'description_color' => array(
+                        'type'          => 'color',
+                        'label'         => __('Color', 'bb-powerpack'),
+                        'default'       => '',
+                        'show_reset'    => true,
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-form-description',
+                            'property'  => 'color'
+                        )
+                    ),
+                    'description_alignment'    => array(
+                        'type'                      => 'pp-switch',
+                        'label'                     => __('Alignment', 'bb-powerpack'),
+                        'default'                   => 'left',
+                        'options'                   => array(
+                            'left'                  => __('Left', 'bb-powerpack'),
+                            'center'                => __('Center', 'bb-powerpack'),
+                            'right'                 => __('Right', 'bb-powerpack'),
+                        ),
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-form-description',
+                            'property'  => 'text-align'
+                        )
+                    ),
+                ),
+            ),
+            'label_typography'       => array( // Section
+                'title'         => __('Label', 'bb-powerpack'), // Section Title
+                'fields'        => array( // Section Fields
+                    'label_font_family' => array(
+                        'type'          => 'font',
+                        'default'		=> array(
+                            'family'		=> 'Default',
+                            'weight'		=> 300
+                        ),
+                        'label'         => __('Font', 'bb-powerpack'),
+                        'preview'         => array(
+                            'type'            => 'font',
+                            'selector'        => '.pp-cf7-content form p'
+                        )
+                    ),
+                    'label_font_size'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Font Size', 'bb-powerpack'),
+                        'description'   => 'px',
+                        'class'         => 'bb-gf-input input-small',
+                        'default'       => '',
+                        'preview'           => array(
+                            'type'          => 'css',
+                            'selector'      => '.pp-cf7-content form p',
+                            'property'      => 'font-size',
+                            'unit'          => 'px'
+                        )
+                    ),
+                    'form_label_color'  => array(
+                        'type'          => 'color',
+                        'label'         => __('Color', 'bb-powerpack'),
+                        'default'       => '',
+                        'show_reset'    => true,
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-content form p',
+                            'property'  => 'color'
+                        )
+                    ),
+                )
+            ),
+            'input_typography'       => array( // Section
+                'title'         => __('Input', 'bb-powerpack'), // Section Title
+                'fields'        => array( // Section Fields
+                    'input_font_family' => array(
+                        'type'          => 'font',
+                        'default'		=> array(
+                            'family'		=> 'Default',
+                            'weight'		=> 300
+                        ),
+                        'label'         => __('Font', 'bb-powerpack'),
+                        'preview'         => array(
+                            'type'            => 'font',
+                            'selector'        => '.pp-cf7-content input.wpcf7-text, .pp-cf7-content .wpcf7-textarea, .pp-cf7-content .wpcf7-quiz, .pp-cf7-content .wpcf7-number, .pp-cf7-content .wpcf7-date,.pp-cf7-content .wpcf7-file'
+                        )
+                    ),
+                    'input_font_size'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Font Size', 'bb-powerpack'),
+                        'description'   => 'px',
+                        'class'         => 'bb-gf-input input-small',
+                        'default'       => '',
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-content input.wpcf7-text, .pp-cf7-content .wpcf7-textarea, .pp-cf7-content .wpcf7-quiz, .pp-cf7-content .wpcf7-number, .pp-cf7-content .wpcf7-date,.pp-cf7-content .wpcf7-file',
+                            'property'  => 'font-size',
+                            'unit'      => 'px'
+                        )
+                    ),
+                )
+            ),
+            'button_typography'       => array( // Section
+                'title'         => __('Button', 'bb-powerpack'), // Section Title
+                'fields'        => array( // Section Fields
+                    'button_font_family' => array(
+                        'type'          => 'font',
+                        'default'		=> array(
+                            'family'		=> 'Default',
+                            'weight'		=> 300
+                        ),
+                        'label'         => __('Font', 'bb-powerpack'),
+                        'preview'         => array(
+                            'type'            => 'font',
+                            'selector'        => '.pp-cf7-content .wpcf7-submit'
+                        )
+                    ),
+                    'button_font_size'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Font Size', 'bb-powerpack'),
+                        'description'   => 'px',
+                        'class'         => 'bb-gf-input input-small',
+                        'default'       => '',
+                        'preview'       => array(
+                            'type'      => 'css',
+                            'selector'  => '.pp-cf7-content .wpcf7-submit',
+                            'property'  => 'font-size',
+                            'unit'      => 'px'
+                        )
+                    ),
                 )
             ),
         )

@@ -19,16 +19,24 @@ $infolist_class = 'pp-infolist-wrap';
 
 			$items = $settings->list_items[$i];
 			$classes = '';
+			if( $items->icon_animation ) {
+				$classes = $items->icon_animation;
+			}
+			else {
+				$classes = '';
+			}
 			?>
 				<li class="pp-list-item pp-list-item-<?php echo $i; ?>">
 					<?php if( $items->link_type == 'box' ) { ?>
 						<a class="pp-more-link" href="<?php echo $items->link; ?>" target="<?php echo $items->link_target; ?>">
 					<?php } ?>
-						<div class="pp-icon-wrapper <?php echo $classes; ?>">
+						<div class="pp-icon-wrapper animated <?php echo $classes; ?>">
 							<div class="pp-infolist-icon">
 								<div class="pp-infolist-icon-inner">
 									<?php if( $items->icon_type == 'icon' ) { ?>
 										<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
+									<?php } else { ?>
+										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
 									<?php } ?>
 								</div>
 							</div>
@@ -50,6 +58,7 @@ $infolist_class = 'pp-infolist-wrap';
 								<?php } ?>
 							</div>
 						</div>
+						<div class="pp-list-connector"></div>
 				<?php if( $items->link_type == 'box' ) { ?>
 					</a>
 				<?php } ?>
@@ -70,6 +79,12 @@ $infolist_class = 'pp-infolist-wrap';
 
 			$items = $settings->list_items[$i];
 			$classes = '';
+			if( $items->icon_animation ) {
+				$classes = $items->icon_animation;
+			}
+			else {
+				$classes = '';
+			}
 			?>
 				<li class="pp-list-item pp-list-item-<?php echo $i; ?>">
 					<?php if( $items->link_type == 'box' ) { ?>
@@ -93,15 +108,18 @@ $infolist_class = 'pp-infolist-wrap';
 								<?php } ?>
 							</div>
 						</div>
-						<div class="pp-icon-wrapper <?php echo $classes; ?>">
+						<div class="pp-icon-wrapper animated <?php echo $classes; ?>">
 							<div class="pp-infolist-icon">
 								<div class="pp-infolist-icon-inner">
 									<?php if( $items->icon_type == 'icon' ) { ?>
 										<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
+									<?php } else { ?>
+										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
 									<?php } ?>
 								</div>
 							</div>
 						</div>
+						<div class="pp-list-connector"></div>
 				<?php if( $items->link_type == 'box' ) { ?>
 					</a>
 				<?php } ?>
@@ -123,16 +141,24 @@ $infolist_class = 'pp-infolist-wrap';
 
 					$items = $settings->list_items[$i];
 					$classes = '';
+					if( $items->icon_animation ) {
+						$classes = $items->icon_animation;
+					}
+					else {
+						$classes = '';
+					}
 					?>
 					<li class="pp-list-item pp-list-item-<?php echo $i; ?>">
 						<?php if( $items->link_type == 'box' ) { ?>
 							<a class="pp-more-link" href="<?php echo $items->link; ?>">
 						<?php } ?>
-						<div class="pp-icon-wrapper <?php echo $classes; ?>">
+						<div class="pp-icon-wrapper animated <?php echo $classes; ?>">
 							<div class="pp-infolist-icon">
 								<div class="pp-infolist-icon-inner">
 									<?php if( $items->icon_type == 'icon' ) { ?>
 										<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
+									<?php } else { ?>
+										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
 									<?php } ?>
 								</div>
 							</div>
@@ -152,6 +178,7 @@ $infolist_class = 'pp-infolist-wrap';
 								<a class="pp-more-link" href="<?php echo $items->link; ?>"><?php echo $items->read_more_text; ?></a>
 							<?php } ?>
 						</div>
+						<div class="pp-list-connector"></div>
 					<?php if( $items->link_type == 'box' ) { ?>
 						</a>
 					<?php } ?>
@@ -172,16 +199,24 @@ $infolist_class = 'pp-infolist-wrap';
 
 			$items = $settings->list_items[$i];
 			$classes = '';
+			if( $items->icon_animation ) {
+				$classes = $items->icon_animation;
+			}
+			else {
+				$classes = '';
+			}
 			?>
 			<?php if( $items->link_type == 'box' ) { ?>
 				<a class="pp-more-link" href="<?php echo $items->link; ?>">
 			<?php } ?>
 				<li class="pp-list-item pp-list-item-<?php echo $i; ?>">
-					<div class="pp-icon-wrapper <?php echo $classes; ?>">
+					<div class="pp-icon-wrapper animated <?php echo $classes; ?>">
 						<div class="pp-infolist-icon">
 							<div class="pp-infolist-icon-inner">
 								<?php if( $items->icon_type == 'icon' ) { ?>
 									<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
+								<?php } else { ?>
+									<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
 								<?php } ?>
 							</div>
 						</div>

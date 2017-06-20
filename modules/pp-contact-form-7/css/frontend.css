@@ -9,3 +9,13 @@
 .fl-module .pp-cf7-content input.wpcf7-submit {
     clear: both;
 }
+
+@media only screen and (max-width: 768px) {
+	.pp-cf7-content .wpcf7-text,
+	.pp-cf7-content .wpcf7-email,
+	.pp-cf7-content .wpcf7-textarea,
+	.pp-cf7-content .wpcf7-quiz,
+	.pp-cf7-content .wpcf7-number {
+		width: 100% !important;
+	}
+}

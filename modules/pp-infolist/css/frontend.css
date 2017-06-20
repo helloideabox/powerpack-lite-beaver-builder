@@ -9,11 +9,8 @@
 	clear: both;
 }
 
-.fl-builder-settings-section select[name="image_select_src"] {
-	display: none;
-}
-
-.entry-content .pp-infolist-title h3, .pp-infolist-title h3 {
+.entry-content .pp-infolist-title h3,
+.pp-infolist-title h3 {
 	margin-bottom: 5px;
 	margin-top: 0;
 }
@@ -43,6 +40,14 @@
 .pp-infolist-icon-inner .dashicons-before:before {
 	height: auto;
 	width: auto;
+}
+
+/* Connector */
+.pp-list-connector {
+	height: 100%;
+	position: absolute;
+	top: 36px;
+	z-index: 1;
 }
 
 /* Default layout */
@@ -80,6 +85,9 @@
 .pp-infolist-icon span {
 	display: table-cell;
 	vertical-align: middle;
+}
+.pp-infolist-icon-inner img {
+	border: none;
 }
 
 /* Layouts */

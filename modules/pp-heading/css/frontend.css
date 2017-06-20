@@ -11,6 +11,10 @@
     overflow: hidden;
 }
 
+.pp-heading-content .pp-heading-link {
+	text-decoration: none;
+}
+
 .pp-heading-content .pp-heading.pp-separator-inline .heading-title {
      display: inline-block;
  }

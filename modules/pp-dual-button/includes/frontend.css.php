@@ -12,6 +12,7 @@
 .fl-node-<?php echo $id; ?> .pp-dual-button-content a.pp-button {
     <?php if($settings->button_font_family['family'] != 'Default') { ?><?php FLBuilderFonts::font_css( $settings->button_font_family ); ?><?php } ?>
     <?php if( $settings->button_font_size['button_font_size_desktop'] >=0 ) { ?>font-size: <?php echo $settings->button_font_size['button_font_size_desktop']; ?>px;<?php } ?>
+    <?php if( $settings->button_line_height['button_line_height_desktop'] >=0 ) { ?>line-height: <?php echo $settings->button_line_height['button_line_height_desktop']; ?>;<?php } ?>
     <?php if( $settings->button_border_width ) { ?>border-width: <?php echo $settings->button_border_width; ?>px;<?php } ?>
     <?php if( $settings->button_border_radius ) { ?>border-radius: <?php echo $settings->button_border_radius; ?>px;<?php } ?>
     <?php if( $settings->button_width ) { ?>width: <?php echo $settings->button_width; ?>px;<?php } ?>
@@ -23,6 +24,9 @@
     text-decoration: none;
     box-shadow: none;
     display: block;
+}
+.fl-node-<?php echo $id; ?> .pp-dual-button-content a.pp-button {
+    letter-spacing: <?php echo $settings->button_letter_spacing; ?>px;
 }
 .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-1 a.pp-button {
     background-color:<?php echo ($settings->button_1_bg_color['primary']) ? '#'.$settings->button_1_bg_color['primary'] : 'transparent'; ?>;
@@ -104,7 +108,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -135,7 +139,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -166,7 +170,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -197,7 +201,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -228,7 +232,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -260,7 +264,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -292,7 +296,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -324,7 +328,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -358,7 +362,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(0);
             -moz-transform: scale(0);
             -o-transform: scale(0);
@@ -387,7 +391,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['primary']) { ?>background: #<?php echo $settings->button_1_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(2);
             -moz-transform: scale(2);
             -o-transform: scale(2);
@@ -414,7 +418,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(0);
             -moz-transform: scale(0);
             -o-transform: scale(0);
@@ -442,7 +446,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['primary']) { ?>background: #<?php echo $settings->button_1_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(1);
             -moz-transform: scale(1);
             -o-transform: scale(1);
@@ -470,7 +474,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['primary']) { ?>background: #<?php echo $settings->button_1_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(1);
             -moz-transform: scaleX(1);
             -o-transform: scaleX(1);
@@ -502,7 +506,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -535,7 +539,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['primary']) { ?>background: #<?php echo $settings->button_1_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(1);
             -moz-transform: scaleY(1);
             -o-transform: scaleY(1);
@@ -567,7 +571,7 @@ switch( $pp_button_1_effect ) {
             content: "";
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -602,7 +606,7 @@ switch( $pp_button_1_effect ) {
             top: 50%;
             <?php if( $settings->button_1_bg_color['secondary']) { ?>background: #<?php echo $settings->button_1_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -o-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
@@ -633,7 +637,7 @@ switch( $pp_button_1_effect ) {
             top: 50%;
             <?php if( $settings->button_1_bg_color['primary']) { ?>background: #<?php echo $settings->button_1_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_1_text_color['secondary']) { ?>color:#<?php echo $settings->button_1_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_1_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_1_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -o-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
@@ -672,7 +676,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -703,7 +707,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -734,7 +738,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -765,7 +769,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -796,7 +800,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -828,7 +832,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -860,7 +864,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -892,7 +896,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -926,7 +930,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(0);
             -moz-transform: scale(0);
             -o-transform: scale(0);
@@ -955,7 +959,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['primary']) { ?>background: #<?php echo $settings->button_2_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(2);
             -moz-transform: scale(2);
             -o-transform: scale(2);
@@ -982,7 +986,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(0);
             -moz-transform: scale(0);
             -o-transform: scale(0);
@@ -1010,7 +1014,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['primary']) { ?>background: #<?php echo $settings->button_2_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scale(1);
             -moz-transform: scale(1);
             -o-transform: scale(1);
@@ -1038,7 +1042,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['primary']) { ?>background: #<?php echo $settings->button_2_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(1);
             -moz-transform: scaleX(1);
             -o-transform: scaleX(1);
@@ -1070,7 +1074,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleX(0);
             -moz-transform: scaleX(0);
             -o-transform: scaleX(0);
@@ -1103,7 +1107,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['primary']) { ?>background: #<?php echo $settings->button_2_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(1);
             -moz-transform: scaleY(1);
             -o-transform: scaleY(1);
@@ -1135,7 +1139,7 @@ switch( $pp_button_2_effect ) {
             content: "";
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: scaleY(0);
             -moz-transform: scaleY(0);
             -o-transform: scaleY(0);
@@ -1170,7 +1174,7 @@ switch( $pp_button_2_effect ) {
             top: 50%;
             <?php if( $settings->button_2_bg_color['secondary']) { ?>background: #<?php echo $settings->button_2_bg_color['secondary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -o-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
@@ -1201,7 +1205,7 @@ switch( $pp_button_2_effect ) {
             top: 50%;
             <?php if( $settings->button_2_bg_color['primary']) { ?>background: #<?php echo $settings->button_2_bg_color['primary']; ?>;<?php } ?>
             <?php if( $settings->button_2_text_color['secondary']) { ?>color:#<?php echo $settings->button_2_text_color['secondary']; ?>;<?php } ?>
-            <?php if( $settings->button_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_border_color['secondary']; ?>;<?php } ?>
+            <?php if( $settings->button_2_border_color['secondary']) { ?>border-color:#<?php echo $settings->button_2_border_color['secondary']; ?>;<?php } ?>
             -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
             -o-transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
@@ -1241,12 +1245,14 @@ switch( $pp_button_2_effect ) {
     }
     .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-button {
         <?php if( $settings->button_font_size['button_font_size_tablet'] >=0 ) { ?>font-size: <?php echo $settings->button_font_size['button_font_size_tablet']; ?>px;<?php } ?>
+        <?php if( $settings->button_line_height['button_line_height_tablet'] >=0 ) { ?>line-height: <?php echo $settings->button_line_height['button_line_height_tablet']; ?>;<?php } ?>
     }
 }
 
 @media only screen and ( max-width: 480px ) {
     .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-button {
         <?php if( $settings->button_font_size['button_font_size_mobile'] >=0 ) { ?>font-size: <?php echo $settings->button_font_size['button_font_size_mobile']; ?>px;<?php } ?>
+        <?php if( $settings->button_line_height['button_line_height_mobile'] >=0 ) { ?>line-height: <?php echo $settings->button_line_height['button_line_height_mobile']; ?>;<?php } ?>
     }
 }
 
@@ -1274,7 +1280,7 @@ switch( $pp_button_2_effect ) {
         <?php if( $settings->button_border_radius ) { ?>border-radius: <?php echo $settings->button_border_radius; ?>px;<?php } ?>
     }
     .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-2 .pp-button {
-        <?php if( $settings->button_border_color['primary'] ) { ?>border-color: #<?php echo $settings->button_border_color['primary']; ?>;<?php } ?>
+        <?php if( $settings->button_2_border_color['primary'] ) { ?>border-color: #<?php echo $settings->button_2_border_color['primary']; ?>;<?php } ?>
         <?php if( $settings->button_border_style) { ?>border-style:  <?php echo $settings->button_border_style; ?>;<?php } ?>
         <?php if( $settings->button_border_width ) { ?>border-width: <?php echo $settings->button_border_width; ?>px;<?php } ?>
         <?php if( $settings->button_border_radius ) { ?>border-radius: <?php echo $settings->button_border_radius; ?>px;<?php } ?>

@@ -1,15 +1,3 @@
-<?php
-
-/**
- * This file should be used to render each module instance.
- * You have access to two variables in this file:
- *
- * $module An instance of your module class.
- * $settings The module's settings.
- *
- * PPHeadingModule:
- */
-?>
 <div class="pp-heading-content">
 	<?php if ( $settings->heading_separator_postion == 'top' && $settings->heading_separator != 'no_spacer' && $settings->heading_separator != 'inline' ) { ?>
 		<div class="pp-heading-separator <?php echo $settings->heading_separator; ?> pp-<?php echo $settings->heading_alignment; ?>">
@@ -52,9 +40,24 @@
 		</div>
 	<?php } ?>
 	<div class="pp-heading <?php if( $settings->heading_separator == 'inline' ) { echo 'pp-separator-' . $settings->heading_separator; } ?> pp-<?php echo $settings->heading_alignment; ?>">
+
 		<<?php echo $settings->heading_tag; ?> class="heading-title">
-		<span class="title-text"><?php echo $settings->heading_title; ?></span>
+
+			<?php if( !empty( $settings->heading_link ) ) : ?>
+				<a class="pp-heading-link" href="<?php echo $settings->heading_link; ?>" target="<?php echo $settings->heading_link_target; ?>">
+			<?php endif; ?>
+
+			<span class="title-text pp-primary-title"><?php echo $settings->heading_title; ?></span>
+			<?php if ( isset($settings->dual_heading) && $settings->dual_heading == 'yes' ) { ?>
+			<span class="title-text pp-secondary-title"><?php echo $settings->heading_title2; ?></span>
+			<?php } ?>
+
+			<?php if( !empty( $settings->heading_link ) ) : ?>
+				</a>
+			<?php endif; ?>
+
 		</<?php echo $settings->heading_tag; ?>>
+
 	</div>
 	<?php if ( $settings->heading_separator_postion == 'middle' && $settings->heading_separator != 'no_spacer' && $settings->heading_separator != 'inline' ) { ?>
 		<div class="pp-heading-separator <?php echo $settings->heading_separator; ?> pp-<?php echo $settings->heading_alignment; ?>">

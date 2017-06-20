@@ -25,29 +25,6 @@ class PPDualButtonModule extends FLBuilderModule {
         ));
     }
 
-    /**
-     * Use this method to work with settings data before
-     * it is saved. You must return the settings object.
-     *
-     * @method update
-     * @param $settings {object}
-     */
-    public function update($settings)
-    {
-        return $settings;
-    }
-
-    /**
-     * This method will be called by the builder
-     * right before the module is deleted.
-     *
-     * @method delete
-     */
-    public function delete()
-    {
-
-    }
-
 }
 
 /**
@@ -63,7 +40,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_1_title'     => array(
                         'type'      => 'text',
                         'label'     => 'Text',
-                        'default'   => 'Button 1',
+                        'default'   => __('Button 1', 'bb-powerpack'),
                         'preview'       => array(
 							'type'          => 'text',
 							'selector'      => '.pp-dual-button-1 span.pp-button-1-text'
@@ -153,9 +130,14 @@ FLBuilder::register_module('PPDualButtonModule', array(
                         'label' => __('Transition Speed', 'bb-powerpack'),
                         'size'  => 5,
                         'maxlength' => 4,
-                        'default'   => 500,
-                        'description'   => __('ms', 'bb-powerpack'),
+                        'default'   => 200,
+                        'description'   => 'ms',
                     ),
+                    'button_1_css_class'    => array(
+                        'type'  => 'text',
+                        'label' => __('CSS Class', 'bb-powerpack'),
+                        'default'   => '',
+                    )
                 )
             ),
         )
@@ -169,7 +151,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_2_title'     => array(
                         'type'      => 'text',
                         'label'     => 'Text',
-                        'default'   => 'Button 2',
+                        'default'   => __('Button 2', 'bb-powerpack'),
                         'preview'       => array(
 							'type'          => 'text',
 							'selector'      => '.pp-dual-button-2 span.pp-button-2-text'
@@ -259,9 +241,14 @@ FLBuilder::register_module('PPDualButtonModule', array(
                         'label' => __('Transition Speed', 'bb-powerpack'),
                         'size'  => 5,
                         'maxlength' => 4,
-                        'default' => '500',
-                        'description'   => __('ms', 'bb-powerpack'),
+                        'default' => '200',
+                        'description'   => 'ms',
                     ),
+                    'button_2_css_class'    => array(
+                        'type'  => 'text',
+                        'label' => __('CSS Class', 'bb-powerpack'),
+                        'default'   => '',
+                    )
                 )
             ),
         ),
@@ -455,7 +442,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_padding'   => array(
                         'type'          => 'pp-multitext',
                         'label'         => __('Padding', 'bb-powerpack'),
-                        'description'   => __('px', 'bb-powerpack'),
+                        'description'   => 'px',
                         'default'       => array(
                             'button_top_padding'    => 10,
                             'button_bottom_padding'    => 10,
@@ -537,7 +524,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                         'default'   => '1',
                         'size'          => '5',
                         'maxlength'     => '5',
-						'description'   => _x( 'px', 'Value unit for border width. Such as: "14 px"', 'bb-powerpack' ),
+						'description'   => 'px',
                         'preview'   => array(
                             'type'  => 'css',
                             'selector'  => '.pp-dual-button-content .pp-button',
@@ -551,7 +538,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                         'default'   => '0',
                         'size'          => '5',
                         'maxlength'     => '5',
-						'description'   => _x( 'px', 'Value unit for border width. Such as: "14 px"', 'bb-powerpack' ),
+						'description'   => 'px',
                         'preview'   => array(
                             'type'            => 'css',
                             'rules'     => array(
@@ -584,7 +571,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                         'default'   => '200',
                         'size'          => '5',
                         'maxlength'     => '5',
-						'description'   => _x( 'px', 'Value unit for border width. Such as: "14 px"', 'bb-powerpack' ),
+						'description'   => 'px',
                         'preview'   => array(
                             'type'  => 'css',
                             'selector'  => '.pp-dual-button-content .pp-button',
@@ -598,7 +585,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                         'default'           => 10,
                         'size'              => 5,
                         'maxlength'         => 5,
-						'description'       => _x( 'px', 'Value unit for spacer width. Such as: "10 px"', 'bb-powerpack' ),
+						'description'       => 'px',
                         'preview'           => array(
                             'type'              => 'css',
                             'selector'          => '.pp-dual-button-content .pp-spacer',
@@ -612,7 +599,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                         'size'          => 5,
                         'maxlength'     => 4,
                         'default'       => 480,
-                        'description'   => __('px', 'bb-powerpack'),
+                        'description'   => 'px',
                         'help'          => __('Buttons will be stacked on top of each other.', 'bb-powerpack'),
                     ),
                 )
@@ -671,16 +658,62 @@ FLBuilder::register_module('PPDualButtonModule', array(
                             ),
                         ),
                     ),
-                ),
-            ),
-            'section_desc'  => array(
-                'title'         => '',
-                'fields'        => array(
-                    'pro_desc'      => array(
-                        'type'          => 'pp-separator',
-                        'default'       => __('More options are available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack')
+                    'button_line_height'   => array(
+                        'type'          => 'pp-multitext',
+                        'label'         => __('Line Height', 'bb-powerpack'),
+                        'default'       => array(
+                            'button_line_height_desktop' => 1.6,
+                            'button_line_height_tablet' => '',
+                            'button_line_height_mobile' => '',
+                        ),
+                        'options'       => array(
+                            'button_line_height_desktop'      => array(
+                                'placeholder'               => __('Desktop', 'bb-powerpack'),
+                                'icon'                      => 'fa-desktop',
+                                'maxlength'                 => 3,
+                                'tooltip'                   => __('Desktop', 'bb-powerpack'),
+                                'preview'           => array(
+                                    'selector'      => '.pp-dual-button-content a.pp-button',
+                                    'property'      => 'line-height',
+                                ),
+                            ),
+                            'button_line_height_tablet'      => array(
+                                'placeholder'               => __('Tablet', 'bb-powerpack'),
+                                'icon'                      => 'fa-tablet',
+                                'maxlength'                 => 3,
+                                'tooltip'                   => __('Tablet', 'bb-powerpack')
+                            ),
+                            'button_line_height_mobile'      => array(
+                                'placeholder'               => __('Mobile', 'bb-powerpack'),
+                                'icon'                      => 'fa-mobile',
+                                'maxlength'                 => 3,
+                                'tooltip'                   => __('Mobile', 'bb-powerpack')
+                            ),
+                        ),
+                    ),
+                    'button_letter_spacing'     => array(
+                        'type'                      => 'text',
+                        'label'                     => __('Letter Spacing', 'bb-powerpack'),
+                        'class'                     => 'bb-box-input input-small',
+                        'default'                   => 0,
+                        'description'               => 'px',
+                        'preview'                   => array(
+                            'type'                      => 'css',
+                            'rules'                     => array(
+                                array(
+                                    'selector'                  => '.pp-dual-button-1 a.pp-button',
+                                    'property'                  => 'letter-spacing',
+                                    'unit'                      => 'px'
+                                ),
+                                array(
+                                    'selector'                  => '.pp-dual-button-2 a.pp-button',
+                                    'property'                  => 'letter-spacing',
+                                    'unit'                      => 'px'
+                                )
+                            )
+                        )
                     )
-                )
+                ),
             ),
         ),
     ),

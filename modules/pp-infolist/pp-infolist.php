@@ -83,11 +83,41 @@ FLBuilder::register_module('PPInfoListModule', array(
             'connector'         => array(
                 'title'             => __('Connector Line', 'bb-powerpack'),
                 'fields'            => array(
-                    'pro_desc_1'      => array(
-                        'type'          => 'pp-separator',
-                        'default'       => __('This option is available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack'),
-                        'color'         => 'ffffff',
-                        'style'         => 'background: #fffce4; padding: 10px; border: 1px solid #fff388;'
+                    'connector_type'    => array(
+                        'type'              => 'pp-switch',
+                        'label'             => __('Style', 'bb-powerpack'),
+                        'default'           => 'dashed',
+                        'options'           => array(
+                            'none'              => __('None', 'bb-powerpack'),
+                            'solid'             => __('Solid', 'bb-powerpack'),
+                            'dashed'            => __('Dashed', 'bb-powerpack'),
+                            'dotted'            => __('Dotted', 'bb-powerpack'),
+                        ),
+                        'toggle'  => array(
+                            'solid'  => array(
+                                'fields'    => array('connector_width', 'connector_color')
+                            ),
+                            'dashed'  => array(
+                                'fields'    => array('connector_width', 'connector_color')
+                            ),
+                            'dotted'  => array(
+                                'fields'    => array('connector_width', 'connector_color')
+                            )
+                        )
+                    ),
+                    'connector_width'   => array(
+                        'type'              => 'text',
+                        'label'             => __('Width', 'bb-powerpack'),
+                        'size'              => 5,
+                        'default'           => 1,
+                        'maxlength'         => 1,
+                        'description'       => __( 'px', 'bb-powerpack' ),
+                    ),
+                    'connector_color'   => array(
+                        'type'              => 'color',
+                        'label'             => __('Color', 'bb-powerpack'),
+                        'default'           => '000000',
+                        'show_reset'        => true,
                     ),
                 ),
             ),
@@ -122,7 +152,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                         'maxlength'     => '2',
                         'default'       => '16',
                         'label'         => __('Icon Size', 'bb-powerpack'),
-                        'description'   => _x( 'px', 'Value unit for font size. Such as: "14 px"', 'bb-powerpack' ),
+                        'description'   => 'px',
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'     => array(
@@ -145,7 +175,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                         'size'      => '5',
                         'maxlength'     => '3',
                         'default'       => '40',
-                        'description'   => _x( 'px', 'bb-powerpack' ),
+                        'description'   => 'px',
                         'preview'       => array(
                             'type'      => 'css',
                             'rules'     => array(
@@ -167,11 +197,85 @@ FLBuilder::register_module('PPInfoListModule', array(
             'icon_border'   => array(
                 'title'         => __('Border', 'bb-powerpack'),
                 'fields'        => array(
-                    'pro_desc_5'      => array(
-                        'type'          => 'pp-separator',
-                        'default'       => __('Border options are available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack'),
-                        'color'         => 'ffffff',
-                        'style'         => 'background: #fffce4; padding: 10px; border: 1px solid #fff388;'
+                    'show_border'   => array(
+                        'type'      => 'pp-switch',
+                        'label'     => __('Show Border', 'bb-powerpack'),
+                        'default'   => 'no',
+                        'options'   => array(
+                            'yes'    => __('Yes', 'bb-powerpack'),
+                            'no'    => __('No', 'bb-powerpack'),
+                        ),
+                        'toggle'    => array(
+                            'yes'   => array(
+                                'fields'    => array ('icon_border_width', 'icon_border_color', 'icon_border_color_hover', 'icon_border_style', 'icon_box_size')
+                            )
+                        ),
+                    ),
+                    'icon_border_style'     => array(
+                        'type'      => 'pp-switch',
+                        'label'     => __('Border Style', 'bb-powerpack'),
+                        'default'   => 'solid',
+                        'options'   => array(
+                            'solid'      => __('Solid', 'bb-powerpack'),
+                            'dotted'      => __('Dotted', 'bb-powerpack'),
+                            'dashed'      => __('Dashed', 'bb-powerpack'),
+                            'double'      => __('Double', 'bb-powerpack'),
+                        ),
+                    ),
+                    'icon_border_width'    => array(
+                        'type'          => 'text',
+                        'label'         => __('Border Width', 'bb-powerpack'),
+                        'default'       => 1,
+                        'size'          => 5,
+                        'maxlength'     => 2,
+                        'description'   => 'px',
+                        'preview'       => array(
+                            'type'          => 'css',
+                            'rules'     => array(
+                                array(
+                                    'selector'      => '.pp-infolist-icon',
+                                    'property'      => 'border-width',
+                                    'unit'          => 'px'
+                                ),
+                                array(
+                                    'selector'      => '.pp-infolist-icon-inner img',
+                                    'property'      => 'border-width',
+                                    'unit'          => 'px'
+                                ),
+                            ),
+                        )
+                    ),
+                    'icon_border_color'    => array(
+                        'type'          => 'color',
+                        'label'         => __('Border Color', 'bb-powerpack'),
+                        'show_reset'    => true,
+                        'preview'       => array(
+                            'type'          => 'css',
+                            'rules'     => array(
+                                array(
+                                    'selector'      => '.pp-infolist-icon',
+                                    'property'      => 'border-color',
+                                ),
+                            ),
+                        )
+                    ),
+                    'icon_border_color_hover'    => array(
+                        'type'          => 'color',
+                        'label'         => __('Border Color Hover', 'bb-powerpack'),
+                        'show_reset'    => true,
+                        'preview'       => array(
+                            'type'          => 'css',
+                            'rules'     => array(
+                                array(
+                                    'selector'      => '.pp-infolist-icon:hover',
+                                    'property'      => 'border-color',
+                                ),
+                                array(
+                                    'selector'      => '.pp-infolist-icon-inner img:hover',
+                                    'property'      => 'border-color',
+                                ),
+                            ),
+                        )
                     ),
                     'icon_border_radius'    => array(
                         'type'          => 'text',
@@ -179,7 +283,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                         'default'       => '0',
                         'size'          => '5',
                         'maxlength'     => '3',
-                        'description'   => _x( 'px', 'Value unit for border radius. Such as: "10px"', 'bb-powerpack' ),
+                        'description'   => 'px',
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'     => array(
@@ -218,7 +322,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                         'maxlength' => 3,
                         'default'   => 25,
                         'help'      => __('Spacing between two list items.', 'bb-powerpack'),
-                        'description'   => __('px', 'bb-powerpack'),
+                        'description'   => 'px',
                         'preview'       => array(
                             'type'      => 'css',
                             'selector'  => '.pp-infolist-wrap .pp-list-item',
@@ -233,7 +337,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                         'maxlength' => 3,
                         'default'   => 20,
                         'help'   => __('Distance between icon and content.', 'bb-powerpack'),
-                        'description'   => __('px', 'bb-powerpack'),
+                        'description'   => 'px',
                         'preview'       => array(
                             'type'      => 'css',
                             'rules'     => array(
@@ -261,7 +365,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                         'maxlength'     => '3',
                         'default'     => '0',
                         'label'         => __('Inside Spacing', 'bb-powerpack'),
-                        'description'   => _x( 'px', 'bb-powerpack' ),
+                        'description'   => 'px',
                         'help'      => __('Space between icon and the border', 'bb-powerpack'),
                         'preview'       => array(
                             'type'          => 'css',
@@ -289,25 +393,6 @@ FLBuilder::register_module('PPInfoListModule', array(
             'general'     => array(
                 'title'     => __('Title', 'bb-powerpack'),
                 'fields'    => array(
-                    'pro_desc_3'      => array(
-                        'type'          => 'pp-separator',
-                        'default'       => __('Font Family is available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack'),
-                        'color'         => 'ffffff',
-                        'style'         => 'background: #fffce4; padding: 10px; border: 1px solid #fff388;'
-                    ),
-                    'title_font_size'    => array(
-						'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'description'   => _x( 'px', 'Value unit for font size. Such as: "14 px"', 'bb-powerpack' ),
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infolist-title h3',
-                            'property'      => 'font-size',
-                            'unit'          => 'px'
-                        )
-					),
                     'title_color'    => array(
 						'type'          => 'color',
 						'label'         => __('Color', 'bb-powerpack'),
@@ -324,6 +409,31 @@ FLBuilder::register_module('PPInfoListModule', array(
                                     'property'      => 'color',
                                 ),
                             ),
+                        )
+					),
+                    'title_font'          => array(
+                        'type'          => 'font',
+                        'default'		=> array(
+                            'family'		=> 'Default',
+                            'weight'		=> 300
+                        ),
+                        'label'         => __('Font', 'bb-powerpack'),
+                        'preview'         => array(
+                            'type'            => 'font',
+                            'selector'        => '.pp-infolist-title h3'
+                        )
+                    ),
+                    'title_font_size'    => array(
+						'type'          => 'text',
+                        'size'          => '5',
+                        'maxlength'     => '2',
+						'label'         => __('Font Size', 'bb-powerpack'),
+						'description'   => 'px',
+                        'preview'       => array(
+                            'type'          => 'css',
+                            'selector'      => '.pp-infolist-title h3',
+                            'property'      => 'font-size',
+                            'unit'          => 'px'
                         )
 					),
                     'title_margin'      => array(
@@ -362,25 +472,6 @@ FLBuilder::register_module('PPInfoListModule', array(
             'text_typography'   => array(
                 'title'     => __('Description', 'bb-powerpack'),
                 'fields'    => array(
-                    'pro_desc_4'      => array(
-                        'type'          => 'pp-separator',
-                        'default'       => __('Font Family is available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack'),
-                        'color'         => 'ffffff',
-                        'style'         => 'background: #fffce4; padding: 10px; border: 1px solid #fff388;'
-                    ),
-                    'text_font_size'    => array(
-						'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'description'   => _x( 'px', 'Value unit for font size. Such as: "14 px"', 'bb-powerpack' ),
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infolist-description',
-                            'property'      => 'font-size',
-                            'unit'          => 'px'
-                        )
-					),
                     'text_color'    => array(
 						'type'          => 'color',
 						'label'         => __('Color', 'bb-powerpack'),
@@ -389,6 +480,31 @@ FLBuilder::register_module('PPInfoListModule', array(
                             'type'          => 'css',
                             'selector'      => '.pp-infolist-description',
                             'property'      => 'color',
+                        )
+					),
+                    'text_font'          => array(
+                        'type'          => 'font',
+                        'default'		=> array(
+                            'family'		=> 'Default',
+                            'weight'		=> 300
+                        ),
+                        'label'         => __('Font', 'bb-powerpack'),
+                        'preview'         => array(
+                            'type'            => 'font',
+                            'selector'        => '.pp-infolist-description'
+                        )
+                    ),
+                    'text_font_size'    => array(
+						'type'          => 'text',
+                        'size'          => '5',
+                        'maxlength'     => '2',
+						'label'         => __('Font Size', 'bb-powerpack'),
+						'description'   => 'px',
+                        'preview'       => array(
+                            'type'          => 'css',
+                            'selector'      => '.pp-infolist-description',
+                            'property'      => 'font-size',
+                            'unit'          => 'px'
                         )
 					),
                 ),
@@ -412,7 +528,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                             'default'   => 'icon',
                             'options'   => array(
                                 'icon'      => __('Icon', 'bb-powerpack'),
-                                'image'      => __('Image (Pro)', 'bb-powerpack'),
+                                'image'      => __('Image', 'bb-powerpack'),
                             ),
                             'toggle'        => array(
                                 'icon'      => array(
@@ -420,20 +536,72 @@ FLBuilder::register_settings_form('pp_list_item', array(
                                     'tabs'          => array('icon_styles'),
                                 ),
                                 'image'      => array(
-                                    'fields'        => array('pro_desc_2'),
+                                    'fields'        => array('image_select'),
                                 ),
                             ),
-                        ),
-                        'pro_desc_2'      => array(
-                            'type'          => 'pp-separator',
-                            'default'       => __('This option is available in <a href="'.BB_POWERPACK_PRO.'" target="_blank" class="pp-pro-link">PowerPack Pro</a> version.', 'bb-powerpack'),
-                            'color'         => 'ffffff',
-                            'style'         => 'background: #fffce4; padding: 10px; border: 1px solid #fff388;'
                         ),
                         'icon_select'       => array(
                             'type'      => 'icon',
                             'label'     => __('Icon', 'bb-powerpack'),
                             'show_remove'    => true,
+                        ),
+                        'image_select'       => array(
+                            'type'      => 'photo',
+                            'label'     => __('Image Icon', 'bb-powerpack'),
+                            'show_remove'    => true,
+                            'connections'   => array( 'photo' ),
+                        ),
+                        'icon_animation'     => array(
+                            'type'      => 'select',
+                            'label'     => __('Animation', 'bb-powerpack'),
+                            'default'     => 'none',
+                            'options'       => array(
+    							'none'          => __('None', 'bb-powerpack'),
+    							'swing'          => __('Swing', 'bb-powerpack'),
+    							'pulse'          => __('Pulse', 'bb-powerpack'),
+    							'flash'          => __('Flash', 'bb-powerpack'),
+    							'fadeIn'          => __('Fade In', 'bb-powerpack'),
+    							'fadeInUp'          => __('Fade In Up', 'bb-powerpack'),
+    							'fadeInDown'          => __('Fade In Down', 'bb-powerpack'),
+    							'fadeInLeft'          => __('Fade In Left', 'bb-powerpack'),
+    							'fadeInRight'          => __('Fade In Right', 'bb-powerpack'),
+                                'slideInUp'          => __('Slide In Up', 'bb-powerpack'),
+    							'slideInDown'          => __('Slide In Down', 'bb-powerpack'),
+                                'slideInLeft'          => __('Slide In Left', 'bb-powerpack'),
+    							'slideInRight'          => __('Slide In Right', 'bb-powerpack'),
+    							'bounceIn'          => __('Bounce In', 'bb-powerpack'),
+                                'bounceInUp'          => __('Bounce In Up', 'bb-powerpack'),
+    							'bounceInDown'          => __('Bounce In Down', 'bb-powerpack'),
+    							'bounceInLeft'          => __('Bounce In Left', 'bb-powerpack'),
+    							'bounceInRight'          => __('Bounce In Right', 'bb-powerpack'),
+    							'flipInX'          => __('Flip In X', 'bb-powerpack'),
+    							'FlipInY'          => __('Flip In Y', 'bb-powerpack'),
+    							'lightSpeedIn'          => __('Light Speed In', 'bb-powerpack'),
+    							'rotateIn'          => __('Rotate In', 'bb-powerpack'),
+                                'rotateInUpLeft'          => __('Rotate In Up Left', 'bb-powerpack'),
+                                'rotateInUpRight'          => __('Rotate In Up Right', 'bb-powerpack'),
+    							'rotateInDownLeft'          => __('Rotate In Down Left', 'bb-powerpack'),
+    							'rotateInDownRight'          => __('Rotate In Down Right', 'bb-powerpack'),
+    							'rollIn'          => __('Roll In', 'bb-powerpack'),
+    							'zoomIn'          => __('Zoom In', 'bb-powerpack'),
+                                'slideInUp'          => __('Slide In Up', 'bb-powerpack'),
+    							'slideInDown'          => __('Slide In Down', 'bb-powerpack'),
+    							'slideInLeft'          => __('Slide In Left', 'bb-powerpack'),
+    							'slideInRight'          => __('Slide In Right', 'bb-powerpack'),
+    						)
+                        ),
+                        'animation_duration'    => array(
+                            'type'      => 'text',
+                            'label'     => __('Animation Duration', 'bb-powerpack'),
+                            'default'     => '1000',
+                            'maxlength'     => '4',
+                            'size'      => '5',
+                            'description'   => _x( 'ms', 'Value unit for animation duration. Such as: "1s"', 'bb-powerpack' ),
+                            'preview'       => array(
+                                'type'      => 'css',
+                                'selector'  => '.animated',
+                                'property'  => 'animation-duration'
+                            ),
                         ),
                     ),
                 ),

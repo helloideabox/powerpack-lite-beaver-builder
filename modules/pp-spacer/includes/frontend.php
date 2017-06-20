@@ -12,6 +12,6 @@
 ?>
 <div class="pp-spacer-module">
     <?php if ( FLBuilderModel::is_builder_active() ) { ?>
-        <p class="pp-helper">Click here to edit Spacer module.</p>
+        <p class="pp-helper"><?php _e('Click here to edit Spacer module.', 'bb-powerpack'); ?></p>
     <?php } ?>
 </div>
