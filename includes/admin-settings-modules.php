@@ -13,14 +13,14 @@ $modules = array(
         'modules'   => array(
             array('title' => __('Info Box', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/info-box/', 'installed' => true),
             array('title' => __('Info List', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/info-list/', 'installed' => true),
-            array('title' => __('Dual Button', 'bb-powerpack'), 'badge' => '3', 'demo' => 'https://wpbeaveraddons.com/demo/buttons/', 'installed' => true),
+            array('title' => __('Dual Button', 'bb-powerpack'), 'badge' => '3', 'demo' => 'https://wpbeaveraddons.com/demo/dual-button/', 'installed' => true),
             array('title' => __('Smart Heading', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/headings/', 'installed' => true),
-            array('title' => __('Dual Color Headings', 'bb-powerpack'), 'badge' => '3', 'demo' => 'https://wpbeaveraddons.com/demo/dual-color-heading/', 'installed' => true),
+            array('title' => __('Dual Color Headings', 'bb-powerpack'), 'badge' => '3', 'demo' => 'https://wpbeaveraddons.com/demo/headings/', 'installed' => true),
             array('title' => __('Business Hours', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/business-hours/', 'installed' => true),
-            array('title' => __('Icon List', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#', 'installed' => true),
+            array('title' => __('Icon / Number List', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/icon-number-list/', 'installed' => true),
             array('title' => __('Content Grid', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/content-grid/'),
             array('title' => __('Content Tiles', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/content-tiles/'),
-            array('title' => __('Custom Grid', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('Custom Grid', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/content-grid/'),
             array('title' => __('Team Member', 'bb-powerpack'), 'badge' => '3', 'demo' => 'https://wpbeaveraddons.com/demo/team-member/'),
             array('title' => __('Smart Button', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/buttons/'),
             array('title' => __('Image', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/images/'),
@@ -39,6 +39,7 @@ $modules = array(
         'modules'   => array(
             array('title' => __('Fancy Heading', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/fancy-heading/', 'installed' => true),
             array('title' => __('Spacer', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#', 'installed' => true),
+            array('title' => __('Advanced Menu', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/advanced-menu/'),
             array('title' => __('Logo Carousel', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/logo-grid-carousel/'),
             array('title' => __('Dot Navigation', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/dot-navigation/'),
             array('title' => __('Highlight Box', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/highlight-box/'),
@@ -46,10 +47,10 @@ $modules = array(
             array('title' => __('Hover Cards', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/hover-cards/'),
             array('title' => __('Flip Box', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/flip-box/'),
             array('title' => __('Divider', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/line-separator/'),
-            array('title' => __('3D Slider', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('3D Slider', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/3d-slider/'),
             array('title' => __('Gallery', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
             array('title' => __('Gallery Carousel', 'bb-powerpack'), 'badge' => '0', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
-            array('title' => __('Filterable Gallery', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/#'),
+            array('title' => __('Filterable Gallery', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/filterable-gallery/'),
         )
     ),
     'lead_gen'  => array(
@@ -65,13 +66,13 @@ $modules = array(
     'forms' => array(
         'name'      => __('Form Styler Modules', 'bb-powerpack'),
         'modules'   => array(
-            array('title' => __('Contact Form 7', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/', 'installed' => true),
+            array('title' => __('Contact Form 7', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/forms/', 'installed' => true),
             array('title' => __('Contact Form', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/forms/'),
-            array('title' => __('Gravity Forms', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
-            array('title' => __('WPForms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
-            array('title' => __('Formidable Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
-            array('title' => __('Ninja Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
-            array('title' => __('Caldera Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/gravity-forms/'),
+            array('title' => __('Gravity Forms', 'bb-powerpack'), 'badge' => '1', 'demo' => 'https://wpbeaveraddons.com/demo/forms/'),
+            array('title' => __('WPForms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/forms/'),
+            array('title' => __('Formidable Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/forms/'),
+            array('title' => __('Ninja Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/forms/'),
+            array('title' => __('Caldera Forms', 'bb-powerpack'), 'badge' => '2', 'demo' => 'https://wpbeaveraddons.com/demo/forms/'),
         )
     ),
     'extensions'    => array(

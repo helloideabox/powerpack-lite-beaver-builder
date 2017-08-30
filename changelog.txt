@@ -1,5 +1,5 @@
 == 1.1.0 ==
-*   Release date: June 20, 2017
+*   Release date: August 30, 2017
 *   New: Unlocked all features of the modules
 *   Enhancement: Added BB 2.0 support
 *   Enhancement: Updated admin settings panel
