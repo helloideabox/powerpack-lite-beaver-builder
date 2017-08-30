@@ -2,7 +2,7 @@
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 4.8
+Tested up to: 4.8.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -62,7 +62,7 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 = Premium Features =
 
 *   50+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Pricing Tables, Restaurant Menu, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
-*   200+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates for Beaver Builder. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
+*   250+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates for Beaver Builder. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
 *   Toggle between Greyscale and Colored row templates.
 *   Dynamic template library in backend.
 *   1-Click Preview on frontend for Beaver Builder.
