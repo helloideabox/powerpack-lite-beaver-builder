@@ -7,8 +7,6 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-URL : https://wordpress.org/plugins/powerpack-addon-for-beaver-builder/
-
 PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, unique modules and templates.
 
 == Description ==
