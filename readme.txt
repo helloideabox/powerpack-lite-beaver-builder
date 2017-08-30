@@ -17,7 +17,7 @@ PowerPack Lite for Beaver Builder extends Beaver Builder with custom options, un
 
 PowerPack for Beaver Builder is built by [Beaver Addons](https://wpbeaveraddons.com/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link). It extends the functionality of Beaver Builder with its custom, creative and unique modules.
 
-There are 40+ easy to use, drag & drop modules, 200+ design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code.
+There are 40+ easy to use, drag & drop modules, 250+ design elements, sections, row templates and page templates that will speed up your website development process. You will be able to build professional websites without writing code.
 
 It's also packed with lead generation modules like Call to action buttons, popup creator, banner creator and much more. With PowerPack for Beaver Builder, you can build stunning websites in a few hours with zero coding.
 
@@ -50,7 +50,7 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 *   Contact Form 7 Module: Style your CF7 forms from front end with easy to use design options. No custom code required. Check the [demo here](https://wpbeaveraddons.com/demo/forms/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Forms Demo").
 *   Dual Button: Create beautiful call to action dual buttons. Check the [demo here](https://wpbeaveraddons.com/demo/buttons/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Buttons Demo").
 *   Heading: Write and create attention grabbing headlines with Smart Headings module. Check the [demo here](https://wpbeaveraddons.com/demo/headings/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-demo-link "Headings Demo").
-*   Iconlist: Create list items with over 2000 font icons for bullet points.
+*   Iconlist: Create list items with over 2000 font icons or numbers for bullet points.
 *   Fancy Heading: Create beautiful clipping to image heading, animated heading with gradient, color, flip options.
 *   Business Hours: Display opening and closing hours with various styling options.
 *   Divider: Add line, icon, image divider/separators between modules, rows.
@@ -124,6 +124,16 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+= 1.1.0 - August 30, 2017 =
+*   New: Unlocked all features of the modules
+*   Enhancement: Added BB 2.0 support
+*   Enhancement: Added placeholder styling options in Contact Form 7 module
+*   Enhancement: Updated admin settings panel
+*   Fix: Minor CSS issue in Business Hours module
+*   Fix: Minor CSS issue in Dual Button module
+*   Fix: Minor CSS issue in Smart Heading module
+*   Fix: Minor CSS issue in Icon List module
+
 = 1.0.7 - May 25, 2017 =
 *   New: Added field connections
 *   Fix: CSS fixes in Business Hours module
@@ -153,5 +163,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.0.7 =
-Added field connections
+= 1.1.0 =
+Unlocked all features of the modules
