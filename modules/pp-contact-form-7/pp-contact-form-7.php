@@ -443,6 +443,36 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                 )
             ),
+            'placeholder_style'      => array( // Section
+                'title'         => __('Placeholder', 'bb-powerpack'), // Section Title
+                'fields'        => array( // Section Fields
+                    'show_placeholder' 	=> array(
+                        'type'          => 'pp-switch',
+                        'label'         => __('Show Placeholder', 'bb-powerpack'),
+                        'default'       => 'yes',
+                        'options'		=> array(
+                       		'yes'	         => __('Yes', 'bb-powerpack'),
+                       		'no'	         => __('No', 'bb-powerpack'),
+                        ),
+                        'toggle' => array(
+                            'yes' => array(
+                                'fields' => array('placeholder_color')
+                            )
+                        )
+                    ),
+                    'placeholder_color'  => array(
+                        'type'                  => 'color',
+                        'label'                 => __('Color', 'bb-powerpack'),
+                        'default'               => '999999',
+                        'show_reset'            => true,
+                        'preview'               => array(
+                            'type'              => 'css',
+                            'selector'          => '.pp-cf7-content input[type=text]::-webkit-input-placeholder, .pp-cf7-content input[type=tel]::-webkit-input-placeholder, .pp-cf7-content input[type=email]::-webkit-input-placeholder, .pp-cf7-content textarea::-webkit-input-placeholder',
+                            'property'          => 'color'
+                        )
+                    ),
+                )
+            ),
         )
     ),
     'button_style'          => array(

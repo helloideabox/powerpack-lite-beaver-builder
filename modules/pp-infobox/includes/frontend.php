@@ -1,6 +1,7 @@
 <?php
 
 $infobox_class = 'pp-infobox-wrap';
+$button_class = ( 'button' == $settings->pp_infobox_link_type && '' != $settings->link_css_class ) ? ' ' . $settings->link_css_class : '';
 
 ?>
 <div class="<?php echo $infobox_class; ?>">
@@ -14,6 +15,9 @@ $infobox_class = 'pp-infobox-wrap';
 		<?php } ?>
 		<div class="pp-infobox layout-0 clearfix">
 			<div class="pp-heading-wrapper">
+
+				<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+
 				<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
 					<a class="pp-more-link pp-title-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
 				<?php } ?>
@@ -27,7 +31,7 @@ $infobox_class = 'pp-infobox-wrap';
 			<div class="pp-infobox-description">
 				<?php echo $settings->description; ?>
 				<?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
-					<p><a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"><?php echo $settings->pp_infobox_read_more_text; ?></a></p>
+					<?php $module->render_link(); ?>
 				<?php } ?>
 			</div>
 		</div>
@@ -52,25 +56,31 @@ $infobox_class = 'pp-infobox-wrap';
 						<?php } else { ?>
 							<?php if ( isset( $settings->image_select_src ) ) { ?>
 								<div class="pp-infobox-image">
-	  								<img src="<?php echo $settings->image_select_src; ?>">
+	  								<img src="<?php echo $settings->image_select_src; ?>" alt="<?php echo $module->get_alt(); ?>" />
 								</div>
 							<?php } ?>
 						<?php } ?>
 					</div>
-					<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
-						<a class="pp-more-link pp-title-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
-					<?php } ?>
-					<div class="pp-infobox-title-wrapper">
-						<<?php echo $settings->title_tag; ?> class="pp-infobox-title"><?php echo $settings->title; ?></<?php echo $settings->title_tag; ?>>
+
+					<div class="pp-heading-wrapper-inner">
+
+						<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+
+						<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
+							<a class="pp-more-link pp-title-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
+						<?php } ?>
+						<div class="pp-infobox-title-wrapper">
+							<<?php echo $settings->title_tag; ?> class="pp-infobox-title"><?php echo $settings->title; ?></<?php echo $settings->title_tag; ?>>
+						</div>
+						<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
+							</a>
+						<?php } ?>
 					</div>
-					<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
-						</a>
-					<?php } ?>
 				</div>
 				<div class="pp-infobox-description">
 					<?php echo $settings->description; ?>
 					<?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
-						<p><a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"><?php echo $settings->pp_infobox_read_more_text; ?></a></p>
+						<?php $module->render_link(); ?>
 					<?php } ?>
 				</div>
 			</div>
@@ -85,15 +95,19 @@ $infobox_class = 'pp-infobox-wrap';
 		<?php } ?>
 			<div class="pp-infobox layout-2 clearfix">
 				<div class="pp-heading-wrapper">
-					<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
-						<a class="pp-more-link pp-title-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
-					<?php } ?>
-					<div class="pp-infobox-title-wrapper">
-						<<?php echo $settings->title_tag; ?> class="pp-infobox-title"><?php echo $settings->title; ?></<?php echo $settings->title_tag; ?>>
+					<div class="pp-header-wrapper-inner">
+						<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+
+						<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
+							<a class="pp-more-link pp-title-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
+						<?php } ?>
+						<div class="pp-infobox-title-wrapper">
+							<<?php echo $settings->title_tag; ?> class="pp-infobox-title"><?php echo $settings->title; ?></<?php echo $settings->title_tag; ?>>
+						</div>
+						<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
+							</a>
+						<?php } ?>
 					</div>
-					<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
-						</a>
-					<?php } ?>
 					<div class="pp-icon-wrapper animated">
 						<?php if( $settings->icon_type == 'icon' ) { ?>
 							<div class="pp-infobox-icon">
@@ -104,7 +118,7 @@ $infobox_class = 'pp-infobox-wrap';
 						<?php } else { ?>
 							<div class="pp-infobox-image">
 								<?php if ( isset( $settings->image_select_src ) ) { ?>
-									<img src="<?php echo $settings->image_select_src; ?>">
+									<img src="<?php echo $settings->image_select_src; ?>" alt="<?php echo $module->get_alt(); ?>" />
 								<?php } ?>
 							</div>
 						<?php } ?>
@@ -113,7 +127,7 @@ $infobox_class = 'pp-infobox-wrap';
 				<div class="pp-infobox-description">
 					<?php echo $settings->description; ?>
 					<?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
-						<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"><?php echo $settings->pp_infobox_read_more_text; ?></a>
+						<?php $module->render_link(); ?>
 					<?php } ?>
 				</div>
 			</div>
@@ -139,12 +153,16 @@ $infobox_class = 'pp-infobox-wrap';
 						<?php } else { ?>
 							<div class="pp-infobox-image">
 								<?php if ( isset( $settings->image_select_src ) ) { ?>
-								  <img src="<?php echo $settings->image_select_src; ?>">
+								  <img src="<?php echo $settings->image_select_src; ?>" alt="<?php echo $module->get_alt(); ?>" />
 								<?php } ?>
 							</div>
 						<?php } ?>
 					</div>
+
 					<div class="pp-heading-wrapper">
+
+							<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+
 							<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
 								<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
 							<?php } ?>
@@ -157,7 +175,7 @@ $infobox_class = 'pp-infobox-wrap';
 						<div class="pp-infobox-description">
 							<?php echo $settings->description; ?>
 							<?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
-								<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"><?php echo $settings->pp_infobox_read_more_text; ?></a>
+								<?php $module->render_link(); ?>
 							<?php } ?>
 						</div>
 					</div>
@@ -175,6 +193,9 @@ $infobox_class = 'pp-infobox-wrap';
 			<div class="pp-infobox layout-4 clearfix">
 				<div class="layout-4-wrapper">
 					<div class="pp-heading-wrapper">
+
+							<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+
 							<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
 								<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
 							<?php } ?>
@@ -187,7 +208,7 @@ $infobox_class = 'pp-infobox-wrap';
 						<div class="pp-infobox-description">
 							<?php echo $settings->description; ?>
 							<?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
-								<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"><?php echo $settings->pp_infobox_read_more_text; ?></a>
+								<?php $module->render_link(); ?>
 							<?php } ?>
 						</div>
 					</div>
@@ -201,7 +222,7 @@ $infobox_class = 'pp-infobox-wrap';
 						<?php } else { ?>
 							<div class="pp-infobox-image">
 								<?php if ( isset( $settings->image_select_src ) ) { ?>
-								  <img src="<?php echo $settings->image_select_src; ?>">
+								  <img src="<?php echo $settings->image_select_src; ?>" alt="<?php echo $module->get_alt(); ?>" />
 								<?php } ?>
 							</div>
 						<?php } ?>
@@ -228,11 +249,14 @@ $infobox_class = 'pp-infobox-wrap';
 					<?php } else { ?>
 						<div class="pp-infobox-image">
 							<?php if ( isset( $settings->image_select_src ) ) { ?>
-							  <img src="<?php echo $settings->image_select_src; ?>">
+							  <img src="<?php echo $settings->image_select_src; ?>" alt="<?php echo $module->get_alt(); ?>" />
 							<?php } ?>
 						</div>
 					<?php } ?>
 				</div>
+
+				<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+
 				<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
 					<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
 				<?php } ?>
@@ -245,7 +269,7 @@ $infobox_class = 'pp-infobox-wrap';
 				<div class="pp-infobox-description">
 					<?php echo $settings->description; ?>
 					<?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
-						<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"><?php echo $settings->pp_infobox_read_more_text; ?></a>
+						<?php $module->render_link(); ?>
 					<?php } ?>
 				</div>
 			</div>
@@ -269,11 +293,15 @@ $infobox_class = 'pp-infobox-wrap';
 					<?php } else { ?>
 						<div class="pp-infobox-image">
 							<?php if ( isset( $settings->image_select_src ) ) { ?>
-							  <img src="<?php echo $settings->image_select_src; ?>">
+							  <img src="<?php echo $settings->image_select_src; ?>" alt="<?php echo $module->get_alt(); ?>" />
 							<?php } ?>
 						</div>
 					<?php } ?>
 				</div>
+
+
+				<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+
 				<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
 					<a class="pp-more-link pp-title-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">
 				<?php } ?>
@@ -286,7 +314,7 @@ $infobox_class = 'pp-infobox-wrap';
 				<div class="pp-infobox-description">
 					<?php echo $settings->description; ?>
 					<?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
-						<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"><?php echo $settings->pp_infobox_read_more_text; ?></a>
+						<?php $module->render_link(); ?>
 					<?php } ?>
 				</div>
 			</div>

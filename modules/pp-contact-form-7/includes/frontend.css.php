@@ -158,3 +158,135 @@
     <?php if( $settings->validation_message ) { ?>display: <?php echo $settings->validation_message; ?>;<?php } ?>
     <?php if( $settings->validation_message_color ) { ?>color: #<?php echo $settings->validation_message_color; ?>;<?php } ?>
 }
+
+
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=text]::-webkit-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=text]:-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=text]::-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=text]:-ms-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=tel]::-webkit-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=tel]:-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=tel]::-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+	color: transparent;
+	opacity: 0;
+	<?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=tel]:-ms-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+	<?php } else { ?>
+	color: transparent;
+	opacity: 0;
+	<?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=email]::-webkit-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=email]:-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+	<?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=email]::-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content input[type=email]:-ms-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+
+.fl-node-<?php echo $id; ?> .pp-cf7-content textarea::-webkit-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+    <?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content textarea:-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+	<?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content textarea::-moz-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+	<?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}
+.fl-node-<?php echo $id; ?> .pp-cf7-content textarea:-ms-input-placeholder {
+    <?php if( $settings->placeholder_color && $settings->show_placeholder == 'yes' ) { ?>
+    color: #<?php echo $settings->placeholder_color; ?>;
+	<?php } else { ?>
+    color: transparent;
+	opacity: 0;
+    <?php } ?>
+}

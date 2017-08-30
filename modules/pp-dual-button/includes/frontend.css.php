@@ -51,6 +51,9 @@
     color:<?php echo ($settings->button_2_text_color['secondary']) ? '#'.$settings->button_2_text_color['secondary'] : 'transparent'; ?>;
     border-color:<?php echo ($settings->button_2_border_color['secondary']) ? '#'.$settings->button_2_border_color['secondary'] : 'transparent'; ?>;
 }
+.fl-node-<?php echo $id; ?> .pp-dual-button-content a.pp-button .pp-font-icon {
+    margin-left: 5px;
+}
 .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-1 .pp-font-icon {
     <?php if( $settings->button_1_font_icon_size ) { ?>font-size:<?php echo $settings->button_1_font_icon_size; ?>px;<?php } ?>
     <?php if( $settings->button_1_text_color['primary']) { ?>color:#<?php echo $settings->button_1_text_color['primary']; ?>;<?php } ?>

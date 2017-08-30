@@ -1,5 +1,11 @@
 .fl-node-<?php echo $id; ?> .pp-infolist-wrap .pp-list-item {
-	margin-bottom: <?php echo ($settings->list_spacing >= 0) ? $settings->list_spacing.'px' : '25px'; ?>;
+	padding-bottom: <?php echo ($settings->list_spacing >= 0) ? $settings->list_spacing.'px' : '25px'; ?>;
+	<?php if ( $settings->connector_type == 'none' ) : ?>
+		margin-bottom: 0;
+	<?php endif; ?>
+}
+.fl-node-<?php echo $id; ?> .pp-infolist-wrap .pp-list-item:last-child {
+	margin-bottom: 0;
 }
 .fl-node-<?php echo $id; ?> .pp-infolist-title h3.pp-infolist-title-text {
 	<?php if( $settings->title_color ) { ?>color: #<?php echo $settings->title_color; ?>;<?php } ?>

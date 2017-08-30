@@ -1,3 +1,11 @@
+.fl-node-<?php echo $id; ?> .pp-infobox-title-prefix {
+	<?php if( $settings->title_prefix_font['family'] != 'Default' ) { ?><?php FLBuilderFonts::font_css( $settings->title_prefix_font ); ?><?php } ?>
+	<?php if( $settings->title_prefix_font_size ) { ?>font-size: <?php echo $settings->title_prefix_font_size; ?>px;<?php } ?>
+	line-height: <?php echo $settings->title_prefix_line_height; ?>;
+	<?php if( $settings->title_prefix_color ) { ?>color: #<?php echo $settings->title_prefix_color; ?>;<?php } ?>
+	<?php if( $settings->title_prefix_margin['top'] ) { ?>margin-top: <?php echo $settings->title_prefix_margin['top']; ?>px;<?php } ?>
+	<?php if( $settings->title_prefix_margin['bottom'] ) { ?>margin-bottom: <?php echo $settings->title_prefix_margin['bottom']; ?>px;<?php } ?>
+}
 .fl-node-<?php echo $id; ?> .pp-infobox-title-wrapper .pp-infobox-title {
 	<?php if( $settings->title_color ) { ?>color: #<?php echo $settings->title_color; ?>;<?php } ?>
 	<?php if( $settings->title_font['family'] != 'Default' ) { ?><?php FLBuilderFonts::font_css( $settings->title_font ); ?><?php } ?>
@@ -59,6 +67,15 @@
 	}
 <?php } ?>
 <?php if( $settings->icon_type == 'image' ) { ?>
+
+	.fl-node-<?php echo $id; ?> .pp-infobox-image {
+		<?php if( $settings->layouts == '3' || $settings->layouts == '4' ) { ?>
+			margin-bottom: 0;
+		<?php } ?>
+		<?php if( $settings->layouts == '5' ) { ?>
+			text-align: <?php echo $settings->alignment; ?>
+		<?php } ?>
+	}
 	.fl-node-<?php echo $id; ?> .pp-infobox-image img {
 		<?php if( $settings->icon_border_radius ) { ?>border-radius: <?php echo $settings->icon_border_radius; ?>px;<?php } ?>
 		<?php if( $settings->show_border == 'yes' ) { ?>
@@ -101,9 +118,6 @@
 
 <?php if( $settings->pp_infobox_link_type == 'read_more' || $settings->pp_infobox_link_type == 'button' ) { ?>
 	.fl-node-<?php echo $id; ?> .pp-infobox .pp-more-link {
-		<?php if ( $settings->pp_infobox_link_type == 'button' ) { ?>
-			display: block;
-		<?php } ?>
 		<?php if( $settings->pp_infobox_read_more_color ) { ?>color: #<?php echo $settings->pp_infobox_read_more_color; ?>;<?php } ?>
 		<?php if( $settings->pp_infobox_link_type == 'button' && $settings->button_bg_color != '' ) { ?>
 			background-color: #<?php echo $settings->button_bg_color; ?>;
@@ -117,6 +131,19 @@
 			padding-left: <?php echo $settings->button_padding['left']; ?>px;
 			padding-right: <?php echo $settings->button_padding['right']; ?>px;
 			text-decoration: none;
+			text-align: center;
+			margin: 0 auto;
+			<?php if ( $settings->button_width == 'custom' ) { ?>
+				width: <?php echo $settings->button_width_custom; ?>px;
+			<?php } ?>
+			<?php if ( $settings->button_width == 'full' ) { ?>
+				width: 100%;
+			<?php } ?>
+		<?php } ?>
+		<?php if ( $settings->pp_infobox_link_type == 'button' && $settings->button_border == 'custom' ) { ?>
+			border-width: <?php echo !empty($settings->button_border_custom) ? $settings->button_border_custom : 0; ?>px;
+			border-style: <?php echo $settings->button_border_style; ?>;
+			border-color: #<?php echo $settings->button_border_color; ?>;
 		<?php } ?>
 		margin-top: <?php echo $settings->read_more_margin['top']; ?>px;
 		margin-bottom: <?php echo $settings->read_more_margin['bottom']; ?>px;
@@ -125,6 +152,9 @@
 		<?php if( $settings->pp_infobox_read_more_color_hover ) { ?>color: #<?php echo $settings->pp_infobox_read_more_color_hover; ?>;<?php } ?>
 		<?php if( $settings->pp_infobox_link_type == 'button' && $settings->button_bg_hover_color != '' ) { ?>
 			background-color: #<?php echo $settings->button_bg_hover_color; ?>;
+		<?php } ?>
+		<?php if ( $settings->pp_infobox_link_type == 'button' && $settings->button_border == 'custom' ) { ?>
+			border-color: #<?php echo $settings->button_border_hover_color; ?>;
 		<?php } ?>
 	}
 <?php } ?>
@@ -146,6 +176,10 @@
 }
 
 @media only screen and (max-width: <?php echo $global_settings->medium_breakpoint; ?>px) {
+	.fl-node-<?php echo $id; ?> .pp-infobox-title-prefix {
+		<?php if( $settings->title_prefix_font_size_medium ) { ?>font-size: <?php echo $settings->title_prefix_font_size_medium; ?>px;<?php } ?>
+		line-height: <?php echo $settings->title_prefix_line_height_medium; ?>;
+	}
 	.fl-node-<?php echo $id; ?> .pp-infobox-title-wrapper .pp-infobox-title {
 		<?php if( $settings->title_font_size_medium ) { ?>font-size: <?php echo $settings->title_font_size_medium; ?>px;<?php } ?>
 		line-height: <?php echo $settings->title_line_height_medium; ?>;
@@ -157,6 +191,10 @@
 }
 
 @media only screen and (max-width: <?php echo $global_settings->responsive_breakpoint; ?>px) {
+	.fl-node-<?php echo $id; ?> .pp-infobox-title-prefix {
+		<?php if( $settings->title_prefix_font_size_responsive ) { ?>font-size: <?php echo $settings->title_prefix_font_size_responsive; ?>px;<?php } ?>
+		line-height: <?php echo $settings->title_prefix_line_height_responsive; ?>;
+	}
 	.fl-node-<?php echo $id; ?> .pp-infobox-title-wrapper .pp-infobox-title {
 		<?php if( $settings->title_font_size_responsive ) { ?>font-size: <?php echo $settings->title_font_size_responsive; ?>px;<?php } ?>
 		line-height: <?php echo $settings->title_line_height_responsive; ?>;

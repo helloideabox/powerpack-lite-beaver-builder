@@ -33,6 +33,9 @@
 .fl-builder-settings-section select[name="image_select_src"] {
 	display: none;
 }
+.pp-infobox-title-prefix {
+	display: block;
+}
 .pp-infobox-title-wrapper .pp-infobox-title {
 	margin-bottom: 5px;
 	margin-top: 0;
@@ -114,7 +117,11 @@
 	margin-bottom: 0;
 	margin-left: 10px;
 }
-.pp-infobox-wrap .layout-1 .pp-more-link.pp-title-link {
+.pp-infobox-wrap .layout-1 .pp-infobox-title-prefix {
+	margin-bottom: 0;
+	margin-left: 10px;
+}
+.pp-infobox-wrap .layout-1 .pp-heading-wrapper-inner {
 	display: table-cell;
 	vertical-align: middle;
 }
@@ -146,12 +153,17 @@
 .pp-infobox-wrap .layout-2 .pp-infobox-description {
 	clear: both;
 }
-.pp-infobox-wrap .layout-2 .pp-more-link.pp-title-link {
+.pp-infobox-wrap .layout-2 .pp-header-wrapper-inner {
 	display: table-cell;
 	vertical-align: middle;
 }
 .pp-infobox-wrap .layout-2 .pp-more-link.pp-title-link .pp-infobox-title-wrapper {
 	display: block;
+}
+
+.pp-infobox-wrap .layout-2 .pp-infobox-title-prefix {
+	margin-bottom: 0;
+	margin-right: 10px;
 }
 
 /* Layout 3 */

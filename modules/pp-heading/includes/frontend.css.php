@@ -134,6 +134,12 @@ div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading.pp-separator-inli
 }
 
 div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-sub-heading {
+    margin-top: <?php echo $settings->sub_heading_top_margin; ?>px;
+    margin-bottom: <?php echo $settings->sub_heading_bottom_margin; ?>px;
+}
+
+div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-sub-heading,
+div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-sub-heading p {
     <?php if( $settings->sub_heading_font['family'] != 'Default' ) { ?>
     <?php FLBuilderFonts::font_css( $settings->sub_heading_font ); ?>
     <?php } ?>
@@ -146,8 +152,6 @@ div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-sub-heading {
     <?php if( $settings->sub_heading_line_height_n >= 0 ) { ?>
     line-height: <?php echo $settings->sub_heading_line_height_n;?>;
     <?php } ?>
-    margin-top: <?php echo $settings->sub_heading_top_margin; ?>px;
-    margin-bottom: <?php echo $settings->sub_heading_bottom_margin; ?>px;
 }
 
 div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-sub-heading p:last-of-type {

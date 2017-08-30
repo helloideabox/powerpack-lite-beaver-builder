@@ -51,7 +51,7 @@
 	   text-transform: <?php echo $settings->title_text_transform; ?>;
    <?php } ?>
    <?php if( $settings->title_color ) { ?>
-	   color: #<?php echo $settings->title_color; ?>
+	   color: #<?php echo $settings->title_color; ?>;
    <?php } ?>
 }
 
@@ -69,14 +69,14 @@
 	   text-transform: <?php echo $settings->timing_text_transform; ?>;
    <?php } ?>
    <?php if( $settings->timing_color ) { ?>
-	   color: #<?php echo $settings->timing_color; ?>
+	   color: #<?php echo $settings->timing_color; ?>;
    <?php } ?>
    text-align: right;
 }
 
 .fl-node-<?php echo $id; ?> .pp-business-hours-content .pp-bh-row.pp-closed .pp-bh-timing {
 	<?php if( $settings->status_color ) { ?>
- 	   color: #<?php echo $settings->status_color; ?>
+ 	   color: #<?php echo $settings->status_color; ?>;
     <?php } ?>
 }
 

@@ -2,7 +2,12 @@
 *   Release date: August 30, 2017
 *   New: Unlocked all features of the modules
 *   Enhancement: Added BB 2.0 support
+*   Enhancement: Added placeholder styling options in Contact Form 7 module
 *   Enhancement: Updated admin settings panel
+*   Fix: Minor CSS issue in Business Hours module
+*   Fix: Minor CSS issue in Dual Button module
+*   Fix: Minor CSS issue in Smart Heading module
+*   Fix: Minor CSS issue in Icon List module
 
 == 1.0.7 ==
 *   Release date: May 25, 2017
