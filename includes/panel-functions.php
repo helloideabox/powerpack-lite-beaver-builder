@@ -5,6 +5,9 @@
  */
 function pp_panel_search()
 {
+    if ( class_exists( 'FLBuilderUIContentPanel' ) ) {
+        return;
+    }
     $panel_search = BB_PowerPack_Admin_Settings::get_option('bb_powerpack_search_box');
 
     if ( $panel_search === false ) {
@@ -20,6 +23,9 @@ function pp_panel_search()
  */
 function pp_preview_button()
 {
+    if ( class_exists( 'FLBuilderUIContentPanel' ) ) {
+        return;
+    }
     $quick_preview = BB_PowerPack_Admin_Settings::get_option('bb_powerpack_quick_preview');
 
     if ( $quick_preview === false ) {

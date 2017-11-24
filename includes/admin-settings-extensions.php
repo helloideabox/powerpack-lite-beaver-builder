@@ -9,6 +9,7 @@
 
     <table class="form-table">
         <tbody>
+            <?php if ( ! class_exists( 'FLBuilderUIContentPanel' ) ) { ?>
             <tr valign="top">
                 <th scope="row" valign="top">
                     <?php _e('Quick Preview', 'bb-powerpack'); ?>
@@ -35,6 +36,7 @@
                     </p>
                 </td>
             </tr>
+            <?php } ?>
             <tr valign="top">
                 <th scope="row" valign="top">
                     <?php _e('Row Extensions', 'bb-powerpack'); ?>
