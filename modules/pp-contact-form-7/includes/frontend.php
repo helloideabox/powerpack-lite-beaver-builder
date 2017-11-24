@@ -1,16 +1,3 @@
-<?php
-
-/**
- * This file should be used to render each module instance.
- * You have access to two variables in this file:
- *
- * $module An instance of your module class.
- * $settings The module's settings.
- *
- * PPContactForm7Module:
- */
-
-?>
 <div class="pp-cf7-content">
 	<h3 class="pp-cf7-form-title">
 	<?php if ( $settings->custom_title ) {

@@ -15,7 +15,7 @@ class PPIconListModule extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Icon / Number List', 'bb-powerpack'),
             'description'   => __('Addon to display icon/number list.', 'bb-powerpack'),
-            'group'         => 'PowerPack Modules',
+            'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-iconlist/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-iconlist/',

@@ -40,6 +40,9 @@
     color:<?php echo ($settings->button_1_text_color['secondary']) ? '#'.$settings->button_1_text_color['secondary'] : '#000'; ?>;
     border-color:<?php echo ($settings->button_1_border_color['secondary']) ? '#'.$settings->button_1_border_color['secondary'] : 'transparent'; ?>;
 }
+.fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-1 a.pp-button:hover span {
+    color:<?php echo ($settings->button_1_text_color['secondary']) ? '#'.$settings->button_1_text_color['secondary'] : '#000'; ?>;
+}
 
 .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-2 a.pp-button {
     background-color:<?php echo ($settings->button_2_bg_color['primary']) ? '#'.$settings->button_2_bg_color['primary'] : 'transparent'; ?>;
@@ -50,6 +53,9 @@
     background-color:<?php echo ($settings->button_2_bg_color['secondary']) ? '#'.$settings->button_2_bg_color['secondary'] : 'transparent'; ?>;
     color:<?php echo ($settings->button_2_text_color['secondary']) ? '#'.$settings->button_2_text_color['secondary'] : 'transparent'; ?>;
     border-color:<?php echo ($settings->button_2_border_color['secondary']) ? '#'.$settings->button_2_border_color['secondary'] : 'transparent'; ?>;
+}
+.fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-2 a.pp-button:hover span {
+    color:<?php echo ($settings->button_2_text_color['secondary']) ? '#'.$settings->button_2_text_color['secondary'] : 'transparent'; ?>;
 }
 .fl-node-<?php echo $id; ?> .pp-dual-button-content a.pp-button .pp-font-icon {
     margin-left: 5px;

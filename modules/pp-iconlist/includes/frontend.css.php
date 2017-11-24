@@ -19,9 +19,12 @@
 	border-radius: <?php echo $settings->icon_border_radius; ?>px;
 	text-align: center;
 	display: inline-block;
-	width: <?php echo ('' != $settings->icon_size) ? $settings->icon_size * 2 : ''; ?>px;
-	height: <?php echo ('' != $settings->icon_size) ? $settings->icon_size * 2 : ''; ?>px;
-	line-height: <?php echo ('' != $settings->icon_size) ? $settings->icon_size * 2 : ''; ?>px;
+	line-height: <?php echo ('' != $settings->icon_size) ? $settings->icon_size : ''; ?>px;
+	<?php if ( $settings->list_type == 'number' || $settings->icon_bg != '' ) : ?>
+		width: <?php echo ('' != $settings->icon_size) ? $settings->icon_size * 2 : ''; ?>px;
+		height: <?php echo ('' != $settings->icon_size) ? $settings->icon_size * 2 : ''; ?>px;
+		line-height: <?php echo ('' != $settings->icon_size) ? $settings->icon_size * 2 : ''; ?>px;
+	<?php endif; ?>
 	vertical-align: middle;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;

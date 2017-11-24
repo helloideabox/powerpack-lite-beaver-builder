@@ -16,7 +16,7 @@ class PPBusinessHoursModule extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Business Hours', 'bb-powerpack'),
             'description'   => __('A module to display business hours.', 'bb-powerpack'),
-            'group'         => 'PowerPack Modules',
+            'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-business-hours/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-business-hours/',

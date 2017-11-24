@@ -1,25 +1,25 @@
-.fl-builder-lightbox .fl-lightbox {
-    width: 700px;
+body:not(.bb-powerpack-ui) .fl-builder-lightbox .fl-lightbox {
+    width: 700px !important;
 }
-.fl-builder-settings-tab {
+body:not(.bb-powerpack-ui) .fl-builder-settings-tab {
     width: 650px;
 }
 
 /* Restore BB's styling */
-.bb-powerpack .fl-builder-bar-content,
-.bb-powerpack .fl-builder-panel,
-.bb-powerpack .fl-lightbox :not(i),
-.bb-powerpack .fl-lightbox-header h1,
-.bb-powerpack .fl-builder-actions-title,
-.bb-powerpack .fl-builder-alert-lightbox .fl-lightbox-message,
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] button,
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] input,
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] select,
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] textarea,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] button,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] input,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] select,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] textarea {
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-bar-content,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-lightbox :not(i),
+.bb-powerpack:not(.bb-powerpack-ui) .fl-lightbox-header h1,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-actions-title,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-alert-lightbox .fl-lightbox-message,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] button,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] input,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] select,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] textarea,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] button,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] input,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] select,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] textarea {
     font-family: Helvetica, Arial, Verdana, sans-serif !important;
     speak: inherit;
     font-style: inherit;
@@ -30,37 +30,37 @@
     -moz-osx-font-smoothing: inherit;
 }
 
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] button,
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] input,
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] select,
-.bb-powerpack .fl-builder-panel [class^="fl-builder"] textarea,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] button,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] input,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] select,
-.bb-powerpack .fl-builder-lightbox [class^="fl-builder"] textarea {
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] button,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] input,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] select,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-panel [class^="fl-builder"] textarea,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] button,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] input,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] select,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox [class^="fl-builder"] textarea {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
 
-.bb-powerpack .fl-builder-lightbox .fl-builder-settings[data-type^=pp-] input:focus,
-.bb-powerpack .fl-builder-lightbox .fl-builder-settings[data-type^=pp-] select:focus,
-.bb-powerpack .fl-builder-lightbox .fl-builder-settings[data-type^=pp-] textarea:focus {
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox .fl-builder-settings[data-type^=pp-] input:focus,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox .fl-builder-settings[data-type^=pp-] select:focus,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox .fl-builder-settings[data-type^=pp-] textarea:focus {
     border-color: #aaa !important;
 }
 
-.bb-powerpack .fl-builder-lightbox ul.as-selections li.as-original input {
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox ul.as-selections li.as-original input {
     border: inherit !important;
 }
 
-.bb-powerpack .fl-builder-lightbox .fa {
+.bb-powerpack:not(.bb-powerpack-ui) .fl-builder-lightbox .fa {
     font-family: FontAwesome !important;
 }
 
-.bb-powerpack .fl-lightbox .ace_editor,
-.bb-powerpack .fl-lightbox .ace_editor * {
+.bb-powerpack:not(.bb-powerpack-ui) .fl-lightbox .ace_editor,
+.bb-powerpack:not(.bb-powerpack-ui) .fl-lightbox .ace_editor * {
     font-family: Monaco,Menlo,"Ubuntu Mono","Droid Sans Mono",Consolas,monospace !important;
-    ont-size: 12px !important;
+    font-size: 12px !important;
     font-weight: 400 !important;
     letter-spacing: 0 !important;
     line-height: 16px !important;
@@ -137,6 +137,26 @@
 .fl-builder-ui-skin--dark .pp-multitext-wrap + .fl-field-description {
     line-height: 2.5;
 }
+.pp-multitext-wrap .pp-multitext-responsive-toggle {
+    float: left;
+    width: 20px;
+    text-align: center;
+    margin-left: -25px;
+}
+.pp-multitext-wrap .pp-multitext-responsive-toggle span {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 25px;
+    cursor: pointer;
+}
+.pp-multitext-wrap .pp-multitext-responsive-toggle span.fa-tablet {
+    display: none;
+    font-size: 18px;
+}
+.pp-multitext-wrap .pp-multitext-responsive-toggle span.fa-mobile {
+    display: none;
+    font-size: 20px;
+}
 span.pp-multitext {
     display: block;
     width: 75px;
@@ -146,6 +166,12 @@ span.pp-multitext {
 }
 .generatepress span.pp-multitext {
     width: 75px;
+}
+.fl-builder-ui-is-pinned span.pp-multitext {
+    width: 70px !important;
+}
+span.pp-multitext.pp-responsive-enabled .pp-field-multitext-responsive {
+    display: none;
 }
 span.pp-multitext .pp-responsive-toggle {
     display: none;
@@ -202,13 +228,19 @@ span.pp-multitext.fa:before {
     border-bottom-left-radius: 3px;
     border-right: 1px solid #ddd;
     width: 13px;
-    height: 14px;
+    height: 13px;
     text-align: center;
 }
 .fl-builder-ui-skin--light span.pp-multitext.fa:before,
 .fl-builder-ui-skin--dark span.pp-multitext.fa:before {
     height: 25px;
     line-height: 2;
+    top: 3px;
+    left: 3px;
+    border: 0;
+}
+.fl-builder-ui-skin--light span.pp-multitext.fa:before {
+    background: #f5f7f9;
 }
 .fl-builder-ui-skin--dark span.pp-multitext.fa:before {
     background: #23282d;
@@ -217,7 +249,7 @@ span.pp-multitext.fa:before {
 span.pp-multitext.fa-mobile:before {
     font-size: 16px;
     padding: 2.2px 5px;
-    height: 17px;
+    height: 16px;
 }
 .fl-builder-ui-skin--light span.pp-multitext.fa-mobile:before,
 .fl-builder-ui-skin--dark span.pp-multitext.fa-mobile:before {
@@ -226,7 +258,7 @@ span.pp-multitext.fa-mobile:before {
 span.pp-multitext.fa-tablet:before {
     font-size: 15px;
     padding: 2.7px 5px;
-    height: 16px;
+    height: 15px;
 }
 .fl-builder-ui-skin--light span.pp-multitext.fa-tablet:before,
 .fl-builder-ui-skin--dark span.pp-multitext.fa-tablet:before {
@@ -257,6 +289,13 @@ span.pp-multitext.fa-long-arrow-right:before {
     float: left;
     margin-right: 5px;
 }
+.fl-builder-ui-skin--light .pp-color-picker,
+.fl-builder-ui-skin--dark .pp-color-picker {
+    width: 34% !important;
+}
+.fl-builder-ui-is-pinned .pp-color-picker {
+    width: 48% !important;
+}
 .pp-color-picker .fl-color-picker-clear {
     float: right;
 }
@@ -271,25 +310,41 @@ span.pp-multitext.fa-long-arrow-right:before {
     border-left: 0;
     line-height: 1.4;
     cursor: default;
-}
-
-.fl-builder-ui-skin--light .pp-color-picker .pp-color-text {
-    border: 2px solid #e1e1e1;
+    text-align: center;
 }
 
 .fl-builder-ui-skin--dark .pp-color-picker .pp-color-text {
-    border: 2px solid #161a1e;
-    background: #1d2227;
+    background: #191d21;
 }
 
 .fl-builder-ui-skin--light .pp-color-picker .pp-color-text,
 .fl-builder-ui-skin--dark .pp-color-picker .pp-color-text {
-    padding: 6px 10px;
-    border-left: 0;
+    border: 0 !important;
+    padding: 10px 10px;
+    width: 40px;
+}
+.fl-builder-ui-skin--light .pp-color-picker .pp-color-text {
+    border-left: 1px solid #e6e6e6 !important;
+    border-right: 1px solid #e6e6e6 !important;
+}
+.fl-builder-ui-skin--dark .pp-color-picker .pp-color-text {
+    border-left: 1px solid #161a1e !important;
+    border-right: 1px solid #161a1e !important;
+}
+.fl-builder-ui-skin--light .pp-color-picker .fl-color-picker-color,
+.fl-builder-ui-skin--dark .pp-color-picker .fl-color-picker-color {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0 !important;
+    max-width: 40px !important;
 }
 
 .pp-switch {
     height: 25px;
+}
+.fl-builder-ui-skin--light .pp-switch,
+.fl-builder-ui-skin--dark .pp-switch {
+    height: 34px;
 }
 span.pp-switch-button {
     background: #f5f5f5;
@@ -303,6 +358,25 @@ span.pp-switch-button {
     border: 1px solid #ddd;
     border-right: 0;
     cursor: pointer;
+}
+.fl-builder-ui-is-pinned .pp-switch[data-options="4"] span.pp-switch-button {
+    width: 24.5%;
+}
+.fl-builder-ui-is-pinned .pp-switch[data-options="3"] span.pp-switch-button {
+    width: 32.5%;
+}
+.fl-builder-ui-is-pinned .pp-switch[data-options="2"] span.pp-switch-button {
+    width: 48.5%;
+}
+
+.fl-builder-ui-skin--light span.pp-switch-button {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
+    border: 0 !important;
+}
+.fl-builder-ui-skin--light span.pp-switch-button,
+.fl-builder-ui-skin--dark span.pp-switch-button {
+    line-height: 2.6 !important;
 }
 span.pp-switch-button:first-child {
     border-top-left-radius: 4px;
@@ -324,6 +398,10 @@ span.pp-switch-button:not(.pp-switch-active):hover {
 .fl-builder-ui-skin--dark div.pp-switch span.pp-switch-button {
     background: #1d2227;
     border-color: #131313;
+}
+.fl-builder-ui-skin--light div.pp-switch span.pp-switch-button.pp-switch-active {
+    background: #00a0d2;
+    border: 0;
 }
 .fl-builder-ui-skin--dark div.pp-switch span.pp-switch-button.pp-switch-active {
     background: #383f46;

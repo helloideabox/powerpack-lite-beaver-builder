@@ -87,7 +87,7 @@
 		<?php if( $settings->icon_box_size ) { ?>padding: <?php echo $settings->icon_box_size; ?>px;<?php } ?>
 		<?php if( $settings->image_width_type == 'custom' && $settings->image_width ) { ?>width: <?php echo $settings->image_width; ?>px;<?php } ?>
 		<?php if( $settings->image_width_type == 'default' ) { ?>width: auto;<?php } ?>
-		max-width: none;
+		max-width: 100%;
 	}
 	.fl-node-<?php echo $id; ?> .pp-infobox:hover .pp-infobox-image img {
 		<?php if( $settings->show_border == 'yes' ) { ?>

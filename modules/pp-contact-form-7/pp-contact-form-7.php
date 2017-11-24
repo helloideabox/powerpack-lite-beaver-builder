@@ -16,7 +16,7 @@ class PPContactForm7Module extends FLBuilderModule {
         parent::__construct(array(
             'name'          => __('Contact Form 7', 'bb-powerpack'),
             'description'   => __('A module for Contact Form 7.', 'bb-powerpack'),
-            'group'         => 'PowerPack Modules',
+            'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'form_style' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-contact-form-7/',
             'url'           => BB_POWERPACK_URL . 'modules/pp-contact-form-7/',

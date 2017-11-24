@@ -180,6 +180,21 @@ if ( !function_exists( 'pp_hex2rgba' ) )
 }
 
 /**
+ * Get color value hex or rgba
+ */
+function pp_get_color_value( $color )
+{
+    if ( $color == '' || ! $color ) {
+        return;
+    }
+    if ( false === strpos( $color, 'rgb' ) ) {
+        return '#' . $color;
+    } else {
+        return $color;
+    }
+}
+
+/**
  * Returns long day format.
  *
  * @since 1.2.2
@@ -286,4 +301,17 @@ function pp_get_modules_categories( $cat = '' )
 function pp_get_modules_cat( $cat )
 {
 	return class_exists( 'FLBuilderUIContentPanel' ) ? pp_get_modules_categories( $cat ) : BB_POWERPACK_CAT;
+}
+
+/**
+ * Returns group name for BB 2.x.
+ *
+ * @since 1.2
+ * @return string
+ */
+function pp_get_modules_group()
+{
+	$group_name = 'PowerPack ' . __('Modules', 'bb-powerpack');
+
+	return $group_name;
 }
