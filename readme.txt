@@ -2,7 +2,7 @@
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 4.8.2
+Tested up to: 4.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -122,6 +122,16 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+== 1.2.0 - November 24, 2017 ==
+*   New: BB 2.0 compatibility with UI fields
+*   Enhancement: Added Inline/Stacked options in Smart Heading module
+*   Enhancement: Added alpha option for heading colors in Smart Heading module
+*   Fix: Columns width in Contact Form 7 module
+*   Fix: Hover text color issue in Dual Button module
+*   Fix: Font Size and Line Height of description were sometime overridden by theme in Smart Heading module 
+*   Fix: Icon size issue in Icon List module
+*   Fix: Image max width issue in Info Box module
+
 = 1.1.0 - August 30, 2017 =
 *   New: Unlocked all features of the modules
 *   Enhancement: Added BB 2.0 support
@@ -161,5 +171,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.1.0 =
-Unlocked all features of the modules
+= 1.2.0 =
+Beaver Builder 2.0 compatibility with UI fields, enhancements, fixes.
