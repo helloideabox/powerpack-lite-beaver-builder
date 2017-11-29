@@ -1,6 +1,6 @@
 == 1.2.1 ==
 *   Release date: November 29, 2017
-*   Enhancement: Added toggle for enable/disable heading link in Smart Headings module
+*   Enhancement: Added toggle to enable/disable heading link in Smart Headings module
 *   Fix: Stacked heading style was not working in Smart Headings module
 
 == 1.2.0 ==
