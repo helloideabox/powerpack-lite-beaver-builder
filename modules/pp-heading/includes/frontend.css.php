@@ -79,9 +79,14 @@ div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading .heading-title sp
 
 div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading .heading-title span.title-text {
     display: inline-block;
-    <?php if ( isset( $settings->heading_style ) && 'stacked' == $settings->heading_style ) { ?>
+    <?php if ( isset( $settings->heading_style ) && 'block' == $settings->heading_style ) { ?>
         display: block;
     <?php } ?>
+}
+div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading .pp-heading-link {
+<?php if ( isset( $settings->heading_style ) && 'block' == $settings->heading_style ) { ?>
+    display: block;
+<?php } ?>
 }
 
 <?php if ( $settings->dual_heading == 'no' ) { ?>

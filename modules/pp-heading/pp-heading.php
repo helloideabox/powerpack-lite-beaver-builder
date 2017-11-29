@@ -89,7 +89,21 @@ FLBuilder::register_module('PPHeadingModule', array(
                             'property'          => 'display'
                         )
                     ),
- 				   'heading_link'          => array(
+                    'enable_link'   => array(
+                        'type'          => 'pp-switch',
+                        'label'         => __('Enable Link', 'bb-powerpack'),
+                        'default'       => 'yes',
+                        'options'       => array(
+                            'yes'           => __('Yes', 'bb-powerpack'),
+                            'no'            => __('No', 'bb-powerpack')
+                        ),
+                        'toggle'        => array(
+                            'yes'           => array(
+                                'fields'        => array('heading_link', 'heading_link_target')
+                            )
+                        )
+                    ),
+ 				    'heading_link'          => array(
  						'type'          => 'link',
  						'label'         => __('Link', 'bb-powerpack'),
                         'connections'   => array( 'url' ),

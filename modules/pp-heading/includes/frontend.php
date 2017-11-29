@@ -1,3 +1,4 @@
+<?php $enable_link = (isset( $settings->enable_link ) && $settings->enable_link == 'no') ? false : true; ?>
 <div class="pp-heading-content">
 	<?php if ( $settings->heading_separator_postion == 'top' && $settings->heading_separator != 'no_spacer' && $settings->heading_separator != 'inline' ) { ?>
 		<div class="pp-heading-separator <?php echo $settings->heading_separator; ?> pp-<?php echo $settings->heading_alignment; ?>">
@@ -43,7 +44,7 @@
 
 		<<?php echo $settings->heading_tag; ?> class="heading-title">
 
-			<?php if( !empty( $settings->heading_link ) ) : ?>
+			<?php if( $enable_link && !empty( $settings->heading_link ) ) : ?>
 				<a class="pp-heading-link" href="<?php echo $settings->heading_link; ?>" target="<?php echo $settings->heading_link_target; ?>">
 			<?php endif; ?>
 
@@ -52,7 +53,7 @@
 			<span class="title-text pp-secondary-title"><?php echo $settings->heading_title2; ?></span>
 			<?php } ?>
 
-			<?php if( !empty( $settings->heading_link ) ) : ?>
+			<?php if( $enable_link && !empty( $settings->heading_link ) ) : ?>
 				</a>
 			<?php endif; ?>
 

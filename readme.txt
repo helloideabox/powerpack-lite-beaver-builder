@@ -122,7 +122,11 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
-== 1.2.0 - November 24, 2017 ==
+= 1.2.1 - November 29, 2017 =
+*   Enhancement: Added toggle to enable/disable heading link in Smart Headings module
+*   Fix: Stacked heading style was not working in Smart Headings module
+
+= 1.2.0 - November 24, 2017 =
 *   New: BB 2.0 compatibility with UI fields
 *   Enhancement: Added Inline/Stacked options in Smart Heading module
 *   Enhancement: Added alpha option for heading colors in Smart Heading module
