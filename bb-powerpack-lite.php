@@ -45,6 +45,7 @@ final class BB_PowerPack_Lite {
 
 		/* Classes */
 		require_once 'classes/class-admin-settings.php';
+		require_once 'classes/class-wpml-compatibility.php';
 
 		/* Includes */
 		require_once 'includes/helper-functions.php';
