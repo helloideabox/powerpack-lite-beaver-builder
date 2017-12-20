@@ -1,6 +1,10 @@
 == 1.2.2 ==
 *   Release date: December 20, 2017
 *   New: Added WPML support
+*   Enhancement: Added day range selection option in Business Hours module
+*   Enhancement: Added nofollow option in Dual Button and Smart Button module
+*   Enhancement: Module icons support in UI panel for Beaver Builder 2.0
+*   Fix: Schema markup in Business Hours module
 
 == 1.2.1 ==
 *   Release date: November 29, 2017

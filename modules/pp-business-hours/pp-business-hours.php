@@ -22,7 +22,8 @@ class PPBusinessHoursModule extends FLBuilderModule {
             'url'           => BB_POWERPACK_URL . 'modules/pp-business-hours/',
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
-			'partial_refresh'	=> true
+			'partial_refresh'	=> true,
+            'icon'				=> 'clock.svg',
         ));
 
         $this->add_css('font-awesome');
@@ -623,13 +624,42 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 									'tabs'	=> array('higlight_row_style')
 								)
 							)
-	                    ),
+						),
+						'hours_type'	=> array(
+							'type'			=> 'pp-switch',
+							'label'			=> __('Type', 'bb-powerpack'),
+							'default'		=> 'day',
+							'options'		=> array(
+								'day'			=> __('Day', 'bb-powerpack'),
+								'range'			=> __('Range', 'bb-powerpack')
+							),
+							'toggle'		=> array(
+								'day'			=> array(
+									'fields'		=> array('title')
+								),
+								'range'			=> array(
+									'fields'		=> array('start_day', 'end_day')
+								)
+							)
+						),
                         'title'       => array(
                             'type'          => 'select',
                             'label'         => __( 'Day', 'bb-powerpack' ),
                             'default'       => 'Monday',
                             'options'       => pp_long_day_format()
-                        ),
+						),
+						'start_day'	=> array(
+							'type'          => 'select',
+                            'label'         => __( 'Start Day', 'bb-powerpack' ),
+                            'default'       => 'Monday',
+                            'options'       => pp_long_day_format()
+						),
+						'end_day'	=> array(
+							'type'          => 'select',
+                            'label'         => __( 'End Day', 'bb-powerpack' ),
+                            'default'       => 'Saturday',
+                            'options'       => pp_long_day_format()
+						),
                         'day_format'    => array(
                             'type'          => 'pp-switch',
                             'label'         => __( 'Day Format', 'bb-powerpack' ),

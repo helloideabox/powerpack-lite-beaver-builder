@@ -1,20 +1,11 @@
 <?php
-
-/**
- * This file should be used to render each module instance.
- * You have access to two variables in this file:
- *
- * $module An instance of your module class.
- * $settings The module's settings.
- *
- * PPDualButtonModule:
- */
-
+$nofollow_1 = isset( $settings->link_no_follow_1 ) && 'yes' == $settings->link_no_follow_1 ? ' rel="nofollow"' : '';
+$nofollow_2 = isset( $settings->link_no_follow_2 ) && 'yes' == $settings->link_no_follow_2 ? ' rel="nofollow"' : '';
 ?>
 <div class="pp-dual-button-content clearfix">
     <div class="pp-dual-button-inner">
         <div class="pp-dual-button-1 pp-dual-button">
-            <a href="<?php echo $settings->button_link_1; ?>" class="pp-button <?php echo $settings->button_1_css_class; ?>" target="<?php echo $settings->link_target_1; ?>">
+            <a href="<?php echo $settings->button_link_1; ?>" class="pp-button <?php echo $settings->button_1_css_class; ?>" role="button" target="<?php echo $settings->link_target_1; ?>"<?php echo $nofollow_1; ?>>
                 <?php if( $settings->button_1_icon_aligment == 'left' ) { ?>
                      <?php if( $settings->button_font_icon_1 && $settings->button_icon_select_1 == 'font_icon' ) { ?>
                         <span class="pp-font-icon <?php echo $settings->button_font_icon_1; ?>"></span>
@@ -36,7 +27,7 @@
         </div>
         <div class="pp-spacer"></div>
         <div class="pp-dual-button-2 pp-dual-button">
-            <a href="<?php echo $settings->button_link_2; ?>" class="pp-button <?php echo $settings->button_2_css_class; ?>" target="<?php echo $settings->link_target_2; ?>">
+            <a href="<?php echo $settings->button_link_2; ?>" class="pp-button <?php echo $settings->button_2_css_class; ?>" role="button" target="<?php echo $settings->link_target_2; ?>"<?php echo $nofollow_2; ?>>
                 <?php if( $settings->button_2_icon_aligment == 'left' ) { ?>
                     <?php if( $settings->button_font_icon_2 && $settings->button_icon_select_2 == 'font_icon' ) { ?>
                        <span class="pp-font-icon <?php echo $settings->button_font_icon_2; ?>"></span>

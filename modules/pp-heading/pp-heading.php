@@ -22,7 +22,8 @@ class PPHeadingModule extends FLBuilderModule {
             'url'           => BB_POWERPACK_URL . 'modules/pp-heading/',
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
-            'partial_refresh' => true
+            'partial_refresh' => true,
+            'icon'				=> 'text.svg',
         ));
     }
 }
@@ -1281,7 +1282,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'label'         => __('Font', 'bb-powerpack'),
                         'preview'         => array(
                             'type'            => 'font',
-                            'selector'        => '.pp-heading-content .pp-sub-heading'
+                            'selector'        => '.pp-heading-content .pp-sub-heading, .pp-heading-content .pp-sub-heading p'
                         )
                     ),
                     'sub_heading_font_size_select'  => array(
@@ -1306,7 +1307,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'default'       => '16',
                         'preview'       => array(
                             'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-sub-heading',
+                            'selector'  => '.pp-heading-content .pp-sub-heading, .pp-heading-content .pp-sub-heading p',
                             'property'  => 'font-size',
                             'unit'      => 'px'
                         )
@@ -1318,7 +1319,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'default'       => '1.6',
                         'preview'       => array(
                             'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-sub-heading',
+                            'selector'  => '.pp-heading-content .pp-sub-heading, .pp-heading-content .pp-sub-heading p',
                             'property'  => 'line-height',
                         )
                     ),
