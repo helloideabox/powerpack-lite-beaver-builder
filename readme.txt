@@ -2,7 +2,7 @@
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 4.9
+Tested up to: 4.9.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -122,6 +122,9 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+= 1.2.2 - December 20, 2017 =
+*   New: Added WPML support
+
 = 1.2.1 - November 29, 2017 =
 *   Enhancement: Added toggle to enable/disable heading link in Smart Headings module
 *   Fix: Stacked heading style was not working in Smart Headings module
@@ -176,4 +179,4 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 == Upgrade Notice ==
 
 = 1.2.0 =
-Beaver Builder 2.0 compatibility with UI fields, enhancements, fixes.
+Beaver Builder 2.0 compatibility with UI fields, WPML support, enhancements, fixes.
