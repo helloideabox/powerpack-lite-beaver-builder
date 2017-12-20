@@ -124,6 +124,10 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 = 1.2.2 - December 20, 2017 =
 *   New: Added WPML support
+*   Enhancement: Added day range selection option in Business Hours module
+*   Enhancement: Added nofollow option in Dual Button and Smart Button module
+*   Enhancement: Module icons support in UI panel for Beaver Builder 2.0
+*   Fix: Schema markup in Business Hours module
 
 = 1.2.1 - November 29, 2017 =
 *   Enhancement: Added toggle to enable/disable heading link in Smart Headings module
