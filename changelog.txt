@@ -1,3 +1,17 @@
+== 1.2.3 ==
+*   Release date: October 25, 2018
+*	Enhancement: Smart Headings - Added Text Shadow options
+*	Enhancement: Smart Headings - Added Gradient option
+*	Enhancement: Smart Headings - Added Text Transform typography option
+*	Enhancement: Info Box - Added icon vertical alignment option
+*	Enhancement: Info Box - Added link nofollow option
+*	Enhancement: Info Box - Added responsive alignment option
+*	Enhancement: Contact Form 7 - Added WPML compatibility for custom title and description fields
+*	Fix: Business Hours - Responsive font-size
+*	Fix: Dual Button - Responsive font-size and line-height
+*	Fix: Info Box - Live preview and minor CSS issues
+*	Fix: Info List - Live preview and minor CSS issues
+
 == 1.2.2 ==
 *   Release date: December 20, 2017
 *   New: Added WPML support

@@ -1252,14 +1252,14 @@ switch( $pp_button_2_effect ) {
     .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-inner {
         float: none;
     }
-    .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-button {
+    .fl-node-<?php echo $id; ?> .pp-dual-button-content a.pp-button {
         <?php if( $settings->button_font_size['button_font_size_tablet'] >=0 ) { ?>font-size: <?php echo $settings->button_font_size['button_font_size_tablet']; ?>px;<?php } ?>
         <?php if( $settings->button_line_height['button_line_height_tablet'] >=0 ) { ?>line-height: <?php echo $settings->button_line_height['button_line_height_tablet']; ?>;<?php } ?>
     }
 }
 
 @media only screen and ( max-width: 480px ) {
-    .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-button {
+    .fl-node-<?php echo $id; ?> .pp-dual-button-content a.pp-button {
         <?php if( $settings->button_font_size['button_font_size_mobile'] >=0 ) { ?>font-size: <?php echo $settings->button_font_size['button_font_size_mobile']; ?>px;<?php } ?>
         <?php if( $settings->button_line_height['button_line_height_mobile'] >=0 ) { ?>line-height: <?php echo $settings->button_line_height['button_line_height_mobile']; ?>;<?php } ?>
     }

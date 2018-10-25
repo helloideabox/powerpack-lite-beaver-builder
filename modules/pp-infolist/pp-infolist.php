@@ -26,37 +26,8 @@ class PPInfoListModule extends FLBuilderModule {
             'icon'				=> 'layout.svg',
         ));
 
-        /**
-         * Use these methods to enqueue css and js already
-         * registered or to register and enqueue your own.
-         */
-        // Already registered
-		$this->add_css('font-awesome');
+		$this->add_css( BB_POWERPACK_LITE()->fa_css );
     }
-
-    /**
-     * Use this method to work with settings data before
-     * it is saved. You must return the settings object.
-     *
-     * @method update
-     * @param $settings {object}
-     */
-    public function update($settings)
-    {
-        return $settings;
-    }
-
-    /**
-     * This method will be called by the builder
-     * right before the module is deleted.
-     *
-     * @method delete
-     */
-    public function delete()
-    {
-
-    }
-
 }
 
 /**
@@ -150,7 +121,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                     'icon_font_size'    => array(
                         'type'          => 'text',
                         'size'          => '5',
-                        'maxlength'     => '2',
+                        'maxlength'     => '3',
                         'default'       => '16',
                         'label'         => __('Icon Size', 'bb-powerpack'),
                         'description'   => 'px',

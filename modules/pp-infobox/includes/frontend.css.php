@@ -1,4 +1,7 @@
 .fl-node-<?php echo $id; ?> .pp-infobox-title-prefix {
+	<?php if ( empty( $settings->title_prefix ) ) { ?>
+	display: none;
+	<?php } ?>
 	<?php if( $settings->title_prefix_font['family'] != 'Default' ) { ?><?php FLBuilderFonts::font_css( $settings->title_prefix_font ); ?><?php } ?>
 	<?php if( $settings->title_prefix_font_size ) { ?>font-size: <?php echo $settings->title_prefix_font_size; ?>px;<?php } ?>
 	line-height: <?php echo $settings->title_prefix_line_height; ?>;
@@ -167,6 +170,21 @@
 	<?php if( $settings->animation_duration ) { ?>animation-duration: <?php echo $settings->animation_duration; ?>ms;<?php } ?>
 }
 
+.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3-wrapper,
+.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4-wrapper {
+	<?php if ( isset( $settings->icon_position ) ) { ?>
+		<?php if ( 'top' == $settings->icon_position ) { ?>
+		align-items: flex-start;
+		<?php } ?>
+		<?php if ( 'center' == $settings->icon_position ) { ?>
+		align-items: center;
+		<?php } ?>
+		<?php if ( 'bottom' == $settings->icon_position ) { ?>
+		align-items: flex-end;
+		<?php } ?>
+	<?php } ?>
+}
+
 .fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-icon-wrapper {
 	margin-right: <?php echo $settings->space_bt_icon_text; ?>px;
 }
@@ -174,6 +192,59 @@
 .fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-icon-wrapper {
 	margin-left: <?php echo $settings->space_bt_icon_text; ?>px;
 }
+
+<?php if ( 'left' == $settings->alignment ) { ?>
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-infobox-description,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-heading-wrapper {
+		float: left;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-heading-wrapper {
+		flex: 0 1 auto;
+	}
+<?php } ?>
+
+<?php if ( 'center' == $settings->alignment ) { ?>
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-infobox-description,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-infobox-description {
+		float: none;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-heading-wrapper,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-heading-wrapper {
+		margin: 0 auto;
+		float: none;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-heading-wrapper,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-icon-wrapper,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-heading-wrapper,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-icon-wrapper {
+		flex: auto;
+	}
+<?php } ?>
+
+<?php if ( 'right' == $settings->alignment ) { ?>
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-heading-wrapper,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-heading-wrapper,
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-infobox-description {
+		float: right;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-infobox-description {
+		clear: both;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-heading-wrapper {
+		flex: 0 1 auto;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-icon-wrapper {
+		flex: 1;
+		text-align: right;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-heading-wrapper {
+		flex: 1;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-icon-wrapper {
+		flex: 0 1 auto;
+		text-align: right;
+	}
+<?php } ?>
 
 @media only screen and (max-width: <?php echo $global_settings->medium_breakpoint; ?>px) {
 	.fl-node-<?php echo $id; ?> .pp-infobox-title-prefix {
@@ -203,4 +274,68 @@
 		<?php if( $settings->text_font_size_responsive ) { ?>font-size: <?php echo $settings->text_font_size_responsive; ?>px;<?php } ?>
 		line-height: <?php echo $settings->text_line_height_responsive; ?>;
 	}
+	<?php if ( isset( $settings->alignment_responsive ) && 'default' != $settings->alignment_responsive ) { ?>
+		.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .layout-3-wrapper,
+		.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .layout-4-wrapper {
+			align-items: normal;
+		}
+		<?php if ( 'left' == $settings->alignment_responsive ) { ?>
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-infobox-description,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-heading-wrapper {
+				float: left;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-heading-wrapper {
+				flex: 0 1 auto;
+			}
+		<?php } ?>
+
+		<?php if ( 'center' == $settings->alignment_responsive ) { ?>
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-infobox-description,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-infobox-description {
+				float: none;
+				text-align: center;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-heading-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-heading-wrapper {
+				margin: 0 auto;
+				float: none;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-heading-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-icon-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-heading-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-icon-wrapper {
+				flex: auto;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .layout-3-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .layout-4-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-5 {
+				text-align: center;
+			}
+		<?php } ?>
+
+		<?php if ( 'right' == $settings->alignment_responsive ) { ?>
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-heading-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-heading-wrapper,
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-2 .pp-infobox-description {
+				float: right;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-1 .pp-infobox-description {
+				clear: both;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-icon-wrapper {
+				flex: 1;
+				text-align: right;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-heading-wrapper {
+				flex: 0 1 auto;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-heading-wrapper {
+				flex: 1;
+			}
+			.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-icon-wrapper {
+				flex: 0;
+				text-align: right;
+			}
+		<?php } ?>
+	<?php } ?>	
 }

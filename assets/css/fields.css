@@ -162,7 +162,8 @@ span.pp-multitext {
     width: 75px;
     margin-right: 5px;
     float: left;
-    position: relative;
+	position: relative;
+	font-weight: 400;
 }
 .generatepress span.pp-multitext {
     width: 75px;
@@ -200,7 +201,7 @@ span.pp-multitext input[type="text"] {
 }
 span.pp-multitext.fa input[type="text"] {
     width: 100%;
-    padding-left: 30px;
+	padding-left: 30px;
 }
 .generatepress span.pp-multitext.fa input[type="text"] {
     width: 100%;
@@ -284,28 +285,21 @@ span.pp-multitext.fa-long-arrow-right:before {
 .fl-builder-ui-skin--dark .fl-builder-settings .pp-field-separator {
     background: #101215 !important;
 }
+.fl-builder-settings .pp-field-separator {
+	margin-left: -8px;
+}
 
 .pp-color-picker {
-    float: left;
-    margin-right: 5px;
-}
-.fl-builder-ui-skin--light .pp-color-picker,
-.fl-builder-ui-skin--dark .pp-color-picker {
-    width: 34% !important;
-}
-.fl-builder-ui-is-pinned .pp-color-picker {
-    width: 48% !important;
-}
-.pp-color-picker .fl-color-picker-clear {
-    float: right;
+	margin-bottom: 5px;
+	display: flex;
+    width: auto;
+    max-width: 300px;
 }
 .pp-color-picker .pp-color-text {
     padding: 7px 10px;
-    display: inline-block;
     vertical-align: middle;
     position: relative;
-    border: 1px solid #e1e1e1;
-    background: #FAFAFA ;
+    border-left: 1px solid #e6eaed !important;
     float: left;
     border-left: 0;
     line-height: 1.4;
@@ -319,24 +313,11 @@ span.pp-multitext.fa-long-arrow-right:before {
 
 .fl-builder-ui-skin--light .pp-color-picker .pp-color-text,
 .fl-builder-ui-skin--dark .pp-color-picker .pp-color-text {
-    border: 0 !important;
-    padding: 10px 10px;
-    width: 40px;
-}
-.fl-builder-ui-skin--light .pp-color-picker .pp-color-text {
-    border-left: 1px solid #e6e6e6 !important;
-    border-right: 1px solid #e6e6e6 !important;
+    max-width: 80px;
+    min-width: 70px;
 }
 .fl-builder-ui-skin--dark .pp-color-picker .pp-color-text {
     border-left: 1px solid #161a1e !important;
-    border-right: 1px solid #161a1e !important;
-}
-.fl-builder-ui-skin--light .pp-color-picker .fl-color-picker-color,
-.fl-builder-ui-skin--dark .pp-color-picker .fl-color-picker-color {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0 !important;
-    max-width: 40px !important;
 }
 
 .pp-switch {
@@ -745,4 +726,40 @@ span.pp-switch-button:not(.pp-switch-active):hover {
     left: -4px;
     width: 200px;
     height: 200px
+}
+
+.pp-date-wrap:before,
+.pp-date-wrap:after {
+	content: " ";
+	display: table;
+}
+.pp-date-wrap:after {
+	clear: both;
+}
+.pp-countdown-custom-fields {
+    float: left;
+	text-align: center;
+}
+.pp-countdown-custom-fields label {
+	font-size: 10px !important;
+    text-transform: uppercase;
+}
+.pp-countdown-custom-fields select {
+	border-radius: 0 !important;
+	padding-left: 5px;
+}
+.pp-countdown-custom-fields.pp-countdown-field-days {
+	max-width: 60px !important;
+}
+.pp-countdown-custom-fields.pp-countdown-field-hours,
+.pp-countdown-custom-fields.pp-countdown-field-minutes,
+.pp-countdown-custom-fields.pp-countdown-field-seconds {
+	max-width: 55px !important;
+}
+.pp-countdown-custom-fields.pp-countdown-field-months {
+	max-width: 65px !important;
+}
+.pp-countdown-custom-fields.pp-countdown-field-years {
+	margin-right: 6px !important;
+	max-width: 78px !important;
 }

@@ -1,8 +1,13 @@
 <?php
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+$browser = '';
+if ( preg_match('/MSIE/i', $user_agent) ) {
+    $browser = ' pp-user-agent-ie';
+}
 $items = $settings->list_items;
 ?>
 
-<div class="pp-icon-list">
+<div class="pp-icon-list<?php echo $browser; ?>">
 	<ul class="pp-icon-list-items pp-list-type-<?php echo $settings->list_type; ?>">
 	<?php if ( is_array( $items ) && count( $items ) ) { ?>
 

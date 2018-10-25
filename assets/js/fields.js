@@ -20,6 +20,7 @@
                 PPFields._initToggleFields();
                 PPFields._initSwitchFields();
                 PPFields._initMultitextFields();
+                PPFields._initDatepickerFields();
                 PPFields._settingsCloseEsc();
             });
             PPFields._bindEvents();
@@ -40,6 +41,7 @@
 			$('body').delegate('.fl-builder-settings-fields .pp-field-toggle', 'change', PPFields._settingsToggleChanged);
             $('body').delegate('.fl-builder-settings-fields .pp-field-multitext', 'keyup', PPFields._settingsMultitextChanged);
             $('body').delegate('.fl-builder-settings-fields .pp-multitext.fa-desktop', 'click', PPFields._settingsMultitextToggle);
+            $('body').delegate('.fl-builder-settings-fields .pp-multitext-wrap .pp-multitext-responsive-toggle span', 'click', PPFields._settingsMultitextToggleResponsive);
             $('body').delegate('.fl-builder-settings-fields .pp-switch-button', 'click', PPFields._settingsSwitchClick);
             $('body').delegate('.fl-builder-settings-fields .pp-field-switch', 'change', PPFields._settingsSwitchChanged);
 
@@ -327,7 +329,7 @@
 
         _initMultitextFields: function() {
             if ( typeof $.fn.tipTip === 'function' ) {
-                $('.fl-builder-settings .pp-tip:not(.fa-desktop)').tipTip();
+                $('.fl-builder-settings .pp-tip:not(.fa-desktop)').tipTip({defaultPosition: 'top'});
             }
         },
 
@@ -368,6 +370,34 @@
             $(this).siblings().toggle();
         },
 
+        _settingsMultitextToggleResponsive: function(e)
+        {
+            var toggle  = $(e.target),
+                target  = toggle.data('field-target'),
+                mode    = target,
+                field   = toggle.parents('.pp-multitext-wrap').find('.pp-multitext .pp-field-multitext-' + target);
+
+            toggle.parents('.pp-multitext-wrap').find('.pp-multitext .pp-field-multitext').hide();
+            field.show();
+
+            if (toggle.hasClass('pp-multitext-default')) {
+                toggle.parent().find('.pp-multitext-medium').show();
+            }
+            if (toggle.hasClass('pp-multitext-medium')) {
+                toggle.parent().find('.pp-multitext-small').show();
+            }
+            if (toggle.hasClass('pp-multitext-small')) {
+                toggle.parent().find('.pp-multitext-default').show();
+            }
+            toggle.hide();
+
+            if (mode === 'small') {
+                mode = 'responsive';
+            }
+
+            FLBuilderResponsiveEditing._switchToAndScroll(mode);
+        },
+
         _settingsSwitchClick: function()
         {
             var val = $(this).data('value');
@@ -377,13 +407,15 @@
             $(this).parent().find('span').removeClass('pp-switch-active');
             $(this).addClass('pp-switch-active');
             if(typeof preview !== 'undefined') {
-                if(preview.type !== 'css') {
-                    setTimeout(function() {
-                       FLBuilder.preview.preview();
-                    }, 100);
-                } else {
-                    PPFields._initFieldCSSPreview( $(this).parents('tr.fl-field') );
-                }
+				if ( preview.type !== 'none' ) {
+					if(preview.type !== 'css') {
+						setTimeout(function() {
+						   FLBuilder.preview.preview();
+						}, 100);
+					} else {
+						PPFields._initFieldCSSPreview( $(this).parents('tr.fl-field') );
+					}
+				}
             }
         },
 
@@ -480,6 +512,34 @@
 				}
 			}
 		},
+
+        /* Datepicker Input Fields
+		----------------------------------------------------------*/
+
+        /**
+		 * Initializes datepicker input fields for a settings form.
+		 *
+		 * @since 1.2.4
+		 * @access private
+		 * @method _initDatepickerFields
+		 */
+        _initDatepickerFields: function()
+        {
+            $('body').delegate('.pp-field-datepicker', 'click', function(){
+                var dateFormat = $(this).data('format');
+                if (!$(this).hasClass("hasDatepicker")) {
+                    $(this).datepicker({
+                        changeMonth: true,
+                        changeYear: true,
+                        dateFormat : dateFormat,
+                        beforeShow: function() {
+                            $('#ui-datepicker-div').addClass('pp-datepicker');
+                        }
+                    });
+                    $(this).datepicker("show");
+                }
+           });
+        },
 
         /**
          * Close setting form lightbox by pressing Esc key.

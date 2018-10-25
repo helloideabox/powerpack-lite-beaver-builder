@@ -3,9 +3,5 @@
 var field = data.field,
     name = data.name,
     value = data.value;
-
 #>
-<span class="pp-field-css-class"></span>
-<#
-    jQuery('.pp-field-css-class').text(value + jQuery('.pp-field-css-class').parents('form.fl-builder-settings').data('node'));
-#>
+<input type="text" class="pp-field-css-class text" value="{{value}}" style="width: 100%;" readonly="readonly" onclick="this.select()" />

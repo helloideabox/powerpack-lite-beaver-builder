@@ -82,7 +82,7 @@ for($i=0; $i < $number_items; $i++) :
 	.fl-node-<?php echo $id; ?> .pp-list-item-<?php echo $i; ?> .pp-infolist-icon-inner .pp-icon {
 		<?php if( $items->icon_background ) { ?>background: #<?php echo $items->icon_background; ?>;<?php } ?>
 		<?php if( $settings->icon_border_radius ) { ?>border-radius: <?php echo $settings->icon_border_radius; ?>px;<?php } ?>
-		<?php if( $items->icon_color ) { ?>color: #<?php echo $items->icon_color; ?>;<?php } ?>
+		<?php if( $items->icon_color ) { ?>color: #<?php echo $items->icon_color; ?> !important;<?php } ?>
 	}
 	.fl-node-<?php echo $id; ?> .pp-list-item-<?php echo $i; ?> .pp-infolist-icon:hover .pp-icon {
 		<?php if( $items->icon_background_hover ) { ?>background: #<?php echo $items->icon_background_hover; ?>;<?php } ?>

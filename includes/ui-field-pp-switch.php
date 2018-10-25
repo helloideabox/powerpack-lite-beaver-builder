@@ -20,9 +20,12 @@ if ( field.trigger ) {
 	atts += " data-trigger='" + JSON.stringify( field.trigger ) + "'";
 }
 
+// Options Count
+var optionsCount = Object.keys(field.options).length;
+
 #>
 
-<div class="pp-switch">
+<div class="pp-switch" data-options="{{optionsCount}}">
     <#
     // Loop through the options
 	for ( var optionKey in field.options ) {

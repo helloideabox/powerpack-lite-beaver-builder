@@ -26,7 +26,7 @@ class PPBusinessHoursModule extends FLBuilderModule {
             'icon'				=> 'clock.svg',
         ));
 
-        $this->add_css('font-awesome');
+        $this->add_css(BB_POWERPACK_LITE()->fa_css);
     }
 }
 

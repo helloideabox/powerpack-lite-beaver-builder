@@ -158,25 +158,22 @@ function pp_get_template_screenshot_url( $type, $category, $mode = '' )
 /**
  * Hex to Rgba
  */
-if ( !function_exists( 'pp_hex2rgba' ) )
+function pp_hex2rgba( $hex, $opacity )
 {
-    function pp_hex2rgba( $hex, $opacity )
-    {
-    	$hex = str_replace( '#', '', $hex );
+	$hex = str_replace( '#', '', $hex );
 
-    	if ( strlen($hex) == 3 ) {
-    		$r = hexdec(substr($hex,0,1).substr($hex,0,1));
-    		$g = hexdec(substr($hex,1,1).substr($hex,1,1));
-    		$b = hexdec(substr($hex,2,1).substr($hex,2,1));
-    	} else {
-    		$r = hexdec(substr($hex,0,2));
-    		$g = hexdec(substr($hex,2,2));
-    		$b = hexdec(substr($hex,4,2));
-    	}
-    	$rgba = array($r, $g, $b, $opacity);
+	if ( strlen($hex) == 3 ) {
+		$r = hexdec(substr($hex,0,1).substr($hex,0,1));
+		$g = hexdec(substr($hex,1,1).substr($hex,1,1));
+		$b = hexdec(substr($hex,2,1).substr($hex,2,1));
+	} else {
+		$r = hexdec(substr($hex,0,2));
+		$g = hexdec(substr($hex,2,2));
+		$b = hexdec(substr($hex,4,2));
+	}
+	$rgba = array($r, $g, $b, $opacity);
 
-    	return 'rgba(' . implode(', ', $rgba) . ')';
-    }
+	return 'rgba(' . implode(', ', $rgba) . ')';
 }
 
 /**
@@ -246,6 +243,30 @@ function pp_short_day_format( $day )
 }
 
 /**
+ * Returns user agent.
+ *
+ * @since 1.2.3
+ * @return string
+ */
+function pp_get_user_agent()
+{
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+	if (stripos( $user_agent, 'Chrome') !== false)
+	{
+	    return 'chrome';
+	}
+	elseif (stripos( $user_agent, 'Safari') !== false)
+	{
+	   return 'safari';
+	}
+	elseif (stripos( $user_agent, 'Firefox') !== false)
+	{
+	   return 'firefox';
+	}
+}
+
+/**
  * Returns badges data.
  *
  * @since 1.0.8
@@ -274,11 +295,13 @@ function pp_modules_badges( $number = '' )
 
 function pp_get_modules_categories( $cat = '' )
 {
+	$admin_label = pp_get_admin_label();
+
 	$cats = array(
-		'creative'		=> __('Creative Modules', 'bb-powerpack'),
-		'content'		=> __('Content Modules', 'bb-powerpack'),
-		'lead_gen'		=> __('Lead Generation Modules', 'bb-powerpack'),
-		'form_style'	=> __('Form Styler Modules', 'bb-powerpack')
+		'creative'		=> sprintf(__('Creative Modules - %s', 'bb-powerpack'), $admin_label),
+		'content'		=> sprintf(__('Content Modules - %s', 'bb-powerpack'), $admin_label),
+		'lead_gen'		=> sprintf(__('Lead Generation Modules - %s', 'bb-powerpack'), $admin_label),
+		'form_style'	=> sprintf(__('Form Styler Modules - %s', 'bb-powerpack'), $admin_label),
 	);
 
 	if ( empty( $cat ) ) {
@@ -295,7 +318,7 @@ function pp_get_modules_categories( $cat = '' )
 /**
  * Returns modules category name for Beaver Builder 2.0 compatibility.
  *
- * @since 1.3
+ * @since 1.2
  * @return string
  */
 function pp_get_modules_cat( $cat )
@@ -314,4 +337,17 @@ function pp_get_modules_group()
 	$group_name = 'PowerPack ' . __('Modules', 'bb-powerpack');
 
 	return $group_name;
+}
+
+/**
+ * Returns admin label for PowerPack settings.
+ *
+ * @since 1.2.3
+ * @return string
+ */
+function pp_get_admin_label()
+{
+	$admin_label = 'PowerPack';
+
+	return $admin_label;
 }

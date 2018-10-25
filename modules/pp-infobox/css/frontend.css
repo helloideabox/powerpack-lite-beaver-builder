@@ -1,11 +1,11 @@
 /* Clearfix */
-.clearfix:before,
-.clearfix:after {
+.pp-infobox:before,
+.pp-infobox:after {
 	content: " ";
 	display: table;
 }
 
-.clearfix:after {
+.pp-infobox:after {
 	clear: both;
 }
 
@@ -173,8 +173,8 @@
 .pp-infobox-wrap .layout-3-wrapper {
 	display: flex;
 	flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
 	flex-shrink: 1;
 }
 .pp-infobox-wrap .layout-3 .pp-icon-wrapper {
@@ -199,8 +199,8 @@
 .pp-infobox-wrap .layout-4-wrapper {
 	display: flex;
 	flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
 	flex-shrink: 1;
 }
 .pp-infobox-wrap .layout-4 .pp-icon-wrapper {

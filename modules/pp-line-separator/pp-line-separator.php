@@ -24,39 +24,10 @@ class PPLineSeparatorModule extends FLBuilderModule {
             'enabled'       => true, // Defaults to true and can be omitted.
             'partial_refresh'   => true,
             'icon'				=> 'minus.svg',
-        ));
-
-        /**
-         * Use these methods to enqueue css and js already
-         * registered or to register and enqueue your own.
-         */
-        // Already registered
-		$this->add_css('font-awesome');
+		));
+		
+		$this->add_css( BB_POWERPACK_LITE()->fa_css );
     }
-
-    /**
-     * Use this method to work with settings data before
-     * it is saved. You must return the settings object.
-     *
-     * @method update
-     * @param $settings {object}
-     */
-    public function update($settings)
-    {
-        return $settings;
-    }
-
-    /**
-     * This method will be called by the builder
-     * right before the module is deleted.
-     *
-     * @method delete
-     */
-    public function delete()
-    {
-
-    }
-
 }
 
 /**

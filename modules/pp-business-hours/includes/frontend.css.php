@@ -117,7 +117,7 @@ for ($i=0; $i < count($settings->business_hours_rows); $i++) :
 @media only screen and ( max-width: 768px ) {
 	.fl-node-<?php echo $id; ?> .pp-business-hours-content .pp-bh-row .pp-bh-title {
 	   <?php if( $settings->title_font_size == 'custom' && $settings->title_custom_font_size ) { ?>
-		   font-size: <?php echo $settings->featured_title_custom_font_size['tablet']; ?>px;
+		   font-size: <?php echo $settings->title_custom_font_size['tablet']; ?>px;
 	   <?php } ?>
 	   <?php if( $settings->title_line_height == 'custom' && $settings->title_custom_line_height ) { ?>
 		   line-height: <?php echo $settings->title_custom_line_height['tablet']; ?>;
@@ -136,7 +136,7 @@ for ($i=0; $i < count($settings->business_hours_rows); $i++) :
 @media only screen and ( max-width: 600px ) {
 	.fl-node-<?php echo $id; ?> .pp-business-hours-content .pp-bh-row .pp-bh-title {
 	   <?php if( $settings->title_font_size == 'custom' && $settings->title_custom_font_size ) { ?>
-		   font-size: <?php echo $settings->featured_title_custom_font_size['mobile']; ?>px;
+		   font-size: <?php echo $settings->title_custom_font_size['mobile']; ?>px;
 	   <?php } ?>
 	   <?php if( $settings->title_line_height == 'custom' && $settings->title_custom_line_height ) { ?>
 		   line-height: <?php echo $settings->title_custom_line_height['mobile']; ?>;

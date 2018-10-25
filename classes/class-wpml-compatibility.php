@@ -166,7 +166,21 @@ class BB_PowerPack_WPML {
                         'editor_type'       => 'LINE'
                     ),
                 )
-            ),
+			),
+			'pp-contact-form-7'		=> array(
+				'fields'				=> array(
+					array(
+						'field'				=> 'custom_title',
+						'type'				=> __('Contact Form 7 Styler - Custom Title', 'bb-powerpack'),
+						'editor-type'		=> 'LINE'
+					),
+					array(
+						'field'				=> 'custom_description',
+						'type'				=> __('Contact Form 7 Styler - Custom Description', 'bb-powerpack'),
+						'editor-type'		=> 'AREA'
+					),
+				)
+			),
             'pp-dual-button'        => array(
                 'fields'                => array(
                     array(
@@ -243,7 +257,21 @@ class BB_PowerPack_WPML {
                         'editor_type'       => 'LINK'
                     ),
                 )
-            ),
+			),
+			'pp-gravity-form'		=> array(
+				'fields'				=> array(
+					array(
+						'field'				=> 'custom_title',
+						'type'				=> __('Gravity Form Styler - Custom Title', 'bb-powerpack'),
+						'editor_type'		=> 'LINE'
+					),
+					array(
+						'field'				=> 'custom_description',
+						'type'				=> __('Gravity Form Styler - Custom Description', 'bb-powerpack'),
+						'editor_type'		=> 'TEXTAREA'
+					),
+				)
+			),
             'pp-highlight-box'      => array(
                 'fields'                => array(
                     array(
@@ -491,7 +519,12 @@ class BB_PowerPack_WPML {
                         'field'             => 'input_email_placeholder',
                         'type'              => __('Subscribe Form - Email Field Placeholder Text', 'bb-powerpack'),
                         'editor_type'       => 'LINE'
-                    ),
+					),
+					array(
+						'field'				=> 'checkbox_field_text',
+						'type'				=> __('Subscribe Form - Checkbox Field Text', 'bb-powerpack'),
+						'editor_type'		=> 'LINE'
+					),
                     array(
                         'field'             => 'btn_text',
                         'type'              => __('Subscribe Form - Button Text', 'bb-powerpack'),
@@ -639,7 +672,49 @@ class BB_PowerPack_WPML {
                     ),
                 ),
                 'integration-class'     => 'WPML_PP_Restaurant_Menu'
-            ),
+			),
+			'pp-caldera-form'		=> array(
+				'fields'				=> array(
+					array(
+						'field'				=> 'custom_title',
+						'type'				=> __('Caledra Form Styler - Custom Title', 'bb-powerpack'),
+						'editor-type'		=> 'LINE'
+					),
+					array(
+						'field'				=> 'custom_description',
+						'type'				=> __('Caldera Form Styler - Custom Description', 'bb-powerpack'),
+						'editor-type'		=> 'AREA'
+					),
+				)
+			),
+			'pp-ninja-form'		=> array(
+				'fields'				=> array(
+					array(
+						'field'				=> 'custom_title',
+						'type'				=> __('Ninja Form Styler - Custom Title', 'bb-powerpack'),
+						'editor-type'		=> 'LINE'
+					),
+					array(
+						'field'				=> 'custom_description',
+						'type'				=> __('Ninja Form Styler - Custom Description', 'bb-powerpack'),
+						'editor-type'		=> 'AREA'
+					),
+				)
+			),
+			'pp-wpforms'		=> array(
+				'fields'				=> array(
+					array(
+						'field'				=> 'custom_title',
+						'type'				=> __('WPForms Styler - Custom Title', 'bb-powerpack'),
+						'editor-type'		=> 'LINE'
+					),
+					array(
+						'field'				=> 'custom_description',
+						'type'				=> __('WPForms Styler - Custom Description', 'bb-powerpack'),
+						'editor-type'		=> 'AREA'
+					),
+				)
+			),
         );
 
         foreach ( $config as $module_name => $module_fields ) {

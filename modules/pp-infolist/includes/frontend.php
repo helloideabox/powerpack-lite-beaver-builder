@@ -36,7 +36,7 @@ $infolist_class = 'pp-infolist-wrap';
 									<?php if( $items->icon_type == 'icon' ) { ?>
 										<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
 									<?php } else { ?>
-										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
+										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>" alt="<?php echo get_the_title(absint($items->image_select)); ?>" />
 									<?php } ?>
 								</div>
 							</div>
@@ -114,7 +114,7 @@ $infolist_class = 'pp-infolist-wrap';
 									<?php if( $items->icon_type == 'icon' ) { ?>
 										<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
 									<?php } else { ?>
-										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
+										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>" alt="<?php echo get_the_title(absint($items->image_select)); ?>" />
 									<?php } ?>
 								</div>
 							</div>
@@ -158,7 +158,7 @@ $infolist_class = 'pp-infolist-wrap';
 									<?php if( $items->icon_type == 'icon' ) { ?>
 										<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
 									<?php } else { ?>
-										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
+										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>" alt="<?php echo get_the_title(absint($items->image_select)); ?>" />
 									<?php } ?>
 								</div>
 							</div>
@@ -216,7 +216,7 @@ $infolist_class = 'pp-infolist-wrap';
 								<?php if( $items->icon_type == 'icon' ) { ?>
 									<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
 								<?php } else { ?>
-									<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>">
+									<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>" alt="<?php echo get_the_title(absint($items->image_select)); ?>" />
 								<?php } ?>
 							</div>
 						</div>

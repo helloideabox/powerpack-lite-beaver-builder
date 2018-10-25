@@ -1,8 +1,8 @@
 .fl-node-<?php echo $id; ?> .pp-icon-list:before {
 	content: "" !important;
 }
-.fl-node-<?php echo $id; ?> [class^="pp-icon-list"] {
-    font-family: unset !important;
+.fl-node-<?php echo $id; ?> .pp-icon-list:not(.pp-user-agent-ie) [class^="pp-icon-list"] {
+	font-family: unset !important;
 }
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item {
 	display: table;

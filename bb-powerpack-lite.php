@@ -26,7 +26,15 @@ final class BB_PowerPack_Lite {
      * @since 1.0.0
      * @var object
      */
-    public static $instance;
+	public static $instance;
+	
+	/**
+     * Holds FontAwesome CSS class.
+     *
+     * @since 1.2.3
+     * @var string
+     */
+	public $fa_css = '';
 
 	/**
 	 * Primary class constructor.
@@ -40,15 +48,15 @@ final class BB_PowerPack_Lite {
 
 		require_once 'includes/sdk/pp_freemius.php';
 
-		/* Hooks */
-		$this->init_hooks();
-
 		/* Classes */
 		require_once 'classes/class-admin-settings.php';
 		require_once 'classes/class-wpml-compatibility.php';
 
 		/* Includes */
 		require_once 'includes/helper-functions.php';
+
+		/* Hooks */
+		$this->init_hooks();
 	}
 
 	/**
@@ -79,6 +87,7 @@ final class BB_PowerPack_Lite {
 		add_action( 'init', array( $this, 'load_modules' ) );
 		add_action( 'plugins_loaded', array( $this, 'loader' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ), 100 );
+		add_action( 'wp_head', array( $this, 'render_scripts' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
@@ -105,20 +114,25 @@ final class BB_PowerPack_Lite {
 	{
 		if ( class_exists( 'FLBuilder' ) ) {
 
-			/* Modules */
-			require_once 'modules/pp-heading/pp-heading.php';
-			require_once 'modules/pp-dual-button/pp-dual-button.php';
-			require_once 'modules/pp-spacer/pp-spacer.php';
-			require_once 'modules/pp-iconlist/pp-iconlist.php';
-			require_once 'modules/pp-infobox/pp-infobox.php';
-			require_once 'modules/pp-infolist/pp-infolist.php';
-			require_once 'modules/pp-fancy-heading/pp-fancy-heading.php';
-			require_once 'modules/pp-business-hours/pp-business-hours.php';
-			require_once 'modules/pp-line-separator/pp-line-separator.php';
+			$enabled_icons = FLBuilderModel::get_enabled_icons();
 
-			/* Form Modules */
-			if ( class_exists( 'WPCF7_ContactForm' ) ) {
-				require_once 'modules/pp-contact-form-7/pp-contact-form-7.php';
+			if ( in_array( 'font-awesome-5-solid', $enabled_icons )
+				|| in_array( 'font-awesome-5-regular', $enabled_icons )
+				|| in_array( 'font-awesome-5-brands', $enabled_icons ) ) {
+					$this->fa_css = 'font-awesome-5';
+			} else {
+				$this->fa_css = 'font-awesome';
+			}
+
+			// Fields
+			require_once 'classes/class-module-fields.php';
+
+			$load_modules_in_admin = apply_filters( 'pp_load_modules_in_admin', true );
+
+			if ( $load_modules_in_admin ) {
+				require_once 'includes/modules.php';
+			} else if ( ! is_admin() ) {
+				require_once 'includes/modules.php';
 			}
 		}
 	}
@@ -132,9 +146,6 @@ final class BB_PowerPack_Lite {
 	public function loader()
 	{
 		if ( !is_admin() && class_exists( 'FLBuilder' ) ) {
-
-			// Fields
-			require_once 'classes/class-module-fields.php';
 
 			// Panel functions
 			require_once 'includes/panel-functions.php';
@@ -164,12 +175,34 @@ final class BB_PowerPack_Lite {
 	 */
 	public function load_scripts()
 	{
-		wp_enqueue_style( 'animate', BB_POWERPACK_URL . 'assets/css/animate.min.css', array(), rand() );
+		wp_enqueue_style( 'animate', BB_POWERPACK_URL . 'assets/css/animate.min.css', array(), '3.5.1' );
 		if ( class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
-			wp_enqueue_style( 'pp-fields-style', BB_POWERPACK_URL . 'assets/css/fields.css', array(), rand() );
-			wp_enqueue_script( 'pp-fields-script', BB_POWERPACK_URL . 'assets/js/fields.js', array( 'jquery' ), rand(), true );
-			wp_enqueue_style( 'pp-panel-style', BB_POWERPACK_URL . 'assets/css/panel.css', array(), rand() );
-	        wp_enqueue_script( 'pp-panel-script', BB_POWERPACK_URL . 'assets/js/panel.js', array( 'jquery' ), rand(), true );
+			wp_enqueue_style( 'pp-fields-style', BB_POWERPACK_URL . 'assets/css/fields.css', array(), BB_POWERPACK_VER );
+			wp_enqueue_script( 'pp-fields-script', BB_POWERPACK_URL . 'assets/js/fields.js', array( 'jquery' ), BB_POWERPACK_VER, true );
+			wp_enqueue_style( 'pp-panel-style', BB_POWERPACK_URL . 'assets/css/panel.css', array(), BB_POWERPACK_VER );
+	        wp_enqueue_script( 'pp-panel-script', BB_POWERPACK_URL . 'assets/js/panel.js', array( 'jquery' ), BB_POWERPACK_VER, true );
+		}
+	}
+
+	/**
+	 * Custom inline scripts.
+	 *
+	 * @since 1.2.3
+	 * @return void
+	 */
+	public function render_scripts()
+	{
+		if ( class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
+		?>
+		<style>
+		form[class*="fl-builder-pp-"] .fl-lightbox-header h1:before {
+			content: "PowerPack ";
+			position: relative;
+			display: inline-block;
+			margin-right: 5px;
+		}
+		</style>
+		<?php
 		}
 	}
 
@@ -219,7 +252,7 @@ final class BB_PowerPack_Lite {
 	{
 		if ( class_exists( 'FLBuilder' ) && class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
 			$classes[] = 'bb-powerpack';
-			if ( pp_panel_search() == 1 ) {
+			if ( function_exists( 'pp_panel_search' ) && pp_panel_search() == 1 ) {
 				$classes[] = 'bb-powerpack-search-enabled';
 			}
 			if ( class_exists( 'FLBuilderUIContentPanel' ) ) {
@@ -267,4 +300,8 @@ function pp_lite_set_review_trigger_date() {
 }
 
 // Load the PowerPack class.
-$bb_powerpack_lite = BB_PowerPack_Lite::get_instance();
+function BB_POWERPACK_LITE() {
+	return BB_PowerPack_Lite::get_instance();
+}
+
+BB_POWERPACK_LITE();
