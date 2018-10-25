@@ -2,7 +2,7 @@
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 4.9.1
+Tested up to: 4.9.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -122,6 +122,19 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+== 1.2.3 - October 25, 2018 ==
+*	Enhancement: Smart Headings - Added Text Shadow options
+*	Enhancement: Smart Headings - Added Gradient option
+*	Enhancement: Smart Headings - Added Text Transform typography option
+*	Enhancement: Info Box - Added icon vertical alignment option
+*	Enhancement: Info Box - Added link nofollow option
+*	Enhancement: Info Box - Added responsive alignment option
+*	Enhancement: Contact Form 7 - Added WPML compatibility for custom title and description fields
+*	Fix: Business Hours - Responsive font-size
+*	Fix: Dual Button - Responsive font-size and line-height
+*	Fix: Info Box - Live preview and minor CSS issues
+*	Fix: Info List - Live preview and minor CSS issues
+
 = 1.2.2 - December 20, 2017 =
 *   New: Added WPML support
 *   Enhancement: Added day range selection option in Business Hours module
@@ -182,5 +195,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.2.0 =
+= 1.2.3 =
 Beaver Builder 2.0 compatibility with UI fields, WPML support, enhancements, fixes.
