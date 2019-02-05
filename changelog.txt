@@ -1,3 +1,7 @@
+== 1.2.3.1 ==
+*	Release date: February 5, 2018
+*	Fix: Icon / Number List: Icons were not appearing in IE
+
 == 1.2.3 ==
 *   Release date: October 25, 2018
 *	Enhancement: Smart Headings - Added Text Shadow options

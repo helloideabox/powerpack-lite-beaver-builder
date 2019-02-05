@@ -264,6 +264,14 @@ function pp_get_user_agent()
 	{
 	   return 'firefox';
 	}
+	elseif (stripos( $user_agent, 'MSIE') !== false)
+	{
+	   return 'ie';
+	}
+	elseif (stripos( $user_agent, 'Trident/7.0; rv:11.0' ) !== false)
+	{
+	   return 'ie';
+	}
 }
 
 /**

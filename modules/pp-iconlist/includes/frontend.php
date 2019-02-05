@@ -1,9 +1,5 @@
 <?php
-$user_agent = $_SERVER['HTTP_USER_AGENT'];
-$browser = '';
-if ( preg_match('/MSIE/i', $user_agent) ) {
-    $browser = ' pp-user-agent-ie';
-}
+$browser = ' pp-user-agent-' . pp_get_user_agent();
 $items = $settings->list_items;
 ?>
 
