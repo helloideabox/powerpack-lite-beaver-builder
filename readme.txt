@@ -122,6 +122,9 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+== 1.2.4 - February 26, 2019 ==
+*	Updated Freemius SDK
+
 == 1.2.3.1 - February 5, 2019 ==
 *	Fix: Icon / Number List: Icons were not appearing in IE
 
