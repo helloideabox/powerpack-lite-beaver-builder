@@ -11,12 +11,12 @@
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-icon {
 	float: left;
 	margin-right: <?php echo $settings->icon_space; ?>px;
-	background-color: #<?php echo $settings->icon_bg; ?>;
+	<?php if ( isset( $settings->icon_bg ) && ! empty( $settings->icon_bg ) ) { ?>
+	background-color: <?php echo pp_get_color_value( $settings->icon_bg ); ?>;
+	<?php } ?>
 	color: #<?php echo $settings->icon_color; ?>;
 	font-size: <?php echo $settings->icon_size; ?>px;
 	padding: <?php echo $settings->icon_padding; ?>px;
-	border: <?php echo $settings->icon_border_width; ?>px <?php echo $settings->icon_border_type; ?> #<?php echo $settings->icon_border_color; ?>;
-	border-radius: <?php echo $settings->icon_border_radius; ?>px;
 	text-align: center;
 	display: inline-block;
 	line-height: <?php echo ('' != $settings->icon_size) ? $settings->icon_size : ''; ?>px;
@@ -30,8 +30,18 @@
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
+<?php
+	// Icon - Border
+	FLBuilderCSS::border_field_rule( array(
+		'settings' 		=> $settings,
+		'setting_name' 	=> 'icon_border',
+		'selector' 		=> ".fl-node-$id .pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-icon",
+	) );
+?>
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item:hover .pp-list-item-icon {
-	background-color: #<?php echo $settings->icon_bg_hover; ?>;
+	<?php if ( isset( $settings->icon_bg_hover ) && ! empty( $settings->icon_bg_hover ) ) { ?>
+	background-color: <?php echo pp_get_color_value( $settings->icon_bg_hover ); ?>;
+	<?php } ?>
 	color: #<?php echo $settings->icon_color_hover; ?>;
 	border-color: #<?php echo $settings->icon_border_color_hover; ?>;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -39,13 +49,22 @@
 	transition: all 0.3s ease-in-out;
 }
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items.pp-list-type-number .pp-icon-list-item .pp-list-item-icon {
-	<?php if( $settings->text_font['family'] != 'Default' ) { FLBuilderFonts::font_css( $settings->text_font ); } ?>
+	 <?php if( $settings->text_typography['font_family'] != 'Default' ) { ?>
+    font-family: <?php echo $settings->text_typography['font_family']; ?>;
+	font-weight: <?php echo $settings->text_typography['font_weight']; ?>;
+    <?php } ?>
 }
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-text {
 	display: table-cell;
 	color: #<?php echo $settings->text_color; ?>;
-	<?php if( $settings->text_font['family'] != 'Default' ) { FLBuilderFonts::font_css( $settings->text_font ); } ?>
-	font-size: <?php echo $settings->text_size; ?>px;
-	line-height: <?php echo $settings->text_line_height; ?>;
 	vertical-align: middle;
 }
+
+<?php
+	// Caption Typography
+	FLBuilderCSS::typography_field_rule( array(
+		'settings'		=> $settings,
+		'setting_name' 	=> 'text_typography',
+		'selector' 		=> ".fl-node-$id .pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-text",
+	) );
+?>

@@ -2,9 +2,9 @@
 
 function pp_column_render_css( $extensions ) {
 
-    if ( array_key_exists( 'corners', $extensions['col'] ) || in_array( 'corners', $extensions['col'] ) ) {
-        add_filter( 'fl_builder_render_css', 'pp_column_round_corners_css', 10, 3 );
-    }
+    // if ( array_key_exists( 'corners', $extensions['col'] ) || in_array( 'corners', $extensions['col'] ) ) {
+    //     add_filter( 'fl_builder_render_css', 'pp_column_round_corners_css', 10, 3 );
+    // }
 }
 
 /** Corners */

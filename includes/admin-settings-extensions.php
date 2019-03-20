@@ -53,22 +53,6 @@
                     <?php endforeach; ?>
                 </td>
             </tr>
-            <tr valign="top">
-                <th scope="row" valign="top">
-                    <?php _e('Column Extensions', 'bb-powerpack'); ?>
-                </th>
-                <td>
-                    <?php foreach ( $extensions['col'] as $extension => $name ) :
-                        $checked = ( array_key_exists($extension, $enabled_extensions['col']) || in_array( $extension, $enabled_extensions['col'] ) ) ? 'checked="checked"' : ''; ?>
-                    <p>
-                        <label>
-                            <input type="checkbox" name="bb_powerpack_extensions[col][]" value="<?php echo $extension; ?>" <?php echo $checked; ?> />
-                            <?php echo $name; ?>
-                        </label>
-                    </p>
-                    <?php endforeach; ?>
-                </td>
-            </tr>
 
         </tbody>
     </table>

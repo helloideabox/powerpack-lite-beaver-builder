@@ -2,7 +2,7 @@
 Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 3.6
-Tested up to: 5.1
+Tested up to: 5.1.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -122,6 +122,14 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+== 1.2.5 - March 20, 2019 ==
+*	New: Added Facebook Button module
+*	New: Added Facebook Comments module
+*	New: Added Facebook Embed module
+*	New: Added Facebook Page module
+*	Enhancement: Updated all modules fields to match BB 2.2 UI
+*	Enhancement: Combined PowerPack's option in row settings into single tab
+
 == 1.2.4 - February 26, 2019 ==
 *	Updated Freemius SDK
 
@@ -201,5 +209,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.2.3 =
-Beaver Builder 2.0 compatibility with UI fields, WPML support, enhancements, fixes.
+= 1.2.4 =
+Added new modules

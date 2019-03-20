@@ -8,7 +8,7 @@ $nofollow		= ( isset( $settings->link_nofollow ) && 'yes' == $settings->link_nof
 <div class="<?php echo $wrap_class; ?>">
 	<?php
 	if( $settings->pp_infobox_link_type == 'box' ) { ?>
-		<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"<?php echo $nofollow; ?>>
+		<a class="pp-infobox-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>"<?php echo $nofollow; ?>>
 	<?php }
 	
 	include apply_filters( 'pp_infobox_layout_path', $module->dir . 'includes/layout-' . $layout . '.php', $layout, $settings );

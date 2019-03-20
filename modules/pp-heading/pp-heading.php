@@ -23,9 +23,193 @@ class PPHeadingModule extends FLBuilderModule {
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
             'partial_refresh' => true,
-            'icon'				=> 'text.svg',
         ));
-    }
+	}
+	
+	public function filter_settings( $settings, $helper )
+	{
+		// Handle old link field.
+		$settings = PP_Module_Fields::handle_link_field( $settings, array(
+			'heading_link'	=> array(
+				'type'			=> 'link'
+			),
+			'heading_link_target'	=> array(
+				'type'			=> 'target'
+			)
+		), 'heading_link' );
+
+		// Handle old title border width field.
+		$settings = PP_Module_Fields::handle_multitext_field( $settings, 'heading_border', 'dimension' );
+		$settings = PP_Module_Fields::handle_multitext_field( $settings, 'heading2_border', 'dimension' );
+		
+		// Handle old title padding field.
+		$settings = PP_Module_Fields::handle_multitext_field( $settings, 'heading_padding', 'dimension' );
+		$settings = PP_Module_Fields::handle_multitext_field( $settings, 'heading2_padding', 'dimension' );
+
+		// Title Gradient Fields
+		if ( isset( $settings->heading_gradient ) && 'yes' == $settings->heading_gradient ) {
+			$settings->heading_color_type = 'gradient';
+			unset( $settings->heading_gradient );
+		}
+		
+		// - Handle old title gradient field.
+		$settings = PP_Module_Fields::handle_gradient_field( $settings, array(
+			'heading_gradient_primary_color'	=> array(
+				'type'		=> 'primary_color',
+			),
+			'heading_gradient_secondary_color'	=> array(
+				'type'		=> 'secondary_color',
+			),
+			'heading_gradient_degree'	=> array(
+				'type'		=> 'angle',
+			),
+		), 'heading_gradient_setting' );
+
+		// Secondary Title Gradient Fields
+		if ( isset( $settings->heading2_gradient ) && 'yes' == $settings->heading2_gradient ) {
+			$settings->heading2_color_type = 'gradient';
+			unset( $settings->heading2_gradient );
+		}
+		
+		// - Handle old secondary title gradient field.
+		$settings = PP_Module_Fields::handle_gradient_field( $settings, array(
+			'heading2_gradient_primary_color'	=> array(
+				'type'		=> 'primary_color',
+			),
+			'heading2_gradient_secondary_color'	=> array(
+				'type'		=> 'secondary_color',
+			),
+			'heading2_gradient_degree'	=> array(
+				'type'		=> 'angle',
+			),
+		), 'heading2_gradient_setting' );
+
+		// Heading Typography.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'heading_font'	=> array(
+				'type'			=> 'font'
+			),
+			'heading_font_size'	=> array(
+				'type'			=> 'font_size',
+				'condition'		=> ( isset( $settings->heading_font_size_select ) && 'custom' == $settings->heading_font_size_select )
+			),
+			'heading_tablet_font_size' => array(
+				'type'			=> 'medium_font_size',
+			),
+			'heading_tablet_line_height_n' => array(
+				'type'			=> 'medium_line_height',
+			),
+			'heading_mobile_font_size' => array(
+				'type'			=> 'responsive_font_size',
+			),
+			'heading_mobile_line_height_n' => array(
+				'type'			=> 'responsive_line_height',
+			),
+			'heading_line_height_n'	=> array(
+				'type'			=> 'line_height',
+			),
+			'heading_letter_space'	=> array(
+				'type'			=> 'letter_spacing'
+			),
+			'heading_text_transform'	=> array(
+				'type'			=> 'text_transform',
+				'condition'		=> ( isset( $settings->heading_text_transform ) && 'default' != $settings->heading_text_transform )
+			),
+			'heading_shadow'	=> array(
+				'type'				=> 'text_shadow',
+				'color'				=> ( isset( $settings->heading_shadow_color ) ) ? $settings->heading_shadow_color : '',
+				'condition'			=> ( isset( $settings->heading_show_shadow ) && 'yes' == $settings->heading_show_shadow )
+			)
+		), 'title_typography' );
+		
+		if ( isset( $settings->heading_shadow_color ) ) {
+			//unset( $settings->heading_shadow_color );
+		}
+
+		// Secondary Title Typography.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'heading2_font'	=> array(
+				'type'			=> 'font'
+			),
+			'heading2_font_size'	=> array(
+				'type'			=> 'font_size',
+				'condition'		=> ( isset( $settings->heading2_font_size_select ) && 'custom' == $settings->heading2_font_size_select )
+			),
+			'heading2_tablet_font_size' => array(
+				'type'			=> 'medium_font_size',
+			),
+			'heading2_tablet_line_height_n' => array(
+				'type'			=> 'medium_line_height',
+			),
+			'heading2_mobile_font_size' => array(
+				'type'			=> 'responsive_font_size',
+			),
+			'heading2_mobile_line_height_n' => array(
+				'type'			=> 'responsive_line_height',
+			),
+			'heading2_line_height_n'	=> array(
+				'type'			=> 'line_height',
+			),
+			'heading2_letter_space'	=> array(
+				'type'			=> 'letter_spacing'
+			),
+			'heading2_text_transform'	=> array(
+				'type'			=> 'text_transform',
+				'condition'		=> ( isset( $settings->heading2_text_transform ) && 'default' != $settings->heading2_text_transform )
+			),
+			'heading2_shadow'	=> array(
+				'type'				=> 'text_shadow',
+				'color'				=> ( isset( $settings->heading2_shadow_color ) ) ? $settings->heading2_shadow_color : '',
+				'condition'			=> ( isset( $settings->heading2_show_shadow ) && 'yes' == $settings->heading2_show_shadow )
+			)
+		), 'title2_typography' );
+		
+		if ( isset( $settings->heading2_shadow_color ) ) {
+			//unset( $settings->heading2_shadow_color );
+		}
+
+		// Sub Heading / Description Typography.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'sub_heading_font'	=> array(
+				'type'		=> 'font'
+			),
+			'sub_heading_font_size'	=> array(
+				'type'		=> 'font_size',
+				'condition'	=> ( isset( $settings->sub_heading_font_size_select ) && 'custom' == $settings->sub_heading_font_size_select )
+			),
+			'sub_heading_line_height_n'	=> array(
+				'type'		=> 'line_height'
+			),
+			'sub_heading_tablet_font_size'	=> array(
+				'type'		=> 'medium_font_size'
+			),
+			'sub_heading_tablet_line_height_n'	=> array(
+				'type'		=> 'medium_line_height'
+			),
+			'sub_heading_mobile_font_size'	=> array(
+				'type'		=> 'responsive_font_size'
+			),
+			'sub_heading_mobile_line_height_n'	=> array(
+				'type'		=> 'responsive_line_height'
+			),
+		), 'desc_typography' );
+
+		if ( isset( $settings->sub_heading_font_size_select ) ) {
+			unset( $settings->sub_heading_font_size_select );
+		}
+
+		// Alignment
+		if ( isset( $settings->heading_tablet_alignment ) && ! empty( $settings->heading_tablet_alignment ) ) {
+			$settings->heading_alignment_medium = $settings->heading_tablet_alignment;
+			unset( $settings->heading_tablet_alignment );
+		}
+		if ( isset( $settings->heading_mobile_alignment ) && ! empty( $settings->heading_mobile_alignment ) ) {
+			$settings->heading_alignment_responsive = $settings->heading_mobile_alignment;
+			unset( $settings->heading_mobile_alignment );
+		}
+
+		return $settings;
+	}
 }
 
 /**
@@ -37,8 +221,32 @@ FLBuilder::register_module('PPHeadingModule', array(
         'sections'      => array( // Tab Sections
             'heading_section'       => array( // Section
                 'title'        => __('Heading', 'bb-powerpack'), // Section Title
-                'fields'       => array( // Section Fields
-                    'dual_heading'  => array(
+				'fields'       => array( // Section Fields
+					'heading_tag'    => array(
+                        'type'          => 'select',
+                        'label'         => __('Tag', 'bb-powerpack'),
+                        'default'       => 'h2',
+                        'options'       => array(
+                            'h1'            => 'H1',
+                            'h2'            => 'H2',
+                            'h3'            => 'H3',
+                            'h4'            => 'H4',
+                            'h5'            => 'H5',
+                            'h6'            => 'H6',
+                        )
+                    ),
+                    'heading_title'   => array(
+                        'type'          => 'text',
+                        'label'         => __('Title', 'bb-powerpack'),
+                        'class'         => '',
+                        'default'       => __('Title', 'bb-powerpack'),
+                        'connections'   => array( 'string', 'html', 'url' ),
+                        'preview'       => array(
+                            'type'      => 'text',
+                            'selector'  => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
+                        )
+					),
+					'dual_heading'  => array(
                         'type'          => 'pp-switch',
                         'label'         => __('Dual Heading?', 'bb-powerpack'),
                         'default'       => 'no',
@@ -53,17 +261,6 @@ FLBuilder::register_module('PPHeadingModule', array(
                             )
                         ),
                         'help'  => __('This option allows you to create dual color heading or dual font heading.', 'bb-powerpack')
-                    ),
-                    'heading_title'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Title', 'bb-powerpack'),
-                        'class'         => '',
-                        'default'       => __('Title', 'bb-powerpack'),
-                        'connections'   => array( 'string', 'html', 'url' ),
-                        'preview'       => array(
-                            'type'      => 'text',
-                            'selector'  => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                        )
                     ),
                     'heading_title2'   => array(
                         'type'          => 'text',
@@ -90,7 +287,18 @@ FLBuilder::register_module('PPHeadingModule', array(
                             'property'          => 'display'
                         )
                     ),
-                    'enable_link'   => array(
+                    'heading_alignment'     => array(
+                       'type'                   => 'align',
+                       'label'                  => __('Alignment', 'bb-powerpack'),
+					   'default'                => 'center',
+					   'responsive'				=> true
+                   ),
+                )
+			),
+			'heading_link'	=> array(
+				'title'			=> __('Link', 'bb-powerpack'),
+				'fields'		=> array(
+					'enable_link'   => array(
                         'type'          => 'pp-switch',
                         'label'         => __('Enable Link', 'bb-powerpack'),
                         'default'       => 'yes',
@@ -100,55 +308,22 @@ FLBuilder::register_module('PPHeadingModule', array(
                         ),
                         'toggle'        => array(
                             'yes'           => array(
-                                'fields'        => array('heading_link', 'heading_link_target')
+                                'fields'        => array('heading_link')
                             )
                         )
                     ),
  				    'heading_link'          => array(
  						'type'          => 'link',
  						'label'         => __('Link', 'bb-powerpack'),
-                        'connections'   => array( 'url' ),
+						'connections'   => array( 'url' ),
+						'show_target'	=> true,
+						'show_nofollow'	=> true,
  						'preview'         => array(
  							'type'            => 'none'
  						)
  					),
- 					'heading_link_target'   => array(
- 						'type'          => 'select',
- 						'label'         => __('Link Target', 'bb-powerpack'),
- 						'default'       => '_self',
- 						'options'       => array(
- 							'_self'         => __('Same Window', 'bb-powerpack'),
- 							'_blank'        => __('New Window', 'bb-powerpack')
- 						),
- 						'preview'         => array(
- 							'type'            => 'none'
- 						)
- 					),
-					'heading_tag'    => array(
-                        'type'          => 'select',
-                        'label'         => __('Tag', 'bb-powerpack'),
-                        'default'       => 'h2',
-                        'options'       => array(
-                            'h1'            => 'H1',
-                            'h2'            => 'H2',
-                            'h3'            => 'H3',
-                            'h4'            => 'H4',
-                            'h5'            => 'H5',
-                            'h6'            => 'H6',
-                        )
-                    ),
-                    'heading_alignment'     => array(
-                       'type'                   => 'pp-switch',
-                       'label'                  => __('Alignment', 'bb-powerpack'),
-                       'default'                => 'center',
-                       'options'                => array(
-                            'left'                  => __('Left', 'bb-powerpack'),
-                            'center'                => __('Center', 'bb-powerpack'),
-                            'right'                 => __('Right', 'bb-powerpack'),
-                        )
-                   ),
-                )
-            ),
+				)
+			),
             'heading_sub_title'         => array(
                 'title'                     => __('Description', 'bb-powerpack'),
                 'fields'                    => array(
@@ -179,34 +354,34 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'label'     => __('Separator', 'bb-powerpack'),
                         'default'     => 'left',
                         'options'       => array(
-                            'no_spacer'          => __('No Separator', 'bb-powerpack'),
-                            'inline'          => __('Inline', 'bb-powerpack'),
-                            'line_only'          => __('Line', 'bb-powerpack'),
-                            'icon_only'          => __('Icon/Image', 'bb-powerpack'),
-                            'line_with_icon'     => __('Line With Icon/Image', 'bb-powerpack'),
+                            'no_spacer'			=> __('No Separator', 'bb-powerpack'),
+                            'inline'        	=> __('Inline', 'bb-powerpack'),
+                            'line_only'     	=> __('Line', 'bb-powerpack'),
+                            'icon_only'     	=> __('Icon/Image', 'bb-powerpack'),
+                            'line_with_icon'    => __('Line With Icon/Image', 'bb-powerpack'),
                         ),
                         'toggle' => array(
-                             'inline'        => array(
-                                 'fields'  => array('heading_line_style', 'font_title_line_space'),
-                                 'sections' => array('heading_line_style_section'),
-                             ),
-                             'line_only'      => array(
-                                 'fields'  => array('heading_line_style', 'heading_separator_postion'),
-                                 'sections' => array('heading_line_style_section', 'heading_separator_style_section'),
-                             ),
-                             'icon_only'      => array(
-                                 'fields'  => array('heading_separator_postion', 'font_icon_color'),
-                                 'sections'  => array('heading_separator_style_section', 'heading_icon_image_style_section', 'heading_icon_image_settings'),
-                             ),
-                             'line_with_icon'      => array(
-                                 'fields'  => array('heading_line_style', 'font_icon_line_space', 'heading_separator_postion', 'font_icon_color'),
-                                 'sections' => array('heading_line_style_section', 'heading_separator_style_section', 'heading_icon_image_style_section', 'heading_icon_image_settings')
-                             ),
-                             'no_spacer' => array(
-                                 'fields' => array(),
-                                 'sections' => array(),
-                             )
-                         )
+							'inline'        => array(
+								'fields'  => array('heading_line_style', 'font_title_line_space'),
+								'sections' => array('heading_line_style_section'),
+							),
+							'line_only'      => array(
+								'fields'  => array('heading_line_style', 'heading_separator_postion'),
+								'sections' => array('heading_line_style_section', 'heading_separator_style_section'),
+							),
+							'icon_only'      => array(
+								'fields'  => array('heading_separator_postion', 'font_icon_color'),
+								'sections'  => array('heading_separator_style_section', 'heading_icon_image_style_section', 'heading_icon_image_settings'),
+							),
+							'line_with_icon'      => array(
+								'fields'  => array('heading_line_style', 'font_icon_line_space', 'heading_separator_postion', 'font_icon_color'),
+								'sections' => array('heading_line_style_section', 'heading_separator_style_section', 'heading_icon_image_style_section', 'heading_icon_image_settings')
+							),
+							'no_spacer' => array(
+								'fields' => array(),
+								'sections' => array(),
+							)
+                        )
                      ),
                      'heading_separator_postion' => array(
                          'type'      => 'select',
@@ -230,10 +405,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                           )
                      ),
                      'font_title_line_space'   => array(
-                         'type'          => 'text',
+                         'type'          => 'unit',
                          'label'         => __('Space between Line & Title', 'bb-powerpack'),
-                         'description'   => 'px',
-                         'class'         => 'bb-heading-input input-small',
+						 'units'   		=> array('px'),
+						 'slider'		=> true,
                          'default'       => '20',
                          'preview'       => array(
                              'type'      => 'css',
@@ -283,10 +458,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'default'       => '',
                     ),
                     'font_icon_line_space'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Space between Line & Icon/Image', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '20',
                         'preview'       => array(
                             'type'      => 'css',
@@ -310,10 +485,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                 'title'             => __('Separator Size & Color', 'bb-powerpack'), // Section Title
                 'fields'            => array( // Section Fields
 					'line_width'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Width', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '100',
                         'preview'       => array(
                             'type'      => 'css',
@@ -347,10 +522,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         )
                     ),
                     'line_height'       => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Height', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '1',
                         'preview'       => array(
                             'type'      => 'css',
@@ -420,10 +595,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                 'title'             => __('Icon/Image Style', 'bb-powerpack'), // Section Title
                 'fields'            => array( // Section Fields
                     'font_icon_font_size'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Icon Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '16',
                         'preview'       => array(
                             'type'      => 'css',
@@ -456,7 +631,8 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'type'          => 'color',
                         'label'         => __('Background Color', 'bb-powerpack'),
                         'default'       => '',
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'show_alpha'	=> true,
                         'preview'         => array(
                             'type'            => 'css',
                             'rules'           => array(
@@ -476,10 +652,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'color'               => 'eeeeee'
                     ),
                     'font_icon_border_width'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Border Width', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '0',
                         'preview'       => array(
                             'type'      => 'css',
@@ -530,10 +706,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         )
                     ),
                     'font_icon_border_radius'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Round Corners', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '100',
                         'preview'       => array(
                             'type'      => 'css',
@@ -564,105 +740,40 @@ FLBuilder::register_module('PPHeadingModule', array(
                     'field_separator_6'  => array(
                         'type'                => 'pp-separator',
                         'color'               => 'eeeeee'
-                    ),
-                    'font_icon_padding_top'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Padding Top', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '0',
-                        'preview'       => array(
+					),
+					'font_icon_padding'	=> array(
+						'type'		=> 'dimension',
+						'label'		=> __('Padding', 'bb-powerpack'),
+						'units'   	=> array('px'),
+						'slider'	=> true,
+						'default'	=> '0',
+						'responsive'	=> false,
+						'preview'       => array(
                             'type'      => 'css',
                             'rules'           => array(
                                array(
                                    'selector'        => '.pp-heading-content .pp-heading-separator .pp-heading-separator-icon',
-                                   'property'        => 'padding-top',
+                                   'property'        => 'padding',
                                    'unit'            => 'px'
                                ),
                                array(
                                    'selector'        => '.pp-heading-content .pp-heading-separator.icon_only span',
-                                   'property'        => 'padding-top',
+                                   'property'        => 'padding',
                                    'unit'            => 'px'
                                ),
                            ),
                         )
-                    ),
-                    'font_icon_padding_bottom'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Padding Bottom', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '0',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'rules'           => array(
-                               array(
-                                   'selector'        => '.pp-heading-content .pp-heading-separator .pp-heading-separator-icon',
-                                   'property'        => 'padding-bottom',
-                                   'unit'            => 'px'
-                               ),
-                               array(
-                                   'selector'        => '.pp-heading-content .pp-heading-separator.icon_only span',
-                                   'property'        => 'padding-bottom',
-                                   'unit'            => 'px'
-                               ),
-                           ),
-                        )
-                    ),
-                    'font_icon_padding_left'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Padding Left', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '0',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'rules'           => array(
-                               array(
-                                   'selector'        => '.pp-heading-content .pp-heading-separator .pp-heading-separator-icon',
-                                   'property'        => 'padding-left',
-                                   'unit'            => 'px'
-                               ),
-                               array(
-                                   'selector'        => '.pp-heading-content .pp-heading-separator.icon_only span',
-                                   'property'        => 'padding-left',
-                                   'unit'            => 'px'
-                               ),
-                           ),
-                        )
-                    ),
-                    'font_icon_padding_right'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Padding Right', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '0',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'rules'           => array(
-                               array(
-                                   'selector'        => '.pp-heading-content .pp-heading-separator .pp-heading-separator-icon',
-                                   'property'        => 'padding-right',
-                                   'unit'            => 'px'
-                               ),
-                               array(
-                                   'selector'        => '.pp-heading-content .pp-heading-separator.icon_only span',
-                                   'property'        => 'padding-right',
-                                   'unit'            => 'px'
-                               ),
-                           ),
-                        )
-                    ),
+					),
                 )
             ),
             'heading_separator_style_section'    => array( // Section
                 'title'             => __('Margin', 'bb-powerpack'), // Section Title
                 'fields'            => array( // Section Fields
                     'separator_heading_top_margin'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Top Margin', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+                        'type'          => 'unit',
+                        'label'         => __('Margin Top', 'bb-powerpack'),
+                        'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '10',
                         'preview'       => array(
                             'type'      => 'css',
@@ -672,10 +783,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         )
                     ),
                     'separator_heading_bottom_margin' => array(
-                        'type'          => 'text',
-                        'label'         => __('Bottom Margin', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+                        'type'          => 'unit',
+                        'label'         => __('Margin Bottom', 'bb-powerpack'),
+                        'units'   		=> array('px'),
+						'slider'		=> true,
                         'default'       => '10',
                         'preview'       => array(
                             'type'      => 'css',
@@ -693,7 +804,24 @@ FLBuilder::register_module('PPHeadingModule', array(
         'sections'      => array( // Tab Sections
             'main_heading_style'       => array( // Section
                 'title'         => __('Title', 'bb-powerpack'), // Section Title
-                'fields'        => array( // Section Fields
+				'fields'        => array( // Section Fields
+					'heading_color_type'	=> array(
+						'type'		=> 'pp-switch',
+						'label'		=> __('Color Type', 'bb-powerpack'),
+						'default'	=> 'solid',
+						'options'	=> array(
+							'solid'		=> __('Solid', 'bb-powerpack'),
+							'gradient'	=> __('Gradient', 'bb-powerpack'),
+						),
+						'toggle'	=> array(
+							'solid'		=> array(
+								'fields'	=> array( 'heading_color' )
+							),
+							'gradient'	=> array(
+								'fields'	=> array( 'heading_gradient_setting' )
+							)
+						)
+					),
                     'heading_color'    => array(
                         'type'          => 'color',
                         'label'         => __('Color', 'bb-powerpack'),
@@ -705,8 +833,21 @@ FLBuilder::register_module('PPHeadingModule', array(
                             'selector'        => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
                             'property'        => 'color'
                         )
-                    ),
-                    'heading_bg_color' => array(
+					),
+					'heading_gradient_setting'	=> array(
+						'type'		=> 'gradient',
+						'label'		=> __('Gradient', 'bb-powerpack'),
+						'preview'	=> array(
+							'type'		=> 'css',
+							'selector'  => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
+                            'property'  => 'background-image'
+						)
+					),
+					'field_separator_1'  => array(
+                        'type'                => 'pp-separator',
+                        'color'               => 'eeeeee'
+					),
+					'heading_bg_color' => array(
                         'type'          => 'color',
                         'label'         => __('Background Color', 'bb-powerpack'),
                         'default'       => '',
@@ -718,16 +859,16 @@ FLBuilder::register_module('PPHeadingModule', array(
                             'property'        => 'background-color'
                         )
                     ),
-                    'field_separator_1'  => array(
+					'field_separator_1_1'  => array(
                         'type'                => 'pp-separator',
                         'color'               => 'eeeeee'
-                    ),
+					),
                     'heading_border_style'  => array(
                         'type'                  => 'select',
                         'label'                 => __('Border Style', 'bb-powerpack'),
                         'default'               => 'none',
                         'options'               => array(
-                            'none'                => __('None', 'bb-powerpack'),
+                            'none'                	=> __('None', 'bb-powerpack'),
                             'dashed'                => __('Dashed', 'bb-powerpack'),
                             'dotted'                => __('Dotted', 'bb-powerpack'),
                             'double'                => __('Double', 'bb-powerpack'),
@@ -739,79 +880,29 @@ FLBuilder::register_module('PPHeadingModule', array(
                                 array(
                                     'selector'              => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
                                     'property'              => 'border-top-style',
-                                    'unit'                  => 'px'
                                 ),
                                 array(
                                     'selector'              => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
                                     'property'              => 'border-bottom-style',
-                                    'unit'                  => 'px'
                                 ),
                                 array(
                                     'selector'              => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
                                     'property'              => 'border-left-style',
-                                    'unit'                  => 'px'
                                 ),
                                 array(
                                     'selector'              => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
                                     'property'              => 'border-right-style',
-                                    'unit'                  => 'px'
                                 )
                             )
                         )
-                    ),
-                    'heading_border'   => array(
-                        'type'              => 'pp-multitext',
-                        'label'             => __('Border Width', 'bb-powerpack'),
-                        'description'       => 'px',
-                        'default'           => array(
-                            'top'               => 0,
-                            'bottom'            => 0,
-                            'left'              => 0,
-                            'right'             => 0
-                        ),
-                        'options'           => array(
-                            'top'               => array(
-                                'placeholder'       => __('Top', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-up',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'border-top-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Top', 'bb-powerpack')
-                            ),
-                            'bottom'            => array(
-                                'placeholder'       => __('Bottom', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-down',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'border-bottom-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Bottom', 'bb-powerpack')
-                            ),
-                            'left'            => array(
-                                'placeholder'       => __('Left', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-left',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'border-left-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Left', 'bb-powerpack')
-                            ),
-                            'right'            => array(
-                                'placeholder'       => __('Right', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-right',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'border-right-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Right', 'bb-powerpack')
-                            ),
-                        )
-                    ),
+					),
+					'heading_border'	=> array(
+						'type'				=> 'dimension',
+						'label'				=> __('Border Width', 'bb-powerpack'),
+						'units'				=> array('px'),
+						'slider'			=> true,
+						'responsive'		=> false,
+					),
                     'heading_border_color' => array(
                         'type'          => 'color',
                         'label'         => __('Border Color', 'bb-powerpack'),
@@ -826,65 +917,25 @@ FLBuilder::register_module('PPHeadingModule', array(
                     'field_separator_2'  => array(
                         'type'                => 'pp-separator',
                         'color'               => 'eeeeee'
-                    ),
-                    'heading_padding'   => array(
-                        'type'              => 'pp-multitext',
-                        'label'             => __('Padding', 'bb-powerpack'),
-                        'description'       => 'px',
-                        'default'           => array(
-                            'top'               => 0,
-                            'bottom'            => 0,
-                            'left'              => 0,
-                            'right'             => 0
-                        ),
-                        'options'           => array(
-                            'top'               => array(
-                                'placeholder'       => __('Top', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-up',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'padding-top',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Top', 'bb-powerpack')
-                            ),
-                            'bottom'            => array(
-                                'placeholder'       => __('Bottom', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-down',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'padding-bottom',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Bottom', 'bb-powerpack')
-                            ),
-                            'left'            => array(
-                                'placeholder'       => __('Left', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-left',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'padding-left',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Left', 'bb-powerpack')
-                            ),
-                            'right'            => array(
-                                'placeholder'       => __('Right', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-right',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-                                    'property'          => 'padding-right',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Right', 'bb-powerpack')
-                            ),
-                        )
-                    ),
+					),
+					'heading_padding'	=> array(
+						'type'				=> 'dimension',
+						'label'				=> __('Padding', 'bb-powerpack'),
+						'units'				=> array('px'),
+						'slider'			=> true,
+						'responsive'		=> false,
+						'preview'			=> array(
+							'type'				=> 'css',
+							'selector'			=> '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
+							'property'			=> 'padding',
+							'unit'				=> 'px'
+						)
+					),
                     'heading_top_margin'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Top Margin', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+                        'type'          => 'unit',
+                        'label'         => __('Margin Top', 'bb-powerpack'),
+                        'units'			=> array('px'),
+						'slider'		=> true,
                         'default'       => '10',
                         'preview'       => array(
                             'type'      => 'css',
@@ -894,10 +945,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         )
                     ),
                     'heading_bottom_margin'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Bottom Margin', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+                        'type'          => 'unit',
+                        'label'         => __('Margin Bottom', 'bb-powerpack'),
+                        'units'			=> array('px'),
+						'slider'		=> true,
                         'default'       => '10',
                         'preview'       => array(
                             'type'      => 'css',
@@ -906,92 +957,29 @@ FLBuilder::register_module('PPHeadingModule', array(
                             'unit'      => 'px'
                         )
 					),
-					'heading_show_shadow'	=> array(
-						'type'                 => 'pp-switch',
-                        'label'                => __( 'Enable Text Shadow', 'bb-powerpack' ),
-                        'default'              => 'no',
-                        'options'              => array(
-                            'yes'          	=> __( 'Yes', 'bb-powerpack' ),
-                            'no'            => __( 'No', 'bb-powerpack' ),
-                        ),
-                        'toggle'    =>  array(
-                            'yes'   => array(
-                                'fields'    => array( 'heading_shadow', 'heading_shadow_color' ),
-							),
-                        ),
-					),
-					'heading_shadow' 		=> array(
-						'type'              => 'pp-multitext',
-						'label'             => __( 'Text Shadow', 'bb-powerpack' ),
-						'default'           => array(
-							'vertical'			=> 2,
-							'horizontal'		=> 2,
-							'blur'				=> 0,
-						),
-						'options'			=> array(
-							'horizontal'		=> array(
-								'placeholder'		=> __('Horizontal', 'bb-powerpack'),
-								'tooltip'			=> __('Horizontal', 'bb-powerpack'),
-								'icon'				=> 'fa-arrows-h'
-							),
-							'vertical'			=> array(
-								'placeholder'		=> __('Vertical', 'bb-powerpack'),
-								'tooltip'			=> __('Vertical', 'bb-powerpack'),
-								'icon'				=> 'fa-arrows-v'
-							),
-							'blur'				=> array(
-								'placeholder'		=> __('Blur', 'bb-powerpack'),
-								'tooltip'			=> __('Blur', 'bb-powerpack'),
-								'icon'				=> 'fa-circle-o'
-							),
-						)
-					),
-					'heading_shadow_color' => array(
-                        'type'              => 'color',
-                        'label'             => __( 'Shadow Color', 'bb-powerpack' ),
-                        'default'           => 'rgba(0,0,0,0.3)',
-						'show_alpha'		=> true
-					),
-					'heading_gradient'	=> array(
-						'type'                 => 'pp-switch',
-                        'label'                => __( 'Enable Gradient Text', 'bb-powerpack' ),
-                        'default'              => 'no',
-                        'options'              => array(
-                            'yes'          	=> __( 'Yes', 'bb-powerpack' ),
-                            'no'            => __( 'No', 'bb-powerpack' ),
-                        ),
-                        'toggle'    =>  array(
-                            'yes'   => array(
-                                'fields'    => array( 'heading_gradient_primary_color', 'heading_gradient_secondary_color', 'heading_gradient_degree' ),
-							),
-                        ),
-					),
-					'heading_gradient_primary_color'	=> array(
-						'type'          		=> 'color',
-						'label'         		=> __( 'Primary Color', 'bb-powerpack' ),
-						'default'       		=> '',
-						'show_reset'    		=> true,
-						'show_alpha'			=> true,
-					),
-					'heading_gradient_secondary_color'	=> array(
-						'type'			=> 'color',
-						'label'     	=> __( 'Secondary Color', 'bb-powerpack' ),
-						'default'		=> '',
-						'show_reset' 	=> true,
-						'show_alpha'	=> true,
-					),
-					'heading_gradient_degree'	=> array(
-						'type'			=> 'text',
-						'label'			=> __('Degree', 'bb-powerpack'),
-						'default'		=> '-90',
-						'placeholder'	=> '-90',
-						'size'			=> '5'
-					)
                 ),
             ),
-            'heading2_style'       => array( // Section
-                'title'         => __('Secondary Title', 'bb-powerpack'), // Section Title
-                'fields'        => array( // Section Fields
+            'heading2_style'	=> array( // Section
+				'title'         	=> __('Secondary Title', 'bb-powerpack'), // Section Title
+				'collapsed'			=> true,
+				'fields'        	=> array( // Section Fields
+					'heading2_color_type'	=> array(
+						'type'		=> 'pp-switch',
+						'label'		=> __('Color Type', 'bb-powerpack'),
+						'default'	=> 'solid',
+						'options'	=> array(
+							'solid'		=> __('Solid', 'bb-powerpack'),
+							'gradient'	=> __('Gradient', 'bb-powerpack'),
+						),
+						'toggle'	=> array(
+							'solid'		=> array(
+								'fields'	=> array( 'heading2_color' )
+							),
+							'gradient'	=> array(
+								'fields'	=> array( 'heading2_gradient_setting' )
+							)
+						)
+					),
                     'heading2_color'    => array(
                         'type'          => 'color',
                         'label'         => __('Color', 'bb-powerpack'),
@@ -1003,6 +991,19 @@ FLBuilder::register_module('PPHeadingModule', array(
                             'selector'        => '.pp-heading-content .pp-heading span.pp-secondary-title',
                             'property'        => 'color'
                         )
+					),
+					'heading2_gradient_setting'	=> array(
+						'type'		=> 'gradient',
+						'label'		=> __('Gradient', 'bb-powerpack'),
+						'preview'	=> array(
+							'type'		=> 'css',
+							'selector'  => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
+                            'property'  => 'background-image'
+						)
+					),
+					'field_separator_2_1'  => array(
+                        'type'                => 'pp-separator',
+                        'color'               => 'eeeeee'
                     ),
                     'heading2_bg_color' => array(
                         'type'          => 'color',
@@ -1033,57 +1034,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                         ),
                     ),
                     'heading2_border'   => array(
-                        'type'              => 'pp-multitext',
-                        'label'             => __('Border Width', 'bb-powerpack'),
-                        'description'       => 'px',
-                        'default'           => array(
-                            'top'               => 0,
-                            'bottom'            => 0,
-                            'left'              => 0,
-                            'right'             => 0
-                        ),
-                        'options'           => array(
-                            'top'               => array(
-                                'placeholder'       => __('Top', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-up',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'border-top-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Top', 'bb-powerpack')
-                            ),
-                            'bottom'            => array(
-                                'placeholder'       => __('Bottom', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-down',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'border-bottom-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Bottom', 'bb-powerpack')
-                            ),
-                            'left'            => array(
-                                'placeholder'       => __('Left', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-left',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'border-left-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Left', 'bb-powerpack')
-                            ),
-                            'right'            => array(
-                                'placeholder'       => __('Right', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-right',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'border-right-width',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Right', 'bb-powerpack')
-                            ),
-                        )
+                        'type'				=> 'dimension',
+						'label'				=> __('Border Width', 'bb-powerpack'),
+						'units'				=> array('px'),
+						'slider'			=> true,
+						'responsive'		=> false,
                     ),
                     'heading2_border_color' => array(
                         'type'          => 'color',
@@ -1101,63 +1056,23 @@ FLBuilder::register_module('PPHeadingModule', array(
                         'color'               => 'eeeeee'
                     ),
                     'heading2_padding'   => array(
-                        'type'              => 'pp-multitext',
-                        'label'             => __('Padding', 'bb-powerpack'),
-                        'description'       => 'px',
-                        'default'           => array(
-                            'top'               => 0,
-                            'bottom'            => 0,
-                            'left'              => 0,
-                            'right'             => 0
-                        ),
-                        'options'           => array(
-                            'top'               => array(
-                                'placeholder'       => __('Top', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-up',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'padding-top',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Top', 'bb-powerpack')
-                            ),
-                            'bottom'            => array(
-                                'placeholder'       => __('Bottom', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-down',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'padding-bottom',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Bottom', 'bb-powerpack')
-                            ),
-                            'left'            => array(
-                                'placeholder'       => __('Left', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-left',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'padding-left',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Left', 'bb-powerpack')
-                            ),
-                            'right'            => array(
-                                'placeholder'       => __('Right', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-right',
-                                'preview'           => array(
-                                    'selector'          => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-                                    'property'          => 'padding-right',
-                                    'unit'              => 'px'
-                                ),
-                                'tooltip'           => __('Right', 'bb-powerpack')
-                            ),
-                        )
+                        'type'				=> 'dimension',
+						'label'				=> __('Padding', 'bb-powerpack'),
+						'units'				=> array('px'),
+						'slider'			=> true,
+						'responsive'		=> false,
+						'preview'			=> array(
+							'type'				=> 'css',
+							'selector'			=> '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
+							'property'			=> 'padding',
+							'unit'				=> 'px'
+						)
                     ),
                     'heading2_left_margin'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Margin Left', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+                        'units'			=> array('px'),
+						'slider'		=> true,
                         'default'       => '0',
                         'preview'       => array(
                             'type'      => 'css',
@@ -1166,91 +1081,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                             'unit'      => 'px'
                         )
 					),
-					'heading2_show_shadow'	=> array(
-						'type'                 => 'pp-switch',
-                        'label'                => __( 'Enable Text Shadow', 'bb-powerpack' ),
-                        'default'              => 'no',
-                        'options'              => array(
-                            'yes'          	=> __( 'Yes', 'bb-powerpack' ),
-                            'no'            => __( 'No', 'bb-powerpack' ),
-                        ),
-                        'toggle'    =>  array(
-                            'yes'   => array(
-                                'fields'    => array( 'heading2_shadow', 'heading2_shadow_color' ),
-							),
-                        ),
-					),
-					'heading2_shadow' 		=> array(
-						'type'              => 'pp-multitext',
-						'label'             => __( 'Text Shadow', 'bb-powerpack' ),
-						'default'           => array(
-							'vertical'			=> 2,
-							'horizontal'		=> 2,
-							'blur'				=> 0,
-						),
-						'options'			=> array(
-							'horizontal'		=> array(
-								'placeholder'		=> __('Horizontal', 'bb-powerpack'),
-								'tooltip'			=> __('Horizontal', 'bb-powerpack'),
-								'icon'				=> 'fa-arrows-h'
-							),
-							'vertical'			=> array(
-								'placeholder'		=> __('Vertical', 'bb-powerpack'),
-								'tooltip'			=> __('Vertical', 'bb-powerpack'),
-								'icon'				=> 'fa-arrows-v'
-							),
-							'blur'				=> array(
-								'placeholder'		=> __('Blur', 'bb-powerpack'),
-								'tooltip'			=> __('Blur', 'bb-powerpack'),
-								'icon'				=> 'fa-circle-o'
-							),
-						)
-					),
-					'heading2_shadow_color' => array(
-                        'type'              => 'color',
-                        'label'             => __( 'Shadow Color', 'bb-powerpack' ),
-						'default'           => 'rgba(0,0,0,0.3)',
-						'show_alpha'		=> true
-					),
-					'heading2_gradient'	=> array(
-						'type'                 => 'pp-switch',
-                        'label'                => __( 'Enable Gradient Text', 'bb-powerpack' ),
-                        'default'              => 'no',
-                        'options'              => array(
-                            'yes'          	=> __( 'Yes', 'bb-powerpack' ),
-                            'no'            => __( 'No', 'bb-powerpack' ),
-                        ),
-                        'toggle'    =>  array(
-                            'yes'   => array(
-                                'fields'    => array( 'heading2_gradient_primary_color', 'heading2_gradient_secondary_color', 'heading2_gradient_degree' ),
-							),
-                        ),
-					),
-					'heading2_gradient_primary_color'	=> array(
-						'type'          		=> 'color',
-						'label'         		=> __( 'Primary Color', 'bb-powerpack' ),
-						'default'       		=> '',
-						'show_reset'    		=> true,
-						'show_alpha'			=> true,
-					),
-					'heading2_gradient_secondary_color'	=> array(
-						'type'			=> 'color',
-						'label'     	=> __( 'Secondary Color', 'bb-powerpack' ),
-						'default'		=> '',
-						'show_reset' 	=> true,
-						'show_alpha'	=> true,
-					),
-					'heading2_gradient_degree'	=> array(
-						'type'			=> 'text',
-						'label'			=> __('Degree', 'bb-powerpack'),
-						'default'		=> '-90',
-						'placeholder'	=> '-90',
-						'size'			=> '5'
-					)
                 )
             ),
             'sub_heading_style'       => array( // Section
-                'title'         => __('Description', 'bb-powerpack'), // Section Title
+				'title'         => __('Description', 'bb-powerpack'), // Section Title
+				'collapsed'		=> true,
                 'fields'        => array( // Section Fields
                     'sub_heading_color'    => array(
                         'type'          => 'color',
@@ -1264,10 +1099,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         )
                     ),
                     'sub_heading_top_margin'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Top Margin', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+                        'type'          => 'unit',
+                        'label'         => __('Margin Top', 'bb-powerpack'),
+                        'units'			=> array('px'),
+						'slider'		=> true,
                         'default'       => '0',
                         'preview'       => array(
                             'type'      => 'css',
@@ -1277,10 +1112,10 @@ FLBuilder::register_module('PPHeadingModule', array(
                         )
                     ),
                     'sub_heading_bottom_margin'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Bottom Margin', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
+                        'type'          => 'unit',
+                        'label'         => __('Margin Bottom', 'bb-powerpack'),
+                        'units'			=> array('px'),
+						'slider'		=> true,
                         'default'       => '0',
                         'preview'       => array(
                             'type'      => 'css',
@@ -1299,338 +1134,45 @@ FLBuilder::register_module('PPHeadingModule', array(
             'title_typography'      => array(
                 'title'                 => __('Title', 'bb-powerpack'),
                 'fields'                => array(
-                    'heading_font' => array(
-                        'type'          => 'font',
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-heading-content .pp-heading .heading-title'
-                        )
-                    ),
-                    'heading_font_size_select'     => array(
-						'type'          => 'pp-switch',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'default'       => 'default',
-						'options'       => array(
-							'default'       =>  __('Default', 'bb-powerpack'),
-							'custom'        =>  __('Custom', 'bb-powerpack')
-						),
-						'toggle'        => array(
-							'custom'        => array(
-								'fields'        => array('heading_font_size')
-							)
+					'title_typography'		=> array(
+						'type'					=> 'typography',
+						'label'					=> __('Typography', 'bb-powerpack'),
+						'responsive'  			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-heading-content .pp-heading .heading-title'
 						)
-					),
-					'heading_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Custom Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '20',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-heading .heading-title',
-                            'property'  => 'font-size',
-                            'unit'      => 'px'
-                        )
-					),
-                    'heading_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '1.4',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-heading .heading-title',
-                            'property'  => 'line-height',
-                        )
-                    ),
-                    'heading_letter_space'  => array(
-						'type'                  => 'text',
-						'label'                 => __('Letter Spacing', 'bb-powerpack'),
-						'description'           => 'px',
-						'class'                 => 'bb-heading-input input-small',
-						'default'               => '',
-						'preview'               => array(
-							'type'                  => 'css',
-							'selector'              => '.pp-heading-content .pp-heading .heading-title',
-							'property'              => 'letter-spacing',
-							'unit'                  => 'px'
-                       	)
-					),
-					'heading_text_transform'     => array(
-						'type'          => 'select',
-						'label'         => __('Text Transform', 'bb-powerpack'),
-						'default'       => 'default',
-						'options'       => array(
-							'default'       	=>  __('Default', 'bb-powerpack'),
-							'lowercase'        	=>  __('lowercase', 'bb-powerpack'),
-							'uppercase'        	=>  __('UPPERCASE', 'bb-powerpack')
-						),
-						'preview'               => array(
-							'type'                  => 'css',
-							'selector'              => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
-							'property'              => 'text-transform',
-                       	)
 					),
                 )
             ),
             'title2_typography'      => array(
                 'title'                 => __('Secondary Title', 'bb-powerpack'),
                 'fields'                => array(
-                    'heading2_font' => array(
-                        'type'          => 'font',
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title'
-                        )
-                    ),
-                    'heading2_font_size_select'     => array(
-						'type'          => 'pp-switch',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'default'       => 'default',
-						'options'       => array(
-							'default'       =>  __('Default', 'bb-powerpack'),
-							'custom'        =>  __('Custom', 'bb-powerpack')
-						),
-						'toggle'        => array(
-							'custom'        => array(
-								'fields'        => array('heading2_font_size')
-							)
+					'title2_typography'		=> array(
+						'type'					=> 'typography',
+						'label'					=> __('Typography', 'bb-powerpack'),
+						'responsive'  			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title'
 						)
-					),
-					'heading2_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Custom Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '20',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-heading span.pp-secondary-title',
-                            'property'  => 'font-size',
-                            'unit'      => 'px'
-                        )
-					),
-                    'heading2_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '1.4',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-heading span.pp-secondary-title',
-                            'property'  => 'line-height',
-                        )
-                    ),
-                    'heading2_letter_space'  => array(
-						'type'                  => 'text',
-						'label'                 => __('Letter Spacing', 'bb-powerpack'),
-						'description'           => 'px',
-						'class'                 => 'bb-heading-input input-small',
-						'default'               => '',
-						'preview'               => array(
-							'type'                  => 'css',
-							'selector'              => '.pp-heading-content .pp-heading span.pp-secondary-title',
-							'property'              => 'letter-spacing',
-							'unit'                  => 'px'
-						)
-					),
-					'heading2_text_transform'     => array(
-						'type'          => 'select',
-						'label'         => __('Text Transform', 'bb-powerpack'),
-						'default'       => 'default',
-						'options'       => array(
-							'default'       	=>  __('Default', 'bb-powerpack'),
-							'none'       		=>  __('None', 'bb-powerpack'),
-							'lowercase'        	=>  __('lowercase', 'bb-powerpack'),
-							'uppercase'        	=>  __('UPPERCASE', 'bb-powerpack')
-						),
-						'preview'               => array(
-							'type'                  => 'css',
-							'selector'              => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
-							'property'              => 'text-transform',
-                       	)
-					),   
+					),  
                 )
             ),
             'sub_heading_style'       => array( // Section
                 'title'         => __('Description', 'bb-powerpack'), // Section Title
-                'fields'        => array( // Section Fields
-                    'sub_heading_font' => array(
-                        'type'          => 'font',
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-heading-content .pp-sub-heading, .pp-heading-content .pp-sub-heading p'
-                        )
-                    ),
-                    'sub_heading_font_size_select'  => array(
-                        'type'      => 'pp-switch',
-                        'label'     => __('Font Size', 'bb-powerpack'),
-                        'default'   => 'default',
-                        'options'   => array(
-                            'default'   => __('Default', 'bb-powerpack'),
-                            'custom'    => __('Custom', 'bb-powerpack'),
-                        ),
-                        'toggle'    => array(
-                            'custom'    => array(
-                                'fields'    => array('sub_heading_font_size')
-                            )
-                        )
-                    ),
-                    'sub_heading_font_size'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Custom Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '16',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-sub-heading, .pp-heading-content .pp-sub-heading p',
-                            'property'  => 'font-size',
-                            'unit'      => 'px'
-                        )
-                    ),
-                    'sub_heading_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '1.6',
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'selector'  => '.pp-heading-content .pp-sub-heading, .pp-heading-content .pp-sub-heading p',
-                            'property'  => 'line-height',
-                        )
-                    ),
+				'fields'        => array( // Section Fields
+					'desc_typography'	=> array(
+						'type'					=> 'typography',
+						'label'					=> __('Typography', 'bb-powerpack'),
+						'responsive'  			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-heading-content .pp-sub-heading, .pp-heading-content .pp-sub-heading p'
+						)
+					),
                 )
             )
         )
     ),
-    'heading_responsive'       => array( // Tab
-        'title'         => __('Responsive', 'bb-powerpack'), // Tab title
-        'sections'      => array( // Tab Sections
-            'heading_responsive_tablet'    => array( // Section
-                'title'             => __('Tablet', 'bb-powerpack'), // Section Title
-                'fields'            => array( // Section Fields
-                    'heading_tablet_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Title Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-					),
-                    'heading_tablet_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Title Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-                    ),
-                    'heading2_tablet_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Secondary Title Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-					),
-                    'heading2_tablet_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Secondary Title Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-                    ),
-                    'sub_heading_tablet_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Description Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-					),
-                    'sub_heading_tablet_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Description Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-                    ),
-                    'heading_tablet_alignment'  => array(
-                       'type'                       => 'pp-switch',
-                       'label'                      => __('Alignment', 'bb-powerpack'),
-                       'default'                    => 'center',
-                       'options'                    => array(
-                            'left'                      => __('Left', 'bb-powerpack'),
-                            'center'                    => __('Center', 'bb-powerpack'),
-                            'right'                      => __('Right', 'bb-powerpack'),
-                        )
-                   ),
-                )
-            ),
-            'heading_responsive_mobile'    => array( // Section
-                'title'             => __('Mobile', 'bb-powerpack'), // Section Title
-                'fields'            => array( // Section Fields
-                    'heading_mobile_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Title Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-					),
-                    'heading_mobile_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Title Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-                    ),
-                    'heading2_mobile_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Secondary Title Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-					),
-                    'heading2_mobile_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Secondary Title Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-                    ),
-                    'sub_heading_mobile_font_size' => array(
-                        'type'          => 'text',
-                        'label'         => __('Description Font Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-					),
-                    'sub_heading_mobile_line_height_n'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Description Line Height', 'bb-powerpack'),
-                        'class'         => 'bb-heading-input input-small',
-                        'default'       => '',
-                    ),
-                    'heading_mobile_alignment'  => array(
-                       'type'                       => 'pp-switch',
-                       'label'                      => __('Alignment', 'bb-powerpack'),
-                       'default'                    => 'center',
-                       'options'                    => array(
-                            'left'                      => __('Left', 'bb-powerpack'),
-                            'center'                    => __('Center', 'bb-powerpack'),
-                            'right'                     => __('Right', 'bb-powerpack'),
-                        )
-                   ),
-                )
-            )
-        )
-    )
 ));

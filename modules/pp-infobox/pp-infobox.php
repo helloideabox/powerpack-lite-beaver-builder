@@ -23,11 +23,144 @@ class PPInfoBoxModule extends FLBuilderModule {
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
             'partial_refresh'   => true,
-            'icon'				=> 'layout.svg',
 		));
 		
 		$this->add_css( BB_POWERPACK_LITE()->fa_css );
-    }
+	}
+	
+	public function filter_settings( $settings, $helper )
+	{
+		// Handle old link, link_target, link_nofollow fields.
+		$settings = PP_Module_Fields::handle_link_field( $settings, array(
+			'link'			=> array(
+				'type'			=> 'link'
+			),
+			'link_target'	=> array(
+				'type'			=> 'target'
+			),
+			'link_nofollow'	=> array(
+				'type'			=> 'nofollow'
+			)
+		), 'link' );
+
+		// Handle button old padding field.
+		$settings = PP_Module_Fields::handle_multitext_field( $settings, 'button_padding', 'padding' );
+
+		// Handle button old margin field.
+		$settings = PP_Module_Fields::handle_multitext_field( $settings, 'read_more_margin', 'margin' );
+
+		// Handle old button border and radius fields.
+		$settings = PP_Module_Fields::handle_border_field( $settings, array(
+			'button_border_custom'	=> array(
+				'type'		=> 'width',
+				'condition'	=> ( isset( $settings->button_border ) && 'custom' == $settings->button_border )
+			),
+			'button_border_color'	=> array(
+				'type'		=> 'color',
+				'condition'	=> ( isset( $settings->button_border ) && 'custom' == $settings->button_border )
+			),
+			'button_border_style'	=> array(
+				'type'		=> 'style',
+				'condition'	=> ( isset( $settings->button_border ) && 'custom' == $settings->button_border )
+			),
+			'button_radius'	=> array(
+				'type'			=> 'radius'
+			)
+		), 'button_border_setting' );
+
+		if ( isset( $settings->button_border ) ) {
+			unset( $settings->button_border );
+		}
+
+		// Handle box old border fields.
+		$settings = PP_Module_Fields::handle_border_field( $settings, array(
+			'box_border_style'	=> array(
+				'type'				=> 'style'
+			),
+			'box_border_width'	=> array(
+				'type'				=> 'width'
+			),
+			'box_border_color'	=> array(
+				'type'				=> 'color'
+			),
+			'box_border_radius'	=> array(
+				'type'				=> 'radius'
+			)
+		), 'box_border' );
+
+		// Handle box old alignment_responsive field.
+		$settings = PP_Module_Fields::handle_alignment_field( $settings, 'alignment', 'alignment_responsive' );
+
+		// Handle icon old border fields.
+		$settings = PP_Module_Fields::handle_border_field( $settings, array(
+			'icon_border_width'		=> array(
+				'type'			=> 'width',
+				'condition'		=> ( isset( $settings->show_border ) && 'yes' == $settings->show_border )
+			),
+			'icon_border_color'		=> array(
+				'type'			=> 'color',
+				'condition'		=> ( isset( $settings->show_border ) && 'yes' == $settings->show_border )
+			),
+			'icon_border_style'		=> array(
+				'type'			=> 'style',
+				'condition'		=> ( isset( $settings->show_border ) && 'yes' == $settings->show_border )
+			),
+			'icon_border_radius'	=> array(
+				'type'			=> 'radius'
+			)
+		), 'icon_border' );
+
+		// Handle old typography fields - Title Prefix.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'title_prefix_font'	=> array(
+				'type'				=> 'font'
+			),
+			'title_prefix_font_size'	=> array(
+				'type'				=> 'font_size'
+			),
+			'title_prefix_line_height'	=> array(
+				'type'				=> 'line_height'
+			)
+		), 'title_prefix_typography' );
+
+		// Handle old typography fields - Title.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'title_font'	=> array(
+				'type'				=> 'font'
+			),
+			'title_font_size'	=> array(
+				'type'				=> 'font_size'
+			),
+			'title_line_height'	=> array(
+				'type'				=> 'line_height'
+			)
+		), 'title_typography' );
+
+		// Handle old typography fields - Description.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'text_font'	=> array(
+				'type'				=> 'font'
+			),
+			'text_font_size'	=> array(
+				'type'				=> 'font_size'
+			),
+			'text_line_height'	=> array(
+				'type'				=> 'line_height'
+			)
+		), 'desc_typography' );
+
+		// Handle old typography fields - Button.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'pp_infobox_read_more_font'	=> array(
+				'type'				=> 'font'
+			),
+			'pp_infobox_read_more_font_size'	=> array(
+				'type'				=> 'font_size'
+			),
+		), 'button_typography' );
+
+		return $settings;
+	}
 
     public function render_link()
     {
@@ -166,12 +299,11 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'connections'   => array( 'photo' ),
                     ),
                     'space_bt_icon_text'    => array(
-                        'type'                  => 'text',
+                        'type'                  => 'unit',
                         'label'                 => __('Space between icon and text', 'bb-powerpack'),
-                        'description'           => 'px',
+                        'units'           		=> array('px'),
                         'default'               => 10,
-                        'size'                  => 5,
-                        'maxlength'             => 3,
+                        'slider'				=> true,
                         'preview'               => array(
                             'type'                  => 'css',
                             'rules'                 => array(
@@ -294,6 +426,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
         'title'         => __('Link', 'bb-powerpack'),
         'sections'      => array(
             'pp_infobox_link_type'     => array(
+				'collapsed'		=> false,
                 'title'     => __('Link', 'bb-powerpack'),
                 'fields'    => array(
                     'pp_infobox_link_type'     => array(
@@ -309,17 +442,17 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         ),
                         'toggle'    => array(
                             'box'     => array(
-                                'fields'    => array('link', 'link_target')
+                                'fields'    => array('link')
                             ),
                             'title'     => array(
-                                'fields'    => array('link', 'link_target')
+                                'fields'    => array('link')
                             ),
                             'read_more'     => array(
-                                'fields'        => array('pp_infobox_read_more_text', 'link', 'link_target'),
+                                'fields'        => array('pp_infobox_read_more_text', 'link'),
                                 'sections'      => array('link_style', 'button_typography')
                             ),
                             'button'     => array(
-                                'fields'        => array('pp_infobox_read_more_text', 'link', 'link_target', 'link_css_class', 'button_bg_color', 'button_bg_hover_color', 'button_padding', 'button_radius', 'button_width', 'field_separator_1', 'field_separator_3'),
+                                'fields'        => array('pp_infobox_read_more_text', 'link', 'link_css_class', 'button_bg_color', 'button_bg_hover_color', 'button_padding', 'button_radius', 'button_width', 'field_separator_1', 'field_separator_3'),
                                 'sections'      => array('link_style', 'button_border', 'button_typography')
                             ),
                         )
@@ -337,35 +470,13 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'type'          => 'link',
 						'label'         => __('Link', 'bb-powerpack'),
 						'placeholder'   => 'http://www.example.com',
+						'show_target'	=> true,
+						'show_nofollow'	=> true,
                         'connections'   => array( 'url' ),
 						'preview'       => array(
 							'type'          => 'none'
 						)
                     ),
-                    'link_target'   => array(
-                        'type'          => 'select',
-                        'label'         => __('Link Target', 'bb-powerpack'),
-                        'default'       => '_self',
-                        'options'       => array(
-                            '_self'         => __('Same Window', 'bb-powerpack'),
-                            '_blank'        => __('New Window', 'bb-powerpack'),
-                        ),
-                        'preview'       => array(
-                            'type'          => 'none'
-                        )
-					),
-					'link_nofollow'	=> array(
-						'type'			=> 'pp-switch',
-						'label'			=> __('Link nofollow', 'bb-powerpack'),
-						'default'		=> 'yes',
-						'options'		=> array(
-							'yes'			=> __('Yes', 'bb-powerpack'),
-							'no'			=> __('No', 'bb-powerpack'),
-						),
-						'preview'		=> array(
-							'type'			=> 'none'
-						)
-					),
                     'link_css_class'    => array(
                         'type'  => 'text',
                         'label' => __('Custom CSS Class', 'bb-powerpack'),
@@ -374,16 +485,18 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                 ),
             ),
             'link_style'    => array(
+				'collapsed'		=> true,
                 'title'         => __('Style', 'bb-powerpack'),
                 'fields'        => array(
                     'button_bg_color'    => array(
                         'type'      => 'color',
                         'label'     => __('Background Color', 'bb-powerpack'),
                         'default'   => '',
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'show_alpha'	=> true,
                         'preview'   => array(
                             'type'      => 'css',
-                            'selector'  => '.pp-more-link',
+                            'selector'  => '.pp-infobox .pp-more-link',
                             'property'  => 'background-color'
                         ),
                     ),
@@ -391,7 +504,8 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'type'      => 'color',
                         'label'     => __('Background Hover Color', 'bb-powerpack'),
                         'default'   => '',
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'show_alpha'	=> true,
                         'preview'   => array(
                             'type'      => 'none',
                         ),
@@ -407,7 +521,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'show_reset'    => true,
                         'preview'   => array(
                             'type'  => 'css',
-                            'selector'  => '.pp-more-link',
+                            'selector'  => '.pp-infobox .pp-more-link',
                             'property'  => 'color'
                         ),
                     ),
@@ -418,115 +532,45 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'show_reset'    => true,
                         'preview'   => array(
                             'type'  => 'css',
-                            'selector'  => '.pp-more-link:hover',
+                            'selector'  => '.pp-infobox .pp-more-link:hover',
                             'property'  => 'color'
                         ),
                     ),
                     'field_separator_2' => array(
                         'type'      => 'pp-separator',
                         'color'     => 'eeeeee'
-                    ),
-                    'button_padding'       => array(
-                        'type'              => 'pp-multitext',
-                        'label'             => __('Padding', 'bb-powerpack'),
-                        'description'       => 'px',
-                        'default'           => array(
-                            'top'               => 10,
-                            'bottom'            => 10,
-                            'left'              => 15,
-                            'right'             => 15,
-                        ),
-                        'options'           => array(
-                            'top'               => array(
-                                'placeholder'       => __('Top', 'bb-powerpack'),
-                                'tooltip'           => __('Top', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-up',
-                                'preview'           => array(
-                                    'selector'          => '.pp-more-link',
-                                    'property'          => 'padding-top',
-                                    'unit'              => 'px'
-                                ),
-                            ),
-                            'bottom'            => array(
-                                'placeholder'       => __('Bottom', 'bb-powerpack'),
-                                'tooltip'           => __('Bottom', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-down',
-                                'preview'           => array(
-                                    'selector'          => '.pp-more-link',
-                                    'property'          => 'padding-bottom',
-                                    'unit'              => 'px'
-                                ),
-                            ),
-                            'left'              => array(
-                                'placeholder'       => __('Left', 'bb-powerpack'),
-                                'tooltip'           => __('Left', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-left',
-                                'preview'           => array(
-                                    'selector'          => '.pp-more-link',
-                                    'property'          => 'padding-left',
-                                    'unit'              => 'px'
-                                ),
-                            ),
-                            'right'             => array(
-                                'placeholder'       => __('Right', 'bb-powerpack'),
-                                'tooltip'           => __('Right', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-right',
-                                'preview'           => array(
-                                    'selector'          => '.pp-more-link',
-                                    'property'          => 'padding-right',
-                                    'unit'              => 'px'
-                                ),
-                            ),
-                        )
-                    ),
+					),
+					'button_padding'	=> array(
+						'type'				=> 'dimension',
+						'label'				=> __('Padding', 'bb-powerpack'),
+						'default'			=> '10',
+						'units'				=> array('px'),
+						'slider'			=> true,
+						'responsive'		=> true,
+						'preview'			=> array(
+							'type'				=> 'css',
+							'selector'			=> '.pp-infobox .pp-more-link',
+							'property'			=> 'padding',
+							'unit'				=> 'px'
+						)
+					),
                     'read_more_margin'       => array(
-                        'type'              => 'pp-multitext',
+                        'type'              => 'dimension',
                         'label'             => __('Margin', 'bb-powerpack'),
-                        'description'       => 'px',
-                        'default'           => array(
-                            'top'               => 0,
-                            'bottom'            => 0,
-                        ),
-                        'options'           => array(
-                            'top'               => array(
-                                'placeholder'       => __('Top', 'bb-powerpack'),
-                                'tooltip'           => __('Top', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-up',
-                                'preview'           => array(
-                                    'selector'          => '.pp-more-link',
-                                    'property'          => 'margin-top',
-                                    'unit'              => 'px'
-                                ),
-                            ),
-                            'bottom'            => array(
-                                'placeholder'       => __('Bottom', 'bb-powerpack'),
-                                'tooltip'           => __('Bottom', 'bb-powerpack'),
-                                'icon'              => 'fa-long-arrow-down',
-                                'preview'           => array(
-                                    'selector'          => '.pp-more-link',
-                                    'property'          => 'margin-bottom',
-                                    'unit'              => 'px'
-                                ),
-                            ),
-                        )
+						'default'           => '',
+						'units'				=> array('px'),
+						'slider'			=> true,
+						'responsive'		=> true,
+						'preview'			=> array(
+							'type'				=> 'css',
+							'selector'			=> '.pp-infobox .pp-more-link',
+							'property'			=> 'margin',
+							'unit'				=> 'px'
+						)
                     ),
                     'field_separator_3' => array(
                         'type'      => 'pp-separator',
                         'color'     => 'eeeeee'
-                    ),
-                    'button_radius'     => array(
-                        'type'      => 'text',
-                        'label'     => __('Round Corners', 'bb-powerpack'),
-                        'size'      => '4',
-                        'maxlength' => '3',
-                        'default'   => '0',
-                        'description'   => 'px',
-                        'preview'   => array(
-                            'type'  => 'css',
-                            'selector'  => '.pp-more-link',
-                            'property'  => 'border-radius',
-                            'unit'      => 'px'
-                        )
                     ),
                     'button_width'  => array(
                         'type'          => 'pp-switch',
@@ -544,57 +588,42 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         )
                     ),
                     'button_width_custom'   => array(
-                        'type'                  => 'text',
+                        'type'                  => 'unit',
                         'label'                 => __('Custom Width', 'bb-powerpack'),
                         'default'               => '',
-                        'size'                  => '4',
-                        'description'           => 'px'
+                        'units'					=> array('px'),
+						'slider'           		=> true,
+						'responsive'			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-infobox .pp-more-link',
+							'property'				=> 'width',
+							'unit'					=> 'px'
+						)
                     ),
                 )
             ),
             'button_border' => array(
+				'collapsed'		=> true,
                 'title'         => __('Border', 'bb-powerpack'),
                 'fields'        => array(
-                    'button_border' => array(
-                        'type'          => 'pp-switch',
-                        'label'         => __('Border', 'bb-powerpack'),
-                        'default'       => 'default',
-                        'options'       => array(
-                            'default'       => __('Default', 'bb-powerpack'),
-                            'custom'        => __('Custom', 'bb-powerpack')
-                        ),
-                        'toggle'    => array(
-                            'custom'    => array(
-                                'fields'    => array('button_border_custom', 'button_border_style', 'button_border_color', 'button_border_hover_color')
-                            )
-                        )
-                    ),
-                    'button_border_custom'  => array(
-                        'type'      => 'text',
-                        'label'     => __('Border Custom', 'bb-powerpack'),
-                        'default'   => '0',
-                        'size'      => '5',
-                        'description' => 'px'
-                    ),
-                    'button_border_style'   => array(
-                        'type'      => 'pp-switch',
-                        'label'     => __('Border Style', 'bb-powerpack'),
-                        'default'   => 'solid',
-                        'options'   => array(
-                            'solid'     => __('Solid', 'bb-powerpack'),
-                            'dashed'    => __('Dashed', 'bb-powerpack'),
-                            'dotted'    => __('Dotted', 'bb-powerpack')
-                        )
-                    ),
-                    'button_border_color'   => array(
-                        'type'          => 'color',
-                        'label'         => __('Border Color', 'bb-powerpack'),
-                        'show_reset'    => true
-                    ),
+					'button_border_setting' => array(
+						'type'          => 'border',
+						'label'         => __( 'Border', 'bb-powerpack' ),
+						'responsive'	=> true,
+						'preview'       => array(
+							'type'          => 'css',
+							'selector'		=> '.pp-infobox .pp-more-link',
+							'important'		=> true,
+						),
+					),
                     'button_border_hover_color'   => array(
                         'type'          => 'color',
                         'label'         => __('Border Hover Color', 'bb-powerpack'),
-                        'show_reset'    => true
+						'show_reset'    => true,
+						'preview'       => array(
+							'type'          => 'none',
+						),
                     )
                 )
             )
@@ -604,13 +633,15 @@ FLBuilder::register_module('PPInfoBoxModule', array(
         'title'     => __('Style', 'bb-powerpack'),
         'sections'  => array(
 			'box_style'     => array(
+				'collapsed'		=> false,
                 'title'         => __('Box', 'bb-powerpack'),
                 'fields'        => array(
                     'box_background'    => array(
                         'type'              => 'color',
                         'label'             => __('Background Color', 'bb-powerpack'),
                         'default'           => 'ffffff',
-                        'show_reset'        => true,
+						'show_reset'        => true,
+						'show_alpha'    	=> true,
                         'preview'           => array(
                             'type'              => 'css',
                             'selector'          => '.pp-infobox',
@@ -622,87 +653,22 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         'label'     => __('Background Hover Color', 'bb-powerpack'),
                         'default'   => '',
                         'show_reset'    => true,
+                        'show_alpha'    => true,
                         'preview'   => array(
                             'type'  => 'css',
                             'selector'  => '.pp-infobox:hover',
                             'property'  => 'background'
                         ),
-                    ),
-                    'box_border_style'    => array(
-                        'type'      => 'select',
-                        'label'     => __('Border Style', 'bb-powerpack'),
-                        'default'   => 'none',
-                        'options'   => array(
-                            'none'     => __('None', 'bb-powerpack'),
-                            'solid'     => __('Solid', 'bb-powerpack'),
-                            'dashed'     => __('Dashed', 'bb-powerpack'),
-                            'dotted'     => __('Dotted', 'bb-powerpack'),
-                            'double'     => __('Double', 'bb-powerpack'),
-                        ),
-                        'toggle'   => array(
-                            'solid'  => array(
-                                'fields'    => array('box_border_width', 'box_border_color'),
-                            ),
-                            'dashed'  => array(
-                                'fields'    => array('box_border_width', 'box_border_color'),
-                            ),
-                            'dotted'  => array(
-                                'fields'    => array('box_border_width', 'box_border_color'),
-                            ),
-                            'double'  => array(
-                                'fields'    => array('box_border_width', 'box_border_color'),
-                            ),
-                        ),
-                    ),
-                    'box_border_width'    => array(
-                        'type'      => 'text',
-                        'label'     => __('Border Width', 'bb-powerpack'),
-                        'default'   => '1',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-                        'description'   => 'px',
-                        'preview'   => array(
-                            'type'  => 'css',
-                            'selector'  => '.pp-infobox',
-                            'property'  => 'border-width',
-                            'unit'      => 'px'
-                        ),
-                    ),
-                    'box_border_color'    => array(
-                        'type'      => 'color',
-                        'label'     => __('Border Color', 'bb-powerpack'),
-                        'default'   => 'd8d8d8',
-                        'show_reset'    => true,
-                        'preview'   => array(
-                            'type'  => 'css',
-                            'selector'  => '.pp-infobox',
-                            'property'  => 'border-color'
-                        ),
-                    ),
-					'box_border_radius'     => array(
-                        'type'      => 'text',
-                        'label'     => __('Round Corners', 'bb-powerpack'),
-                        'size'      => '5',
-                        'maxlength' => '3',
-                        'default'   => '0',
-                        'description'   => 'px',
-                        'preview'   => array(
-                            'type'  => 'css',
-                            'selector'  => '.pp-infobox',
-                            'property'  => 'border-radius',
-                            'unit'      => 'px'
-                        )
-                    ),
+					),
                     'padding_top'   => array(
-                        'type'      => 'text',
-                        'size'      => '5',
-                        'maxlength'     => '3',
-                        'default'       => '20',
-                        'label'     => __('Top/Bottom Padding', 'bb-powerpack'),
-                        'description'   => 'px',
+                        'type'      	=> 'unit',
+						'label'     	=> __('Top/Bottom Padding', 'bb-powerpack'),
+						'default'       => '20',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'preview'       => array(
                             'type'          => 'css',
-                            'rules'     => array(
+                            'rules'     	=> array(
                                 array(
                                     'selector'      => '.pp-infobox',
                                     'property'      => 'padding-top',
@@ -717,15 +683,14 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         )
                     ),
                     'padding_left'   => array(
-                        'type'      => 'text',
-                        'size'      => '5',
-                        'maxlength'     => '3',
-                        'default'       => '20',
-                        'label'     => __('Left/Right Padding', 'bb-powerpack'),
-                        'description'   => 'px',
+                        'type'      	=> 'unit',
+						'label'     	=> __('Left/Right Padding', 'bb-powerpack'),
+						'default'       => '20',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'preview'       => array(
                             'type'          => 'css',
-                            'rules'     => array(
+                            'rules'     	=> array(
                                 array(
                                     'selector'      => '.pp-infobox',
                                     'property'      => 'padding-left',
@@ -739,30 +704,26 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                             ),
                         )
                     ),
-					'alignment' => array(
-                        'type'      => 'pp-switch',
-                        'label'     => __('Content Alignment', 'bb-powerpack'),
-                        'default'   => 'center',
-                        'options'   => array(
-                            'left'      => __('Left', 'bb-powerpack'),
-                            'center'    => __('Center', 'bb-powerpack'),
-                            'right'     => __('Right', 'bb-powerpack'),
-                        )
+					'alignment' 	=> array(
+                        'type'      	=> 'align',
+                        'label'     	=> __('Content Alignment', 'bb-powerpack'),
+						'default'   	=> 'center',
+						'responsive'	=> true
 					),
-					'alignment_responsive' => array(
-						'type'      => 'pp-switch',
-						'label'     => __('Responsive Alignment', 'bb-powerpack'),
-						'default'   => 'default',
-						'options'   => array(
-							'default'	=> __('Default', 'bb-powerpack'),
-							'left'      => __('Left', 'bb-powerpack'),
-							'center'    => __('Center', 'bb-powerpack'),
-							'right'     => __('Right', 'bb-powerpack'),
-						)
-					)
+					'box_border'	=> array(
+						'type'          => 'border',
+						'label'         => __( 'Border', 'bb-powerpack' ),
+						'responsive'	=> true,
+						'preview'   	=> array(
+                            'type'  		=> 'css',
+                            'selector'  	=> '.pp-infobox',
+                            'property'  	=> 'border',
+                        ),
+					),
                 )
             ),
 			'title_prefix_style'   => array(
+				'collapsed'		=> true,
                 'title'         => __('Title Prefix', 'bb-powerpack'),
                 'fields'        => array(
                     'title_prefix_color'    => array(
@@ -809,6 +770,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                 )
             ),
             'title_style'   => array(
+				'collapsed'		=> true,
                 'title'         => __('Title', 'bb-powerpack'),
                 'fields'        => array(
                     'title_color'    => array(
@@ -863,6 +825,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                 )
             ),
             'description_style' => array(
+				'collapsed'		=> true,
                 'title'             => __('Description', 'bb-powerpack'),
                 'fields'            => array(
                     'text_color'    => array(
@@ -922,15 +885,15 @@ FLBuilder::register_module('PPInfoBoxModule', array(
         'title'     => __('Icon Style', 'bb-powerpack'),
         'sections'  => array(
             'icon_size'   => array(
+				'collapsed'	=> false,
                 'title'     => __('Size', 'bb-powerpack'),
                 'fields'    => array(
                     'icon_font_size'    => array(
-						'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-                        'default'       => '16',
+						'type'          => 'unit',
 						'label'         => __('Icon Size', 'bb-powerpack'),
-						'description'   => 'px',
+                        'default'       => '16',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'         => array(
@@ -948,12 +911,11 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         )
 					),
                     'icon_width'    => array(
-                        'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '3',
-                        'default'       => '0',
+						'type'          => 'unit',
 						'label'         => __('Icon Box Size', 'bb-powerpack'),
-                        'description'   => 'px',
+						'default'       => '0',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'           => array(
@@ -985,12 +947,11 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         )
                     ),
                     'image_width'    => array(
-						'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '3',
-                        'default'     => '100',
+						'type'          => 'unit',
 						'label'         => __('Image Icon Custom Size', 'bb-powerpack'),
-						'description'   => 'px',
+                        'default'     	=> '100',
+						'units'   		=> array('px'),
+						'slider'		=> true,
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'           => array(
@@ -1020,6 +981,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                 ),
             ),
             'icon_colors'   => array(
+				'collapsed'		=> true,
                 'title'         => __('Colors', 'bb-powerpack'),
                 'fields'        => array(
                     'icon_color'    => array(
@@ -1045,7 +1007,8 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                     'icon_background'    => array(
                         'type'          => 'color',
                         'label'         => __('Background', 'bb-powerpack'),
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'show_alpha'	=> true,
                         'preview'       => array(
                             'type'          => 'css',
                             'selector'      => '.pp-infobox-icon-inner',
@@ -1055,7 +1018,8 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                     'icon_background_hover'    => array(
                         'type'          => 'color',
                         'label'         => __('Background Hover Color', 'bb-powerpack'),
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'show_alpha'	=> true,
                         'preview'       => array(
                             'type'          => 'css',
                             'selector'      => '.pp-infobox-icon-inner:hover',
@@ -1065,73 +1029,13 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                 )
             ),
             'icon_border'   => array(
+				'collapsed'		=> true,
                 'title'         => __('Border', 'bb-powerpack'),
                 'fields'        => array(
-                    'show_border'   => array(
-                        'type'      => 'pp-switch',
-                        'label'     => __('Show Border', 'bb-powerpack'),
-                        'default'   => 'no',
-                        'options'   => array(
-                            'yes'    => __('Yes', 'bb-powerpack'),
-                            'no'    => __('No', 'bb-powerpack'),
-                        ),
-                        'toggle'    => array(
-                            'yes'   => array(
-                                'fields'    => array ('icon_border_width', 'icon_border_color', 'icon_border_color_hover', 'icon_border_style', 'icon_box_size')
-                            )
-                        ),
-                    ),
-                    'icon_border_style'    => array(
-                        'type'      => 'pp-switch',
-                        'label'     => __('Border Style', 'bb-powerpack'),
-                        'default'   => 'solid',
-                        'options'   => array(
-                            'solid'     => __('Solid', 'bb-powerpack'),
-                            'dashed'     => __('Dashed', 'bb-powerpack'),
-                            'dotted'     => __('Dotted', 'bb-powerpack'),
-                            'double'     => __('Double', 'bb-powerpack'),
-                        ),
-                    ),
-                    'icon_border_width'    => array(
-						'type'          => 'text',
-						'label'         => __('Border Width', 'bb-powerpack'),
-						'default'       => 1,
-                        'size'          => 5,
-                        'maxlength'     => 2,
-                        'description'   => 'px',
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'rules'         => array(
-                                array(
-                                    'selector'      => '.pp-infobox-icon',
-                                    'property'      => 'border-width',
-                                    'unit'          => 'px'
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-image img',
-                                    'property'      => 'border-width',
-                                    'unit'          => 'px'
-                                ),
-                            ),
-                        )
-					),
-                    'icon_border_color'    => array(
-						'type'          => 'color',
-						'label'         => __('Border Color', 'bb-powerpack'),
-						'show_reset'    => true,
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'rules'     => array(
-                                array(
-                                    'selector'      => '.pp-infobox-icon',
-                                    'property'      => 'border-color',
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-image img',
-                                    'property'      => 'border-color',
-                                ),
-                            ),
-                        )
+					'icon_border'	=> array(
+						'type'          => 'border',
+						'label'         => __( 'Border', 'bb-powerpack' ),
+						'responsive'	=> true,
 					),
                     'icon_border_color_hover'    => array(
 						'type'          => 'color',
@@ -1152,16 +1056,15 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                         )
 					),
                     'icon_box_size'     => array(
-                        'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '3',
-                        'default'     => '0',
-                        'label'         => __('Inside Spacing', 'bb-powerpack'),
-						'description'   => 'px',
-                        'help'      => __('Space between icon and the border', 'bb-powerpack'),
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'rules'           => array(
+                        'type'          	=> 'unit',
+                        'default'     		=> '0',
+                        'label'         	=> __('Inside Spacing', 'bb-powerpack'),
+						'units'   			=> array('px'),
+						'slider'			=> true,
+                        'help'      		=> __('Space between icon and the border', 'bb-powerpack'),
+                        'preview'       	=> array(
+                            'type'          	=> 'css',
+                            'rules'           	=> array(
                                 array(
                                     'selector'      => '.pp-infobox-image img',
                                     'property'     => 'padding',
@@ -1175,39 +1078,6 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                             ),
                         )
                     ),
-                    'icon_border_radius'    => array(
-						'type'          => 'text',
-						'label'         => __('Round Corners', 'bb-powerpack'),
-						'default'       => '0',
-                        'size'          => '5',
-                        'maxlength'     => '3',
-                        'description'   => 'px',
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'rules'     => array(
-                                array(
-                                    'selector'      => '.pp-infobox-icon',
-                                    'property'      => 'border-radius',
-                                    'unit'          => 'px'
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-icon-inner',
-                                    'property'      => 'border-radius',
-                                    'unit'          => 'px'
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-icon-inner span.pp-icon',
-                                    'property'      => 'border-radius',
-                                    'unit'          => 'px'
-                                ),
-                                array(
-                                    'selector'      => '.pp-infobox-image img',
-                                    'property'      => 'border-radius',
-                                    'unit'          => 'px'
-                                ),
-                            ),
-                        )
-					),
                 )
             ),
         ),
@@ -1216,64 +1086,22 @@ FLBuilder::register_module('PPInfoBoxModule', array(
 		'title'         => __('Typography', 'bb-powerpack'), // Tab title
 		'sections'      => array( // Tab Sections
 			'title_prefix'     => array(
+				'collapsed'	=> false,
                 'title'     => __('Title Prefix', 'bb-powerpack'),
                 'fields'    => array(
-                    'title_prefix_font'          => array(
-                        'type'          => 'font',
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-infobox-title-prefix'
-                        )
-                    ),
-                    'title_prefix_font_size'    => array(
-						'type'          => 'unit',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-                        'default'       => '',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'description'   => 'px',
-                        'responsive'    => array(
-                            'placeholder' => array(
-									'default'    => '',
-									'medium'     => '',
-									'responsive' => '',
-								)
-                        ),
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infobox-title-prefix',
-                            'property'      => 'font-size',
-                            'unit'          => 'px'
-                        ),
-                        'help'          => __('Leave empty for default font size.', 'bb-powerpack')
+					'title_prefix_typography'		=> array(
+						'type'					=> 'typography',
+						'label'					=> __('Typography', 'bb-powerpack'),
+						'responsive'  			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-infobox-title-prefix'
+						)
 					),
-                    'title_prefix_line_height' => array(
-                        'type'              => 'unit',
-                        'label'             => __('Line Height', 'bb-powerpack'),
-                        'default'           => '',
-                        'size'              => 5,
-                        'responsive'    => array(
-                            'placeholder' => array(
-									'default'    => '',
-									'medium'     => '',
-									'responsive' => '',
-								)
-                        ),
-                        'preview'           => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infobox-title-prefix',
-                            'property'      => 'line-height',
-                        ),
-                        'help'          => __('Leave empty for default line height.', 'bb-powerpack')
-                    ),
                 ),
             ),
             'general'     => array(
+				'collapsed'	=> true,
                 'title'     => __('Title', 'bb-powerpack'),
                 'fields'    => array(
                     'title_tag' => array(
@@ -1289,147 +1117,45 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                             'h6'        => 'H6',
                             'p'         => 'p'
                         )
-                    ),
-                    'title_font'          => array(
-                        'type'          => 'font',
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-infobox-title-wrapper .pp-infobox-title'
-                        )
-                    ),
-                    'title_font_size'    => array(
-						'type'          => 'unit',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-                        'default'       => '',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'description'   => 'px',
-                        'responsive'    => array(
-                            'placeholder' => array(
-									'default'    => '',
-									'medium'     => '',
-									'responsive' => '',
-								)
-                        ),
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infobox-title-wrapper .pp-infobox-title',
-                            'property'      => 'font-size',
-                            'unit'          => 'px'
-                        ),
-                        'help'          => __('Leave empty for default font size.', 'bb-powerpack')
 					),
-                    'title_line_height' => array(
-                        'type'              => 'unit',
-                        'label'             => __('Line Height', 'bb-powerpack'),
-                        'default'           => '',
-                        'size'              => 5,
-                        'responsive'    => array(
-                            'placeholder' => array(
-									'default'    => '',
-									'medium'     => '',
-									'responsive' => '',
-								)
-                        ),
-                        'preview'           => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infobox-title-wrapper .pp-infobox-title',
-                            'property'      => 'line-height',
-                        ),
-                        'help'          => __('Leave empty for default line height.', 'bb-powerpack')
-                    ),
+					'title_typography'		=> array(
+						'type'					=> 'typography',
+						'label'					=> __('Typography', 'bb-powerpack'),
+						'responsive'  			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-infobox-title-wrapper .pp-infobox-title'
+						)
+					),
                 ),
             ),
             'text_typography'   => array(
+				'collapsed'	=> true,
                 'title'     => __('Description', 'bb-powerpack'),
                 'fields'    => array(
-                    'text_font'          => array(
-                        'type'          => 'font',
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-infobox-description .pp-description-wrap'
-                        )
-                    ),
-                    'text_font_size'    => array(
-						'type'          => 'unit',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-                        'default'       => '',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'description'   => 'px',
-                        'responsive'    => array(
-                            'placeholder' => array(
-									'default'    => '',
-									'medium'     => '',
-									'responsive' => '',
-								)
-                        ),
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infobox-description .pp-description-wrap',
-                            'property'      => 'font-size',
-                            'unit'          => 'px'
-                        ),
-                        'help'          => __('Leave empty for default font size.', 'bb-powerpack')
+					'desc_typography'		=> array(
+						'type'					=> 'typography',
+						'label'					=> __('Typography', 'bb-powerpack'),
+						'responsive'  			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-infobox-description'
+						)
 					),
-                    'text_line_height' => array(
-                        'type'              => 'unit',
-                        'label'             => __('Line Height', 'bb-powerpack'),
-                        'default'           => '',
-                        'size'              => 5,
-                        'responsive'    => array(
-                            'placeholder' => array(
-									'default'    => '',
-									'medium'     => '',
-									'responsive' => '',
-								)
-                        ),
-                        'preview'           => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-infobox-description .pp-description-wrap',
-                            'property'      => 'line-height',
-                        ),
-                        'help'          => __('Leave empty for default line height.', 'bb-powerpack')
-                    ),
                 )
             ),
             'button_typography'     => array(
+				'collapsed'	=> true,
                 'title'     => __('Link', 'bb-powerpack'),
                 'fields'    => array(
-                    'pp_infobox_read_more_font'          => array(
-                        'type'          => 'font',
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-more-link'
-                        )
-                    ),
-                    'pp_infobox_read_more_font_size'    => array(
-						'type'          => 'text',
-                        'size'          => '5',
-                        'maxlength'     => '2',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'description'   => 'px',
-                        'preview'       => array(
-                            'type'          => 'css',
-                            'selector'      => '.pp-more-link',
-                            'property'      => 'font-size',
-                            'unit'          => 'px'
-                        )
+					'button_typography'	=> array(
+						'type'					=> 'typography',
+						'label'					=> __('Typography', 'bb-powerpack'),
+						'responsive'  			=> true,
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-more-link'
+						)
 					),
                 )
             ),

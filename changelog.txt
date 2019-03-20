@@ -1,3 +1,12 @@
+== 1.2.5 ==
+*	Release date: March 20, 2019
+*	New: Added Facebook Button module
+*	New: Added Facebook Comments module
+*	New: Added Facebook Embed module
+*	New: Added Facebook Page module
+*	Enhancement: Updated all modules fields to match BB 2.2 UI
+*	Enhancement: Combined PowerPack's option in row settings into single tab
+
 == 1.2.4 ==
 *	Release date: February 26, 2019
 *	Updated Freemius SDK

@@ -22,9 +22,31 @@ class PPFancyHeadingModule extends FLBuilderModule {
             'url'           => BB_POWERPACK_URL . 'modules/pp-fancy-heading/',
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
-            'icon'				=> 'text.svg',
         ));
-    }
+	}
+	public function filter_settings( $settings, $helper ) {
+		// Handle Heading's old typography fields.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'font_family'	=> array(
+				'type'			=> 'font'
+			),
+			'font_size_custom'	=> array(
+				'type'          => 'font_size',
+				'condition'     => ( isset( $settings->font_size ) && 'custom' == $settings->font_size )
+			),
+			'line_height_custom'	=> array(
+				'type'          => 'line_height',
+				'condition'     => ( isset( $settings->line_height ) && 'custom' == $settings->line_height )
+			),
+			'text_alignment'	=> array(
+				'type'			=> 'text_align',
+			),
+			'letter_spacing'	=> array(
+				'type'			=> 'letter_spacing',
+			),
+		), 'font_typography' );
+		return $settings;
+	}
 }
 
 /**
@@ -37,7 +59,7 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
             'general'       => array( // Section
                 'title'         => __('Heading', 'bb-powerpack'), // Section Title
                 'fields'        => array( // Section Fields
-                    'heading_title' => array(
+                    'heading_title'		=> array(
                         'type'          => 'text',
                         'label'         => __('Title', 'bb-powerpack'),
                         'default'       => __('AWESOME TITLE!', 'bb-powerpack'),
@@ -47,7 +69,7 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                             'selector'         => '.pp-fancy-heading-title',
                         )
                     ),
-                    'heading_type'   => array(
+                    'heading_type'		=> array(
                         'type'          => 'select',
                         'label'         => __('Type', 'bb-powerpack'),
                         'default'       => 'gradient',
@@ -76,31 +98,31 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                             )
                         )
                     ),
-                    'primary_color' => array(
+                    'primary_color'		=> array(
                         'type'          => 'color',
                         'label'         => __('Primary Color', 'bb-powerpack'),
                         'default'       => '255dea',
                         'show_reset'    => false,
                     ),
-                    'secondary_color'   => array(
+                    'secondary_color'	=> array(
                         'type'              => 'color',
                         'label'             => __('Secondary Color', 'bb-powerpack'),
                         'default'           => '34d6e5',
                         'show_reset'        => false,
                     ),
                     'animation_speed'   => array(
-                        'type'              => 'text',
+                        'type'              => 'unit',
                         'label'             => __('Animation Speed', 'bb-powerpack'),
                         'default'           => 20,
-                        'description'       => __('seconds', 'bb-powerpack'),
-                        'size'              => 5
+                        'units'       		=> array('seconds'),
+                        'slider'			=> true,
                     ),
-                    'bg_image'      => array(
+                    'bg_image'			=> array(
                         'type'          => 'photo',
                         'label'         => __('Image', 'bb-powerpack'),
                         'show_remove'   => false
                     ),
-                    'bg_repeat' => array(
+                    'bg_repeat'			=> array(
                         'type'      => 'select',
                         'label'     => __('Repeat', 'bb-powerpack'),
                         'default'   => 'no-repeat',
@@ -112,7 +134,7 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                         ),
                         'help'  => __('Repeat applies to how the image should display in the background. Choosing none will display the image as uploaded. Tile will repeat the image as many times as needed to fill the background horizontally and vertically. You can also specify the image to only repeat horizontally or vertically.', 'bb-powerpack')
                     ),
-                    'bg_position'       => array(
+                    'bg_position'		=> array(
                         'type'              => 'select',
                         'label'             => __('Position', 'bb-powerpack'),
                         'default'           => 'center center',
@@ -129,7 +151,7 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                         ),
                         'help'  => __('Position will tell the image where it should sit in the background.', 'bb-powerpack')
                     ),
-                    'bg_attachment' => array(
+                    'bg_attachment'		=> array(
                         'type'          => 'pp-switch',
                         'label'         => __('Attachment', 'bb-powerpack'),
                         'default'       => 'scroll',
@@ -161,130 +183,16 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                             'h5'            => 'h5',
                             'h6'            => 'h6'
                         )
-                    ),
-                    'font_family'   => array(
-                        'type'          => 'font',
-                        'label'         => __('Font', 'bb-powerpack'),
-                        'default'		=> array(
-                            'family'		=> 'Default',
-                            'weight'		=> 300
-                        ),
-                        'preview'         => array(
-                            'type'            => 'font',
-                            'selector'        => '.pp-fancy-heading-title'
-                        )
-                    ),
-                    'font_size'     => array(
-                        'type'          => 'pp-switch',
-						'label'         => __('Font Size', 'bb-powerpack'),
-						'default'       => 'default',
-						'options'       => array(
-							'default'       =>  __('Default', 'bb-powerpack'),
-							'custom'        =>  __('Custom', 'bb-powerpack')
+					),
+					'font_typography'	=> array(
+						'type'        	   => 'typography',
+						'label'       	   => __( 'Typography', 'bb-powerpack' ),
+						'responsive'  	   => true,
+						'preview'          => array(
+							'type'         		=> 'css',
+							'selector' 		    => '.pp-fancy-heading-title',
 						),
-						'toggle'        => array(
-							'custom'        => array(
-								'fields'        => array('font_size_custom')
-							)
-						)
-                    ),
-                    'font_size_custom'  => array(
-                        'type'              => 'pp-multitext',
-						'label'             => __('Custom Font Size', 'bb-powerpack'),
-						'default'	        => array(
-							'desktop'	        => 40,
-							'tablet'	        => '',
-							'mobile'	        => '',
-						),
-						'options' 		    => array(
-							'desktop'           => array(
-								'icon'		        => 'fa-desktop',
-								'placeholder'	    => __('Desktop', 'bb-powerpack'),
-								'tooltip'	        => __('Desktop', 'bb-powerpack'),
-								'preview'           => array(
-									'selector'          => '.pp-fancy-heading-title',
-									'property'          => 'font-size',
-									'unit'			    => 'px'
-								),
-							),
-							'tablet'             => array(
-								'icon'		         => 'fa-tablet',
-								'placeholder'	     => __('Tablet', 'bb-powerpack'),
-								'tooltip'	         => __('Tablet', 'bb-powerpack'),
-							),
-							'mobile'             => array(
-								'icon'		         => 'fa-mobile',
-								'placeholder'	     => __('Mobile', 'bb-powerpack'),
-								'tooltip'	         => __('Mobile', 'bb-powerpack'),
-							),
-						),
-                    ),
-                    'line_height'   => array(
-                        'type'          => 'pp-switch',
-						'label'         => __('Line Height', 'bb-powerpack'),
-						'default'       => 'default',
-						'options'       => array(
-							'default'       =>  __('Default', 'bb-powerpack'),
-							'custom'        =>  __('Custom', 'bb-powerpack')
-						),
-						'toggle'        => array(
-							'custom'        => array(
-								'fields'        => array('line_height_custom')
-							)
-						)
-                    ),
-                    'line_height_custom' => array(
-                        'type'                => 'pp-multitext',
-						'label'               => __('Custom Line Height', 'bb-powerpack'),
-						'default'	        => array(
-							'desktop'	        => 1.4,
-							'tablet'	        => '',
-							'mobile'	        => '',
-						),
-						'options' 		    => array(
-							'desktop'           => array(
-								'icon'		        => 'fa-desktop',
-								'placeholder'	    => __('Desktop', 'bb-powerpack'),
-								'tooltip'	        => __('Desktop', 'bb-powerpack'),
-								'preview'           => array(
-									'selector'          => '.pp-fancy-heading-title',
-									'property'          => 'line-height',
-								),
-							),
-							'tablet'             => array(
-								'icon'		         => 'fa-tablet',
-								'placeholder'	     => __('Tablet', 'bb-powerpack'),
-								'tooltip'	         => __('Tablet', 'bb-powerpack'),
-							),
-							'mobile'             => array(
-								'icon'		         => 'fa-mobile',
-								'placeholder'	     => __('Mobile', 'bb-powerpack'),
-								'tooltip'	         => __('Mobile', 'bb-powerpack'),
-							),
-						),
-                    ),
-                    'letter_spacing'    => array(
-                        'type'              => 'text',
-                        'label'             => __('Letter Spacing', 'bb-powerpack'),
-                        'default'           => '',
-                        'size'              => 5,
-                        'preview'           => array(
-                            'type'              => 'css',
-                            'selector'          => '.pp-fancy-heading-title',
-                            'property'          => 'letter-spacing',
-                            'unit'              => 'px'
-                        )
-                    ),
-                    'text_alignment'    => array(
-                        'type'              => 'pp-switch',
-                        'label'             => __('Alignment', 'bb-powerpack'),
-                        'default'           => 'left',
-                        'options'           => array(
-                            'left'              => __('Left', 'bb-powerpack'),
-                            'center'            => __('Center', 'bb-powerpack'),
-                            'right'             => __('Right', 'bb-powerpack'),
-                        )
-                    )
+					),
                 )
             )
         )

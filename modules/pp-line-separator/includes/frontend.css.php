@@ -53,11 +53,6 @@
 }
 .fl-node-<?php echo $id; ?> .pp-line-separator-inner.pp-icon-image .pp-icon-wrap span.pp-icon {
 	<?php if($settings->font_icon_bg_color) { ?>background: #<?php echo $settings->font_icon_bg_color; ?>;<?php } ?>
-	<?php if( $settings->show_border == 'yes' ) { ?>
-		<?php if($settings->font_icon_border_color) { ?>border-color: #<?php echo $settings->font_icon_border_color; ?>;<?php } ?>
-		<?php if($settings->font_icon_border_style) { ?>border-style: <?php echo $settings->font_icon_border_style; ?>;<?php } ?>
-		<?php if($settings->font_icon_border_width) { ?>border-width: <?php echo $settings->font_icon_border_width; ?>px;<?php } ?>
-	<?php } ?>
 	<?php if($settings->font_icon_color) { ?>color: #<?php echo $settings->font_icon_color; ?>;<?php } ?>
 	<?php if($settings->font_icon_font_size) { ?>font-size: <?php echo $settings->font_icon_font_size; ?>px;<?php } ?>
 	<?php if($settings->font_icon_padding_top_bottom) { ?>
@@ -68,19 +63,12 @@
 		padding-left: <?php echo $settings->font_icon_padding_left_right; ?>px;
 		padding-right: <?php echo $settings->font_icon_padding_left_right; ?>px;
 	<?php } ?>
-	<?php if($settings->icon_border_radius) { ?>border-radius: <?php echo $settings->icon_border_radius; ?>px;<?php } ?>
 }
 .fl-node-<?php echo $id; ?> .pp-line-separator-inner.pp-icon-image {
 	<?php if($settings->separator_alignment) { ?>text-align: <?php echo $settings->separator_alignment; ?>;<?php } ?>
 }
 .fl-node-<?php echo $id; ?> .pp-line-separator-inner.pp-icon-image .pp-image-wrap {
 	<?php if($settings->font_icon_bg_color) { ?>background: #<?php echo $settings->font_icon_bg_color; ?>;<?php } ?>
-	<?php if( $settings->show_border == 'yes' ) { ?>
-		<?php if($settings->font_icon_border_color) { ?>border-color: #<?php echo $settings->font_icon_border_color; ?>;<?php } ?>
-		<?php if($settings->font_icon_border_style) { ?>border-style: <?php echo $settings->font_icon_border_style; ?>;<?php } ?>
-		<?php if($settings->font_icon_border_width) { ?>border-width: <?php echo $settings->font_icon_border_width; ?>px;<?php } ?>
-	<?php } ?>
-	<?php if($settings->icon_border_radius) { ?>border-radius: <?php echo $settings->icon_border_radius; ?>px;<?php } ?>
 	<?php if($settings->font_icon_padding_top_bottom) { ?>
 		padding-top: <?php echo $settings->font_icon_padding_top_bottom; ?>px;
 		padding-bottom: <?php echo $settings->font_icon_padding_top_bottom; ?>px;
@@ -90,8 +78,22 @@
 		padding-right: <?php echo $settings->font_icon_padding_left_right; ?>px;
 	<?php } ?>
 }
+
+<?php
+	// Icon - Border
+	FLBuilderCSS::border_field_rule( array(
+		'settings' 		=> $settings,
+		'setting_name' 	=> 'icon_border',
+		'selector' 		=> ".fl-node-$id .pp-line-separator-inner.pp-icon-image .pp-icon-wrap span.pp-icon, .fl-node-$id .pp-line-separator-inner.pp-icon-image .pp-image-wrap",
+	) );
+?>
 .fl-node-<?php echo $id; ?> .pp-line-separator-inner.pp-icon-image .pp-image-wrap img {
-	<?php if($settings->icon_border_radius) { ?>border-radius: <?php echo $settings->icon_border_radius; ?>px;<?php } ?>
+	<?php if ( isset( $settings->icon_border ) && isset( $settings->icon_border['radius'] ) ) { ?>
+		border-top-left-radius: <?php echo $settings->icon_border['radius']['top_left']; ?>px;
+		border-top-right-radius: <?php echo $settings->icon_border['radius']['top_right']; ?>px;
+		border-bottom-left-radius: <?php echo $settings->icon_border['radius']['bottom_left']; ?>px;
+		border-bottom-right-radius: <?php echo $settings->icon_border['radius']['bottom_right']; ?>px;
+	<?php } ?>
 	<?php if($settings->icon_image_select != 'image' && $settings->font_icon_font_size) { ?>height: <?php echo $settings->font_icon_font_size; ?>px;<?php } ?>
 	<?php if($settings->font_icon_font_size) { ?>width: <?php echo $settings->font_icon_font_size; ?>px;<?php } ?>
 }

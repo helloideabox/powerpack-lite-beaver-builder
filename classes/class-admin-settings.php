@@ -249,8 +249,38 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
     			return;
     		}
 
+			self::save_integration();
     		self::save_extensions();
-    	}
+		}
+		
+		/**
+		 * Saves integrations.
+		 *
+		 * @since 1.2.5
+		 * @access private
+		 * @return void
+		 */
+		static private function save_integration()
+		{
+			if ( isset( $_POST['bb_powerpack_fb_app_id'] ) && ( ! isset( $_POST['bb_powerpack_license_deactivate'] ) && ! isset( $_POST['bb_powerpack_license_activate'] ) ) ) {
+				
+				// Validate App ID.
+				if ( ! empty( $_POST['bb_powerpack_fb_app_id'] ) ) {
+					$response = wp_remote_get( 'https://graph.facebook.com/' . $_POST['bb_powerpack_fb_app_id'] );
+					$error = '';
+
+					if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+						$error = __( 'Facebook App ID is not valid.', 'bb-powerpack' );
+					}
+
+					if ( ! empty( $error ) ) {
+						wp_die( $error, __( 'Facebook SDK', 'bb-powerpack' ), array( 'back_link' => true ) );
+					}
+				}
+
+				self::update_option( 'bb_powerpack_fb_app_id', trim( $_POST['bb_powerpack_fb_app_id'] ), false );
+			}
+		}
 
         /**
          * Saves the extensions settings.

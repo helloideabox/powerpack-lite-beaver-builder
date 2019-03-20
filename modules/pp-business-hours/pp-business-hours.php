@@ -23,11 +23,78 @@ class PPBusinessHoursModule extends FLBuilderModule {
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
 			'partial_refresh'	=> true,
-            'icon'				=> 'clock.svg',
         ));
 
         $this->add_css(BB_POWERPACK_LITE()->fa_css);
-    }
+	}
+	
+	public function filter_settings( $settings, $helper )
+	{
+		// Handle title's old typography fields.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'title_font'	=> array(
+				'type'			=> 'font'
+			),
+			'title_custom_font_size'	=> array(
+				'type'			=> 'font_size',
+				'condition'		=> ( isset( $settings->title_font_size ) && 'custom' == $settings->title_font_size )
+			),
+			'title_custom_line_height'	=> array(
+				'type'			=> 'line_height',
+				'condition'		=> ( isset( $settings->title_line_height ) && 'custom'	== $settings->title_line_height )
+			),
+			'title_text_transform'	=> array(
+				'type'			=> 'text_transform',
+				'condition'		=> ( isset( $settings->title_text_transform ) && 'default' != $settings->title_text_transform )
+			)
+		), 'title_typography' );
+
+		// Handle timing's old typography fields.
+		$settings = PP_Module_Fields::handle_typography_field( $settings, array(
+			'timing_font'	=> array(
+				'type'			=> 'font'
+			),
+			'timing_custom_font_size'	=> array(
+				'type'			=> 'font_size',
+				'condition'		=> ( isset( $settings->timing_font_size ) && 'custom' == $settings->timing_font_size )
+			),
+			'timing_custom_line_height'	=> array(
+				'type'			=> 'line_height',
+				'condition'		=> ( isset( $settings->timing_line_height ) && 'custom' == $settings->timing_line_height )
+			),
+			'timing_text_transform'	=> array(
+				'type'			=> 'text_transform',
+				'condition'		=> ( isset( $settings->timing_text_transform ) && 'default' != $settings->timing_text_transform )
+			)
+		), 'timing_typography' );
+
+		// Handle old border and shadow fields.
+		$settings = PP_Module_Fields::handle_border_field( $settings, array(
+			'box_border'		=> array(
+				'type'				=> 'style'
+			),
+			'box_border_width'	=> array(
+				'type'				=> 'width'
+			),
+			'box_border_color'	=> array(
+				'type'				=> 'color'
+			),
+			'box_shadow'		=> array(
+				'type'				=> 'shadow',
+				'condition'			=> ( isset( $settings->box_shadow_display ) && 'yes' == $settings->box_shadow_display )
+			),
+			'box_shadow_color'	=> array(
+				'type'				=> 'shadow_color',
+				'condition'			=> ( isset( $settings->box_shadow_display ) && 'yes' == $settings->box_shadow_display ),
+				'opacity'			=> isset( $settings->box_shadow_opacity ) ? $settings->box_shadow_opacity : 1
+			),
+			'box_border_radius'	=> array(
+				'type'				=> 'radius'
+			)
+		), 'box_border_setting' );
+		
+		return $settings;
+	}
 }
 
 /**
@@ -58,11 +125,11 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 				'title'	=> __( 'Timing', 'bb-powerpack' ),
 				'fields'	=> array(
                     'spacing'   => array(
-                        'type'      => 'text',
+                        'type'      => 'unit',
                         'label'     => __('Spacing', 'bb-powerpack'),
                         'default'   => 10,
-                        'size'      => 5,
-                        'description'   => 'px',
+                        'units'      => array('px'),
+                        'slider'   => true,
                         'preview'   => array(
                             'type'      => 'css',
                             'rules'     => array(
@@ -98,6 +165,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'default'       => '',
 						'label'         => __( 'Color 1', 'bb-powerpack' ),
 						'show_reset'		=> true,
+						'show_alpha'		=> true,
 						'preview'              => array(
 							'type'				=> 'css',
 							'selector'			=> '.pp-business-hours-content .pp-bh-row:nth-of-type(odd):not(.pp-highlight-row)',
@@ -109,6 +177,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'default'       => '',
 						'label'         => __( 'Color 2', 'bb-powerpack' ),
 						'show_reset'		=> true,
+						'show_alpha'		=> true,
 						'preview'              => array(
 							'type'				=> 'css',
 							'selector'			=> '.pp-business-hours-content .pp-bh-row:nth-of-type(even):not(.pp-highlight-row)',
@@ -175,136 +244,24 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 				'title'	=> __( 'Box', 'bb-powerpack' ),
 				'fields'	=> array(
 					'box_bg_color'      => array(
-						'type'      => 'color',
-						'label'     => __('Background Color', 'bb-powerpack'),
-						'default'	=> 'f5f5f5',
-						'show_reset'   => true,
-						'preview'              => array(
+						'type'      		=> 'color',
+						'label'     		=> __('Background Color', 'bb-powerpack'),
+						'default'			=> 'f5f5f5',
+						'show_reset'   		=> true,
+						'show_alpha'   		=> true,
+						'preview'           => array(
 							'type'				=> 'css',
 							'selector'			=> '.pp-business-hours-content',
 							'property'			=> 'background-color',
 						)
 					),
-					'box_border'    => array(
-						'type'      => 'pp-switch',
-						'label'     => __('Border Style', 'bb-powerpack'),
-						'default'   => 'none',
-						'options'   => array(
-							'none'  => __('None', 'bb-powerpack'),
-							'solid'  => __('Solid', 'bb-powerpack'),
-							'dashed'  => __('Dashed', 'bb-powerpack'),
-							'dotted'  => __('Dotted', 'bb-powerpack'),
-						),
-						'toggle'    => array(
-							'dashed'   => array(
-								'fields'    => array('box_border_width', 'box_border_color')
-							),
-							'dotted'   => array(
-								'fields'    => array('box_border_width', 'box_border_color')
-							),
-							'solid'   => array(
-								'fields'    => array('box_border_width', 'box_border_color')
-							),
-						),
-						'preview'	=> array(
-							'type'		=> 'css',
-							'selector'	=> '.pp-business-hours-content',
-							'property'	=> 'border-style',
-						)
-					),
-					'box_border_width'   => array(
-						'type'      => 'text',
-						'label'     => __('Border Width', 'bb-powerpack'),
-						'size'      => 5,
-						'maxlength' => 3,
-						'default'   => 1,
-						'description'   => __('px', 'bb-powerpack'),
-						'preview'       => array(
-							'type'		=> 'css',
-							'selector'	=> '.pp-business-hours-content',
-							'property'	=> 'border-width',
-							'unit'		=> 'px'
-						)
-					),
-					'box_border_color'   => array(
-						'type'      => 'color',
-						'label'     => __('Border Color', 'bb-powerpack'),
-						'show_reset'   => true,
-						'preview'              => array(
-							'type'		=> 'css',
-							'selector'	=> '.pp-business-hours-content',
-							'property'	=> 'border-color',
-						)
-					),
-					'box_shadow_display'   => array(
-						'type'                 => 'pp-switch',
-						'label'                => __('Enable Shadow', 'bb-powerpack'),
-						'default'              => 'no',
-						'options'              => array(
-							'yes'          => __('Yes', 'bb-powerpack'),
-							'no'             => __('No', 'bb-powerpack'),
-						),
-						'toggle'    =>  array(
-							'yes'   => array(
-								'fields'    => array('box_shadow', 'box_shadow_color', 'box_shadow_opacity')
-							)
-						)
-					),
-					'box_shadow' 		=> array(
-						'type'              => 'pp-multitext',
-						'label'             => __('Box Shadow', 'bb-powerpack'),
-						'default'           => array(
-							'vertical'			=> 2,
-							'horizontal'		=> 2,
-							'blur'				=> 2,
-							'spread'			=> 1
-						),
-						'options'			=> array(
-							'vertical'			=> array(
-								'placeholder'		=> __('Vertical', 'bb-powerpack'),
-								'tooltip'			=> __('Vertical', 'bb-powerpack'),
-								'icon'				=> 'fa-arrows-v'
-							),
-							'horizontal'		=> array(
-								'placeholder'		=> __('Horizontal', 'bb-powerpack'),
-								'tooltip'			=> __('Horizontal', 'bb-powerpack'),
-								'icon'				=> 'fa-arrows-h'
-							),
-							'blur'				=> array(
-								'placeholder'		=> __('Blur', 'bb-powerpack'),
-								'tooltip'			=> __('Blur', 'bb-powerpack'),
-								'icon'				=> 'fa-circle-o'
-							),
-							'spread'			=> array(
-								'placeholder'		=> __('Spread', 'bb-powerpack'),
-								'tooltip'			=> __('Spread', 'bb-powerpack'),
-								'icon'				=> 'fa-paint-brush'
-							),
-						)
-					),
-					'box_shadow_color' => array(
-						'type'              => 'color',
-						'label'             => __('Shadow Color', 'bb-powerpack'),
-						'default'           => '000000',
-					),
-					'box_shadow_opacity' => array(
-						'type'              => 'text',
-						'label'             => __('Shadow Opacity', 'bb-powerpack'),
-						'description'       => '%',
-						'size'             => 5,
-						'default'           => 50,
-					),
-					'box_border_radius' => array(
-						'type'              => 'text',
-						'label'             => __('Round Corners', 'bb-powerpack'),
-						'description'       => 'px',
-						'size'             	=> 5,
-						'default'           => 0,
-						'preview'			=> array(
-							'type'				=> 'css',
-							'selector'			=> '.pp-business-hours-content',
-							'property'			=> 'border-radius',
-							'unit'				=> 'px'
+					'box_border_setting'	=> array(
+						'type'					=> 'border',
+						'label'					=> __('Border', 'bb-powerpack'),
+						'preview'				=> array(
+							'type'					=> 'css',
+							'selector'				=> '.pp-business-hours-content',
+							'important'				=> true
 						)
 					),
 				)
@@ -317,125 +274,6 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 			'day_typography'	=> array(
 				'title'	=> __( 'Day', 'bb-powerpack' ),
 				'fields'	=> array(
-					'title_font'	=> array(
-						'type'		=> 'font',
-						'label'		=> __('Font', 'bb-powerpack'),
-						'default'	=> array(
-							'family'	=> 'Default',
-							'weight'	=> '400',
-						),
-						'preview'       => array(
-							'type'		=> 'font',
-							'selector'        => '.pp-business-hours-content .pp-bh-row .pp-bh-title',
-						),
-					),
-					'title_font_size' => array(
-						'type'		=> 'pp-switch',
-						'label'		=> __('Font Size', 'bb-powerpack'),
-						'default'	=> 'default',
-						'options'       => array(
-							'default'          => __('Default', 'bb-powerpack'),
-							'custom'         => __('Custom', 'bb-powerpack'),
-						),
-						'toggle'	=> array(
-							'custom'	=> array(
-								'fields'	=> array('title_custom_font_size')
-							)
-						),
-					),
-					'title_custom_font_size'	=> array(
-						'type' 		=> 'pp-multitext',
-						'label'		=> __('Custom Font Size', 'bb-powerpack'),
-						'default'		=> array(
-							'desktop'	=> 24,
-							'tablet'	=> '',
-							'mobile'	=> '',
-						),
-						'options' 		=> array(
-							'desktop' => array(
-								'icon'		=> 'fa-desktop',
-								'placeholder'	=> __('Desktop', 'bb-powerpack'),
-								'tooltip'	=> __('Desktop', 'bb-powerpack'),
-								'preview'       => array(
-									'selector'        => '.pp-business-hours-content .pp-bh-row .pp-bh-title',
-									'property'        => 'font-size',
-									'unit'            => 'px'
-								),
-							),
-							'tablet' => array(
-								'icon'		=> 'fa-tablet',
-								'placeholder'	=> __('Tablet', 'bb-powerpack'),
-								'tooltip'	=> __('Tablet', 'bb-powerpack'),
-							),
-							'mobile' => array(
-								'icon'		=> 'fa-mobile',
-								'placeholder'	=> __('Mobile', 'bb-powerpack'),
-								'tooltip'	=> __('Mobile', 'bb-powerpack'),
-							),
-
-						),
-					),
-					'title_line_height' => array(
-						'type'		=> 'pp-switch',
-						'label'		=> __('Line Height', 'bb-powerpack'),
-						'default'	=> 'default',
-						'options'       => array(
-							'default'          => __('Default', 'bb-powerpack'),
-							'custom'         => __('Custom', 'bb-powerpack'),
-						),
-						'toggle'	=> array(
-							'custom'	=> array(
-								'fields'	=> array('title_custom_line_height')
-							)
-						),
-					),
-					'title_custom_line_height'	=> array(
-						'type' 		=> 'pp-multitext',
-						'label'		=> __('Custom Line Height', 'bb-powerpack'),
-						'help' 		=> __('Recommended values between 1-2', 'bb-powerpack'),
-						'default'	=> array(
-							'desktop'	=> 1.6,
-							'tablet'	=> '',
-							'mobile'	=> '',
-						),
-						'options' 		=> array(
-							'desktop' => array(
-								'icon'		=> 'fa-desktop',
-								'placeholder'	=> __('Desktop', 'bb-powerpack'),
-								'tooltip'	=> __('Desktop', 'bb-powerpack'),
-								'preview'       => array(
-									'selector'        => '.pp-business-hours-content .pp-bh-row .pp-bh-title',
-									'property'        => 'line-height',
-								),
-							),
-							'tablet' => array(
-								'icon'		=> 'fa-tablet',
-								'placeholder'	=> __('Tablet', 'bb-powerpack'),
-								'tooltip'	=> __('Tablet', 'bb-powerpack'),
-							),
-							'mobile' => array(
-								'icon'		=> 'fa-mobile',
-								'placeholder'	=> __('Mobile', 'bb-powerpack'),
-								'tooltip'	=> __('Mobile', 'bb-powerpack'),
-							),
-
-						),
-					),
-					'title_text_transform' => array(
-						'type'		=> 'select',
-						'label'		=> __('Text Transform', 'bb-powerpack'),
-						'default'	=> 'default',
-						'options'       => array(
-							'default'          => __('Default', 'bb-powerpack'),
-							'lowercase'         => __('lowercase', 'bb-powerpack'),
-							'uppercase'         => __('UPPERCASE', 'bb-powerpack'),
-						),
-						'preview'	=> array(
-							'type'		=> 'css',
-							'selector'	=> '.pp-business-hours-content .pp-bh-row .pp-bh-title',
-							'property'	=> 'text-transform'
-						)
-					),
 					'title_color'  => array(
 						'type'          => 'color',
 						'default'       => '',
@@ -447,130 +285,20 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 							'property'	=> 'color'
 						)
 					),
+					'title_typography'	=> array(
+						'type'			=> 'typography',
+						'label'			=> __('Typography', 'bb-powerpack'),
+						'responsive'  	=> true,
+						'preview'		=> array(
+							'type'			=> 'css',
+							'selector'		=> '.pp-business-hours-content .pp-bh-row .pp-bh-title',
+						),
+					),
 				)
 			),
 			'timing_typography'	=> array(
 				'title'	=> __( 'Timing', 'bb-powerpack' ),
 				'fields'	=> array(
-					'timing_font'	=> array(
-						'type'		=> 'font',
-						'label'		=> __('Font', 'bb-powerpack'),
-						'default'	=> array(
-							'family'	=> 'Default',
-							'weight'	=> '400',
-						),
-						'preview'       => array(
-							'type'		=> 'font',
-							'selector'        => '.pp-business-hours-content .pp-bh-row .pp-bh-timing',
-						),
-					),
-					'timing_font_size' => array(
-						'type'		=> 'pp-switch',
-						'label'		=> __('Font Size', 'bb-powerpack'),
-						'default'	=> 'default',
-						'options'       => array(
-							'default'          => __('Default', 'bb-powerpack'),
-							'custom'         => __('Custom', 'bb-powerpack'),
-						),
-						'toggle'	=> array(
-							'custom'	=> array(
-								'fields'	=> array('timing_custom_font_size')
-							)
-						),
-					),
-					'timing_custom_font_size'	=> array(
-						'type' 		=> 'pp-multitext',
-						'label'		=> __('Custom Font Size', 'bb-powerpack'),
-						'default'		=> array(
-							'desktop'	=> 24,
-							'tablet'	=> '',
-							'mobile'	=> '',
-						),
-						'options' 		=> array(
-							'desktop' => array(
-								'icon'		=> 'fa-desktop',
-								'placeholder'	=> __('Desktop', 'bb-powerpack'),
-								'tooltip'	=> __('Desktop', 'bb-powerpack'),
-								'preview'       => array(
-									'selector'        => '.pp-business-hours-content .pp-bh-row .pp-bh-timing',
-									'property'        => 'font-size',
-									'unit'            => 'px'
-								),
-							),
-							'tablet' => array(
-								'icon'		=> 'fa-tablet',
-								'placeholder'	=> __('Tablet', 'bb-powerpack'),
-								'tooltip'	=> __('Tablet', 'bb-powerpack'),
-							),
-							'mobile' => array(
-								'icon'		=> 'fa-mobile',
-								'placeholder'	=> __('Mobile', 'bb-powerpack'),
-								'tooltip'	=> __('Mobile', 'bb-powerpack'),
-							),
-
-						),
-					),
-					'timing_line_height' => array(
-						'type'		=> 'pp-switch',
-						'label'		=> __('Line Height', 'bb-powerpack'),
-						'default'	=> 'default',
-						'options'       => array(
-							'default'          => __('Default', 'bb-powerpack'),
-							'custom'         => __('Custom', 'bb-powerpack'),
-						),
-						'toggle'	=> array(
-							'custom'	=> array(
-								'fields'	=> array('timing_custom_line_height')
-							)
-						),
-					),
-					'timing_custom_line_height'	=> array(
-						'type' 		=> 'pp-multitext',
-						'label'		=> __('Custom Line Height', 'bb-powerpack'),
-						'help' 		=> __('Recommended values between 1-2', 'bb-powerpack'),
-						'default'	=> array(
-							'desktop'	=> 1.6,
-							'tablet'	=> '',
-							'mobile'	=> '',
-						),
-						'options' 		=> array(
-							'desktop' => array(
-								'icon'		=> 'fa-desktop',
-								'placeholder'	=> __('Desktop', 'bb-powerpack'),
-								'tooltip'	=> __('Desktop', 'bb-powerpack'),
-								'preview'       => array(
-									'selector'        => '.pp-business-hours-content .pp-bh-row .pp-bh-timing',
-									'property'        => 'line-height',
-								),
-							),
-							'tablet' => array(
-								'icon'		=> 'fa-tablet',
-								'placeholder'	=> __('Tablet', 'bb-powerpack'),
-								'tooltip'	=> __('Tablet', 'bb-powerpack'),
-							),
-							'mobile' => array(
-								'icon'		=> 'fa-mobile',
-								'placeholder'	=> __('Mobile', 'bb-powerpack'),
-								'tooltip'	=> __('Mobile', 'bb-powerpack'),
-							),
-
-						),
-					),
-					'timing_text_transform' => array(
-						'type'		=> 'select',
-						'label'		=> __('Text Transform', 'bb-powerpack'),
-						'default'	=> 'default',
-						'options'       => array(
-							'default'          => __('Default', 'bb-powerpack'),
-							'lowercase'         => __('lowercase', 'bb-powerpack'),
-							'uppercase'         => __('UPPERCASE', 'bb-powerpack'),
-						),
-						'preview'	=> array(
-							'type'		=> 'css',
-							'selector'	=> '.pp-business-hours-content .pp-bh-row .pp-bh-timing',
-							'property'	=> 'text-transform'
-						)
-					),
 					'timing_color'  => array(
 						'type'          => 'color',
 						'default'       => '',
@@ -592,6 +320,15 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 							'selector'	=> '.pp-business-hours-content .pp-bh-row.pp-closed .pp-bh-timing',
 							'property'	=> 'color'
 						)
+					),
+					'timing_typography'	=> array(
+						'type'			=> 'typography',
+						'label'			=> __('Typography', 'bb-powerpack'),
+						'responsive'  	=> true,
+						'preview'		=> array(
+							'type'			=> 'css',
+							'selector'		=> '.pp-business-hours-content .pp-bh-row .pp-bh-timing',
+						),
 					),
 				)
 			)
@@ -724,6 +461,7 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 							'default'       => '',
 							'label'         => __( 'Background Color', 'bb-powerpack' ),
 							'show_reset'		=> true,
+							'show_alpha'		=> true,
 						),
 						'hl_title_color'  => array(
 							'type'          => 'color',

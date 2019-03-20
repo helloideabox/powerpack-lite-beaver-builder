@@ -602,6 +602,12 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 						'show_reset'	=> ( isset( $args['reset'] ) && ! $args['reset'] ) ? false : true,
 					);
 					break;
+				case 'border':
+					$field = array(
+						'type'			=> 'border',
+						'responsive'	=> true,
+					);
+					break;
 				case 'border-style':
 					$field = array(
 						'type'		=> 'pp-switch',
@@ -618,6 +624,7 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 					$field = array(
 						'type'		=> 'unit',
 						'slider'	=> true,
+						'units'		=> array('px'),
 						'responsive'	=> $responsive
 					);
 					break;
@@ -625,17 +632,13 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 					$field = array(
 						'type'		=> 'dimension',
 						'slider'	=> true,
+						'units'		=> array('px'),
 						'responsive'	=> $responsive
 					);
 					break;
 				case 'align':
 					$field = array(
-						'type'		=> 'pp-switch',
-						'options'	=> array(
-							'left'		=> __('Left', 'bb-powerpack'),
-							'center'	=> __('Center', 'bb-powerpack'),
-							'right'		=> __('Right', 'bb-powerpack'),
-						),
+						'type'		=> 'align',
 						'default'	=> 'left'
 					);
 					break;
@@ -651,6 +654,10 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 
 			if ( ! empty( $default ) ) {
 				$field['default'] = $default;
+			}
+
+			if ( isset( $args['units'] ) ) {
+				$field['units'] = $args['units'];
 			}
 
 			if ( ! empty( $help ) ) {
@@ -673,12 +680,13 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 				'bg_hover_color'	=> self::get_field( 'color', __('Background Hover Color', 'bb-powerpack'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
 				'text_color'		=> self::get_field( 'color', __('Text Color', 'bb-powerpack') ),
 				'text_hover_color'	=> self::get_field( 'color', __('Text Hover Color', 'bb-powerpack'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
-				'border_style'		=> self::get_field( 'border-style', __('Border Style', 'bb-powerpack') ),
-				'border_width'		=> self::get_field( 'unit', __('Border Width', 'bb-powerpack'), array( 'desc' => 'px', 'responsive' => false ) ),
-				'border_color'		=> self::get_field( 'color', __('Border Color', 'bb-powerpack') ),
+				'border'			=> self::get_field( 'border', __('Border', 'bb-powerpack') ),
+				// 'border_style'		=> self::get_field( 'border-style', __('Border Style', 'bb-powerpack') ),
+				// 'border_width'		=> self::get_field( 'unit', __('Border Width', 'bb-powerpack'), array( 'responsive' => false ) ),
+				// 'border_color'		=> self::get_field( 'color', __('Border Color', 'bb-powerpack') ),
 				'border_hover_color' => self::get_field( 'color', __('Border Hover Color', 'bb-powerpack'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
-				'border_radius'		=> self::get_field( 'unit', __('Round Corners', 'bb-powerpack'), array( 'desc' => 'px', 'responsive' => false ) ),
-				'margin_top'		=> self::get_field( 'unit', __('Margin Top', 'bb-powerpack'), array( 'desc' => 'px' ) ),
+				// 'border_radius'		=> self::get_field( 'unit', __('Round Corners', 'bb-powerpack'), array( 'responsive' => false ) ),
+				'margin_top'		=> self::get_field( 'unit', __('Margin Top', 'bb-powerpack') ),
 				'padding'			=> self::get_field( 'dimension', __('Padding', 'bb-powerpack') ),
 				'alignment'			=> self::get_field( 'align', __('Alignment', 'bb-powerpack') ),
 			);
@@ -697,6 +705,9 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 						}
 						if ( isset( $field['description'] ) ) {
 							$final_fields[ $key ]['description'] = $field['description'];
+						}
+						if ( isset( $field['units'] ) ) {
+							$final_fields[ $key ]['units'] = $field['units'];
 						}
 						if ( isset( $field['default'] ) ) {
 							$final_fields[ $key ]['default'] = $field['default'];
@@ -723,6 +734,523 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 			}
 
 			return $fields_with_prefix;
+		}
+
+		/**
+		 * Convert old multitext field value to new dimension field.
+		 * 
+		 * @since 2.6.8
+		 * 
+		 * @param object $settings	module settings
+		 * @param string $field	name of the setting field
+		 * @param string $type	margin | padding | responsive
+		 * @param string $prefix	A prefix for new field
+		 * 
+		 * @return object $settings
+		 */
+		public static function handle_multitext_field( $settings, $field = '', $type = '', $new_field = '', $custom_keys = array() )
+		{
+			if ( ! is_object( $settings ) ) {
+				return $settings;
+			}
+
+			if ( empty( $field ) || ! isset( $settings->{$field} ) ) {
+				return $settings;
+			}
+
+			$value = $settings->{$field};
+
+			if ( is_object( $value ) ) {
+				$value = (array) $value;
+			}
+
+			if ( ! is_array( $value ) ) {
+				return $settings;
+			}
+
+			if ( ! empty( $custom_keys ) ) {
+				$new_val = array();
+				foreach ( $custom_keys as $key => $value_key ) {
+					$new_val[ $key ] = ( isset( $value[ $value_key ] ) ) ? $value[ $value_key ] : '';
+				}
+				$value = $new_val;
+			}
+
+			if ( empty( $new_field ) ) {
+				$new_field = $field;
+			}
+
+			switch ( $type ) {
+				case 'dimension':
+				case 'margin':
+				case 'padding':
+					$settings->{$new_field . '_top'} = isset( $value['top'] ) ? $value['top'] : '';
+					$settings->{$new_field . '_right'} = isset( $value['right'] ) ? $value['right'] : '';
+					$settings->{$new_field . '_bottom'} = isset( $value['bottom'] ) ? $value['bottom'] : '';
+					$settings->{$new_field . '_left'} = isset( $value['left'] ) ? $value['left'] : '';
+					unset( $settings->{$field} );
+					break;
+				case 'responsive':
+					$settings->{$new_field} = $value['desktop'];
+					$settings->{$new_field . '_medium'} = isset( $value['tablet'] ) ? $value['tablet'] : '';
+					$settings->{$new_field . '_responsive'} = isset( $value['mobile'] ) ? $value['mobile'] : '';
+					break;
+			}
+
+			return $settings;
+		}
+
+		/**
+		 * Convert old typography fields value into single typography field.
+		 * 
+		 * @since 2.6.8
+		 * 
+		 * @param object $settings	Module settings
+		 * @param string $fields	Array of old fields
+		 * @param string $new_field	Name of the new field
+		 * 
+		 * @return object $settings
+		 */
+		public static function handle_typography_field( $settings, $fields = array(), $new_field = 'typography' )
+		{
+			if ( ! is_object( $settings ) || empty( $fields ) || empty( $new_field ) ) {
+				return $settings;
+			}
+
+			$typography 			= array();
+			$typography_medium 		= array();
+			$typography_responsive 	= array();
+
+			foreach ( $fields as $name => $field ) {
+				if ( ! isset( $settings->{$name} ) ) {
+					continue;
+				}
+
+				$type		= $field['type'];
+				$value 		= $settings->{$name};
+				$condition 	= isset( $field['condition'] ) ? $field['condition'] : true;
+
+				if ( ! $condition ) {
+					continue;
+				}
+				
+				switch ( $type ) {
+					case 'font':
+						$typography['font_family'] = $value['family'];
+						$typography['font_weight'] = $value['weight'] === 'regular' ? 'normal' : $value['weight'];
+						break;
+
+					case 'font_size':
+					case 'letter_spacing':
+					case 'line_height':
+						$unit = ( 'line_height' == $type ) ? '' : 'px';
+						if ( ! is_array( $value ) ) {
+							$typography[ $type ] = array(
+								'length'	=> $value,
+								'unit'		=> $unit
+							);
+							if ( isset( $settings->{ $name . '_medium' } ) ) {
+								$typography_medium[ $type ] = array(
+									'length'	=> $settings->{ $name . '_medium' },
+									'unit'		=> $unit
+								);
+
+								unset( $settings->{ $name . '_medium' } );
+							}
+							if ( isset( $settings->{ $name . '_responsive' } ) ) {
+								$typography_responsive[ $type ] = array(
+									'length'	=> $settings->{ $name . '_responsive' },
+									'unit'		=> $unit
+								);
+
+								unset( $settings->{ $name . '_responsive' } );
+							}
+						} else {
+							$desktop = 'desktop';
+							$tablet = 'tablet';
+							$mobile = 'mobile';
+							if ( isset( $field['keys'] ) ) {
+								if ( isset( $field['keys']['desktop'] ) ) {
+									$desktop = $field['keys']['desktop'];
+								}
+								if ( isset( $field['keys']['tablet'] ) ) {
+									$tablet = $field['keys']['tablet'];
+								}
+								if ( isset( $field['keys']['mobile'] ) ) {
+									$mobile = $field['keys']['mobile'];
+								}
+							}
+							$typography[ $type ] = array(
+								'length'	=> $value[ $desktop ],
+								'unit'		=> $unit
+							);
+							$typography_medium[ $type ] = array(
+								'length'	=> $value[ $tablet ],
+								'unit'		=> $unit
+							);
+							$typography_responsive[ $type ] = array(
+								'length'	=> $value[ $mobile ],
+								'unit'		=> $unit
+							);
+						}
+						break;
+
+					case 'medium_font_size':
+					case 'medium_line_height':
+						$orig_type = str_replace( 'medium_', '', $type );
+						$typography_medium[ $orig_type ] = array(
+							'length'	=> $value,
+							'unit'		=> ( 'line_height' == $orig_type ) ? '' : 'px'
+						);
+						break;
+
+					case 'responsive_font_size':
+					case 'responsive_line_height':
+						$orig_type = str_replace( 'responsive_', '', $type );
+						$typography_responsive[ $orig_type ] = array(
+							'length'	=> $value,
+							'unit'		=> ( 'line_height' == $orig_type ) ? '' : 'px'
+						);
+						break;
+
+					case 'text_align':
+					case 'text_transform':
+					case 'font_style':
+						$typography[ $type ] = $value;
+						break;
+
+					case 'text_shadow':
+						$typography[ $type ] = array(
+							'horizontal'	=> isset( $value['horizontal'] ) ? $value['horizontal'] : '',
+							'vertical'		=> isset( $value['vertical'] ) ? $value['vertical'] : '',
+							'blur'			=> isset( $value['blur'] ) ? $value['blur'] : '',
+						);
+						if ( isset( $field['color'] ) ) {
+							$typography[ $type ]['color'] = $field['color'];
+						}
+						break;
+				}
+
+				unset( $settings->{$name} );
+			}
+
+			if ( ! empty( $typography ) ) {
+				$settings->{$new_field} = $typography;
+			}
+			if ( ! empty( $typography_medium ) ) {
+				$settings->{$new_field . '_medium'} = $typography_medium;
+			}
+			if ( ! empty( $typography_responsive ) ) {
+				$settings->{$new_field . '_responsive'} = $typography_responsive;
+			}
+
+			return $settings;
+		}
+
+		public static function handle_border_field( $settings, $fields = array(), $new_field = '' )
+		{
+			if ( ! is_object( $settings ) || empty( $fields ) || empty( $new_field ) ) {
+				return $settings;
+			}
+
+			$border = array();
+
+			foreach ( $fields as $name => $field ) {
+				if ( ! isset( $settings->{$name} ) ) {
+					continue;
+				}
+
+				$type		= $field['type'];
+				$value 		= isset( $field['value'] ) ? $field['value'] : $settings->{$name};
+				$condition 	= isset( $field['condition'] ) ? $field['condition'] : true;
+
+				if ( ! $condition ) {
+					continue;
+				}
+
+				if ( is_object( $value ) ) {
+					$value = (array) $value;
+				}
+
+				switch ( $type ) {
+					case 'style':
+					case 'color':
+						$border[ $type ] = $value;
+						break;
+
+					case 'width':
+						if ( ! is_array( $value ) ) {
+							$border['width']['top'] = $value;
+							$border['width']['right'] = $value;
+							$border['width']['bottom'] = $value;
+							$border['width']['left'] = $value;
+						} else {
+							$border['width']['top'] = isset( $value['top'] ) ? $value['top'] : '';
+							$border['width']['right'] = isset( $value['right'] ) ? $value['right'] : '';
+							$border['width']['bottom'] = isset( $value['bottom'] ) ? $value['bottom'] : '';
+							$border['width']['left'] = isset( $value['left'] ) ? $value['left'] : '';
+						}
+						break;
+
+					case 'radius':
+						if ( ! is_array( $value ) ) {
+							$border['radius'] = array(
+								'top_left'		=> $value,
+								'top_right'		=> $value,
+								'bottom_left'	=> $value,
+								'bottom_right'	=> $value,
+							);
+						} else {
+							$border['radius'] = $value;
+						}
+						break;
+
+					case 'shadow':
+						if ( is_array( $value ) ) {
+							$values = array(
+								'horizontal'	=> isset( $value['horizontal'] ) ? $value['horizontal'] : '',
+								'vertical'		=> isset( $value['vertical'] ) ? $value['vertical'] : '',
+								'blur'			=> isset( $value['blur'] ) ? $value['blur'] : '',
+								'spread'		=> isset( $value['spread'] ) ? $value['spread'] : '',
+							);
+							if ( isset( $field['keys'] ) ) {
+								if ( is_object( $field['keys'] ) ) {
+									$field['keys'] = (array) $field['keys'];
+								}
+								foreach ( $field['keys'] as $key => $old_key ) {
+									if ( isset( $values[ $key ] ) && isset( $value[ $old_key ] ) ) {
+										$values[ $key ] = $value[ $old_key ];
+									}
+								}
+							}
+							$border['shadow'] = $values;
+						}
+						break;
+
+					case 'shadow_color':
+						$opacity = ( isset( $field['opacity'] ) && ! empty( $field['opacity'] ) ) ? $field['opacity'] : 1;
+						$border['shadow']['color'] = pp_hex2rgba( $value, $opacity );
+						break;
+				}
+
+				unset( $settings->{$name} );
+			}
+
+			if ( ! empty( $border ) ) {
+				$settings->{$new_field} = $border;
+			}
+
+			return $settings;
+		}
+
+		public static function handle_link_field( $settings, $fields = array(), $new_field = '' )
+		{
+			if ( ! is_object( $settings ) || empty( $fields ) || empty( $new_field ) ) {
+				return $settings;
+			}
+
+			foreach ( $fields as $name => $field ) {
+				if ( ! isset( $settings->{$name} ) ) {
+					continue;
+				}
+
+				$type		= $field['type'];
+				$value 		= isset( $field['value'] ) ? $field['value'] : $settings->{$name};
+				$condition 	= isset( $field['condition'] ) ? $field['condition'] : true;
+
+				if ( ! $condition ) {
+					continue;
+				}
+
+				switch ( $type ) {
+					case 'link':
+						if ( $name != $new_field ) {
+							// let's unset old field first.
+							unset( $settings->{$name} );
+						}
+						// $value should be URL
+						$settings->{$new_field} = $value;
+						break;
+
+					case 'target':
+						// let's unset old field first.
+						unset( $settings->{$name} );
+
+						// $value should be _blank or _self
+						$settings->{$new_field . '_target'} = $value;
+						break;
+
+					case 'nofollow':
+						// let's unset old field first.
+						unset( $settings->{$name} );
+
+						// $value should be yes or no
+						$settings->{$new_field . '_nofollow'} = $value;
+						break;
+				}
+			}
+
+			return $settings;
+		}
+
+		static public function handle_alignment_field( $settings, $field = '', $responsive_field = '' )
+		{
+			if ( ! is_object( $settings ) || empty( $field ) || ! isset( $settings->{$field} ) ) {
+				return $settings;
+			}
+
+			if ( ! isset( $settings->{$field . '_medium'} ) || empty( $settings->{$field . '_medium'} ) ) {
+				$settings->{$field . '_medium'} = $settings->{$field};
+			}
+
+			if ( ! isset( $settings->{$field . '_responsive'} ) || empty( $settings->{$field . '_responsive'} ) ) {
+				$settings->{$field . '_responsive'} = $settings->{$field . '_medium'};
+			}
+
+			if ( empty( $responsive_field ) || ! isset( $settings->{$responsive_field} ) ) {
+				if ( ! isset( $settings->{$field . '_responsive'} ) || empty( $settings->{$field . '_responsive'} ) ) {
+					$settings->{$field . '_responsive'} = $settings->{$field . '_medium'};
+				}
+			} else {
+				$responsive_align = $settings->{$responsive_field};
+
+				if ( empty( $responsive_align ) || 'default' == $responsive_align ) {
+					$settings->{$field . '_responsive'} = $settings->{$field . '_medium'};
+				}
+
+				if ( in_array( $responsive_align, array( 'left', 'center', 'right' ) ) ) {
+					$settings->{$field . '_responsive'} = $responsive_align;
+				}
+
+				if ( $responsive_field != $field . '_responsive' ) {
+					unset( $settings->{$responsive_field} );
+				}
+			}
+
+			return $settings;
+		}
+
+		public static function handle_gradient_field( $settings, $fields = array(), $new_field = '' )
+		{
+			if ( ! is_object( $settings ) || empty( $fields ) || empty( $new_field ) ) {
+				return $settings;
+			}
+
+			$gradient = array();
+
+			if ( isset( $settings->{$new_field} ) ) {
+				$gradient = $settings->{$new_field};
+			}
+			if ( ! is_array( $gradient ) ) {
+				$gradient = array();
+			}
+			if ( ! isset( $gradient['colors'] ) || ! is_array( $gradient['colors'] ) ) {
+				$gradient['colors'] = array();
+			}
+			if ( ! isset( $gradient['type'] ) ) {
+				$gradient['type'] = 'linear';
+			}
+			if ( ! isset( $gradient['stops'] ) || ! is_array( $gradient['stops'] ) ) {
+				$gradient['stops'] = array(0, 100);
+			}
+			if ( ! isset( $gradient['angle'] ) ) {
+				$gradient['angle'] = '90';
+			}
+
+			foreach ( $fields as $name => $field ) {
+				if ( ! isset( $settings->{$name} ) ) {
+					continue;
+				}
+
+				$type		= $field['type'];
+				$value 		= isset( $field['value'] ) ? $field['value'] : $settings->{$name};
+				$condition 	= isset( $field['condition'] ) ? $field['condition'] : true;
+
+				if ( ! $condition ) {
+					continue;
+				}
+
+				switch ( $type ) {
+					case 'type':
+						$gradient['type'] = $value;
+						break;
+					case 'primary_color':
+						$gradient['colors'][0] = $value;
+						break;
+					case 'secondary_color':
+						$gradient['colors'][1] = $value;
+						break;
+					case 'angle':
+						if ( '-90' == $value ) {
+							$value = '180';
+						}
+						$gradient['angle'] = $value;
+						break;
+				}
+				
+				unset( $settings->{$name} );
+			}
+
+			if ( ! empty( $gradient ) ) {
+				$settings->{$new_field} = $gradient;
+			}
+
+			return $settings;
+		}
+
+		public static function handle_dual_color_field( $settings, $field = '', $fields = array() )
+		{
+			if ( ! is_object( $settings ) || empty( $field ) || empty( $fields ) ) {
+				return $settings;
+			}
+
+			if ( isset( $settings->{$field} ) ) {
+				if ( is_object( $settings->{$field} ) ) {
+					$settings->{$field} = (array) $settings->{$field};
+				}
+				$value = $settings->{$field};
+				$has_opacity = false;
+				$opacity = 1;
+				if ( isset( $fields['opacity'] ) && isset( $settings->{$fields['opacity']} ) ) {
+					if ( ! empty( $settings->{$fields['opacity']} ) ) {
+						$opacity = ( $settings->{$fields['opacity']} / 100 );
+						$has_opacity = true;
+					}
+					unset( $settings->{$fields['opacity']} );
+				}
+				if ( isset( $fields['primary'] ) && isset( $value['primary'] ) ) {
+					$primary_field = $fields['primary'];
+					$color = empty( $value['primary'] ) ? '' : $value['primary'];
+					if ( ! $has_opacity && ! empty( $color ) ) {
+						if ( isset( $fields['primary_opacity'] ) && $fields['primary_opacity'] !== false ) {
+							$primary_opacity = $fields['primary_opacity'];
+							$color = pp_hex2rgba( $color, $primary_opacity );
+						}
+					}
+					if ( $has_opacity && ! empty( $color ) ) {
+						$color = pp_hex2rgba( $color, $opacity );
+					}
+					$settings->{$primary_field} = $color;
+				}
+				if ( isset( $fields['secondary'] ) && isset( $value['secondary'] ) ) {
+					$secondary_field = $fields['secondary'];
+					$color = empty( $value['secondary'] ) ? '' : $value['secondary'];
+					if ( ! $has_opacity && ! empty( $color ) ) {
+						if ( isset( $fields['secondary_opacity'] ) && $fields['secondary_opacity'] !== false ) {
+							$secondary_opacity = $fields['secondary_opacity'];
+							$color = pp_hex2rgba( $color, $secondary_opacity );
+						}
+					}
+					if ( $has_opacity && ! empty( $color ) ) {
+						$color = pp_hex2rgba( $color, $opacity );
+					}
+					$settings->{$secondary_field} = $color;
+				}
+
+				unset( $settings->{$field} );
+			}
+
+			return $settings;
 		}
 
         /**

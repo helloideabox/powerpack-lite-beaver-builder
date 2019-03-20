@@ -23,11 +23,35 @@ class PPLineSeparatorModule extends FLBuilderModule {
             'editor_export' => true, // Defaults to true and can be omitted.
             'enabled'       => true, // Defaults to true and can be omitted.
             'partial_refresh'   => true,
-            'icon'				=> 'minus.svg',
 		));
 		
 		$this->add_css( BB_POWERPACK_LITE()->fa_css );
     }
+
+	public function filter_settings( $settings, $helper )
+	{
+		// Handle old icon border and radius fields.
+		$settings = PP_Module_Fields::handle_border_field( $settings, array(
+			'font_icon_border_style'	=> array(
+				'type'				=> 'style',
+				'condition'			=> ( isset( $settings->show_border ) && 'yes' == $settings->show_border ),
+			),
+			'font_icon_border_width'	=> array(
+				'type'				=> 'width',
+				'condition'			=> ( isset( $settings->show_border ) && 'yes' == $settings->show_border ),
+			),
+			'font_icon_border_color'	=> array(
+				'type'				=> 'color',
+				'condition'			=> ( isset( $settings->show_border ) && 'yes' == $settings->show_border ),
+			),
+			'icon_border_radius'	=> array(
+				'type'				=> 'radius',
+				'condition'			=> ( isset( $settings->show_border ) && 'yes' == $settings->show_border ),
+			),
+		), 'icon_border' );
+
+		return $settings;
+	}
 }
 
 /**
@@ -77,14 +101,9 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                          )
                     ),
                     'separator_alignment'    => array(
-                        'type'      => 'pp-switch',
+                        'type'      => 'align',
                         'label'     => 'Separator Alignment',
                         'default'   => 'center',
-                        'options'   => array(
-                            'left'    => __('Left', 'bb-powerpack'),
-                            'center'    => __('Center', 'bb-powerpack'),
-                            'right'    => __('Right', 'bb-powerpack'),
-                        )
                     ),
                 ),
             ),
@@ -101,10 +120,10 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         ),
                         'toggle'    => array(
                             'icon'  => array(
-                                'fields'  => array('separator_icon', 'font_icon_font_size', 'font_icon_color', 'font_icon_bg_color', 'font_icon_padding_top_bottom', 'font_icon_padding_left_right', 'icon_border_radius'),
+                                'fields'  => array('separator_icon', 'font_icon_font_size', 'font_icon_color', 'font_icon_bg_color', 'font_icon_padding_top_bottom', 'font_icon_padding_left_right'),
                             ),
                             'image'  => array(
-                                'fields'  => array('separator_image', 'font_icon_font_size', 'font_icon_bg_color', 'font_icon_padding_top_bottom', 'font_icon_padding_left_right', 'icon_border_radius'),
+                                'fields'  => array('separator_image', 'font_icon_font_size', 'font_icon_bg_color', 'font_icon_padding_top_bottom', 'font_icon_padding_left_right'),
                             ),
                         ),
                     ),
@@ -118,11 +137,10 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         'connections'   => array( 'photo' ),
                     ),
                     'icon_line_space'   => array(
-                        'type'      => 'text',
+                        'type'      => 'unit',
                         'label'     => __('Line-Icon gap', 'bb-powerpack'),
-                        'size'      => 5,
-                        'maxlength'     => 4,
-                        'description'   => 'px',
+                        'units'		=> array( 'px' ),
+						'slider'	=> true,
                         'preview'   => array(
                             'type'  => 'css',
                             'rules'     => array(
@@ -150,11 +168,10 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                 'title'             => __('Line Style', 'bb-powerpack'), // Section Title
                 'fields'            => array( // Section Fields
 					'line_width'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Custom Width', 'bb-powerpack'),
-                        'size'          => 5,
-                        'maxlength'     => 4,
-                        'description'   => '%',
+                        'units'			=> array( '%' ),
+						'slider'		=> true,
                         'default'       => '100',
                         'preview'       => array(
                             'type'      => 'css',
@@ -183,11 +200,10 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         )
                     ),
                     'line_height'       => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Line Height', 'bb-powerpack'),
-                        'size'          => 5,
-                        'maxlength'     => 2,
-                        'description'   => 'px',
+                        'units'			=> array( 'px' ),
+						'slider'		=> true,
                         'default'       => '1',
                         'preview'       => array(
                             'type'      => 'css',
@@ -253,11 +269,10 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                 'title'             => __('Icon Style', 'bb-powerpack'), // Section Title
                 'fields'            => array( // Section Fields
 					'font_icon_font_size'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Icon Size', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'size'          => 5,
-                        'maxlength'     => 3,
+                        'units'			=> array( 'px' ),
+						'slider'		=> true,
                         'default'       => '16',
                         'preview'       => array(
                             'type'      => 'css',
@@ -311,13 +326,11 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         )
                     ),
                     'font_icon_padding_top_bottom'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Padding Top/Bottom', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
                         'default'       => '0',
-                        'size'          => 5,
-                        'maxlength'     => 3,
+                        'units'			=> array( 'px' ),
+						'slider'		=> true,
                         'preview'       => array(
                             'type'      => 'css',
                             'rules'           => array(
@@ -345,13 +358,11 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         )
                     ),
                     'font_icon_padding_left_right'   => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Padding Left/Right', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'class'         => 'bb-heading-input input-small',
                         'default'       => '0',
-                        'size'          => 5,
-                        'maxlength'     => 3,
+                        'units'			=> array( 'px' ),
+						'slider'		=> true,
                         'preview'       => array(
                             'type'      => 'css',
                             'rules'           => array(
@@ -378,117 +389,21 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                            ),
                         )
                     ),
-                    'icon_border_radius'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Border Radius', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'default'       => '100',
-                        'size'          => 5,
-                        'maxlength'     => 3,
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'rules'     => array(
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-icon-wrap span.pp-icon',
-                                    'property'  => 'border-radius',
-                                    'unit'      => 'px'
-                                ),
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-image-wrap',
-                                    'property'  => 'border-radius',
-                                    'unit'      => 'px'
-                                ),
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-image-wrap img',
-                                    'property'  => 'border-radius',
-                                    'unit'      => 'px'
-                                ),
-                            ),
-
-                        )
-                    ),
                 )
             ),
             'border_section'    => array(
                 'title'     => __('Border Styling', 'bb-powerpack'),
                 'fields'    => array(
-                    'show_border'       => array(
-                        'type'      => 'pp-switch',
-                        'label'     => __('Show Border', 'bb-powerpack'),
-                        'default'   => 'no',
-                        'options'   => array(
-                            'yes'    => __('Yes', 'bb-powerpack'),
-                            'no'    => __('No', 'bb-powerpack'),
+                    'icon_border'	=> array(
+						'type'          => 'border',
+						'label'         => __( 'Border', 'bb-powerpack' ),
+						'responsive'	=> true,
+						'preview'   	=> array(
+                            'type'  		=> 'css',
+                            'selector'  	=> '.pp-line-separator-inner.pp-icon-image .pp-icon-wrap span.pp-icon, .pp-line-separator-inner.pp-icon-image .pp-image-wrap',
+                            'property'  	=> 'border',
                         ),
-                        'toggle'    => array(
-                            'yes'   => array(
-                                'fields'    => array('font_icon_border_width', 'font_icon_border_style', 'font_icon_border_radius', 'font_icon_border_color'),
-                            ),
-                        ),
-                    ),
-                    'font_icon_border_style'     => array(
-                        'type'      => 'select',
-                        'label'     => __('Border Style', 'bb-powerpack'),
-                        'default'     => 'none',
-                        'options'       => array(
-                             'none'          => __('None', 'bb-powerpack'),
-                             'solid'          => __('Solid', 'bb-powerpack'),
-                             'dashed'          => __('Dashed', 'bb-powerpack'),
-                             'dotted'          => __('Dotted', 'bb-powerpack'),
-                             'double'          => __('Double', 'bb-powerpack'),
-                         )
-                    ),
-                    'font_icon_border_width'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Border Width', 'bb-powerpack'),
-                        'description'   => 'px',
-                        'default'       => '0',
-                        'size'          => 5,
-                        'maxlength'     => 3,
-                        'preview'       => array(
-                            'type'      => 'css',
-                            'rules'     => array(
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-icon-wrap span.pp-icon',
-                                    'property'  => 'border-width',
-                                    'unit'      => 'px'
-                                ),
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-image-wrap',
-                                    'property'  => 'border-width',
-                                    'unit'      => 'px'
-                                ),
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-image-wrap img',
-                                    'property'  => 'border-width',
-                                    'unit'      => 'px'
-                                ),
-                            ),
-                        )
-                    ),
-                    'font_icon_border_color'    => array(
-                        'type'          => 'color',
-                        'label'         => __('Border Color', 'bb-powerpack'),
-                        'default'       => '',
-                        'show_reset'    => true,
-                        'preview'         => array(
-                            'type'            => 'css',
-                            'rules'     => array(
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-icon-wrap span.pp-icon',
-                                    'property'  => 'border-color',
-                                ),
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-image-wrap img',
-                                    'property'  => 'border-color',
-                                ),
-                                array(
-                                    'selector'  => '.pp-line-separator.pp-image-wrap',
-                                    'property'  => 'border-color',
-                                ),
-                            ),
-                        )
-                    ),
+					),
                 ),
             ),
         ),

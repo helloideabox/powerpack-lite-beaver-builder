@@ -37,12 +37,12 @@ FLBuilder::register_module('PPSpacerModule', array(
                 'title'         => __('Height', 'bb-powerpack'), // Section Title
                 'fields'        => array( // Section Fields
                     'spacer_height_lg' => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Large Device', 'bb-powerpack'),
-                        'description'   => 'px',
+                        'units'			=> array('px'),
                         'default'       => 15,
-                        'size'          => 5,
-                        'preview'           => array(
+                        'slider'		=> true,
+                        'preview'		=> array(
                             'type'              => 'css',
                             'selector'          => '.pp-spacer-module',
                             'property'          => 'height',
@@ -50,22 +50,22 @@ FLBuilder::register_module('PPSpacerModule', array(
                         ),
                     ),
                     'spacer_height_md' => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Medium Device', 'bb-powerpack'),
-                        'description'   => 'px',
                         'default'       => 15,
-                        'size'          => 5,
-                        'preview'           => array(
+                        'units'			=> array('px'),
+                        'slider'		=> true,
+                        'preview'		=> array(
                             'type'              => 'none',
                         ),
                     ),
                     'spacer_height_sm' => array(
-                        'type'          => 'text',
+                        'type'          => 'unit',
                         'label'         => __('Small Device', 'bb-powerpack'),
-                        'description'   => 'px',
+                        'units'			=> array('px'),
                         'default'       => 15,
-                        'size'          => 5,
-                        'preview'           => array(
+                        'slider'		=> true,
+                        'preview'		=> array(
                             'type'              => 'none',
                         ),
                     ),
@@ -104,11 +104,11 @@ FLBuilder::register_module('PPSpacerModule', array(
                         )
                     ),
                     'custom_breakpoint'     => array(
-                        'type'                  => 'text',
+                        'type'                  => 'unit',
                         'label'                 => __('Custom Breakpoint', 'bb-powerpack'),
-                        'description'           => 'px',
                         'default'               => '',
-                        'size'                  => 5,
+                        'units'					=> array('px'),
+                        'slider'				=> true,
                         'preview'               => array(
                             'type'                  => 'none'
                         )

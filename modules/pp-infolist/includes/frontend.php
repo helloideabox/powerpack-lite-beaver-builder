@@ -1,7 +1,7 @@
 <?php
 
 $infolist_class = 'pp-infolist-wrap';
-
+$title_tag = ( isset( $settings->title_tag ) ) ? $settings->title_tag : 'h3';
 ?>
 <div class="<?php echo $infolist_class; ?>">
 	<?php
@@ -46,7 +46,7 @@ $infolist_class = 'pp-infolist-wrap';
 								<?php if( $items->link_type == 'title' ) { ?>
 									<a class="pp-more-link" href="<?php echo $items->link; ?>" target="<?php echo $items->link_target; ?>">
 								<?php } ?>
-								<h3 class="pp-infolist-title-text"><?php echo $items->title; ?></h3>
+								<<?php echo $title_tag; ?> class="pp-infolist-title-text"><?php echo $items->title; ?></<?php echo $title_tag; ?>>
 								<?php if( $items->link_type == 'title' ) { ?>
 									</a>
 								<?php } ?>
@@ -96,7 +96,7 @@ $infolist_class = 'pp-infolist-wrap';
 								<?php if( $items->link_type == 'title' ) { ?>
 									<a class="pp-more-link" href="<?php echo $items->link; ?>">
 								<?php } ?>
-								<h3 class="pp-infolist-title-text"><?php echo $items->title; ?></h3>
+								<<?php echo $title_tag; ?> class="pp-infolist-title-text"><?php echo $items->title; ?></<?php echo $title_tag; ?>>
 								<?php if( $items->link_type == 'title' ) { ?>
 									</a>
 								<?php } ?>
@@ -167,7 +167,7 @@ $infolist_class = 'pp-infolist-wrap';
 							<?php if( $items->link_type == 'title' ) { ?>
 								<a class="pp-more-link" href="<?php echo $items->link; ?>">
 							<?php } ?>
-							<h3 class="pp-infolist-title-text"><?php echo $items->title; ?></h3>
+							<<?php echo $title_tag; ?> class="pp-infolist-title-text"><?php echo $items->title; ?></<?php echo $title_tag; ?>>
 							<?php if( $items->link_type == 'title' ) { ?>
 								</a>
 							<?php } ?>
@@ -226,7 +226,7 @@ $infolist_class = 'pp-infolist-wrap';
 							<?php if( $items->link_type == 'title' ) { ?>
 								<a class="pp-more-link" href="<?php echo $items->link; ?>">
 							<?php } ?>
-							<h3 class="pp-infolist-title-text"><?php echo $items->title; ?></h3>
+							<<?php echo $title_tag; ?> class="pp-infolist-title-text"><?php echo $items->title; ?></<?php echo $title_tag; ?>>
 							<?php if( $items->link_type == 'title' ) { ?>
 								</a>
 							<?php } ?>

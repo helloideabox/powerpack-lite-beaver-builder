@@ -18,6 +18,7 @@ $current_tab = isset( $_REQUEST['tab'] ) ? $_REQUEST['tab'] : 'extensions';
             <?php } ?>
             <a href="<?php echo self::get_form_action( '&tab=modules' ); ?>" class="nav-tab<?php echo ( $current_tab == 'modules' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Modules', 'bb-powerpack' ); ?></a>
             <a href="<?php echo self::get_form_action( '&tab=templates' ); ?>" class="nav-tab<?php echo ( $current_tab == 'templates' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Templates', 'bb-powerpack' ); ?></a>
+            <a href="<?php echo self::get_form_action( '&tab=integration' ); ?>" class="nav-tab<?php echo ( $current_tab == 'integration' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Integration', 'bb-powerpack' ); ?></a>
             <a href="https://wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=module-settings&utm_campaign=module-settings" class="nav-tab" target="_blank"><?php _e( 'Upgrade', 'bb-powerpack' ); ?></a>
         </h2>
 
@@ -32,7 +33,12 @@ $current_tab = isset( $_REQUEST['tab'] ) ? $_REQUEST['tab'] : 'extensions';
             }
             if ( 'templates' == $current_tab ) {
                 include BB_POWERPACK_DIR . 'includes/admin-settings-templates.php';
-            }
+			}
+			
+			// Integration settings.
+			if ( 'integration' == $current_tab ) {
+				include BB_POWERPACK_DIR . 'includes/admin-settings-integration.php';
+			}
 
         ?>
 

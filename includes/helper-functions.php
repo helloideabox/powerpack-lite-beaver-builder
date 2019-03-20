@@ -8,11 +8,7 @@ function pp_extensions()
     $extensions = array(
         'row'       => array(
             'separators'    => __('Separators', 'bb-powerpack'),
-            'gradient'      => __('Gradient', 'bb-powerpack'),
         ),
-        'col'       => array(
-            'corners'       => __('Round Corners', 'bb-powerpack'),
-        )
     );
 
     return $extensions;
@@ -158,8 +154,12 @@ function pp_get_template_screenshot_url( $type, $category, $mode = '' )
 /**
  * Hex to Rgba
  */
-function pp_hex2rgba( $hex, $opacity )
+function pp_hex2rgba( $hex, $opacity = 1 )
 {
+	if ( false !== strpos( $hex, 'rgb' ) ) {
+		return $hex;
+	}
+	
 	$hex = str_replace( '#', '', $hex );
 
 	if ( strlen($hex) == 3 ) {
@@ -171,6 +171,7 @@ function pp_hex2rgba( $hex, $opacity )
 		$g = hexdec(substr($hex,2,2));
 		$b = hexdec(substr($hex,4,2));
 	}
+	$opacity = ( $opacity > 1 ) ? ( $opacity / 100 ) : $opacity;
 	$rgba = array($r, $g, $b, $opacity);
 
 	return 'rgba(' . implode(', ', $rgba) . ')';
@@ -272,6 +273,8 @@ function pp_get_user_agent()
 	{
 	   return 'ie';
 	}
+
+	return;
 }
 
 /**
@@ -358,4 +361,56 @@ function pp_get_admin_label()
 	$admin_label = 'PowerPack';
 
 	return $admin_label;
+}
+
+/**
+ * Returns Facebook App ID stored in options.
+ *
+ * @return mixed
+ */
+function pp_get_fb_app_id()
+{
+	$app_id = BB_PowerPack_Admin_Settings::get_option( 'bb_powerpack_fb_app_id' );
+
+	return $app_id;
+}
+
+/**
+ * Build the URL of Facebook SDK.
+ *
+ * @return string
+ */
+function pp_get_fb_sdk_url()
+{
+	$app_id = pp_get_fb_app_id();
+	
+	if ( $app_id && ! empty( $app_id ) ) {
+		return sprintf( 'https://connect.facebook.net/%s/sdk.js#xfbml=1&version=v2.12&appId=%s', get_locale(), $app_id );
+	}
+
+	return sprintf( 'https://connect.facebook.net/%s/sdk.js#xfbml=1&version=v2.12', get_locale() );
+}
+
+function pp_get_fb_app_settings_url()
+{
+	$app_id = pp_get_fb_app_id();
+
+	if ( $app_id ) {
+		return sprintf( 'https://developers.facebook.com/apps/%d/settings/', $app_id );
+	} else {
+		return 'https://developers.facebook.com/apps/';
+	}
+}
+
+function pp_get_fb_module_desc()
+{
+	$app_id = pp_get_fb_app_id();
+
+	if ( ! $app_id ) {
+		// translators: %s: Setting Page link
+		return sprintf( __( 'You can set your Facebook App ID in the <a href="%s" target="_blank">Integrations Settings</a>', 'bb-powerpack' ), BB_PowerPack_Admin_Settings::get_form_action() );
+	} else {
+		// translators: %1$s: app_id, %2$s: Setting Page link.
+		return sprintf( __( 'You are connected to Facebook App %1$s, <a href="%2$s" target="_blank">Change App</a>', 'bb-powerpack' ), $app_id, BB_PowerPack_Admin_Settings::get_form_action() );
+	}
 }

@@ -1,20 +1,16 @@
+<?php
+// Heading Typography
+FLBuilderCSS::typography_field_rule( array(
+	'settings'		=> $settings,
+	'setting_name' 	=> 'font_typography',
+	'selector' 		=> ".fl-node-$id .pp-fancy-heading-title",
+) );
+?>
 .fl-node-<?php echo $id; ?> {
-    text-align: <?php echo $settings->text_alignment; ?>;
+    text-align: <?php echo $settings->font_typography['text_align']; ?>;
 }
 .fl-node-<?php echo $id; ?> .pp-fancy-heading-title {
     display: inline-block;
-    <?php if ( $settings->font_family['family'] != 'Default' ) {
-        FLBuilderFonts::font_css( $settings->font_family );
-    } ?>
-    <?php if ( $settings->font_size != 'default' && $settings->font_size_custom['desktop'] != '' ) { ?>
-        font-size: <?php echo $settings->font_size_custom['desktop']; ?>px;
-    <?php } ?>
-    <?php if ( $settings->line_height != 'default' && $settings->line_height_custom['desktop'] != '' ) { ?>
-        line-height: <?php echo $settings->line_height_custom['desktop']; ?>;
-    <?php } ?>
-    <?php if ( $settings->letter_spacing != '' ) { ?>
-        letter-spacing: <?php echo $settings->letter_spacing; ?>px;
-    <?php } ?>
     <?php if ( $settings->heading_type == 'gradient' ) { ?>
         color: #<?php echo $settings->primary_color; ?>;
         background-image: -webkit-linear-gradient(92deg, #<?php echo $settings->primary_color; ?>, #<?php echo $settings->secondary_color; ?>);
@@ -47,26 +43,4 @@
         -webkit-animation: pp-rotate <?php echo $settings->animation_speed; ?>s infinite linear;
         animation: pp-rotate <?php echo $settings->animation_speed; ?>s infinite linear;
     <?php } ?>
-}
-
-@media only screen and (max-width: 768px) {
-    .fl-node-<?php echo $id; ?> .pp-fancy-heading-title {
-        <?php if ( $settings->font_size != 'default' && $settings->font_size_custom['tablet'] != '' ) { ?>
-            font-size: <?php echo $settings->font_size_custom['tablet']; ?>px;
-        <?php } ?>
-        <?php if ( $settings->line_height != 'default' && $settings->line_height_custom['tablet'] != '' ) { ?>
-            line-height: <?php echo $settings->line_height_custom['tablet']; ?>;
-        <?php } ?>
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .fl-node-<?php echo $id; ?> .pp-fancy-heading-title {
-        <?php if ( $settings->font_size != 'default' && $settings->font_size_custom['mobile'] != '' ) { ?>
-            font-size: <?php echo $settings->font_size_custom['mobile']; ?>px;
-        <?php } ?>
-        <?php if ( $settings->line_height != 'default' && $settings->line_height_custom['mobile'] != '' ) { ?>
-            line-height: <?php echo $settings->line_height_custom['mobile']; ?>;
-        <?php } ?>
-    }
 }

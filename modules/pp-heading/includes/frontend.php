@@ -52,7 +52,11 @@ if ( isset( $settings->dual_heading ) && 'yes' == $settings->dual_heading && ! e
 		<<?php echo $settings->heading_tag; ?> class="heading-title">
 
 			<?php if ( $enable_link && ! empty( $settings->heading_link ) ) : ?>
-				<a class="pp-heading-link" href="<?php echo $settings->heading_link; ?>" target="<?php echo $settings->heading_link_target; ?>">
+				<a class="pp-heading-link"
+					href="<?php echo $settings->heading_link; ?>"
+					target="<?php echo $settings->heading_link_target; ?>"
+					<?php echo ( isset( $settings->heading_link_nofollow ) && 'on' == $settings->heading_link_nofollow ) ? ' rel="nofollow"' : ''; ?>
+					>
 			<?php endif; ?>
 
 			<span class="title-text pp-primary-title"><?php echo $settings->heading_title; ?></span>
