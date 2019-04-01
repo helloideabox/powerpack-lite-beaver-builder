@@ -53,6 +53,8 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 *   Business Hours: Display opening and closing hours with various styling options.
 *   Divider: Add line, icon, image divider/separators between modules, rows.
 *   Spacer: Manage extra spacing between various elements on desktop and mobile devices efficiently with this module.
+*   Facebook Modules
+*   Twitter Modules
 *   Fast loading, valid markup, SEO friendly.
 *   Completely mobile responsive.
 *   Translation Ready.
@@ -121,6 +123,12 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 
 == Changelog ==
+
+== 1.2.6 - April 1, 2019 ==
+*	New: Added Twitter Buttons module
+*	New: Added Twitter Grid module
+*	New: Added Twitter Timeline module
+*	New: Added Twitter Tweet module
 
 == 1.2.5 - March 20, 2019 ==
 *	New: Added Facebook Button module
@@ -209,5 +217,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.2.4 =
+= 1.2.6 =
 Added new modules

@@ -1,3 +1,10 @@
+== 1.2.6 ==
+*	Release date: April 1, 2019
+*	New: Added Twitter Buttons module
+*	New: Added Twitter Grid module
+*	New: Added Twitter Timeline module
+*	New: Added Twitter Tweet module
+
 == 1.2.5 ==
 *	Release date: March 20, 2019
 *	New: Added Facebook Button module
