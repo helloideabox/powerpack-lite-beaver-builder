@@ -15,7 +15,11 @@ $modules = array(
 	'modules/pp-facebook-page/pp-facebook-page.php',
     'modules/pp-facebook-button/pp-facebook-button.php',
     'modules/pp-facebook-embed/pp-facebook-embed.php',
-    'modules/pp-facebook-comments/pp-facebook-comments.php',
+	'modules/pp-facebook-comments/pp-facebook-comments.php',
+	'modules/pp-twitter-tweet/pp-twitter-tweet.php',
+    'modules/pp-twitter-grid/pp-twitter-grid.php',
+    'modules/pp-twitter-timeline/pp-twitter-timeline.php',
+    'modules/pp-twitter-buttons/pp-twitter-buttons.php',
 );
 
 /* Form Modules */
