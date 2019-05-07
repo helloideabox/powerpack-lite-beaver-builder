@@ -124,6 +124,9 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+== 1.2.6.1 - May 7, 2019 ==
+*	Fix: PHP fatal error
+
 == 1.2.6 - April 1, 2019 ==
 *	New: Added Twitter Buttons module
 *	New: Added Twitter Grid module

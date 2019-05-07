@@ -414,3 +414,28 @@ function pp_get_fb_module_desc()
 		return sprintf( __( 'You are connected to Facebook App %1$s, <a href="%2$s" target="_blank">Change App</a>', 'bb-powerpack' ), $app_id, BB_PowerPack_Admin_Settings::get_form_action() );
 	}
 }
+
+function pp_get_image_alt( $img_id = false, $default = '' ) {
+	if ( ! $img_id || ! absint( $img_id ) ) {
+		return;
+	}
+	if ( ! class_exists( 'FLBuilderPhoto' ) ) {
+		return;
+	}
+	
+	$img_id = absint( $img_id );
+	$attachment_data = FLBuilderPhoto::get_attachment_data( $img_id );
+	$image_alt = ( ! empty( $default ) ) ? $default : '';
+	
+	if ( is_object( $attachment_data ) ) {
+		$image_alt = $attachment_data->alt;
+		if ( empty( $image_alt ) ) {
+			$image_alt = $attachment_data->caption;
+			if ( empty( $image_alt ) ) {
+				$image_alt = $attachment_data->title;
+			}
+		}
+	}
+
+	return $image_alt;
+}
