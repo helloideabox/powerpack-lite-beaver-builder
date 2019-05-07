@@ -1,6 +1,4 @@
 <div class="<?php echo $main_class; ?>">
-	<?php include $module->dir . 'includes/icon-layout.php'; ?>
-
 	<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
 
 	<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
@@ -12,6 +10,9 @@
 	<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
 		</a>
 	<?php } ?>
+	
+	<?php include $module->dir . 'includes/icon-layout.php'; ?>
+	
 	<div class="pp-infobox-description">
 		<div class="pp-description-wrap">
 			<?php echo $settings->description; ?>

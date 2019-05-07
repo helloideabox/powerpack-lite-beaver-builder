@@ -124,8 +124,13 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
-== 1.2.6.1 - May 7, 2019 ==
+== 1.2.7 - May 7, 2019 ==
+*	Enhancement: Info Box - Added new layout "Icon below Title"
 *	Fix: PHP fatal error
+*	Fix: Fancy Heading - Text clip was not working in Firefox browser
+*	Fix: Dual Button - Button hover transparent background issue
+*	Fix: Info Box - Alignment issue
+*	Fix: Business Hours - Updated schema
 
 == 1.2.6 - April 1, 2019 ==
 *	New: Added Twitter Buttons module

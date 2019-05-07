@@ -3,7 +3,7 @@
  * Plugin Name: PowerPack Lite for Beaver Builder
  * Plugin URI: https://wpbeaveraddons.com
  * Description: A set of custom, creative, unique modules for Beaver Builder to speed up your web design and development process.
- * Version: 1.2.6.1
+ * Version: 1.2.7
  * Author: Beaver Addons
  * Author URI: https://wpbeaveraddons.com
  * Copyright: (c) 2016 IdeaBox Creations
@@ -69,7 +69,7 @@ final class BB_PowerPack_Lite {
 	{
 		define( 'BB_POWERPACK_LITE', true );
 		define( 'BB_POWERPACK_PRO', 'https://wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=module-settings&utm_campaign=module-settings' );
-		define( 'BB_POWERPACK_VER', '1.2.6.1' );
+		define( 'BB_POWERPACK_VER', '1.2.7' );
 		define( 'BB_POWERPACK_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'BB_POWERPACK_URL', plugins_url( '/', __FILE__ ) );
 		define( 'BB_POWERPACK_PATH', plugin_basename( __FILE__ ) );
@@ -86,6 +86,7 @@ final class BB_PowerPack_Lite {
 	{
 		add_action( 'init', array( $this, 'load_modules' ) );
 		add_action( 'plugins_loaded', array( $this, 'loader' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ), 5 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ), 100 );
 		add_action( 'wp_head', array( $this, 'render_scripts' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
@@ -164,6 +165,16 @@ final class BB_PowerPack_Lite {
 		}
 
 		$this->load_textdomain();
+	}
+
+	/**
+	 * Register the styles and scripts.
+	 *
+	 * @since 1.2.6
+	 * @return void
+	 */
+	public function register_scripts() {
+		wp_register_script( 'modernizr-custom', BB_POWERPACK_URL . 'assets/js/modernizr.custom.53451.js', array(), '3.6.0', true );
 	}
 
 	/**

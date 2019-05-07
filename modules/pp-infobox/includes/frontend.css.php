@@ -89,7 +89,7 @@ FLBuilderCSS::border_field_rule( array(
 		<?php if( $settings->layouts == '3' || $settings->layouts == '4' ) { ?>
 			margin-bottom: 0;
 		<?php } ?>
-		<?php if( $settings->layouts == '5' ) { ?>
+		<?php if( $settings->layouts == '5' || $settings->layouts == '6' ) { ?>
 			text-align: <?php echo $settings->alignment; ?>
 		<?php } ?>
 	}
@@ -299,7 +299,7 @@ FLBuilderCSS::typography_field_rule( array(
 	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-3 .pp-icon-wrapper,
 	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-heading-wrapper,
 	.fl-node-<?php echo $id; ?> .pp-infobox-wrap .layout-4 .pp-icon-wrapper {
-		flex: auto;
+		/*flex: auto;*/
 	}
 <?php } ?>
 

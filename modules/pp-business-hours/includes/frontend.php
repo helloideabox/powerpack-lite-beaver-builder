@@ -1,4 +1,4 @@
-<div class="pp-business-hours-content clearfix" itemscope itemtype="http://schema.org/Store">
+<div class="pp-business-hours-content clearfix" itemscope itemtype="http://schema.org/LocalBusiness">
 	<meta itemprop="name" content="<?php echo get_bloginfo('name'); ?>" />
 	<?php $rows = count($settings->business_hours_rows);
 	for ($i=0; $i < count($settings->business_hours_rows); $i++) :

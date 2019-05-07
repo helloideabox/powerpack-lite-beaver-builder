@@ -227,6 +227,7 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                             '4'         => __('Icon at Right', 'bb-powerpack'),
                             '1'         => __('Icon at Left with Title', 'bb-powerpack'),
                             '2'         => __('Icon at Right with Title', 'bb-powerpack'),
+                            '6'         => __('Icon below Title', 'bb-powerpack'),
                         ),
                         'toggle'        => array(
                             '1'             => array(
@@ -248,6 +249,10 @@ FLBuilder::register_module('PPInfoBoxModule', array(
                                 'fields'        => array('space_bt_icon_text', 'icon_position')
                             ),
                             '5'             => array(
+                                'tabs'          => array('icon_styles'),
+                                'sections'      => array('type'),
+							),
+							'6'             => array(
                                 'tabs'          => array('icon_styles'),
                                 'sections'      => array('type'),
                             ),

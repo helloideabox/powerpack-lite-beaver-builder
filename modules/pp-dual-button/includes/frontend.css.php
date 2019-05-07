@@ -49,8 +49,8 @@ FLBuilderCSS::typography_field_rule( array(
     vertical-align: middle;
 }
 .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-1 a.pp-button:hover {
-    <?php if ( isset( $settings->button_1_bg_color_hover ) && ! empty( $settings->button_1_bg_color_hover ) ) { ?>
-	background-color: <?php echo pp_get_color_value( $settings->button_1_bg_color_hover ); ?>;
+    <?php if ( isset( $settings->button_1_bg_color_hover ) ) { ?>
+	background-color: <?php echo ! empty( $settings->button_1_bg_color_hover ) ? pp_get_color_value( $settings->button_1_bg_color_hover ) : 'transparent'; ?>;
 	<?php } ?>
     <?php if ( isset( $settings->button_1_text_color_hover ) && ! empty( $settings->button_1_text_color_hover ) ) { ?>
 	color: <?php echo pp_get_color_value( $settings->button_1_text_color_hover ); ?>;
@@ -77,8 +77,8 @@ FLBuilderCSS::typography_field_rule( array(
 	<?php } ?>
 }
 .fl-node-<?php echo $id; ?> .pp-dual-button-content .pp-dual-button-2 a.pp-button:hover {
-    <?php if ( isset( $settings->button_2_bg_color_hover ) && ! empty( $settings->button_2_bg_color_hover ) ) { ?>
-	background-color: <?php echo pp_get_color_value( $settings->button_2_bg_color_hover ); ?>;
+    <?php if ( isset( $settings->button_2_bg_color_hover ) ) { ?>
+	background-color: <?php echo ! empty( $settings->button_2_bg_color_hover ) ? pp_get_color_value( $settings->button_2_bg_color_hover ) : 'transparent'; ?>;
 	<?php } ?>
     <?php if ( isset( $settings->button_2_text_color_hover ) && ! empty( $settings->button_2_text_color_hover ) ) { ?>
 	color: <?php echo pp_get_color_value( $settings->button_2_text_color_hover ); ?>;
