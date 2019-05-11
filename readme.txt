@@ -26,7 +26,7 @@ Head over to [PowerPack for Beaver Builder website](https://wpbeaveraddons.com/?
 >
 > Beaver Addons team tries to answer all questions at the earliest on the WordPress.org forums. Please feel free to post questions or bug reports, but for quick support, we recommend purchasing a PowerPack license.
 >
-> Along with the great support, there are 35+ custom modules, pre-made sections and beautifully designed page template sets that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack Premium version for Beaver Builder")
+> Along with the great support, there are 55+ custom modules, pre-made sections and beautifully designed page template sets that will make your life easier for building websites. You will be able to build beautiful, professional websites faster than ever. [**Get a license today.**](https://www.wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-support-cta "PowerPack Premium version for Beaver Builder")
 >
 
 
@@ -61,7 +61,7 @@ You can follow us on [Twitter](https://twitter.com/beaveraddons/ "Beaver Addons 
 
 = Premium Features =
 
-*   50+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Pricing Tables, Restaurant Menu, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
+*   55+ powerful modules - Forms, Tabs, Content Grid (with WooCommerce and EDD support), Modal Popup Box, Pricing Tables, Restaurant Menu, Testimonials, One Page Navigation, Headings, Content Tiles, Logo Grid & Carousel etc. Get the complete list [here](https://wpbeaveraddons.com/demo/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
 *   250+ beautiful templates - Pre-made, professionally designed, conversion oriented page and section templates for Beaver Builder. Checkout all the templates [here](https://wpbeaveraddons.com/page-templates/?utm_medium=bb-powerpack-lite&utm_source=repo-readme&utm_campaign=repo-homepage-link).
 *   Toggle between Greyscale and Colored row templates.
 *   Dynamic template library in backend.
@@ -225,5 +225,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Upgrade Notice ==
 
-= 1.2.6 =
-Added new modules
+= 1.2.7 =
+Bug fixes and enhancement
