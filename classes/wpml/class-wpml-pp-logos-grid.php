@@ -13,10 +13,10 @@ class WPML_PP_Logos_Grid extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'upload_logo_title':
-                return esc_html__( 'Logos Grid - Item Title', 'bb-powerpack' );
+                return esc_html__( 'Logos Grid - Item Title', 'bb-powerpack-lite' );
 
 			case 'upload_logo_link':
-				return esc_html__( 'Logos Grid - Item Link', 'bb-powerpack' );
+				return esc_html__( 'Logos Grid - Item Link', 'bb-powerpack-lite' );
 
 			default:
 				return '';

@@ -20,9 +20,9 @@ if ( field.responsive ) {
 <div class="pp-multitext-wrap">
     <# if ( responsive.length > 0 ) { #>
         <div class="pp-multitext-responsive-toggle">
-            <span class="fa fa-desktop pp-multitext-default" data-field-target="medium" title="<?php esc_html_e('Default', 'bb-powerpack'); ?>"></span>
-            <span class="fa fa-tablet pp-multitext-medium" data-field-target="small" title="<?php esc_html_e('Medium Devices', 'bb-powerpack'); ?>"></span>
-            <span class="fa fa-mobile pp-multitext-small" data-field-target="default" title="<?php esc_html_e('Responsive Devices', 'bb-powerpack'); ?>"></span>
+            <span class="fa fa-desktop pp-multitext-default" data-field-target="medium" title="<?php esc_html_e('Default', 'bb-powerpack-lite'); ?>"></span>
+            <span class="fa fa-tablet pp-multitext-medium" data-field-target="small" title="<?php esc_html_e('Medium Devices', 'bb-powerpack-lite'); ?>"></span>
+            <span class="fa fa-mobile pp-multitext-small" data-field-target="default" title="<?php esc_html_e('Responsive Devices', 'bb-powerpack-lite'); ?>"></span>
         </div>
     <# } #>
     <#
@@ -64,7 +64,7 @@ if ( field.responsive ) {
             <input type="text" name="{{name}}[][responsive_small][{{optionKey}}]" value="{{value[responsive_small][optionKey]}}" class="text pp-field-multitext pp-field-multitext-responsive pp-field-multitext-small input-small-m valid" placeholder="{{placeholder}}" />
         <# } #>
         <# if ( 0 === count ) { #>
-            <span class="pp-responsive-toggle fa fa-chevron-right pp-tip" title="<?php esc_html_e( 'Responsive Options', 'bb-powerpack' ); ?>"></span>
+            <span class="pp-responsive-toggle fa fa-chevron-right pp-tip" title="<?php esc_html_e( 'Responsive Options', 'bb-powerpack-lite' ); ?>"></span>
         <# } #>
     </span>
     <#

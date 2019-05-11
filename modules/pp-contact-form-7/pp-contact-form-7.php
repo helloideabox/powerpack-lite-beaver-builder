@@ -14,8 +14,8 @@ class PPContactForm7Module extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Contact Form 7', 'bb-powerpack'),
-            'description'   => __('A module for Contact Form 7.', 'bb-powerpack'),
+            'name'          => __('Contact Form 7', 'bb-powerpack-lite'),
+            'description'   => __('A module for Contact Form 7.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'form_style' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-contact-form-7/',
@@ -151,20 +151,20 @@ require_once BB_POWERPACK_DIR . 'modules/pp-contact-form-7/includes/functions.ph
  */
 FLBuilder::register_module('PPContactForm7Module', array(
     'form'       => array(
-        'title'         => __('Form', 'bb-powerpack'), // Tab title
+        'title'         => __('Form', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'select_form'       => array( // Section
                 'title'         => '', // Section Title
                 'fields'        => array( // Section Fields
                     'select_form_field' => array(
                         'type'          => 'select',
-                        'label'         => __('Select Form', 'bb-powerpack'),
+                        'label'         => __('Select Form', 'bb-powerpack-lite'),
                         'default'       => '',
                         'options'       => cf7_module_form_titles()
                     ),
                     'custom_title'      => array(
                         'type'          => 'text',
-                        'label'         => __('Custom Title', 'bb-powerpack'),
+                        'label'         => __('Custom Title', 'bb-powerpack-lite'),
                         'default'       => '',
                         'description'   => '',
                         'connections'   => array('string'),
@@ -175,7 +175,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'custom_description'    => array(
                         'type'              => 'textarea',
-                        'label'             => __('Custom Description', 'bb-powerpack'),
+                        'label'             => __('Custom Description', 'bb-powerpack-lite'),
                         'default'           => '',
                         'placeholder'       => '',
                         'rows'              => '6',
@@ -190,18 +190,18 @@ FLBuilder::register_module('PPContactForm7Module', array(
         )
     ),
     'style'       => array( // Tab
-        'title'         => __('Style', 'bb-powerpack'), // Tab title
+        'title'         => __('Style', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'form_setting'	=> array( // Section
-                'title'         => __('Form Background', 'bb-powerpack'), // Section Title
+                'title'         => __('Form Background', 'bb-powerpack-lite'), // Section Title
                 'fields'        => array( // Section Fields
                     'form_bg_type'      => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Background Type', 'bb-powerpack'),
+                        'label'         => __('Background Type', 'bb-powerpack-lite'),
                         'default'       => 'color',
                         'options'       => array(
-                            'color'     => __('Color', 'bb-powerpack'),
-                            'image'     => __('Image', 'bb-powerpack'),
+                            'color'     => __('Color', 'bb-powerpack-lite'),
+                            'image'     => __('Image', 'bb-powerpack-lite'),
                         ),
                         'toggle'        => array(
                             'color'     => array(
@@ -214,7 +214,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'form_bg_color'     => array(
                         'type'          => 'color',
-                        'label'         => __('Background Color', 'bb-powerpack'),
+                        'label'         => __('Background Color', 'bb-powerpack-lite'),
                         'default'       => 'ffffff',
                         'show_reset'    => true,
                         'show_alpha'    => true,
@@ -226,7 +226,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'form_bg_image'     => array(
                         'type'              => 'photo',
-                        'label'         => __('Background Image', 'bb-powerpack'),
+                        'label'         => __('Background Image', 'bb-powerpack-lite'),
                         'default'       => '',
                         'preview'       => array(
                             'type'      => 'css',
@@ -236,36 +236,36 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'form_bg_size'      => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Background Size', 'bb-powerpack'),
+                        'label'         => __('Background Size', 'bb-powerpack-lite'),
                         'default'       => 'false',
                         'options'       => array(
-                            'contain'   => __('Contain', 'bb-powerpack'),
-                            'cover'     => __('Cover', 'bb-powerpack'),
+                            'contain'   => __('Contain', 'bb-powerpack-lite'),
+                            'cover'     => __('Cover', 'bb-powerpack-lite'),
                         )
                     ),
                     'form_bg_repeat'    => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Background Repeat', 'bb-powerpack'),
+                        'label'         => __('Background Repeat', 'bb-powerpack-lite'),
                         'default'       => 'no-repeat',
                         'options'       => array(
-                            'repeat-x'      => __('Repeat X', 'bb-powerpack'),
-                            'repeat-y'      => __('Repeat Y', 'bb-powerpack'),
-                            'no-repeat'     => __('No Repeat', 'bb-powerpack'),
+                            'repeat-x'      => __('Repeat X', 'bb-powerpack-lite'),
+                            'repeat-y'      => __('Repeat Y', 'bb-powerpack-lite'),
+                            'no-repeat'     => __('No Repeat', 'bb-powerpack-lite'),
                         )
                     ),
                 )
             ),
             'form_border'	=> array(
-				'title'             => __('Form Border', 'bb-powerpack'),
+				'title'             => __('Form Border', 'bb-powerpack-lite'),
 				'collapsed'			=> true,
                 'fields'            => array(
                     'form_show_border'      => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Show Border', 'bb-powerpack'),
+                        'label'         => __('Show Border', 'bb-powerpack-lite'),
                         'default'       => 'no',
                         'options'       => array(
-                            'yes'        => __('Yes', 'bb-powerpack'),
-                            'no'        => __('No', 'bb-powerpack'),
+                            'yes'        => __('Yes', 'bb-powerpack-lite'),
+                            'no'        => __('No', 'bb-powerpack-lite'),
                         ),
                         'toggle'        => array(
                             'yes'       => array(
@@ -275,7 +275,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
 					'form_border_group'	=> array(
 						'type'					=> 'border',
-						'label'					=> __('Border Style', 'bb-powerpack'),
+						'label'					=> __('Border Style', 'bb-powerpack-lite'),
 						'responsive'			=> true,
 						'preview'				=> array(
 							'type'					=> 'css',
@@ -285,12 +285,12 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'form_corners'	=> array(
-				'title'			=> __('Padding', 'bb-powerpack'),
+				'title'			=> __('Padding', 'bb-powerpack-lite'),
 				'collapsed'		=> true,
                 'fields'		=> array(
                     'form_padding'	=> array(
                         'type'          => 'unit',
-                        'label'         => __('Padding', 'bb-powerpack'),
+                        'label'         => __('Padding', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
                         'slider'		=> true,
                         'default'       => 10,
@@ -306,14 +306,14 @@ FLBuilder::register_module('PPContactForm7Module', array(
         )
     ),
     'input_style'           => array(
-        'title'                 => __('Inputs', 'bb-powerpack'),
+        'title'                 => __('Inputs', 'bb-powerpack-lite'),
         'sections'              => array(
             'input_style'           => array( // Section
-                'title'                 => __('Colors', 'bb-powerpack'), // Section Title
+                'title'                 => __('Colors', 'bb-powerpack-lite'), // Section Title
                 'fields'                => array( // Section Fields
                     'input_field_text_color'	=> array(
                         'type'                      => 'color',
-                        'label'                     => __('Text Color', 'bb-powerpack'),
+                        'label'                     => __('Text Color', 'bb-powerpack-lite'),
                         'default'                   => '',
                         'show_reset'                => true,
                         'preview'                   => array(
@@ -324,7 +324,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'input_field_bg_color'		=> array(
                         'type'                  => 'color',
-                        'label'                 => __('Background Color', 'bb-powerpack'),
+                        'label'                 => __('Background Color', 'bb-powerpack-lite'),
                         'default'               => '',
                         'show_reset'            => true,
                         'show_alpha'            => true,
@@ -337,12 +337,12 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'input_sizes'			=> array(
-				'title'                     => __('Sizes & Padding', 'bb-powerpack'),
+				'title'                     => __('Sizes & Padding', 'bb-powerpack-lite'),
 				'collapsed'					=> true,
                 'fields'                    => array(
 					'input_width'              => array(
 						'type'                      => 'unit',
-						'label'                     => __('Input Width', 'bb-powerpack'),
+						'label'                     => __('Input Width', 'bb-powerpack-lite'),
 						'units'						=> array('%'),
 						'slider'					=> true,
 						'preview'                   => array(
@@ -354,7 +354,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
                     'input_height'              => array(
                         'type'                      => 'unit',
-						'label'                     => __('Input Height', 'bb-powerpack'),
+						'label'                     => __('Input Height', 'bb-powerpack-lite'),
 						'units'						=> array('px'),
 						'slider'					=> true,
                         'preview'                   => array(
@@ -366,7 +366,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'textarea_height'           => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Textarea Height', 'bb-powerpack'),
+                        'label'                     => __('Textarea Height', 'bb-powerpack-lite'),
 						'units'						=> array('px'),
 						'slider'					=> true,
                         'default'                   => 200,
@@ -379,7 +379,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'input_field_padding'       => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Padding', 'bb-powerpack'),
+                        'label'                     => __('Padding', 'bb-powerpack-lite'),
 						'units'						=> array('px'),
 						'slider'					=> true,
 						'default'                   => 12,
@@ -392,7 +392,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'input_field_margin_top'    => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Margin Top', 'bb-powerpack'),
+                        'label'                     => __('Margin Top', 'bb-powerpack-lite'),
 						'units'						=> array('px'),
 						'slider'					=> true,
                         'default'                   => 5,
@@ -405,7 +405,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'input_field_margin'        => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Margin Bottom', 'bb-powerpack'),
+                        'label'                     => __('Margin Bottom', 'bb-powerpack-lite'),
 						'units'						=> array('px'),
 						'slider'					=> true,
                         'default'                   => 10,
@@ -419,19 +419,19 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'input_border'			=> array(
-				'title'                     => __('Border', 'bb-powerpack'),
+				'title'                     => __('Border', 'bb-powerpack-lite'),
 				'collapsed'					=> true,
                 'fields'                    => array(
                     'input_field_border_width'  => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Border Width', 'bb-powerpack'),
+                        'label'                     => __('Border Width', 'bb-powerpack-lite'),
 						'units'						=> array('px'),
 						'slider'					=> true,
                         'default'                   => 1,
                     ),
                     'input_field_border_color'  => array(
                         'type'                      => 'color',
-                        'label'                     => __('Border Color', 'bb-powerpack'),
+                        'label'                     => __('Border Color', 'bb-powerpack-lite'),
                         'default'                   => '',
                         'show_reset'                => true,
                         'preview'                   => array(
@@ -442,31 +442,31 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'input_field_border_focus'  => array(
                         'type'                      => 'color',
-                        'label'                     => __('Border Color Focus', 'bb-powerpack'),
+                        'label'                     => __('Border Color Focus', 'bb-powerpack-lite'),
                         'default'                   => '',
                         'show_reset'                => true,
                     ),
                     'input_field_border_position'   => array(
                         'type'                          => 'select',
-                        'label'                         => __('Border Position', 'bb-powerpack'),
+                        'label'                         => __('Border Position', 'bb-powerpack-lite'),
                         'default'                       => 'border',
                         'options'				        => array(
-                        	'border'			            => __('Default', 'bb-powerpack'),
-                        	'border-top'		            => __('Top', 'bb-powerpack'),
-                        	'border-bottom'		            => __('Bottom', 'bb-powerpack'),
-                        	'border-left'                   => __('Left', 'bb-powerpack'),
-                        	'border-right'		            => __('Right', 'bb-powerpack'),
+                        	'border'			            => __('Default', 'bb-powerpack-lite'),
+                        	'border-top'		            => __('Top', 'bb-powerpack-lite'),
+                        	'border-bottom'		            => __('Bottom', 'bb-powerpack-lite'),
+                        	'border-left'                   => __('Left', 'bb-powerpack-lite'),
+                        	'border-right'		            => __('Right', 'bb-powerpack-lite'),
                         ),
                     ),
                 )
             ),
             'input_general'			=> array(
-				'title'                     => __('General', 'bb-powerpack'),
+				'title'                     => __('General', 'bb-powerpack-lite'),
 				'collapsed'					=> true,
                 'fields'                    => array(
                     'input_field_border_radius' => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Round Corners', 'bb-powerpack'),
+                        'label'                     => __('Round Corners', 'bb-powerpack-lite'),
 						'units'						=> array('px'),
 						'slider'					=> true,
                         'default'                   => 2,
@@ -479,11 +479,11 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'input_field_box_shadow'    => array(
                         'type'                      => 'pp-switch',
-                        'label'                     => __('Enable Box Shadow', 'bb-powerpack'),
+                        'label'                     => __('Enable Box Shadow', 'bb-powerpack-lite'),
                         'default'                   => 'no',
                         'options'                   => array(
-                            'yes'                       => __('Yes', 'bb-powerpack'),
-                            'no'                        => __('No', 'bb-powerpack'),
+                            'yes'                       => __('Yes', 'bb-powerpack-lite'),
+                            'no'                        => __('No', 'bb-powerpack-lite'),
                         ),
                         'toggle'                    => array(
                             'yes'                       => array(
@@ -493,7 +493,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'shadow_color'              => array(
                         'type'                      => 'color',
-                        'label'                     => __('Shadow Color', 'bb-powerpack'),
+                        'label'                     => __('Shadow Color', 'bb-powerpack-lite'),
                         'show_reset'                => true,
                         'preview'                   => array(
                             'type'                      => 'css',
@@ -503,26 +503,26 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'shadow_direction'          => array(
                         'type'                      => 'pp-switch',
-                        'label'                     => __('Shadow Direction', 'bb-powerpack'),
+                        'label'                     => __('Shadow Direction', 'bb-powerpack-lite'),
                         'default'                   => 'out',
                         'options'                   => array(
-                            'out'                       => __('Outside', 'bb-powerpack'),
-                            'inset'                     => __('Inside', 'bb-powerpack'),
+                            'out'                       => __('Outside', 'bb-powerpack-lite'),
+                            'inset'                     => __('Inside', 'bb-powerpack-lite'),
                         ),
                     ),
                 )
             ),
             'placeholder_style'		=> array( // Section
-				'title'         => __('Placeholder', 'bb-powerpack'), // Section Title
+				'title'         => __('Placeholder', 'bb-powerpack-lite'), // Section Title
 				'collapsed'					=> true,
                 'fields'        => array( // Section Fields
                     'show_placeholder' 	=> array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Show Placeholder', 'bb-powerpack'),
+                        'label'         => __('Show Placeholder', 'bb-powerpack-lite'),
                         'default'       => 'yes',
                         'options'		=> array(
-                       		'yes'	         => __('Yes', 'bb-powerpack'),
-                       		'no'	         => __('No', 'bb-powerpack'),
+                       		'yes'	         => __('Yes', 'bb-powerpack-lite'),
+                       		'no'	         => __('No', 'bb-powerpack-lite'),
                         ),
                         'toggle' => array(
                             'yes' => array(
@@ -532,7 +532,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'placeholder_color'  => array(
                         'type'                  => 'color',
-                        'label'                 => __('Color', 'bb-powerpack'),
+                        'label'                 => __('Color', 'bb-powerpack-lite'),
                         'default'               => '999999',
                         'show_reset'            => true,
                         'preview'               => array(
@@ -546,14 +546,14 @@ FLBuilder::register_module('PPContactForm7Module', array(
         )
     ),
     'button_style'          => array(
-        'title'                 => __('Button', 'bb-powerpack'),
+        'title'                 => __('Button', 'bb-powerpack-lite'),
         'sections'              => array(
             'button_settings'       => array( // Section
-                'title'                 => __('Colors', 'bb-powerpack'), // Section Title
+                'title'                 => __('Colors', 'bb-powerpack-lite'), // Section Title
                 'fields'                => array( // Section Fields
                     'button_bg_color'       => array(
                         'type'                  => 'color',
-                        'label'                 => __('Background Color', 'bb-powerpack'),
+                        'label'                 => __('Background Color', 'bb-powerpack-lite'),
                         'default'               => '333333',
                         'show_reset'            => true,
                         'show_alpha'            => true,
@@ -565,7 +565,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'button_hover_bg_color' => array(
                         'type'                  => 'color',
-                        'label'                 => __('Background Color Hover', 'bb-powerpack'),
+                        'label'                 => __('Background Color Hover', 'bb-powerpack-lite'),
                         'default'               => '000000',
                         'show_reset'            => true,
                         'show_alpha'            => true,
@@ -577,7 +577,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'button_text_color'     => array(
                         'type'                  => 'color',
-                        'label'                 => __('Text Color', 'bb-powerpack'),
+                        'label'                 => __('Text Color', 'bb-powerpack-lite'),
                         'default'               => 'ffffff',
                         'show_reset'            => true,
                         'preview'               => array(
@@ -588,7 +588,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'button_hover_text_color'   => array(
                         'type'                      => 'color',
-                        'label'                     => __('Text Color Hover', 'bb-powerpack'),
+                        'label'                     => __('Text Color Hover', 'bb-powerpack-lite'),
                         'default'                   => 'eeeeee',
                         'show_reset'                => true,
                         'preview'                   => array(
@@ -600,16 +600,16 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'button_size'           => array(
-				'title'                 => __('Sizes & Alignment', 'bb-powerpack'),
+				'title'                 => __('Sizes & Alignment', 'bb-powerpack-lite'),
 				'collapsed'				=> true,
                 'fields'                => array(
                     'button_width'          => array(
                         'type'                  => 'pp-switch',
-                        'label'                 => __('Full Width', 'bb-powerpack'),
+                        'label'                 => __('Full Width', 'bb-powerpack-lite'),
                         'default'               => 'false',
                         'options'               => array(
-                            'true'                  => __('Yes', 'bb-powerpack'),
-                            'false'                 => __('No', 'bb-powerpack'),
+                            'true'                  => __('Yes', 'bb-powerpack-lite'),
+                            'false'                 => __('No', 'bb-powerpack-lite'),
                         ),
                         'toggle'            => array(
                             'false'             => array(
@@ -619,7 +619,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'button_width_size'     => array(
                         'type'                  => 'unit',
-                        'label'                 => __('Button Width', 'bb-powerpack'),
+                        'label'                 => __('Button Width', 'bb-powerpack-lite'),
                         'units'           		=> array('px'),
                         'slider'				=> true,
                         'default'               => 100,
@@ -632,18 +632,18 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'button_alignment'      => array(
                         'type'                  => 'align',
-                        'label'                 => __('Button Alignment', 'bb-powerpack'),
+                        'label'                 => __('Button Alignment', 'bb-powerpack-lite'),
                         'default'               => 'none',
                     ),
                 )
             ),
             'button_corners'        => array(
-				'title'                 => __('Padding', 'bb-powerpack'),
+				'title'                 => __('Padding', 'bb-powerpack-lite'),
 				'collapsed'				=> true,
                 'fields'                => array(
                     'button_padding_top_bottom' => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Top/Bottom Padding', 'bb-powerpack'),
+                        'label'                     => __('Top/Bottom Padding', 'bb-powerpack-lite'),
                         'units'						=> array('px'),
                         'slider'                    => true,
                         'default'                   => 10,
@@ -665,7 +665,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'button_padding_left_right' => array(
                         'type'                      => 'unit',
-                        'label'                     => __('Left/Right Padding', 'bb-powerpack'),
+                        'label'                     => __('Left/Right Padding', 'bb-powerpack-lite'),
                         'units'						=> array('px'),
                         'slider'                    => true,
                         'default'                   => 10,
@@ -688,12 +688,12 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'button_border'         => array(
-				'title'                 => __('Border', 'bb-powerpack'),
+				'title'                 => __('Border', 'bb-powerpack-lite'),
 				'collapsed'				=> true,
                 'fields'                => array(
 					'button_border_group'	=> array(
 						'type'					=> 'border',
-						'label'					=> __('Border Style', 'bb-powerpack'),
+						'label'					=> __('Border Style', 'bb-powerpack-lite'),
 						'responsive'			=> true,
 						'preview'				=> array(
 							'type'					=> 'css',
@@ -702,7 +702,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
                     'button_border_color_hover' => array(
                         'type'                      => 'color',
-                        'label'                     => __('Border Color Hover', 'bb-powerpack'),
+                        'label'                     => __('Border Color Hover', 'bb-powerpack-lite'),
                         'default'                   => '333333',
                         'show_reset'                => true,
                         'preview'                   => array(
@@ -716,18 +716,18 @@ FLBuilder::register_module('PPContactForm7Module', array(
         )
     ),
     'error_style'           => array(
-        'title'                 => __('Errors', 'bb-powerpack'),
+        'title'                 => __('Errors', 'bb-powerpack-lite'),
         'sections'              => array(
             'form_error_styling'    => array( // Section
-                'title'                 => __('Errors Style', 'bb-powerpack'), // Section Title
+                'title'                 => __('Errors Style', 'bb-powerpack-lite'), // Section Title
                 'fields'                => array( // Section Fields
                     'validation_error'      => array(
                         'type'              => 'pp-switch',
-                        'label'             => __('Validation Error', 'bb-powerpack'),
+                        'label'             => __('Validation Error', 'bb-powerpack-lite'),
                         'default'           => 'block',
                         'options'           => array(
-                            'block'             => __('Show', 'bb-powerpack'),
-                            'none'              => __('Hide', 'bb-powerpack'),
+                            'block'             => __('Show', 'bb-powerpack-lite'),
+                            'none'              => __('Hide', 'bb-powerpack-lite'),
                         ),
                         'toggle'            => array(
                             'block'             => array(
@@ -737,7 +737,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
 					'validation_error_color'   => array(
                         'type'                      => 'color',
-                        'label'                     => __('Validation Error Color', 'bb-powerpack'),
+                        'label'                     => __('Validation Error Color', 'bb-powerpack-lite'),
                         'default'                   => '000000',
                         'show_reset'                => true,
                         'preview'                   => array(
@@ -748,7 +748,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'validation_error_font_size'    => array(
                         'type'                          => 'unit',
-                        'label'                         => __('Validation Error Font Size', 'bb-powerpack'),
+                        'label'                         => __('Validation Error Font Size', 'bb-powerpack-lite'),
                         'units'							=> array('px'),
                         'slider'						=> true,
                         'default'                       => '',
@@ -761,7 +761,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
                     'form_error_field_background_color' => array(
                         'type'                              => 'color',
-                        'label'                             => __('Validation Error Background Color', 'bb-powerpack'),
+                        'label'                             => __('Validation Error Background Color', 'bb-powerpack-lite'),
                         'default'                           => 'ffffff',
                         'show_reset'                        => true,
                         'show_alpha'                        => true,
@@ -773,7 +773,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
 					'form_error_field_border_group'	=> array(
 						'type'					=> 'border',
-						'label'					=> __('Validation Error Border Style', 'bb-powerpack'),
+						'label'					=> __('Validation Error Border Style', 'bb-powerpack-lite'),
 						'responsive'			=> true,
 						'preview'				=> array(
 							'type'					=> 'css',
@@ -782,11 +782,11 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
 					'validation_message'   => array(
                         'type'                 => 'pp-switch',
-                        'label'                => __('Error Field Message', 'bb-powerpack'),
+                        'label'                => __('Error Field Message', 'bb-powerpack-lite'),
                         'default'              => 'true',
                         'options'              => array(
-                            'block'            => __('Show', 'bb-powerpack'),
-                            'none'             => __('Hide', 'bb-powerpack'),
+                            'block'            => __('Show', 'bb-powerpack-lite'),
+                            'none'             => __('Hide', 'bb-powerpack-lite'),
                         ),
                         'toggle'               => array(
                             'block'                => array(
@@ -796,7 +796,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     ),
 					'validation_message_color' => array(
                         'type'                    => 'color',
-                        'label'                   => __('Error Field Label Color', 'bb-powerpack'),
+                        'label'                   => __('Error Field Label Color', 'bb-powerpack-lite'),
                         'default'                 => 'ff0000',
                         'show_reset'              => true,
                         'preview'                 => array(
@@ -810,14 +810,14 @@ FLBuilder::register_module('PPContactForm7Module', array(
         )
     ),
     'form_typography'       => array( // Tab
-        'title'         => __('Typography', 'bb-powerpack'), // Tab title
+        'title'         => __('Typography', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'title_typography'       => array( // Section
-                'title'         => __('Title', 'bb-powerpack'), // Section Title
+                'title'         => __('Title', 'bb-powerpack-lite'), // Section Title
 				'fields'        => array( // Section Fields
 					'title_typography'	=> array(
 						'type'        	   => 'typography',
-						'label'       	   => __( 'Typography', 'bb-powerpack' ),
+						'label'       	   => __( 'Typography', 'bb-powerpack-lite' ),
 						'responsive'  	   => true,
 						'preview'          => array(
 							'type'         		=> 'css',
@@ -826,7 +826,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
                     'title_color'       => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'preview'       => array(
@@ -838,12 +838,12 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'description_typography'    => array(
-				'title'     => __('Description', 'bb-powerpack'),
+				'title'     => __('Description', 'bb-powerpack-lite'),
 				'collapsed'	=> true,
                 'fields'    => array(
 					'description_typography'	=> array(
 						'type'        	   => 'typography',
-						'label'       	   => __( 'Typography', 'bb-powerpack' ),
+						'label'       	   => __( 'Typography', 'bb-powerpack-lite' ),
 						'responsive'  	   => true,
 						'preview'          => array(
 							'type'         		=> 'css',
@@ -852,7 +852,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
                     'description_color' => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'preview'       => array(
@@ -864,12 +864,12 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 ),
             ),
             'label_typography'       => array( // Section
-				'title'         => __('Label', 'bb-powerpack'), // Section Title
+				'title'         => __('Label', 'bb-powerpack-lite'), // Section Title
 				'collapsed'		=> true,
 				'fields'        => array( // Section Fields
 					'label_typography'	=> array(
 						'type'        	   => 'typography',
-						'label'       	   => __( 'Typography', 'bb-powerpack' ),
+						'label'       	   => __( 'Typography', 'bb-powerpack-lite' ),
 						'responsive'  	   => true,
 						'preview'          => array(
 							'type'         		=> 'css',
@@ -878,7 +878,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
 					),
                     'form_label_color'  => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'preview'       => array(
@@ -890,12 +890,12 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'input_typography'       => array( // Section
-				'title'         => __('Input', 'bb-powerpack'), // Section Title
+				'title'         => __('Input', 'bb-powerpack-lite'), // Section Title
 				'collapsed'		=> true,
 				'fields'        => array( // Section Fields
 					'input_typography'	=> array(
 						'type'        	   => 'typography',
-						'label'       	   => __( 'Typography', 'bb-powerpack' ),
+						'label'       	   => __( 'Typography', 'bb-powerpack-lite' ),
 						'responsive'  	   => true,
 						'preview'          => array(
 							'type'         		=> 'css',
@@ -905,12 +905,12 @@ FLBuilder::register_module('PPContactForm7Module', array(
                 )
             ),
             'button_typography'       => array( // Section
-				'title'         => __('Button', 'bb-powerpack'), // Section Title
+				'title'         => __('Button', 'bb-powerpack-lite'), // Section Title
 				'collapsed'		=> true,
 				'fields'        => array( // Section Fields
 					'button_typography'	=> array(
 						'type'        	   => 'typography',
-						'label'       	   => __( 'Typography', 'bb-powerpack' ),
+						'label'       	   => __( 'Typography', 'bb-powerpack-lite' ),
 						'responsive'  	   => true,
 						'preview'          => array(
 							'type'         		=> 'css',

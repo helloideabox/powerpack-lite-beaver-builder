@@ -11,8 +11,8 @@ class PPTwitterGridModule extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'          => __( 'Twitter Embedded Grid', 'bb-powerpack' ),
-			'description'   => __( 'A collection timeline displays multiple Tweets curated by a Twitter user in their chosen display order or sorted by time.', 'bb-powerpack' ),
+			'name'          => __( 'Twitter Embedded Grid', 'bb-powerpack-lite' ),
+			'description'   => __( 'A collection timeline displays multiple Tweets curated by a Twitter user in their chosen display order or sorted by time.', 'bb-powerpack-lite' ),
 			'group'         	=> pp_get_modules_group(),
 			'category'			=> pp_get_modules_cat( 'creative' ),
 			'dir'           	=> BB_POWERPACK_DIR . 'modules/pp-twitter-grid/',
@@ -30,34 +30,34 @@ class PPTwitterGridModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPTwitterGridModule', array(
 	'general'       => array( // Tab
-		'title'         => __( 'General', 'bb-powerpack' ), // Tab title
+		'title'         => __( 'General', 'bb-powerpack-lite' ), // Tab title
 		'description'	=> sprintf(
-			__('Please refer these guidelines %s and %s', 'bb-powerpack'),
+			__('Please refer these guidelines %s and %s', 'bb-powerpack-lite'),
 			'<a href="https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features?lang=browser" target="_blank">https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features?lang=browser</a>',
 			'<a href="https://developer.twitter.com/en/docs/tweets/curate-a-collection/overview/overview" target="_blank">https://developer.twitter.com/en/docs/tweets/curate-a-collection/overview/overview</a>'
 		),
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __( 'General', 'bb-powerpack' ), // Section Title
+				'title'         => __( 'General', 'bb-powerpack-lite' ), // Section Title
 				'fields'        => array( // Section Fields
 					'url'     		=> array(
 						'type'          => 'text',
-						'label'         => __( 'Collection URL', 'bb-powerpack' ),
+						'label'         => __( 'Collection URL', 'bb-powerpack-lite' ),
 						'default'       => '',
 						'connections'	=> array( 'url' ),
 					),
 					'footer'  		=> array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Show Footer?', 'bb-powerpack' ),
+						'label'         => __( 'Show Footer?', 'bb-powerpack-lite' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'yes'			=> __( 'Yes', 'bb-powerpack' ),
-							'no'       		=> __( 'No', 'bb-powerpack' ),
+							'yes'			=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'       		=> __( 'No', 'bb-powerpack-lite' ),
 						),
 					),
 					'width'     	=> array(
 						'type'          => 'unit',
-						'label'         => __( 'Width', 'bb-powerpack' ),
+						'label'         => __( 'Width', 'bb-powerpack-lite' ),
 						'default'       => '',
 						'units'   		=> array( 'px' ),
 						'slider'		=> array(
@@ -68,7 +68,7 @@ FLBuilder::register_module('PPTwitterGridModule', array(
 					),
 					'tweet_limit'	=> array(
 						'type'          => 'unit',
-						'label'         => __( 'Tweet Limit', 'bb-powerpack' ),
+						'label'         => __( 'Tweet Limit', 'bb-powerpack-lite' ),
 						'default'       => '',
 						'slider'		=> true,
 					),

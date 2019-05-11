@@ -13,7 +13,7 @@ class WPML_PP_Business_Hours extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'status_text':
-				return esc_html__( 'Business Hours - Status Text', 'bb-powerpack' );
+				return esc_html__( 'Business Hours - Status Text', 'bb-powerpack-lite' );
 
 			default:
 				return '';

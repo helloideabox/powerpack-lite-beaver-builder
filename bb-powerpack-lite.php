@@ -3,13 +3,13 @@
  * Plugin Name: PowerPack Lite for Beaver Builder
  * Plugin URI: https://wpbeaveraddons.com
  * Description: A set of custom, creative, unique modules for Beaver Builder to speed up your web design and development process.
- * Version: 1.2.7
+ * Version: 1.2.7.1
  * Author: Beaver Addons
  * Author URI: https://wpbeaveraddons.com
  * Copyright: (c) 2016 IdeaBox Creations
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: bb-powerpack
+ * Text Domain: bb-powerpack-lite
  */
 
 // Exit if accessed directly.
@@ -68,11 +68,11 @@ final class BB_PowerPack_Lite {
 	{
 		define( 'BB_POWERPACK_LITE', true );
 		define( 'BB_POWERPACK_PRO', 'https://wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=module-settings&utm_campaign=module-settings' );
-		define( 'BB_POWERPACK_VER', '1.2.7' );
+		define( 'BB_POWERPACK_VER', '1.2.7.1' );
 		define( 'BB_POWERPACK_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'BB_POWERPACK_URL', plugins_url( '/', __FILE__ ) );
 		define( 'BB_POWERPACK_PATH', plugin_basename( __FILE__ ) );
-		define( 'BB_POWERPACK_CAT', __('PowerPack Modules', 'bb-powerpack') );
+		define( 'BB_POWERPACK_CAT', __('PowerPack Modules', 'bb-powerpack-lite') );
 	}
 
 	/**
@@ -91,17 +91,6 @@ final class BB_PowerPack_Lite {
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
-	}
-
-	/**
-	 * Load language files.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	public function load_textdomain()
-	{
-    	load_plugin_textdomain( 'bb-powerpack', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
@@ -162,8 +151,6 @@ final class BB_PowerPack_Lite {
 		        require_once 'includes/column.php';
 		    }
 		}
-
-		$this->load_textdomain();
 	}
 
 	/**
@@ -237,16 +224,16 @@ final class BB_PowerPack_Lite {
 
 		if ( !is_plugin_active( 'bb-plugin/fl-builder.php' ) ) {
 			if ( !is_plugin_active( 'beaver-builder-lite-version/fl-builder.php' ) ) {
-				echo sprintf('<div class="notice notice-error"><p>%s</p></div>', __('Please install and activate <a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">Beaver Builder Lite</a> or <a href="https://www.wpbeaverbuilder.com/pricing/" target="_blank">Beaver Builder Pro / Agency</a> to use PowerPack add-on.', 'bb-powerpack'));
+				echo sprintf('<div class="notice notice-error"><p>%s</p></div>', __('Please install and activate <a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">Beaver Builder Lite</a> or <a href="https://www.wpbeaverbuilder.com/pricing/" target="_blank">Beaver Builder Pro / Agency</a> to use PowerPack add-on.', 'bb-powerpack-lite'));
 			}
 		}
 		if ( class_exists( 'BB_PowerPack' ) ) {
-			echo sprintf('<div class="notice notice-error"><p>%s</p></div>', __('You already have PowerPack Pro version. PowerPack Lite cannot be used with the Pro version.', 'bb-powerpack'));
+			echo sprintf('<div class="notice notice-error"><p>%s</p></div>', __('You already have PowerPack Pro version. PowerPack Lite cannot be used with the Pro version.', 'bb-powerpack-lite'));
 		}
 		/* Check transient, if available display notice */
     	if ( get_transient( 'bb-powerpack-lite-admin-notices' ) ) {
 			if ( ! class_exists( 'BB_PowerPack' ) && ( is_plugin_active( 'bb-plugin/fl-builder.php' ) || is_plugin_active( 'beaver-builder-lite-version/fl-builder.php' ) ) ) {
-				echo sprintf('<div class="notice notice-info is-dismissible"><p>%s</p></div>', __('Thank you for choosing PowerPack Lite for Beaver Builder. Checkout <a href="https://wpbeaveraddons.com/?utm_medium=powerpack-lite&utm_source=plugin-page&utm_campaign=activation-message" target="_blank">Pro version</a> for more features.', 'bb-powerpack'));
+				echo sprintf('<div class="notice notice-info is-dismissible"><p>%s</p></div>', __('Thank you for choosing PowerPack Lite for Beaver Builder. Checkout <a href="https://wpbeaveraddons.com/?utm_medium=powerpack-lite&utm_source=plugin-page&utm_campaign=activation-message" target="_blank">Pro version</a> for more features.', 'bb-powerpack-lite'));
 				delete_transient( 'bb-powerpack-lite-admin-notices' );
 			}
 		}

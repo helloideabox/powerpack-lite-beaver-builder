@@ -14,8 +14,8 @@ class PPBusinessHoursModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Business Hours', 'bb-powerpack'),
-            'description'   => __('A module to display business hours.', 'bb-powerpack'),
+            'name'          => __('Business Hours', 'bb-powerpack-lite'),
+            'description'   => __('A module to display business hours.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-business-hours/',
@@ -102,14 +102,14 @@ class PPBusinessHoursModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPBusinessHoursModule', array(
     'general'       => array( // Tab
-        'title'         => __('General', 'bb-powerpack'), // Tab title
+        'title'         => __('General', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'general'       => array( // Section
                 'title'         => '', // Section Title
                 'fields'        => array( // Section Fields
                     'business_hours_rows'     => array(
                         'type'          => 'form',
-                        'label'         => __( 'Timing', 'bb-powerpack' ),
+                        'label'         => __( 'Timing', 'bb-powerpack-lite' ),
                         'form'          => 'bh_settings_form', // ID from registered form below
                         'preview_text'  => 'title', // Name of a field to use for the preview text
 						'multiple'		=> true,
@@ -119,14 +119,14 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
         )
     ),
 	'style'	=> array(
-		'title'	=> __( 'Style', 'bb-powerpack' ),
+		'title'	=> __( 'Style', 'bb-powerpack-lite' ),
 		'sections'	=> array(
 			'layout'	=> array(
-				'title'	=> __( 'Timing', 'bb-powerpack' ),
+				'title'	=> __( 'Timing', 'bb-powerpack-lite' ),
 				'fields'	=> array(
                     'spacing'   => array(
                         'type'      => 'unit',
-                        'label'     => __('Spacing', 'bb-powerpack'),
+                        'label'     => __('Spacing', 'bb-powerpack-lite'),
                         'default'   => 10,
                         'units'      => array('px'),
                         'slider'   => true,
@@ -148,11 +148,11 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
                     ),
 					'zebra_pattern'   => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Striped Effect', 'bb-powerpack'),
+                        'label'         => __('Striped Effect', 'bb-powerpack-lite'),
                         'default'       => 'no',
                         'options'       => array(
-                            'yes'           => __('Yes', 'bb-powerpack'),
-                            'no'            => __('No', 'bb-powerpack'),
+                            'yes'           => __('Yes', 'bb-powerpack-lite'),
+                            'no'            => __('No', 'bb-powerpack-lite'),
                         ),
 						'toggle'	=> array(
 							'yes'	=> array(
@@ -163,7 +163,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					'row_bg_color_1'  => array(
 						'type'          => 'color',
 						'default'       => '',
-						'label'         => __( 'Color 1', 'bb-powerpack' ),
+						'label'         => __( 'Color 1', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'show_alpha'		=> true,
 						'preview'              => array(
@@ -175,7 +175,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					'row_bg_color_2'  => array(
 						'type'          => 'color',
 						'default'       => '',
-						'label'         => __( 'Color 2', 'bb-powerpack' ),
+						'label'         => __( 'Color 2', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'show_alpha'		=> true,
 						'preview'              => array(
@@ -186,11 +186,11 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					),
 					'separator'   => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Separator', 'bb-powerpack'),
+                        'label'         => __('Separator', 'bb-powerpack-lite'),
                         'default'       => 'no',
                         'options'       => array(
-                            'yes'      => __('Yes', 'bb-powerpack'),
-                            'no'      => __('No', 'bb-powerpack'),
+                            'yes'      => __('Yes', 'bb-powerpack-lite'),
+                            'no'      => __('No', 'bb-powerpack-lite'),
                         ),
 						'toggle'	=> array(
 							'yes'	=> array(
@@ -200,12 +200,12 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
                     ),
 					'separator_style'   => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Separator Style', 'bb-powerpack'),
+                        'label'         => __('Separator Style', 'bb-powerpack-lite'),
                         'default'       => 'solid',
                         'options'       => array(
-                            'solid'      => __('Solid', 'bb-powerpack'),
-                            'dashed'      => __('Dashed', 'bb-powerpack'),
-                            'dotted'      => __('Dotted', 'bb-powerpack'),
+                            'solid'      => __('Solid', 'bb-powerpack-lite'),
+                            'dashed'      => __('Dashed', 'bb-powerpack-lite'),
+                            'dotted'      => __('Dotted', 'bb-powerpack-lite'),
                         ),
 						'preview'              => array(
 							'type'				=> 'css',
@@ -215,8 +215,8 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
                     ),
 					'separator_width'       => array(
 						'type'          => 'text',
-						'label'         => __( 'Separator Width', 'bb-powerpack' ),
-						'description'	=> __( 'px', 'bb-powerpack' ),
+						'label'         => __( 'Separator Width', 'bb-powerpack-lite' ),
+						'description'	=> __( 'px', 'bb-powerpack-lite' ),
 						'default'       => 1,
 						'size'			=> 5,
 						'maxlength'		=> 10,
@@ -230,7 +230,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					'separator_color'  => array(
 						'type'          => 'color',
 						'default'       => '',
-						'label'         => __( 'Separator Color', 'bb-powerpack' ),
+						'label'         => __( 'Separator Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'preview'              => array(
 							'type'				=> 'css',
@@ -241,11 +241,11 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 				)
 			),
 			'box'	=> array(
-				'title'	=> __( 'Box', 'bb-powerpack' ),
+				'title'	=> __( 'Box', 'bb-powerpack-lite' ),
 				'fields'	=> array(
 					'box_bg_color'      => array(
 						'type'      		=> 'color',
-						'label'     		=> __('Background Color', 'bb-powerpack'),
+						'label'     		=> __('Background Color', 'bb-powerpack-lite'),
 						'default'			=> 'f5f5f5',
 						'show_reset'   		=> true,
 						'show_alpha'   		=> true,
@@ -257,7 +257,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					),
 					'box_border_setting'	=> array(
 						'type'					=> 'border',
-						'label'					=> __('Border', 'bb-powerpack'),
+						'label'					=> __('Border', 'bb-powerpack-lite'),
 						'preview'				=> array(
 							'type'					=> 'css',
 							'selector'				=> '.pp-business-hours-content',
@@ -269,15 +269,15 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 		)
 	),
 	'typography'	=> array(
-		'title'	=> __( 'Typography', 'bb-powerpack' ),
+		'title'	=> __( 'Typography', 'bb-powerpack-lite' ),
 		'sections'	=> array(
 			'day_typography'	=> array(
-				'title'	=> __( 'Day', 'bb-powerpack' ),
+				'title'	=> __( 'Day', 'bb-powerpack-lite' ),
 				'fields'	=> array(
 					'title_color'  => array(
 						'type'          => 'color',
 						'default'       => '',
-						'label'         => __( 'Color', 'bb-powerpack' ),
+						'label'         => __( 'Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'preview'	=> array(
 							'type'		=> 'css',
@@ -287,7 +287,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					),
 					'title_typography'	=> array(
 						'type'			=> 'typography',
-						'label'			=> __('Typography', 'bb-powerpack'),
+						'label'			=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  	=> true,
 						'preview'		=> array(
 							'type'			=> 'css',
@@ -297,12 +297,12 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 				)
 			),
 			'timing_typography'	=> array(
-				'title'	=> __( 'Timing', 'bb-powerpack' ),
+				'title'	=> __( 'Timing', 'bb-powerpack-lite' ),
 				'fields'	=> array(
 					'timing_color'  => array(
 						'type'          => 'color',
 						'default'       => '',
-						'label'         => __( 'Color', 'bb-powerpack' ),
+						'label'         => __( 'Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'preview'	=> array(
 							'type'		=> 'css',
@@ -313,7 +313,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					'status_color'  => array(
 						'type'          => 'color',
 						'default'       => '',
-						'label'         => __( 'Status Text Color', 'bb-powerpack' ),
+						'label'         => __( 'Status Text Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'preview'	=> array(
 							'type'		=> 'css',
@@ -323,7 +323,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 					),
 					'timing_typography'	=> array(
 						'type'			=> 'typography',
-						'label'			=> __('Typography', 'bb-powerpack'),
+						'label'			=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  	=> true,
 						'preview'		=> array(
 							'type'			=> 'css',
@@ -340,21 +340,21 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
  * Register a settings form to use in the "form" field type above.
  */
 FLBuilder::register_settings_form('bh_settings_form', array(
-    'title' => __('Timing Settings', 'bb-powerpack'),
+    'title' => __('Timing Settings', 'bb-powerpack-lite'),
     'tabs'  => array(
         'general'      => array( // Tab
-            'title'         => __('General', 'bb-powerpack'), // Tab title
+            'title'         => __('General', 'bb-powerpack-lite'), // Tab title
             'sections'      => array( // Tab Sections
                 'general'       => array( // Section
                     'title'         => '', // Section Title
                     'fields'        => array( // Section Fields
 						'highlight'   => array(
 	                        'type'          => 'pp-switch',
-	                        'label'         => __('Highlight this', 'bb-powerpack'),
+	                        'label'         => __('Highlight this', 'bb-powerpack-lite'),
 	                        'default'       => 'no',
 	                        'options'       => array(
-	                            'yes'      => __('Yes', 'bb-powerpack'),
-	                            'no'      => __('No', 'bb-powerpack'),
+	                            'yes'      => __('Yes', 'bb-powerpack-lite'),
+	                            'no'      => __('No', 'bb-powerpack-lite'),
 	                        ),
 							'toggle'	=> array(
 								'yes'	=> array(
@@ -364,11 +364,11 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 						),
 						'hours_type'	=> array(
 							'type'			=> 'pp-switch',
-							'label'			=> __('Type', 'bb-powerpack'),
+							'label'			=> __('Type', 'bb-powerpack-lite'),
 							'default'		=> 'day',
 							'options'		=> array(
-								'day'			=> __('Day', 'bb-powerpack'),
-								'range'			=> __('Range', 'bb-powerpack')
+								'day'			=> __('Day', 'bb-powerpack-lite'),
+								'range'			=> __('Range', 'bb-powerpack-lite')
 							),
 							'toggle'		=> array(
 								'day'			=> array(
@@ -381,38 +381,38 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 						),
                         'title'       => array(
                             'type'          => 'select',
-                            'label'         => __( 'Day', 'bb-powerpack' ),
+                            'label'         => __( 'Day', 'bb-powerpack-lite' ),
                             'default'       => 'Monday',
                             'options'       => pp_long_day_format()
 						),
 						'start_day'	=> array(
 							'type'          => 'select',
-                            'label'         => __( 'Start Day', 'bb-powerpack' ),
+                            'label'         => __( 'Start Day', 'bb-powerpack-lite' ),
                             'default'       => 'Monday',
                             'options'       => pp_long_day_format()
 						),
 						'end_day'	=> array(
 							'type'          => 'select',
-                            'label'         => __( 'End Day', 'bb-powerpack' ),
+                            'label'         => __( 'End Day', 'bb-powerpack-lite' ),
                             'default'       => 'Saturday',
                             'options'       => pp_long_day_format()
 						),
                         'day_format'    => array(
                             'type'          => 'pp-switch',
-                            'label'         => __( 'Day Format', 'bb-powerpack' ),
+                            'label'         => __( 'Day Format', 'bb-powerpack-lite' ),
                             'default'       => 'long',
                             'options'       => array(
-                                'long'          => __('Long', 'bb-powerpack'),
-                                'short'         => __('Short', 'bb-powerpack'),
+                                'long'          => __('Long', 'bb-powerpack-lite'),
+                                'short'         => __('Short', 'bb-powerpack-lite'),
                             )
                         ),
 						'status'   => array(
 	                        'type'          => 'pp-switch',
-	                        'label'         => __('Status', 'bb-powerpack'),
+	                        'label'         => __('Status', 'bb-powerpack-lite'),
 	                        'default'       => 'open',
 	                        'options'       => array(
-	                            'open'      => __('Open', 'bb-powerpack'),
-	                            'close'      => __('Close', 'bb-powerpack'),
+	                            'open'      => __('Open', 'bb-powerpack-lite'),
+	                            'close'      => __('Close', 'bb-powerpack-lite'),
 	                        ),
 							'toggle'	=> array(
 								'open'	=> array(
@@ -425,33 +425,33 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 	                    ),
 						'start_time' => array(
 							'type'       => 'time',
-							'label'      => __( 'Start Time', 'bb-powerpack' ),
+							'label'      => __( 'Start Time', 'bb-powerpack-lite' ),
 							'default'		=>array(
 								'hours'			=> '01',
 								'minutes'		=> '00',
-								'day_period'	=> __('am', 'bb-powerpack')
+								'day_period'	=> __('am', 'bb-powerpack-lite')
 							)
 						),
 						'end_time' => array(
 							'type'       => 'time',
-							'label'      => __( 'End Time', 'bb-powerpack' ),
+							'label'      => __( 'End Time', 'bb-powerpack-lite' ),
 							'default'		=>array(
 								'hours'			=> '01',
 								'minutes'		=> '00',
-								'day_period'	=> __('am', 'bb-powerpack')
+								'day_period'	=> __('am', 'bb-powerpack-lite')
 							)
 						),
 						'status_text'       => array(
                             'type'          => 'text',
-                            'label'         => __( 'Status Text', 'bb-powerpack' ),
-                            'default'       => __( 'Closed', 'bb-powerpack' )
+                            'label'         => __( 'Status Text', 'bb-powerpack-lite' ),
+                            'default'       => __( 'Closed', 'bb-powerpack-lite' )
                         ),
                     )
                 )
             )
         ),
 		'higlight_row_style'	=> array(
-			'title'	=> __( 'Style', 'bb-powerpack' ),
+			'title'	=> __( 'Style', 'bb-powerpack-lite' ),
 			'sections'	=> array(
 				'general'	=> array(
 					'title'	=> '',
@@ -459,26 +459,26 @@ FLBuilder::register_settings_form('bh_settings_form', array(
 						'hl_row_bg_color'  => array(
 							'type'          => 'color',
 							'default'       => '',
-							'label'         => __( 'Background Color', 'bb-powerpack' ),
+							'label'         => __( 'Background Color', 'bb-powerpack-lite' ),
 							'show_reset'		=> true,
 							'show_alpha'		=> true,
 						),
 						'hl_title_color'  => array(
 							'type'          => 'color',
 							'default'       => '',
-							'label'         => __( 'Day Color', 'bb-powerpack' ),
+							'label'         => __( 'Day Color', 'bb-powerpack-lite' ),
 							'show_reset'		=> true,
 						),
 						'hl_timing_color'  => array(
 							'type'          => 'color',
 							'default'       => '',
-							'label'         => __( 'Timing Color', 'bb-powerpack' ),
+							'label'         => __( 'Timing Color', 'bb-powerpack-lite' ),
 							'show_reset'		=> true,
 						),
 						'hl_status_color'  => array(
 							'type'          => 'color',
 							'default'       => '',
-							'label'         => __( 'Status Color', 'bb-powerpack' ),
+							'label'         => __( 'Status Color', 'bb-powerpack-lite' ),
 							'show_reset'		=> true,
 						),
 					)

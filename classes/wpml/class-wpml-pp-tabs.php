@@ -13,10 +13,10 @@ class WPML_PP_Tabs extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'label':
-				return esc_html__( 'Tabs - Item Label', 'bb-powerpack' );
+				return esc_html__( 'Tabs - Item Label', 'bb-powerpack-lite' );
 
 			case 'content':
-				return esc_html__( 'Tabs - Item Content', 'bb-powerpack' );
+				return esc_html__( 'Tabs - Item Content', 'bb-powerpack-lite' );
 
 			default:
 				return '';

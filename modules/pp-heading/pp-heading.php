@@ -14,8 +14,8 @@ class PPHeadingModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Smart Headings', 'bb-powerpack'),
-            'description'   => __('A module for Smart Headings.', 'bb-powerpack'),
+            'name'          => __('Smart Headings', 'bb-powerpack-lite'),
+            'description'   => __('A module for Smart Headings.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-heading/',
@@ -217,14 +217,14 @@ class PPHeadingModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPHeadingModule', array(
     'heading_info_tab'       => array( // Tab
-        'title'         => __('General', 'bb-powerpack'), // Tab title
+        'title'         => __('General', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'heading_section'       => array( // Section
-                'title'        => __('Heading', 'bb-powerpack'), // Section Title
+                'title'        => __('Heading', 'bb-powerpack-lite'), // Section Title
 				'fields'       => array( // Section Fields
 					'heading_tag'    => array(
                         'type'          => 'select',
-                        'label'         => __('Tag', 'bb-powerpack'),
+                        'label'         => __('Tag', 'bb-powerpack-lite'),
                         'default'       => 'h2',
                         'options'       => array(
                             'h1'            => 'H1',
@@ -237,9 +237,9 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading_title'   => array(
                         'type'          => 'text',
-                        'label'         => __('Title', 'bb-powerpack'),
+                        'label'         => __('Title', 'bb-powerpack-lite'),
                         'class'         => '',
-                        'default'       => __('Title', 'bb-powerpack'),
+                        'default'       => __('Title', 'bb-powerpack-lite'),
                         'connections'   => array( 'string', 'html', 'url' ),
                         'preview'       => array(
                             'type'      => 'text',
@@ -248,11 +248,11 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
 					'dual_heading'  => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Dual Heading?', 'bb-powerpack'),
+                        'label'         => __('Dual Heading?', 'bb-powerpack-lite'),
                         'default'       => 'no',
                         'options'       => array(
-                            'yes'           => __('Yes', 'bb-powerpack'),
-                            'no'            => __('No', 'bb-powerpack')
+                            'yes'           => __('Yes', 'bb-powerpack-lite'),
+                            'no'            => __('No', 'bb-powerpack-lite')
                         ),
                         'toggle'        => array(
                             'yes'           => array(
@@ -260,13 +260,13 @@ FLBuilder::register_module('PPHeadingModule', array(
                                 'fields'        => array('heading_title2', 'heading_style', 'heading2_tablet_font_size', 'heading2_tablet_line_height_n', 'heading2_mobile_font_size', 'heading2_mobile_line_height_n')
                             )
                         ),
-                        'help'  => __('This option allows you to create dual color heading or dual font heading.', 'bb-powerpack')
+                        'help'  => __('This option allows you to create dual color heading or dual font heading.', 'bb-powerpack-lite')
                     ),
                     'heading_title2'   => array(
                         'type'          => 'text',
-                        'label'         => __('Secondary Title', 'bb-powerpack'),
+                        'label'         => __('Secondary Title', 'bb-powerpack-lite'),
                         'class'         => '',
-                        'default'       => __('Secondary Title', 'bb-powerpack'),
+                        'default'       => __('Secondary Title', 'bb-powerpack-lite'),
                         'connections'   => array( 'string', 'html', 'url' ),
                         'preview'       => array(
                             'type'      => 'text',
@@ -275,11 +275,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading_style'     => array(
                         'type'              => 'pp-switch',
-                        'label'             => __('Style', 'bb-powerpack'),
+                        'label'             => __('Style', 'bb-powerpack-lite'),
                         'default'           => 'inline-block',
                         'options'           => array(
-                            'inline-block'      => __('Inline', 'bb-powerpack'),
-                            'block'             => __('Stacked', 'bb-powerpack')
+                            'inline-block'      => __('Inline', 'bb-powerpack-lite'),
+                            'block'             => __('Stacked', 'bb-powerpack-lite')
                         ),
                         'preview'           => array(
                             'type'              => 'css',
@@ -289,22 +289,22 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading_alignment'     => array(
                        'type'                   => 'align',
-                       'label'                  => __('Alignment', 'bb-powerpack'),
+                       'label'                  => __('Alignment', 'bb-powerpack-lite'),
 					   'default'                => 'center',
 					   'responsive'				=> true
                    ),
                 )
 			),
 			'heading_link'	=> array(
-				'title'			=> __('Link', 'bb-powerpack'),
+				'title'			=> __('Link', 'bb-powerpack-lite'),
 				'fields'		=> array(
 					'enable_link'   => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Enable Link', 'bb-powerpack'),
+                        'label'         => __('Enable Link', 'bb-powerpack-lite'),
                         'default'       => 'yes',
                         'options'       => array(
-                            'yes'           => __('Yes', 'bb-powerpack'),
-                            'no'            => __('No', 'bb-powerpack')
+                            'yes'           => __('Yes', 'bb-powerpack-lite'),
+                            'no'            => __('No', 'bb-powerpack-lite')
                         ),
                         'toggle'        => array(
                             'yes'           => array(
@@ -314,7 +314,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
  				    'heading_link'          => array(
  						'type'          => 'link',
- 						'label'         => __('Link', 'bb-powerpack'),
+ 						'label'         => __('Link', 'bb-powerpack-lite'),
 						'connections'   => array( 'url' ),
 						'show_target'	=> true,
 						'show_nofollow'	=> true,
@@ -325,12 +325,12 @@ FLBuilder::register_module('PPHeadingModule', array(
 				)
 			),
             'heading_sub_title'         => array(
-                'title'                     => __('Description', 'bb-powerpack'),
+                'title'                     => __('Description', 'bb-powerpack-lite'),
                 'fields'                    => array(
                     'heading_sub_title'     => array(
                         'type'                  => 'editor',
                         'label'                 => '',
-                        'default'               => __('Description', 'bb-powerpack'),
+                        'default'               => __('Description', 'bb-powerpack-lite'),
                         'rows'                  => '6',
                         'media_buttons'         => false,
                         'connections'            => array( 'string', 'html', 'url' ),
@@ -344,21 +344,21 @@ FLBuilder::register_module('PPHeadingModule', array(
         )
     ),
     'heading_separator'         => array(
-        'title'                     => __('Separator', 'bb-powerpack'),
+        'title'                     => __('Separator', 'bb-powerpack-lite'),
         'sections'                  => array(
             'heading_separator'     => array(
                 'title'                     => '',
                 'fields'                    => array(
                     'heading_separator'     => array(
                         'type'      => 'select',
-                        'label'     => __('Separator', 'bb-powerpack'),
+                        'label'     => __('Separator', 'bb-powerpack-lite'),
                         'default'     => 'left',
                         'options'       => array(
-                            'no_spacer'			=> __('No Separator', 'bb-powerpack'),
-                            'inline'        	=> __('Inline', 'bb-powerpack'),
-                            'line_only'     	=> __('Line', 'bb-powerpack'),
-                            'icon_only'     	=> __('Icon/Image', 'bb-powerpack'),
-                            'line_with_icon'    => __('Line With Icon/Image', 'bb-powerpack'),
+                            'no_spacer'			=> __('No Separator', 'bb-powerpack-lite'),
+                            'inline'        	=> __('Inline', 'bb-powerpack-lite'),
+                            'line_only'     	=> __('Line', 'bb-powerpack-lite'),
+                            'icon_only'     	=> __('Icon/Image', 'bb-powerpack-lite'),
+                            'line_with_icon'    => __('Line With Icon/Image', 'bb-powerpack-lite'),
                         ),
                         'toggle' => array(
 							'inline'        => array(
@@ -385,28 +385,28 @@ FLBuilder::register_module('PPHeadingModule', array(
                      ),
                      'heading_separator_postion' => array(
                          'type'      => 'select',
-                         'label'     => __('Position', 'bb-powerpack'),
+                         'label'     => __('Position', 'bb-powerpack-lite'),
                          'default'     => 'middle',
                          'options'       => array(
-                            'top'            => __('Above Heading', 'bb-powerpack'),
-                            'middle'         => __('Below Heading', 'bb-powerpack'),
-                            'bottom'         => __('Below Description', 'bb-powerpack'),
+                            'top'            => __('Above Heading', 'bb-powerpack-lite'),
+                            'middle'         => __('Below Heading', 'bb-powerpack-lite'),
+                            'bottom'         => __('Below Description', 'bb-powerpack-lite'),
                           )
                      ),
                      'heading_line_style'     => array(
                          'type'      => 'pp-switch',
-                         'label'     => __('Line Style', 'bb-powerpack'),
+                         'label'     => __('Line Style', 'bb-powerpack-lite'),
                          'default'     => 'solid',
                          'options'       => array(
-                              'solid'          => __('Solid', 'bb-powerpack'),
-                              'dashed'         => __('Dashed', 'bb-powerpack'),
-                              'dotted'         => __('Dotted', 'bb-powerpack'),
-                              'double'         => __('Double', 'bb-powerpack'),
+                              'solid'          => __('Solid', 'bb-powerpack-lite'),
+                              'dashed'         => __('Dashed', 'bb-powerpack-lite'),
+                              'dotted'         => __('Dotted', 'bb-powerpack-lite'),
+                              'double'         => __('Double', 'bb-powerpack-lite'),
                           )
                      ),
                      'font_title_line_space'   => array(
                          'type'          => 'unit',
-                         'label'         => __('Space between Line & Title', 'bb-powerpack'),
+                         'label'         => __('Space between Line & Title', 'bb-powerpack-lite'),
 						 'units'   		=> array('px'),
 						 'slider'		=> true,
                          'default'       => '20',
@@ -429,15 +429,15 @@ FLBuilder::register_module('PPHeadingModule', array(
                 )
             ),
             'heading_icon_image_settings'       => array( // Section
-                'title'        => __('Icon', 'bb-powerpack'), // Section Title
+                'title'        => __('Icon', 'bb-powerpack-lite'), // Section Title
                 'fields'       => array( // Section Fields
                     'heading_icon_select'       => array(
                         'type'          => 'select',
-						'label'         => __('Icon Source', 'bb-powerpack'),
+						'label'         => __('Icon Source', 'bb-powerpack-lite'),
                         'default'       => 'font_icon_select',
 						'options'       => array(
-							'font_icon_select'         => __('Icon Library', 'bb-powerpack'),
-							'custom_icon_select'       => __('Custom Image', 'bb-powerpack')
+							'font_icon_select'         => __('Icon Library', 'bb-powerpack-lite'),
+							'custom_icon_select'       => __('Custom Image', 'bb-powerpack-lite')
 						),
                         'toggle' => array(
                             'font_icon_select'    => array(
@@ -450,16 +450,16 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
                     'heading_font_icon_select' => array(
 						'type'          => 'icon',
-						'label'         => __('Icon', 'bb-powerpack')
+						'label'         => __('Icon', 'bb-powerpack-lite')
 					),
                     'heading_custom_icon_select'     => array(
                         'type'              => 'photo',
-                        'label'         => __('Custom Image', 'bb-powerpack'),
+                        'label'         => __('Custom Image', 'bb-powerpack-lite'),
                         'default'       => '',
                     ),
                     'font_icon_line_space'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Space between Line & Icon/Image', 'bb-powerpack'),
+                        'label'         => __('Space between Line & Icon/Image', 'bb-powerpack-lite'),
 						'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '20',
@@ -482,11 +482,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                 )
             ),
             'heading_line_style_section'    => array( // Section
-                'title'             => __('Separator Size & Color', 'bb-powerpack'), // Section Title
+                'title'             => __('Separator Size & Color', 'bb-powerpack-lite'), // Section Title
                 'fields'            => array( // Section Fields
 					'line_width'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Width', 'bb-powerpack'),
+                        'label'         => __('Width', 'bb-powerpack-lite'),
 						'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '100',
@@ -523,7 +523,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'line_height'       => array(
                         'type'          => 'unit',
-                        'label'         => __('Height', 'bb-powerpack'),
+                        'label'         => __('Height', 'bb-powerpack-lite'),
 						'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '1',
@@ -560,7 +560,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'line_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -592,11 +592,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                 )
             ),
             'heading_icon_image_style_section'    => array( // Section
-                'title'             => __('Icon/Image Style', 'bb-powerpack'), // Section Title
+                'title'             => __('Icon/Image Style', 'bb-powerpack-lite'), // Section Title
                 'fields'            => array( // Section Fields
                     'font_icon_font_size'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Icon Size', 'bb-powerpack'),
+                        'label'         => __('Icon Size', 'bb-powerpack-lite'),
 						'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '16',
@@ -618,7 +618,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'font_icon_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -629,7 +629,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'font_icon_bg_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Background Color', 'bb-powerpack'),
+                        'label'         => __('Background Color', 'bb-powerpack-lite'),
                         'default'       => '',
 						'show_reset'    => true,
 						'show_alpha'	=> true,
@@ -653,7 +653,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'font_icon_border_width'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Border Width', 'bb-powerpack'),
+                        'label'         => __('Border Width', 'bb-powerpack-lite'),
 						'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '0',
@@ -675,19 +675,19 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'font_icon_border_style'     => array(
                         'type'      => 'select',
-                        'label'     => __('Border Style', 'bb-powerpack'),
+                        'label'     => __('Border Style', 'bb-powerpack-lite'),
                         'default'     => 'none',
                         'options'       => array(
-                             'none'          => __('None', 'bb-powerpack'),
-                             'solid'          => __('Solid', 'bb-powerpack'),
-                             'dashed'          => __('Dashed', 'bb-powerpack'),
-                             'dotted'          => __('Dotted', 'bb-powerpack'),
-                             'double'          => __('Double', 'bb-powerpack'),
+                             'none'          => __('None', 'bb-powerpack-lite'),
+                             'solid'          => __('Solid', 'bb-powerpack-lite'),
+                             'dashed'          => __('Dashed', 'bb-powerpack-lite'),
+                             'dotted'          => __('Dotted', 'bb-powerpack-lite'),
+                             'double'          => __('Double', 'bb-powerpack-lite'),
                          )
                     ),
                     'font_icon_border_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Border Color', 'bb-powerpack'),
+                        'label'         => __('Border Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -707,7 +707,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'font_icon_border_radius'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Round Corners', 'bb-powerpack'),
+                        'label'         => __('Round Corners', 'bb-powerpack-lite'),
 						'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '100',
@@ -743,7 +743,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
 					'font_icon_padding'	=> array(
 						'type'		=> 'dimension',
-						'label'		=> __('Padding', 'bb-powerpack'),
+						'label'		=> __('Padding', 'bb-powerpack-lite'),
 						'units'   	=> array('px'),
 						'slider'	=> true,
 						'default'	=> '0',
@@ -767,11 +767,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                 )
             ),
             'heading_separator_style_section'    => array( // Section
-                'title'             => __('Margin', 'bb-powerpack'), // Section Title
+                'title'             => __('Margin', 'bb-powerpack-lite'), // Section Title
                 'fields'            => array( // Section Fields
                     'separator_heading_top_margin'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Margin Top', 'bb-powerpack'),
+                        'label'         => __('Margin Top', 'bb-powerpack-lite'),
                         'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '10',
@@ -784,7 +784,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'separator_heading_bottom_margin' => array(
                         'type'          => 'unit',
-                        'label'         => __('Margin Bottom', 'bb-powerpack'),
+                        'label'         => __('Margin Bottom', 'bb-powerpack-lite'),
                         'units'   		=> array('px'),
 						'slider'		=> true,
                         'default'       => '10',
@@ -800,18 +800,18 @@ FLBuilder::register_module('PPHeadingModule', array(
         )
     ),
     'heading_style_tab'       => array( // Tab
-        'title'         => __('Style', 'bb-powerpack'), // Tab title
+        'title'         => __('Style', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'main_heading_style'       => array( // Section
-                'title'         => __('Title', 'bb-powerpack'), // Section Title
+                'title'         => __('Title', 'bb-powerpack-lite'), // Section Title
 				'fields'        => array( // Section Fields
 					'heading_color_type'	=> array(
 						'type'		=> 'pp-switch',
-						'label'		=> __('Color Type', 'bb-powerpack'),
+						'label'		=> __('Color Type', 'bb-powerpack-lite'),
 						'default'	=> 'solid',
 						'options'	=> array(
-							'solid'		=> __('Solid', 'bb-powerpack'),
-							'gradient'	=> __('Gradient', 'bb-powerpack'),
+							'solid'		=> __('Solid', 'bb-powerpack-lite'),
+							'gradient'	=> __('Gradient', 'bb-powerpack-lite'),
 						),
 						'toggle'	=> array(
 							'solid'		=> array(
@@ -824,7 +824,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
                     'heading_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'show_alpha'    => true,
@@ -836,7 +836,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
 					'heading_gradient_setting'	=> array(
 						'type'		=> 'gradient',
-						'label'		=> __('Gradient', 'bb-powerpack'),
+						'label'		=> __('Gradient', 'bb-powerpack-lite'),
 						'preview'	=> array(
 							'type'		=> 'css',
 							'selector'  => '.pp-heading-content .pp-heading .heading-title span.pp-primary-title',
@@ -849,7 +849,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
 					'heading_bg_color' => array(
                         'type'          => 'color',
-                        'label'         => __('Background Color', 'bb-powerpack'),
+                        'label'         => __('Background Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'show_alpha'    => true,
@@ -865,14 +865,14 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
                     'heading_border_style'  => array(
                         'type'                  => 'select',
-                        'label'                 => __('Border Style', 'bb-powerpack'),
+                        'label'                 => __('Border Style', 'bb-powerpack-lite'),
                         'default'               => 'none',
                         'options'               => array(
-                            'none'                	=> __('None', 'bb-powerpack'),
-                            'dashed'                => __('Dashed', 'bb-powerpack'),
-                            'dotted'                => __('Dotted', 'bb-powerpack'),
-                            'double'                => __('Double', 'bb-powerpack'),
-                            'solid'                 => __('Solid', 'bb-powerpack'),
+                            'none'                	=> __('None', 'bb-powerpack-lite'),
+                            'dashed'                => __('Dashed', 'bb-powerpack-lite'),
+                            'dotted'                => __('Dotted', 'bb-powerpack-lite'),
+                            'double'                => __('Double', 'bb-powerpack-lite'),
+                            'solid'                 => __('Solid', 'bb-powerpack-lite'),
                         ),
                         'preview'               => array(
                             'type'                  => 'css',
@@ -898,14 +898,14 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
 					'heading_border'	=> array(
 						'type'				=> 'dimension',
-						'label'				=> __('Border Width', 'bb-powerpack'),
+						'label'				=> __('Border Width', 'bb-powerpack-lite'),
 						'units'				=> array('px'),
 						'slider'			=> true,
 						'responsive'		=> false,
 					),
                     'heading_border_color' => array(
                         'type'          => 'color',
-                        'label'         => __('Border Color', 'bb-powerpack'),
+                        'label'         => __('Border Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -920,7 +920,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
 					'heading_padding'	=> array(
 						'type'				=> 'dimension',
-						'label'				=> __('Padding', 'bb-powerpack'),
+						'label'				=> __('Padding', 'bb-powerpack-lite'),
 						'units'				=> array('px'),
 						'slider'			=> true,
 						'responsive'		=> false,
@@ -933,7 +933,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
                     'heading_top_margin'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Margin Top', 'bb-powerpack'),
+                        'label'         => __('Margin Top', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
 						'slider'		=> true,
                         'default'       => '10',
@@ -946,7 +946,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading_bottom_margin'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Margin Bottom', 'bb-powerpack'),
+                        'label'         => __('Margin Bottom', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
 						'slider'		=> true,
                         'default'       => '10',
@@ -960,16 +960,16 @@ FLBuilder::register_module('PPHeadingModule', array(
                 ),
             ),
             'heading2_style'	=> array( // Section
-				'title'         	=> __('Secondary Title', 'bb-powerpack'), // Section Title
+				'title'         	=> __('Secondary Title', 'bb-powerpack-lite'), // Section Title
 				'collapsed'			=> true,
 				'fields'        	=> array( // Section Fields
 					'heading2_color_type'	=> array(
 						'type'		=> 'pp-switch',
-						'label'		=> __('Color Type', 'bb-powerpack'),
+						'label'		=> __('Color Type', 'bb-powerpack-lite'),
 						'default'	=> 'solid',
 						'options'	=> array(
-							'solid'		=> __('Solid', 'bb-powerpack'),
-							'gradient'	=> __('Gradient', 'bb-powerpack'),
+							'solid'		=> __('Solid', 'bb-powerpack-lite'),
+							'gradient'	=> __('Gradient', 'bb-powerpack-lite'),
 						),
 						'toggle'	=> array(
 							'solid'		=> array(
@@ -982,7 +982,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
                     'heading2_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'show_alpha'    => true,
@@ -994,7 +994,7 @@ FLBuilder::register_module('PPHeadingModule', array(
 					),
 					'heading2_gradient_setting'	=> array(
 						'type'		=> 'gradient',
-						'label'		=> __('Gradient', 'bb-powerpack'),
+						'label'		=> __('Gradient', 'bb-powerpack-lite'),
 						'preview'	=> array(
 							'type'		=> 'css',
 							'selector'  => '.pp-heading-content .pp-heading .heading-title span.pp-secondary-title',
@@ -1007,7 +1007,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading2_bg_color' => array(
                         'type'          => 'color',
-                        'label'         => __('Background Color', 'bb-powerpack'),
+                        'label'         => __('Background Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'show_alpha'    => true,
@@ -1023,26 +1023,26 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading2_border_style'  => array(
                         'type'                  => 'select',
-                        'label'                 => __('Border Style', 'bb-powerpack'),
+                        'label'                 => __('Border Style', 'bb-powerpack-lite'),
                         'default'               => 'none',
                         'options'               => array(
-                            'none'                => __('None', 'bb-powerpack'),
-                            'dashed'                => __('Dashed', 'bb-powerpack'),
-                            'dotted'                => __('Dotted', 'bb-powerpack'),
-                            'double'                => __('Double', 'bb-powerpack'),
-                            'solid'                 => __('Solid', 'bb-powerpack'),
+                            'none'                => __('None', 'bb-powerpack-lite'),
+                            'dashed'                => __('Dashed', 'bb-powerpack-lite'),
+                            'dotted'                => __('Dotted', 'bb-powerpack-lite'),
+                            'double'                => __('Double', 'bb-powerpack-lite'),
+                            'solid'                 => __('Solid', 'bb-powerpack-lite'),
                         ),
                     ),
                     'heading2_border'   => array(
                         'type'				=> 'dimension',
-						'label'				=> __('Border Width', 'bb-powerpack'),
+						'label'				=> __('Border Width', 'bb-powerpack-lite'),
 						'units'				=> array('px'),
 						'slider'			=> true,
 						'responsive'		=> false,
                     ),
                     'heading2_border_color' => array(
                         'type'          => 'color',
-                        'label'         => __('Border Color', 'bb-powerpack'),
+                        'label'         => __('Border Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -1057,7 +1057,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading2_padding'   => array(
                         'type'				=> 'dimension',
-						'label'				=> __('Padding', 'bb-powerpack'),
+						'label'				=> __('Padding', 'bb-powerpack-lite'),
 						'units'				=> array('px'),
 						'slider'			=> true,
 						'responsive'		=> false,
@@ -1070,7 +1070,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'heading2_left_margin'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Margin Left', 'bb-powerpack'),
+                        'label'         => __('Margin Left', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
 						'slider'		=> true,
                         'default'       => '0',
@@ -1084,12 +1084,12 @@ FLBuilder::register_module('PPHeadingModule', array(
                 )
             ),
             'sub_heading_style'       => array( // Section
-				'title'         => __('Description', 'bb-powerpack'), // Section Title
+				'title'         => __('Description', 'bb-powerpack-lite'), // Section Title
 				'collapsed'		=> true,
                 'fields'        => array( // Section Fields
                     'sub_heading_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -1100,7 +1100,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'sub_heading_top_margin'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Margin Top', 'bb-powerpack'),
+                        'label'         => __('Margin Top', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
 						'slider'		=> true,
                         'default'       => '0',
@@ -1113,7 +1113,7 @@ FLBuilder::register_module('PPHeadingModule', array(
                     ),
                     'sub_heading_bottom_margin'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Margin Bottom', 'bb-powerpack'),
+                        'label'         => __('Margin Bottom', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
 						'slider'		=> true,
                         'default'       => '0',
@@ -1129,14 +1129,14 @@ FLBuilder::register_module('PPHeadingModule', array(
         )
     ),
     'heading_typography'    => array(
-        'title'                 => __('Typography', 'bb-powerpack'),
+        'title'                 => __('Typography', 'bb-powerpack-lite'),
         'sections'              => array(
             'title_typography'      => array(
-                'title'                 => __('Title', 'bb-powerpack'),
+                'title'                 => __('Title', 'bb-powerpack-lite'),
                 'fields'                => array(
 					'title_typography'		=> array(
 						'type'					=> 'typography',
-						'label'					=> __('Typography', 'bb-powerpack'),
+						'label'					=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  			=> true,
 						'preview'				=> array(
 							'type'					=> 'css',
@@ -1146,11 +1146,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                 )
             ),
             'title2_typography'      => array(
-                'title'                 => __('Secondary Title', 'bb-powerpack'),
+                'title'                 => __('Secondary Title', 'bb-powerpack-lite'),
                 'fields'                => array(
 					'title2_typography'		=> array(
 						'type'					=> 'typography',
-						'label'					=> __('Typography', 'bb-powerpack'),
+						'label'					=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  			=> true,
 						'preview'				=> array(
 							'type'					=> 'css',
@@ -1160,11 +1160,11 @@ FLBuilder::register_module('PPHeadingModule', array(
                 )
             ),
             'sub_heading_style'       => array( // Section
-                'title'         => __('Description', 'bb-powerpack'), // Section Title
+                'title'         => __('Description', 'bb-powerpack-lite'), // Section Title
 				'fields'        => array( // Section Fields
 					'desc_typography'	=> array(
 						'type'					=> 'typography',
-						'label'					=> __('Typography', 'bb-powerpack'),
+						'label'					=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  			=> true,
 						'preview'				=> array(
 							'type'					=> 'css',

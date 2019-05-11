@@ -11,8 +11,8 @@ class PPTwitterTweetModule extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'          => __( 'Twitter Embedded Tweet', 'bb-powerpack' ),
-			'description'   => __( 'A module to embed twitter tweet.', 'bb-powerpack' ),
+			'name'          => __( 'Twitter Embedded Tweet', 'bb-powerpack-lite' ),
+			'description'   => __( 'A module to embed twitter tweet.', 'bb-powerpack-lite' ),
 			'group'         	=> pp_get_modules_group(),
 			'category'			=> pp_get_modules_cat( 'creative' ),
 			'dir'           	=> BB_POWERPACK_DIR . 'modules/pp-twitter-tweet/',
@@ -30,43 +30,43 @@ class PPTwitterTweetModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPTwitterTweetModule', array(
 	'general'       => array( // Tab
-		'title'         => __( 'General', 'bb-powerpack' ), // Tab title
+		'title'         => __( 'General', 'bb-powerpack-lite' ), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __( 'General', 'bb-powerpack' ), // Section Title
+				'title'         => __( 'General', 'bb-powerpack-lite' ), // Section Title
 				'fields'        => array( // Section Fields
 					'tweet_url'     	=> array(
 						'type'          => 'text',
-						'label'         => __( 'Tweet URL', 'bb-powerpack' ),
+						'label'         => __( 'Tweet URL', 'bb-powerpack-lite' ),
 						'default'       => '',
 						'connections'	=> array( 'url' ),
 					),
 					'theme'	=> array(
 						'type'		=> 'pp-switch',
-						'label'     => __( 'Theme', 'bb-powerpack' ),
+						'label'     => __( 'Theme', 'bb-powerpack-lite' ),
 						'default'   => 'light',
 						'options'   => array(
-							'light'		=> __( 'Light', 'bb-powerpack' ),
-							'dark'		=> __( 'Dark', 'bb-powerpack' ),
+							'light'		=> __( 'Light', 'bb-powerpack-lite' ),
+							'dark'		=> __( 'Dark', 'bb-powerpack-lite' ),
 						),
 					),
 					'expanded'	=> array(
 						'type'		=> 'pp-switch',
-						'label'     => __( 'Expanded', 'bb-powerpack' ),
+						'label'     => __( 'Expanded', 'bb-powerpack-lite' ),
 						'default'   => 'yes',
 						'options'   => array(
-							'yes'		=> __( 'Yes', 'bb-powerpack' ),
-							'no'		=> __( 'No', 'bb-powerpack' ),
+							'yes'		=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'		=> __( 'No', 'bb-powerpack-lite' ),
 						),
 					),
 					'alignment'	=> array(
 						'type'		=> 'align',
-						'label'     => __( 'Alignment', 'bb-powerpack' ),
+						'label'     => __( 'Alignment', 'bb-powerpack-lite' ),
 						'default'   => 'center',
 					),
 					'width'     	=> array(
 						'type'          => 'unit',
-						'label'         => __( 'Width', 'bb-powerpack' ),
+						'label'         => __( 'Width', 'bb-powerpack-lite' ),
 						'default'       => '',
 						'units'   		=> array( 'px' ),
 						'slider'		=> array(
@@ -77,7 +77,7 @@ FLBuilder::register_module('PPTwitterTweetModule', array(
 					),
 					'link_color'     	=> array(
 						'type'          => 'color',
-						'label'         => __( 'Link Color', 'bb-powerpack' ),
+						'label'         => __( 'Link Color', 'bb-powerpack-lite' ),
 						'show_reset'	=> true
 					),
 				),

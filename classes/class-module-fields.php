@@ -191,9 +191,9 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
             <div class="pp-multitext-wrap">
                 <?php if ( count($responsive) ) { ?>
                     <div class="pp-multitext-responsive-toggle">
-                        <span class="fa fa-desktop pp-multitext-default" data-field-target="medium" title="<?php esc_html_e('Default', 'bb-powerpack'); ?>"></span>
-                        <span class="fa fa-tablet pp-multitext-medium" data-field-target="small" title="<?php esc_html_e('Medium Devices', 'bb-powerpack'); ?>"></span>
-                        <span class="fa fa-mobile pp-multitext-small" data-field-target="default" title="<?php esc_html_e('Responsive Devices', 'bb-powerpack'); ?>"></span>
+                        <span class="fa fa-desktop pp-multitext-default" data-field-target="medium" title="<?php esc_html_e('Default', 'bb-powerpack-lite'); ?>"></span>
+                        <span class="fa fa-tablet pp-multitext-medium" data-field-target="small" title="<?php esc_html_e('Medium Devices', 'bb-powerpack-lite'); ?>"></span>
+                        <span class="fa fa-mobile pp-multitext-small" data-field-target="default" title="<?php esc_html_e('Responsive Devices', 'bb-powerpack-lite'); ?>"></span>
                     </div>
                 <?php } ?>
                 <?php
@@ -235,7 +235,7 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
                     }
                     ?>
                     <?php if ( 0 == $count ) { ?>
-                        <span class="pp-responsive-toggle fa fa-chevron-right pp-tip" title="<?php esc_html_e( 'Responsive Options', 'bb-powerpack' ); ?>"></span>
+                        <span class="pp-responsive-toggle fa fa-chevron-right pp-tip" title="<?php esc_html_e( 'Responsive Options', 'bb-powerpack-lite' ); ?>"></span>
                     <?php } ?>
                 </span>
                 <?php
@@ -251,8 +251,8 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
          */
         public function _color( $name, $value, $field, $settings )
         {
-            $primary    = isset( $field['options'] ) ? ( isset( $field['options']['primary'] ) ? $field['options']['primary'] : esc_html__( 'Primary', 'bb-powerpack' ) ) : esc_html__( 'Primary', 'bb-powerpack' );
-            $secondary  = isset( $field['options'] ) ? ( isset( $field['options']['secondary'] ) ? $field['options']['secondary'] : esc_html__( 'Secondary', 'bb-powerpack' ) ) : esc_html__( 'Secondary', 'bb-powerpack' );
+            $primary    = isset( $field['options'] ) ? ( isset( $field['options']['primary'] ) ? $field['options']['primary'] : esc_html__( 'Primary', 'bb-powerpack-lite' ) ) : esc_html__( 'Primary', 'bb-powerpack-lite' );
+            $secondary  = isset( $field['options'] ) ? ( isset( $field['options']['secondary'] ) ? $field['options']['secondary'] : esc_html__( 'Secondary', 'bb-powerpack-lite' ) ) : esc_html__( 'Secondary', 'bb-powerpack-lite' );
             $value      = (array) $value;
             ?>
             <div class="pp-color-picker fl-color-picker<?php if( isset( $field['class'] ) ) echo ' ' . $field['class']; ?>">
@@ -347,7 +347,7 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 
 			$preview = isset( $field['preview'] ) ? json_encode( $field['preview'] ) : json_encode( array( 'type' => 'refresh' ) );
 
-			echo '<div class="pp-date-wrap fl-field" data-type="select" data-preview=\'' . $preview . '\'><div class="pp-countdown-custom-fields pp-countdown-field-days"><select class="text text-full" name="' . $name . '_days" ><option value="0">' . __( 'Days', 'bb-powerpack' ) . '</option>';
+			echo '<div class="pp-date-wrap fl-field" data-type="select" data-preview=\'' . $preview . '\'><div class="pp-countdown-custom-fields pp-countdown-field-days"><select class="text text-full" name="' . $name . '_days" ><option value="0">' . __( 'Days', 'bb-powerpack-lite' ) . '</option>';
 
 			for ( $i=1; $i <= 31; $i++ ) {
 			    $selected = "";
@@ -371,11 +371,11 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 
 			$selected_month = ( isset( $settings->fixed_date_month ) && ! empty( $settings->fixed_date_month ) ) ? $settings->fixed_date_month : "01";
 
-			echo '</select></br><label>' . __( 'Days', 'bb-powerpack' ) . '</label></div>';
+			echo '</select></br><label>' . __( 'Days', 'bb-powerpack-lite' ) . '</label></div>';
 
 			// Month
 			echo '<div class="pp-countdown-custom-fields pp-countdown-field-months"><select class="text text-full" name="' . $name . '_month" >';
-			echo '<option value="0">' . __( 'Months', 'bb-powerpack' ) . '</option>';
+			echo '<option value="0">' . __( 'Months', 'bb-powerpack-lite' ) . '</option>';
 			echo '<option value="01" ' . ( ( $selected_month == "01" ) ? 'selected' : '' ) . ' >Jan</option>';
 			echo '<option value="02" ' . ( ( $selected_month == "02" ) ? 'selected' : '' ) . ' >Feb</option>';
 			echo '<option value="03" ' . ( ( $selected_month == "03" ) ? 'selected' : '' ) . ' >Mar</option>';
@@ -388,11 +388,11 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 			echo '<option value="10" ' . ( ( $selected_month == "10" ) ? 'selected' : '' ) . ' >Oct</option>';
 			echo '<option value="11" ' . ( ( $selected_month == "11" ) ? 'selected' : '' ) . ' >Nov</option>';
 			echo '<option value="12" ' . ( ( $selected_month == "12" ) ? 'selected' : '' ) . ' >Dec</option>';
-			echo '</select></br><label>' . __( 'Months', 'bb-powerpack' ) . '</label></div>';
+			echo '</select></br><label>' . __( 'Months', 'bb-powerpack-lite' ) . '</label></div>';
 
 			// Year
 			echo '<div class="pp-countdown-custom-fields pp-countdown-field-years"><select class="text text-full" name="'.$name.'_year" >';
-			echo '<option value="0">' . __( 'Years', 'bb-powerpack' ) . '</option>';
+			echo '<option value="0">' . __( 'Years', 'bb-powerpack-lite' ) . '</option>';
 			for ( $i = date('Y'); $i < date('Y') + 6; $i++ ) {
 			    $selected = "";
 			    if ( isset( $settings->fixed_date_year ) ) {
@@ -406,11 +406,11 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 			    }
 			    echo '<option value="'.$i.'" '. $selected .'>'.$i.'</option>';
 			}
-			echo '</select></br><label>' . __( 'Years', 'bb-powerpack' ) . '</label></div>';
+			echo '</select></br><label>' . __( 'Years', 'bb-powerpack-lite' ) . '</label></div>';
 
 			// Hour
 			echo '<div class="pp-countdown-custom-fields pp-countdown-field-hours"><select class="text text-full" name="'.$name.'_hours" >';
-			echo '<option value="0">' . __( 'Hours', 'bb-powerpack' ) . '</option>';
+			echo '<option value="0">' . __( 'Hours', 'bb-powerpack-lite' ) . '</option>';
 			for ( $i = 0; $i < 24; $i++ ) {
 			$selected = "";
 			if ( isset( $settings->fixed_date_hours ) ) {
@@ -429,11 +429,11 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 			  echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
 			}
 			}
-			echo '</select></br><label>' . __( 'Hours', 'bb-powerpack' ) . '</label></div>';
+			echo '</select></br><label>' . __( 'Hours', 'bb-powerpack-lite' ) . '</label></div>';
 
 			// Minute
 			echo '<div class="pp-countdown-custom-fields pp-countdown-field-minutes"><select class="text text-full" name="'.$name.'_minutes" >';
-			echo '<option value="0">' . __( 'Minutes', 'bb-powerpack' ) . '</option>';
+			echo '<option value="0">' . __( 'Minutes', 'bb-powerpack-lite' ) . '</option>';
 			for ( $i = 0; $i < 60; $i++ ) {
 			    $selected = "";
 			    if ( isset( $settings->fixed_date_minutes ) ) {
@@ -452,7 +452,7 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 			        echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
 			    }
 			}
-			echo '</select></br><label>' . __( 'Minutes', 'bb-powerpack' ) . '</label></div>';
+			echo '</select></br><label>' . __( 'Minutes', 'bb-powerpack-lite' ) . '</label></div>';
 		}
 
 		function _evergreen_date($name, $value, $field, $settings) {
@@ -463,7 +463,7 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 
 
 			echo '<div class="fl-field pp-evergreen-wrap" data-type="select" data-preview=\'' . $preview . '\'><div class="pp-countdown-custom-fields pp-countdown-field-days"><select class="text text-full" name="' . $name . '_days" >';
-			echo '<option value="0">' . __( 'Days', 'bb-powerpack' ) . '</option>';
+			echo '<option value="0">' . __( 'Days', 'bb-powerpack-lite' ) . '</option>';
 			for ( $i=0; $i <= 31; $i++ ) {
 			    if ( isset( $settings->evergreen_date_days ) ) {
 			          if ( $i == $settings->evergreen_date_days ) {
@@ -480,12 +480,12 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 			          echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
 			    }
 			}
-			echo '</select></br><label>' . __( 'Days', 'bb-powerpack' ) . '</label></div>';
+			echo '</select></br><label>' . __( 'Days', 'bb-powerpack-lite' ) . '</label></div>';
 
 
 
 			echo '<div class="pp-countdown-custom-fields pp-countdown-field-hours"><select class="text text-full" name="' . $name . '_hours" >';
-			echo '<option value="0">' . __( 'Hours', 'bb-powerpack' ) . '</option>';
+			echo '<option value="0">' . __( 'Hours', 'bb-powerpack-lite' ) . '</option>';
 			for ( $i = 0; $i < 24; $i++ ) {
 			    if ( isset( $settings->evergreen_date_hours ) ) {
 			        if ( $i == $settings->evergreen_date_hours ) {
@@ -502,9 +502,9 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 			        echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
 					}
 			}
-		echo '</select></br><label>' . __( 'Hours', 'bb-powerpack' ) . '</label></div>';
+		echo '</select></br><label>' . __( 'Hours', 'bb-powerpack-lite' ) . '</label></div>';
 		echo '<div class="pp-countdown-custom-fields pp-countdown-field-minutes"><select class="text text-full" name="' . $name . '_minutes" >';
-		echo '<option value="0">' . __( 'Minutes', 'bb-powerpack' ) . '</option>';
+		echo '<option value="0">' . __( 'Minutes', 'bb-powerpack-lite' ) . '</option>';
 		for ( $i = 0; $i < 60; $i++ ) {
 		    if ( isset( $settings->evergreen_date_minutes ) ) {
 		        if ( $i == $settings->evergreen_date_minutes ) {
@@ -522,9 +522,9 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 		        echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
 		    }
 		}
-		echo '</select></br><label>' . __( 'Minutes', 'bb-powerpack' ) . '</label></div>';
+		echo '</select></br><label>' . __( 'Minutes', 'bb-powerpack-lite' ) . '</label></div>';
 		echo '<div class="pp-countdown-custom-fields pp-countdown-field-seconds"><select class="text text-full" name="' . $name . '_seconds" >';
-		echo '<option value="0">' . __( 'Seconds', 'bb-powerpack' ) . '</option>';
+		echo '<option value="0">' . __( 'Seconds', 'bb-powerpack-lite' ) . '</option>';
 		for ( $i = 0; $i < 60; $i++ ) {
 		    if ( isset( $settings->evergreen_date_seconds ) ) {
 		        if ( $i == $settings->evergreen_date_seconds ) {
@@ -541,7 +541,7 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 		        echo '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
 		    }
 		}
-		echo '</select></br><label>' . __( 'Seconds', 'bb-powerpack' ) . '</label></div></div>';
+		echo '</select></br><label>' . __( 'Seconds', 'bb-powerpack-lite' ) . '</label></div></div>';
 	}
         /**
          * Hidden
@@ -613,10 +613,10 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 						'type'		=> 'pp-switch',
 						'default'	=> 'none',
 						'options'	=> array(
-							'none'		=> __('None', 'bb-powerpack'),
-							'dashed'	=> __('Dashed', 'bb-powerpack'),
-							'dotted'	=> __('Dotted', 'bb-powerpack'),
-							'solid'		=> __('Solid', 'bb-powerpack'),
+							'none'		=> __('None', 'bb-powerpack-lite'),
+							'dashed'	=> __('Dashed', 'bb-powerpack-lite'),
+							'dotted'	=> __('Dotted', 'bb-powerpack-lite'),
+							'solid'		=> __('Solid', 'bb-powerpack-lite'),
 						)
 					);
 					break;
@@ -676,19 +676,19 @@ if ( ! class_exists( 'PP_Module_Fields' ) ) {
 		public static function get_button_style_fields( $prefix = '', $fields_data = array() )
 		{
 			$fields = array(
-				'bg_color'			=> self::get_field( 'color', __('Background Color', 'bb-powerpack') ),
-				'bg_hover_color'	=> self::get_field( 'color', __('Background Hover Color', 'bb-powerpack'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
-				'text_color'		=> self::get_field( 'color', __('Text Color', 'bb-powerpack') ),
-				'text_hover_color'	=> self::get_field( 'color', __('Text Hover Color', 'bb-powerpack'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
-				'border'			=> self::get_field( 'border', __('Border', 'bb-powerpack') ),
-				// 'border_style'		=> self::get_field( 'border-style', __('Border Style', 'bb-powerpack') ),
-				// 'border_width'		=> self::get_field( 'unit', __('Border Width', 'bb-powerpack'), array( 'responsive' => false ) ),
-				// 'border_color'		=> self::get_field( 'color', __('Border Color', 'bb-powerpack') ),
-				'border_hover_color' => self::get_field( 'color', __('Border Hover Color', 'bb-powerpack'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
-				// 'border_radius'		=> self::get_field( 'unit', __('Round Corners', 'bb-powerpack'), array( 'responsive' => false ) ),
-				'margin_top'		=> self::get_field( 'unit', __('Margin Top', 'bb-powerpack') ),
-				'padding'			=> self::get_field( 'dimension', __('Padding', 'bb-powerpack') ),
-				'alignment'			=> self::get_field( 'align', __('Alignment', 'bb-powerpack') ),
+				'bg_color'			=> self::get_field( 'color', __('Background Color', 'bb-powerpack-lite') ),
+				'bg_hover_color'	=> self::get_field( 'color', __('Background Hover Color', 'bb-powerpack-lite'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
+				'text_color'		=> self::get_field( 'color', __('Text Color', 'bb-powerpack-lite') ),
+				'text_hover_color'	=> self::get_field( 'color', __('Text Hover Color', 'bb-powerpack-lite'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
+				'border'			=> self::get_field( 'border', __('Border', 'bb-powerpack-lite') ),
+				// 'border_style'		=> self::get_field( 'border-style', __('Border Style', 'bb-powerpack-lite') ),
+				// 'border_width'		=> self::get_field( 'unit', __('Border Width', 'bb-powerpack-lite'), array( 'responsive' => false ) ),
+				// 'border_color'		=> self::get_field( 'color', __('Border Color', 'bb-powerpack-lite') ),
+				'border_hover_color' => self::get_field( 'color', __('Border Hover Color', 'bb-powerpack-lite'), array( 'preview'	=> array( 'type' => 'none' ) ) ),
+				// 'border_radius'		=> self::get_field( 'unit', __('Round Corners', 'bb-powerpack-lite'), array( 'responsive' => false ) ),
+				'margin_top'		=> self::get_field( 'unit', __('Margin Top', 'bb-powerpack-lite') ),
+				'padding'			=> self::get_field( 'dimension', __('Padding', 'bb-powerpack-lite') ),
+				'alignment'			=> self::get_field( 'align', __('Alignment', 'bb-powerpack-lite') ),
 			);
 
 			$final_fields = $fields;

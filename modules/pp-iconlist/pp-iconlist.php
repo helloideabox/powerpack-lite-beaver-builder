@@ -13,8 +13,8 @@ class PPIconListModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Icon / Number List', 'bb-powerpack'),
-            'description'   => __('Addon to display icon/number list.', 'bb-powerpack'),
+            'name'          => __('Icon / Number List', 'bb-powerpack-lite'),
+            'description'   => __('Addon to display icon/number list.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-iconlist/',
@@ -68,18 +68,18 @@ class PPIconListModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPIconListModule', array(
     'general'   => array(
-        'title'     => __('General', 'bb-powerpack'),
+        'title'     => __('General', 'bb-powerpack-lite'),
         'sections'  => array(
             'general'   => array(
                 'title'     => '',
                 'fields'    => array(
                     'list_type' => array(
                         'type'      => 'pp-switch',
-                        'label'     => __('List Type', 'bb-powerpack'),
+                        'label'     => __('List Type', 'bb-powerpack-lite'),
                         'default'   => 'icon',
                         'options'   => array(
-                            'icon'      => __('Icon', 'bb-powerpack'),
-                            'number'    => __('Number', 'bb-powerpack')
+                            'icon'      => __('Icon', 'bb-powerpack-lite'),
+                            'number'    => __('Number', 'bb-powerpack-lite')
                         ),
                         'toggle'    => array(
                             'icon'      => array(
@@ -89,16 +89,16 @@ FLBuilder::register_module('PPIconListModule', array(
                     ),
                     'list_icon' => array(
                         'type'      => 'icon',
-                        'label'     => __('Choose Icon', 'bb-powerpack')
+                        'label'     => __('Choose Icon', 'bb-powerpack-lite')
                     ),
                 )
             ),
             'list_items'    => array(
-                'title'         => __('List Items', 'bb-powerpack'),
+                'title'         => __('List Items', 'bb-powerpack-lite'),
                 'fields'        => array(
                     'list_items'    => array(
                         'type'          => 'text',
-                        'label'         => __('Item', 'bb-powerpack'),
+                        'label'         => __('Item', 'bb-powerpack-lite'),
                         'default'       => '',
                         'multiple'      => true
                     )
@@ -107,14 +107,14 @@ FLBuilder::register_module('PPIconListModule', array(
         )
     ),
     'style' => array(
-        'title' => __('Style', 'bb-powerpack'),
+        'title' => __('Style', 'bb-powerpack-lite'),
         'sections'  => array(
             'general'   => array(
-                'title'     => __('General', 'bb-powerpack'),
+                'title'     => __('General', 'bb-powerpack-lite'),
                 'fields'    => array(
                     'item_margin'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Space b/w each item', 'bb-powerpack'),
+                        'label'         => __('Space b/w each item', 'bb-powerpack-lite'),
                         'default'       => 20,
 						'units'			=> array( 'px' ),
 						'slider'		=> true,	
@@ -127,7 +127,7 @@ FLBuilder::register_module('PPIconListModule', array(
                     ),
                     'icon_space'    => array(
                         'type'          => 'unit',
-                        'label'         => __('Space b/w Icon and Text', 'bb-powerpack'),
+                        'label'         => __('Space b/w Icon and Text', 'bb-powerpack-lite'),
                         'default'       => 10,
                        	'units'			=> array( 'px' ),
 						'slider'		=> true,	
@@ -141,11 +141,11 @@ FLBuilder::register_module('PPIconListModule', array(
                 )
             ),
             'icon_style'    => array(
-                'title'         => __('Icon', 'bb-powerpack'),
+                'title'         => __('Icon', 'bb-powerpack-lite'),
                 'fields'        => array(
                     'icon_bg'       => array(
                         'type'          => 'color',
-                        'label'         => __('Background Color', 'bb-powerpack'),
+                        'label'         => __('Background Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
 						'show_alpha'	=> true,
@@ -157,14 +157,14 @@ FLBuilder::register_module('PPIconListModule', array(
                     ),
                     'icon_bg_hover' => array(
                         'type'          => 'color',
-                        'label'         => __('Background Hover Color', 'bb-powerpack'),
+                        'label'         => __('Background Hover Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
 						'show_alpha'	=> true
                     ),
                     'icon_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '444444',
                         'preview'       => array(
                             'type'          => 'css',
@@ -174,7 +174,7 @@ FLBuilder::register_module('PPIconListModule', array(
                     ),
                     'icon_color_hover'  => array(
                         'type'              => 'color',
-                        'label'             => __('Hover Color', 'bb-powerpack'),
+                        'label'             => __('Hover Color', 'bb-powerpack-lite'),
                         'default'           => '111111',
                     ),
                     'field_separator_0' => array(
@@ -183,7 +183,7 @@ FLBuilder::register_module('PPIconListModule', array(
                     ),
                     'icon_border'	=> array(
 						'type'          => 'border',
-						'label'         => __( 'Border', 'bb-powerpack' ),
+						'label'         => __( 'Border', 'bb-powerpack-lite' ),
 						'responsive'	=> true,
 						'preview'   	=> array(
                             'type'  		=> 'css',
@@ -193,7 +193,7 @@ FLBuilder::register_module('PPIconListModule', array(
 					),
                     'icon_border_color_hover'   => array(
                         'type'                      => 'color',
-                        'label'                     => __('Border Hover Color', 'bb-powerpack'),
+                        'label'                     => __('Border Hover Color', 'bb-powerpack-lite'),
                         'default'                   => ''
                     ),
                     'field_separator_1' => array(
@@ -202,7 +202,7 @@ FLBuilder::register_module('PPIconListModule', array(
                     ),
                     'icon_size'     => array(
                         'type'          => 'unit',
-                        'label'         => __('Size', 'bb-powerpack'),
+                        'label'         => __('Size', 'bb-powerpack-lite'),
                         'default'       => 20,
                         'units'			=> array( 'px' ),
 						'slider'		=> true,
@@ -215,7 +215,7 @@ FLBuilder::register_module('PPIconListModule', array(
                     ),
                     'icon_padding'  => array(
                         'type'          => 'unit',
-                        'label'         => __('Padding', 'bb-powerpack'),
+                        'label'         => __('Padding', 'bb-powerpack-lite'),
                         'default'       => 0,
                         'units'			=> array( 'px' ),
 						'slider'		=> true,
@@ -229,11 +229,11 @@ FLBuilder::register_module('PPIconListModule', array(
                 )
             ),
             'text_style'    => array(
-                'title'         => __('Text', 'bb-powerpack'),
+                'title'         => __('Text', 'bb-powerpack-lite'),
                 'fields'        => array(
                     'text_typography'	=> array(
 						'type'			=> 'typography',
-						'label'			=> __('Typography', 'bb-powerpack'),
+						'label'			=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  	=> true,
 						'preview'		=> array(
 							'type'			=> 'css',
@@ -242,7 +242,7 @@ FLBuilder::register_module('PPIconListModule', array(
 					),
                     'text_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'preview'       => array(

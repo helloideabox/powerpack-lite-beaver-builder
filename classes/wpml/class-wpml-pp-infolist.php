@@ -13,16 +13,16 @@ class WPML_PP_Infolist extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'title':
-				return esc_html__( 'InfoList - Title', 'bb-powerpack' );
+				return esc_html__( 'InfoList - Title', 'bb-powerpack-lite' );
 
 			case 'description':
-				return esc_html__( 'InfoList - Description', 'bb-powerpack' );
+				return esc_html__( 'InfoList - Description', 'bb-powerpack-lite' );
 
 			case 'read_more_text':
-				return esc_html__( 'InfoList - Button Text', 'bb-powerpack' );
+				return esc_html__( 'InfoList - Button Text', 'bb-powerpack-lite' );
 
 			case 'link':
-				return esc_html__( 'InfoList - Link', 'bb-powerpack' );
+				return esc_html__( 'InfoList - Link', 'bb-powerpack-lite' );
 
 			default:
 				return '';

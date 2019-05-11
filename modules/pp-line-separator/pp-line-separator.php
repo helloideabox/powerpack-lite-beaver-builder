@@ -14,8 +14,8 @@ class PPLineSeparatorModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Divider', 'bb-powerpack'),
-            'description'   => __('Addon to add dividers in the row.', 'bb-powerpack'),
+            'name'          => __('Divider', 'bb-powerpack-lite'),
+            'description'   => __('Addon to add dividers in the row.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'creative' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-line-separator/',
@@ -59,19 +59,19 @@ class PPLineSeparatorModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPLineSeparatorModule', array(
 	'general'      => array( // Tab
-		'title'         => __('Separator', 'bb-powerpack'), // Tab title
+		'title'         => __('Separator', 'bb-powerpack-lite'), // Tab title
 		'sections'      => array( // Tab Sections
             'separator'      => array(
                 'title'     => '',
                 'fields'    => array(
                     'line_separator'     => array(
                        'type'      => 'select',
-                       'label'     => __('Separator', 'bb-powerpack'),
+                       'label'     => __('Separator', 'bb-powerpack-lite'),
                        'default'     => 'line_only',
                        'options'       => array(
-                           'line_only'          => __('Line', 'bb-powerpack'),
-                           'icon_image'          => __('Icon/Image', 'bb-powerpack'),
-                           'line_with_icon'     => __('Line With Icon/Image', 'bb-powerpack'),
+                           'line_only'          => __('Line', 'bb-powerpack-lite'),
+                           'icon_image'          => __('Icon/Image', 'bb-powerpack-lite'),
+                           'line_with_icon'     => __('Line With Icon/Image', 'bb-powerpack-lite'),
                        ),
                        'toggle' => array(
                             'line_only'      => array(
@@ -90,14 +90,14 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'line_style'     => array(
                         'type'      => 'select',
-                        'label'     => __('Line Style', 'bb-powerpack'),
+                        'label'     => __('Line Style', 'bb-powerpack-lite'),
                         'default'     => 'none',
                         'options'       => array(
-                             'none'           => __('None', 'bb-powerpack'),
-                             'solid'          => __('Solid', 'bb-powerpack'),
-                             'dashed'         => __('Dashed', 'bb-powerpack'),
-                             'dotted'         => __('Dotted', 'bb-powerpack'),
-                             'double'         => __('Double', 'bb-powerpack'),
+                             'none'           => __('None', 'bb-powerpack-lite'),
+                             'solid'          => __('Solid', 'bb-powerpack-lite'),
+                             'dashed'         => __('Dashed', 'bb-powerpack-lite'),
+                             'dotted'         => __('Dotted', 'bb-powerpack-lite'),
+                             'double'         => __('Double', 'bb-powerpack-lite'),
                          )
                     ),
                     'separator_alignment'    => array(
@@ -112,11 +112,11 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                 'fields'    => array(
                     'icon_image_select'    => array(
                         'type'      => 'pp-switch',
-                        'label'     => __('Icon Source', 'bb-powerpack'),
+                        'label'     => __('Icon Source', 'bb-powerpack-lite'),
                         'default'   => 'icon',
                         'options'   => array(
-                            'icon'  => __('Icon', 'bb-powerpack'),
-                            'image'  => __('Image', 'bb-powerpack'),
+                            'icon'  => __('Icon', 'bb-powerpack-lite'),
+                            'image'  => __('Image', 'bb-powerpack-lite'),
                         ),
                         'toggle'    => array(
                             'icon'  => array(
@@ -129,16 +129,16 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'separator_icon'          => array(
 						'type'          => 'icon',
-						'label'         => __('Icon', 'bb-powerpack')
+						'label'         => __('Icon', 'bb-powerpack-lite')
 					),
                     'separator_image'   => array(
                         'type'          => 'photo',
-                        'label'         => __('Select Image', 'bb-powerpack'),
+                        'label'         => __('Select Image', 'bb-powerpack-lite'),
                         'connections'   => array( 'photo' ),
                     ),
                     'icon_line_space'   => array(
                         'type'      => 'unit',
-                        'label'     => __('Line-Icon gap', 'bb-powerpack'),
+                        'label'     => __('Line-Icon gap', 'bb-powerpack-lite'),
                         'units'		=> array( 'px' ),
 						'slider'	=> true,
                         'preview'   => array(
@@ -162,14 +162,14 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
 		)
 	),
     'style'     => array(
-        'title'     => __('Style', 'bb-powerpack'),
+        'title'     => __('Style', 'bb-powerpack-lite'),
         'sections'      => array(
             'line_style_section'    => array( // Section
-                'title'             => __('Line Style', 'bb-powerpack'), // Section Title
+                'title'             => __('Line Style', 'bb-powerpack-lite'), // Section Title
                 'fields'            => array( // Section Fields
 					'line_width'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Custom Width', 'bb-powerpack'),
+                        'label'         => __('Custom Width', 'bb-powerpack-lite'),
                         'units'			=> array( '%' ),
 						'slider'		=> true,
                         'default'       => '100',
@@ -201,7 +201,7 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'line_height'       => array(
                         'type'          => 'unit',
-                        'label'         => __('Line Height', 'bb-powerpack'),
+                        'label'         => __('Line Height', 'bb-powerpack-lite'),
                         'units'			=> array( 'px' ),
 						'slider'		=> true,
                         'default'       => '1',
@@ -238,7 +238,7 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'line_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Line Color', 'bb-powerpack'),
+                        'label'         => __('Line Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -266,11 +266,11 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                 )
             ),
             'image_icon_style_section'    => array( // Section
-                'title'             => __('Icon Style', 'bb-powerpack'), // Section Title
+                'title'             => __('Icon Style', 'bb-powerpack-lite'), // Section Title
                 'fields'            => array( // Section Fields
 					'font_icon_font_size'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Icon Size', 'bb-powerpack'),
+                        'label'         => __('Icon Size', 'bb-powerpack-lite'),
                         'units'			=> array( 'px' ),
 						'slider'		=> true,
                         'default'       => '16',
@@ -297,7 +297,7 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'font_icon_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color', 'bb-powerpack'),
+                        'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -308,7 +308,7 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'font_icon_bg_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Background Color', 'bb-powerpack'),
+                        'label'         => __('Background Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -327,7 +327,7 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'font_icon_padding_top_bottom'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Padding Top/Bottom', 'bb-powerpack'),
+                        'label'         => __('Padding Top/Bottom', 'bb-powerpack-lite'),
                         'default'       => '0',
                         'units'			=> array( 'px' ),
 						'slider'		=> true,
@@ -359,7 +359,7 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                     ),
                     'font_icon_padding_left_right'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Padding Left/Right', 'bb-powerpack'),
+                        'label'         => __('Padding Left/Right', 'bb-powerpack-lite'),
                         'default'       => '0',
                         'units'			=> array( 'px' ),
 						'slider'		=> true,
@@ -392,11 +392,11 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                 )
             ),
             'border_section'    => array(
-                'title'     => __('Border Styling', 'bb-powerpack'),
+                'title'     => __('Border Styling', 'bb-powerpack-lite'),
                 'fields'    => array(
                     'icon_border'	=> array(
 						'type'          => 'border',
-						'label'         => __( 'Border', 'bb-powerpack' ),
+						'label'         => __( 'Border', 'bb-powerpack-lite' ),
 						'responsive'	=> true,
 						'preview'   	=> array(
                             'type'  		=> 'css',

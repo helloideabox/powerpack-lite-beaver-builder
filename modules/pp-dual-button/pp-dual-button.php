@@ -14,8 +14,8 @@ class PPDualButtonModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Dual Button', 'bb-powerpack'),
-            'description'   => __('A module for Dual Button.', 'bb-powerpack'),
+            'name'          => __('Dual Button', 'bb-powerpack-lite'),
+            'description'   => __('A module for Dual Button.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-dual-button/',
@@ -133,7 +133,7 @@ class PPDualButtonModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPDualButtonModule', array(
     'button_1_tab'       => array( // Tab
-        'title'         => __('Button 1', 'bb-powerpack'), // Tab title
+        'title'         => __('Button 1', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'button_sections_1'     => array(
                 'title'     => '',
@@ -141,7 +141,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_1_title'     => array(
                         'type'      => 'text',
                         'label'     => 'Text',
-                        'default'   => __('Button 1', 'bb-powerpack'),
+                        'default'   => __('Button 1', 'bb-powerpack-lite'),
                         'preview'       => array(
 							'type'          => 'text',
 							'selector'      => '.pp-dual-button-1 span.pp-button-1-text'
@@ -149,19 +149,19 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_1_link'          => array(
 						'type'          => 'link',
-						'label'         => __('Link', 'bb-powerpack'),
+						'label'         => __('Link', 'bb-powerpack-lite'),
 						'connections'   => array( 'url' ),
 						'show_target'	=> true,
 						'show_nofollow'	=> true
 					),
                     'button_icon_select_1'       => array(
                         'type'          => 'pp-switch',
-						'label'         => __('Icon Type', 'bb-powerpack'),
+						'label'         => __('Icon Type', 'bb-powerpack-lite'),
                         'default'       => 'none',
 						'options'       => array(
-                            'none'              => __('None', 'bb-powerpack'),
-							'font_icon'         => __('Icon', 'bb-powerpack'),
-							'custom_icon'       => __('Image', 'bb-powerpack')
+                            'none'              => __('None', 'bb-powerpack-lite'),
+							'font_icon'         => __('Icon', 'bb-powerpack-lite'),
+							'custom_icon'       => __('Image', 'bb-powerpack-lite')
 						),
                         'toggle' => array(
                             'font_icon'    => array(
@@ -176,52 +176,52 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_font_icon_1'          => array(
 						'type'          => 'icon',
-						'label'         => __('Icon', 'bb-powerpack')
+						'label'         => __('Icon', 'bb-powerpack-lite')
 					),
                     'button_custom_icon_1'     => array(
                         'type'              => 'photo',
-                        'label'         => __('Custom Image', 'bb-powerpack'),
+                        'label'         => __('Custom Image', 'bb-powerpack-lite'),
                         'connections'   => array( 'photo' ),
                     ),
                     'button_1_icon_aligment'       => array(
                         'type'          => 'pp-switch',
-						'label'         => __('Icon Position', 'bb-powerpack'),
+						'label'         => __('Icon Position', 'bb-powerpack-lite'),
                         'default'       => 'left',
 						'options'       => array(
-							'left'      => __('Before Text', 'bb-powerpack'),
-							'right'     => __('After Text', 'bb-powerpack')
+							'left'      => __('Before Text', 'bb-powerpack-lite'),
+							'right'     => __('After Text', 'bb-powerpack-lite')
 						),
 					),
                     'button_1_effect'   => array(
                         'type'  => 'select',
-                        'label' => __('Hover Transition', 'bb-powerpack'),
+                        'label' => __('Hover Transition', 'bb-powerpack-lite'),
                         'default'   => 'none',
                         'options'   => array(
-                            'none'  => __('None', 'bb-powerpack'),
-                            'fade'  => __('Fade', 'bb-powerpack'),
-                            'sweep_right'  => __('Sweep To Right', 'bb-powerpack'),
-                            'sweep_left'  => __('Sweep To Left', 'bb-powerpack'),
-                            'sweep_bottom'  => __('Sweep To Bottom', 'bb-powerpack'),
-                            'sweep_top'  => __('Sweep To Top', 'bb-powerpack'),
-                            'bounce_right'  => __('Bounce To Right', 'bb-powerpack'),
-                            'bounce_left'  => __('Bounce To Left', 'bb-powerpack'),
-                            'bounce_bottom'  => __('Bounce To Bottom', 'bb-powerpack'),
-                            'bounce_top'  => __('Bounce To Top', 'bb-powerpack'),
-                            'radial_out'  => __('Radial Out', 'bb-powerpack'),
-                            'radial_in'  => __('Radial In', 'bb-powerpack'),
-                            'rectangle_out'  => __('Rectangle Out', 'bb-powerpack'),
-                            'rectangle_in'  => __('Rectangle In', 'bb-powerpack'),
-                            'shutter_in_horizontal'  => __('Shutter In Horizontal', 'bb-powerpack'),
-                            'shutter_out_horizontal'  => __('Shutter Out Horizontal', 'bb-powerpack'),
-                            'shutter_in_vertical'  => __('Shutter In Vertical', 'bb-powerpack'),
-                            'shutter_out_vertical'  => __('Shutter Out Vertical', 'bb-powerpack'),
-                            'shutter_out_diagonal'  => __('Shutter Out Diagonal', 'bb-powerpack'),
-                            'shutter_in_diagonal'  => __('Shutter In Diagonal', 'bb-powerpack'),
+                            'none'  => __('None', 'bb-powerpack-lite'),
+                            'fade'  => __('Fade', 'bb-powerpack-lite'),
+                            'sweep_right'  => __('Sweep To Right', 'bb-powerpack-lite'),
+                            'sweep_left'  => __('Sweep To Left', 'bb-powerpack-lite'),
+                            'sweep_bottom'  => __('Sweep To Bottom', 'bb-powerpack-lite'),
+                            'sweep_top'  => __('Sweep To Top', 'bb-powerpack-lite'),
+                            'bounce_right'  => __('Bounce To Right', 'bb-powerpack-lite'),
+                            'bounce_left'  => __('Bounce To Left', 'bb-powerpack-lite'),
+                            'bounce_bottom'  => __('Bounce To Bottom', 'bb-powerpack-lite'),
+                            'bounce_top'  => __('Bounce To Top', 'bb-powerpack-lite'),
+                            'radial_out'  => __('Radial Out', 'bb-powerpack-lite'),
+                            'radial_in'  => __('Radial In', 'bb-powerpack-lite'),
+                            'rectangle_out'  => __('Rectangle Out', 'bb-powerpack-lite'),
+                            'rectangle_in'  => __('Rectangle In', 'bb-powerpack-lite'),
+                            'shutter_in_horizontal'  => __('Shutter In Horizontal', 'bb-powerpack-lite'),
+                            'shutter_out_horizontal'  => __('Shutter Out Horizontal', 'bb-powerpack-lite'),
+                            'shutter_in_vertical'  => __('Shutter In Vertical', 'bb-powerpack-lite'),
+                            'shutter_out_vertical'  => __('Shutter Out Vertical', 'bb-powerpack-lite'),
+                            'shutter_out_diagonal'  => __('Shutter Out Diagonal', 'bb-powerpack-lite'),
+                            'shutter_in_diagonal'  => __('Shutter In Diagonal', 'bb-powerpack-lite'),
                         ),
                     ),
                     'button_1_effect_duration'  => array(
                         'type'  => 'text',
-                        'label' => __('Transition Speed', 'bb-powerpack'),
+                        'label' => __('Transition Speed', 'bb-powerpack-lite'),
                         'size'  => 5,
                         'maxlength' => 4,
                         'default'   => 200,
@@ -229,7 +229,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_1_css_class'    => array(
                         'type'  => 'text',
-                        'label' => __('CSS Class', 'bb-powerpack'),
+                        'label' => __('CSS Class', 'bb-powerpack-lite'),
                         'default'   => '',
                     )
                 )
@@ -237,7 +237,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
         )
     ),
     'button_2_tab'  => array(
-        'title'     => __('Button 2', 'bb-powerpack'),
+        'title'     => __('Button 2', 'bb-powerpack-lite'),
         'sections'  => array(
             'button_sections_2'     => array(
                 'title'     => '',
@@ -245,7 +245,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     'button_2_title'     => array(
                         'type'      => 'text',
                         'label'     => 'Text',
-                        'default'   => __('Button 2', 'bb-powerpack'),
+                        'default'   => __('Button 2', 'bb-powerpack-lite'),
                         'preview'       => array(
 							'type'          => 'text',
 							'selector'      => '.pp-dual-button-2 span.pp-button-2-text'
@@ -253,19 +253,19 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_2_link'          => array(
 						'type'          => 'link',
-						'label'         => __('Link', 'bb-powerpack'),
+						'label'         => __('Link', 'bb-powerpack-lite'),
 						'connections'   => array( 'url' ),
 						'show_target'	=> true,
 						'show_nofollow'	=> true
 					),
                     'button_icon_select_2'       => array(
                         'type'          => 'pp-switch',
-						'label'         => __('Icon Type', 'bb-powerpack'),
+						'label'         => __('Icon Type', 'bb-powerpack-lite'),
                         'default'       => 'none',
 						'options'       => array(
-                            'none'              => __('None', 'bb-powerpack'),
-							'font_icon'         => __('Icon', 'bb-powerpack'),
-							'custom_icon'       => __('Image', 'bb-powerpack')
+                            'none'              => __('None', 'bb-powerpack-lite'),
+							'font_icon'         => __('Icon', 'bb-powerpack-lite'),
+							'custom_icon'       => __('Image', 'bb-powerpack-lite')
 						),
                         'toggle' => array(
                             'font_icon'    => array(
@@ -280,52 +280,52 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_font_icon_2'          => array(
 						'type'          => 'icon',
-						'label'         => __('Icon', 'bb-powerpack')
+						'label'         => __('Icon', 'bb-powerpack-lite')
 					),
                     'button_custom_icon_2'     => array(
                         'type'              => 'photo',
-                        'label'         => __('Custom Image', 'bb-powerpack'),
+                        'label'         => __('Custom Image', 'bb-powerpack-lite'),
                         'connections'   => array( 'photo' ),
                     ),
                     'button_2_icon_aligment'       => array(
                         'type'          => 'pp-switch',
-						'label'         => __('Icon Position', 'bb-powerpack'),
+						'label'         => __('Icon Position', 'bb-powerpack-lite'),
                         'default'       => 'left',
 						'options'       => array(
-							'left'      => __('Before Text', 'bb-powerpack'),
-							'right'     => __('After Text', 'bb-powerpack')
+							'left'      => __('Before Text', 'bb-powerpack-lite'),
+							'right'     => __('After Text', 'bb-powerpack-lite')
 						),
 					),
                     'button_2_effect'   => array(
                         'type'  => 'select',
-                        'label' => __('Hover Transition', 'bb-powerpack'),
+                        'label' => __('Hover Transition', 'bb-powerpack-lite'),
                         'default'   => 'none',
                         'options'   => array(
-                            'none'  => __('None', 'bb-powerpack'),
-                            'fade'  => __('Fade', 'bb-powerpack'),
-                            'sweep_right'  => __('Sweep To Right', 'bb-powerpack'),
-                            'sweep_left'  => __('Sweep To Left', 'bb-powerpack'),
-                            'sweep_bottom'  => __('Sweep To Bottom', 'bb-powerpack'),
-                            'sweep_top'  => __('Sweep To Top', 'bb-powerpack'),
-                            'bounce_right'  => __('Bounce To Right', 'bb-powerpack'),
-                            'bounce_left'  => __('Bounce To Left', 'bb-powerpack'),
-                            'bounce_bottom'  => __('Bounce To Bottom', 'bb-powerpack'),
-                            'bounce_top'  => __('Bounce To Top', 'bb-powerpack'),
-                            'radial_out'  => __('Radial Out', 'bb-powerpack'),
-                            'radial_in'  => __('Radial In', 'bb-powerpack'),
-                            'rectangle_out'  => __('Rectangle Out', 'bb-powerpack'),
-                            'rectangle_in'  => __('Rectangle In', 'bb-powerpack'),
-                            'shutter_in_horizontal'  => __('Shutter In Horizontal', 'bb-powerpack'),
-                            'shutter_out_horizontal'  => __('Shutter Out Horizontal', 'bb-powerpack'),
-                            'shutter_in_vertical'  => __('Shutter In Vertical', 'bb-powerpack'),
-                            'shutter_out_vertical'  => __('Shutter Out Vertical', 'bb-powerpack'),
-                            'shutter_out_diagonal'  => __('Shutter Out Diagonal', 'bb-powerpack'),
-                            'shutter_in_diagonal'  => __('Shutter In Diagonal', 'bb-powerpack'),
+                            'none'  => __('None', 'bb-powerpack-lite'),
+                            'fade'  => __('Fade', 'bb-powerpack-lite'),
+                            'sweep_right'  => __('Sweep To Right', 'bb-powerpack-lite'),
+                            'sweep_left'  => __('Sweep To Left', 'bb-powerpack-lite'),
+                            'sweep_bottom'  => __('Sweep To Bottom', 'bb-powerpack-lite'),
+                            'sweep_top'  => __('Sweep To Top', 'bb-powerpack-lite'),
+                            'bounce_right'  => __('Bounce To Right', 'bb-powerpack-lite'),
+                            'bounce_left'  => __('Bounce To Left', 'bb-powerpack-lite'),
+                            'bounce_bottom'  => __('Bounce To Bottom', 'bb-powerpack-lite'),
+                            'bounce_top'  => __('Bounce To Top', 'bb-powerpack-lite'),
+                            'radial_out'  => __('Radial Out', 'bb-powerpack-lite'),
+                            'radial_in'  => __('Radial In', 'bb-powerpack-lite'),
+                            'rectangle_out'  => __('Rectangle Out', 'bb-powerpack-lite'),
+                            'rectangle_in'  => __('Rectangle In', 'bb-powerpack-lite'),
+                            'shutter_in_horizontal'  => __('Shutter In Horizontal', 'bb-powerpack-lite'),
+                            'shutter_out_horizontal'  => __('Shutter Out Horizontal', 'bb-powerpack-lite'),
+                            'shutter_in_vertical'  => __('Shutter In Vertical', 'bb-powerpack-lite'),
+                            'shutter_out_vertical'  => __('Shutter Out Vertical', 'bb-powerpack-lite'),
+                            'shutter_out_diagonal'  => __('Shutter Out Diagonal', 'bb-powerpack-lite'),
+                            'shutter_in_diagonal'  => __('Shutter In Diagonal', 'bb-powerpack-lite'),
                         ),
                     ),
                     'button_2_effect_duration'  => array(
                         'type'  => 'text',
-                        'label' => __('Transition Speed', 'bb-powerpack'),
+                        'label' => __('Transition Speed', 'bb-powerpack-lite'),
                         'size'  => 5,
                         'maxlength' => 4,
                         'default' => '200',
@@ -333,7 +333,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_2_css_class'    => array(
                         'type'  => 'text',
-                        'label' => __('CSS Class', 'bb-powerpack'),
+                        'label' => __('CSS Class', 'bb-powerpack-lite'),
                         'default'   => '',
                     )
                 )
@@ -341,19 +341,19 @@ FLBuilder::register_module('PPDualButtonModule', array(
         ),
     ),
     'style'       => array( // Tab
-        'title'         => __('Style', 'bb-powerpack'), // Tab title
+        'title'         => __('Style', 'bb-powerpack-lite'), // Tab title
 		'sections'      => array( // Tab Sections
 			'structure'       => array( // Section
-                'title'         => __('Structure', 'bb-powerpack'), // Section Title
+                'title'         => __('Structure', 'bb-powerpack-lite'), // Section Title
                 'fields'        => array( // Section Fields
                     'button_alignment'  => array(
                         'type'      => 'align',
-                        'label'     => __('Alignment', 'bb-powerpack'),
+                        'label'     => __('Alignment', 'bb-powerpack-lite'),
                         'default'   => 'left',
 					),
 					'button_padding'	=> array(
 						'type'				=> 'dimension',
-						'label'				=> __('Padding', 'bb-powerpack'),
+						'label'				=> __('Padding', 'bb-powerpack-lite'),
 						'default'			=> '10',
 						'units'				=> array('px'),
 						'slider'			=> true,
@@ -367,13 +367,13 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_border_style'    => array(
                         'type'      => 'pp-switch',
-                        'label'     => __('Border Style', 'bb-powerpack'),
+                        'label'     => __('Border Style', 'bb-powerpack-lite'),
                         'default'   => 'none',
                         'options'   => array(
-                            'none'     => __('None', 'bb-powerpack'),
-                            'solid'     => __('Solid', 'bb-powerpack'),
-                            'dashed'     => __('Dashed', 'bb-powerpack'),
-                            'dotted'     => __('Dotted', 'bb-powerpack'),
+                            'none'     => __('None', 'bb-powerpack-lite'),
+                            'solid'     => __('Solid', 'bb-powerpack-lite'),
+                            'dashed'     => __('Dashed', 'bb-powerpack-lite'),
+                            'dotted'     => __('Dotted', 'bb-powerpack-lite'),
                         ),
                         'toggle'    => array(
                             'solid'     => array(
@@ -389,7 +389,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_border_width'    => array(
                         'type'      => 'unit',
-                        'label'     => __('Border Width', 'bb-powerpack'),
+                        'label'     => __('Border Width', 'bb-powerpack-lite'),
 						'default'   => '1',
 						'units'		=> array('px'),
 						'slider'	=> true,
@@ -402,7 +402,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_border_radius'    => array(
                         'type'      => 'unit',
-                        'label'     => __('Round Corners', 'bb-powerpack'),
+                        'label'     => __('Round Corners', 'bb-powerpack-lite'),
                         'default'   => '0',
 						'units'		=> array('px'),
 						'slider'	=> true,
@@ -434,7 +434,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_width'    => array(
                         'type'      => 'unit',
-                        'label'     => __('Width', 'bb-powerpack'),
+                        'label'     => __('Width', 'bb-powerpack-lite'),
                         'default'   => '200',
 						'units'		=> array('px'),
 						'slider'	=> true,
@@ -447,7 +447,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_spacing'    => array(
                         'type'              => 'unit',
-                        'label'             => __('Spacing', 'bb-powerpack'),
+                        'label'             => __('Spacing', 'bb-powerpack-lite'),
                         'default'           => '10',
                         'units'				=> array('px'),
 						'slider'			=> true,
@@ -460,19 +460,19 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'responsive_breakpoint' => array(
                         'type'          => 'unit',
-                        'label'         => __('Responsive Breakpoint', 'bb-powerpack'),
+                        'label'         => __('Responsive Breakpoint', 'bb-powerpack-lite'),
 						'default'       => '480',
 						'units'			=> array('px'),
-                        'help'          => __('Buttons will be stacked on top of each other.', 'bb-powerpack'),
+                        'help'          => __('Buttons will be stacked on top of each other.', 'bb-powerpack-lite'),
                     ),
                 )
             ),
             'button_1_style'       => array( // Section
-                'title'         => __('Button 1', 'bb-powerpack'), // Section Title
+                'title'         => __('Button 1', 'bb-powerpack-lite'), // Section Title
 				'fields'        => array( // Section Fields
 					'button_1_bg_color_default'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Background Color', 'bb-powerpack'),
+						'label'			=> __('Background Color', 'bb-powerpack-lite'),
 						'default'		=> 'eeeeee',
 						'show_reset'	=> true,
 						'show_alpha'	=> true,
@@ -484,7 +484,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_1_text_color_default'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Text Color', 'bb-powerpack'),
+						'label'			=> __('Text Color', 'bb-powerpack-lite'),
 						'default'		=> '565656',
 						'show_reset'	=> true,
 						'preview'         => array(
@@ -495,7 +495,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_1_bg_color_hover'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Background Hover Color', 'bb-powerpack'),
+						'label'			=> __('Background Hover Color', 'bb-powerpack-lite'),
 						'default'		=> 'dddddd',
 						'show_reset'	=> true,
 						'show_alpha'	=> true,
@@ -505,7 +505,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_1_text_color_hover'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Text Hover Color', 'bb-powerpack'),
+						'label'			=> __('Text Hover Color', 'bb-powerpack-lite'),
 						'default'		=> '565656',
 						'show_reset'	=> true,
 						'preview'         => array(
@@ -514,7 +514,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_1_border_color_default'	=> array(
 						'type'		=> 'color',
-						'label'		=> __('Border Color', 'bb-powerpack'),
+						'label'		=> __('Border Color', 'bb-powerpack-lite'),
 						'default'	=> '333333',
 						'show_alpha'	=> true,
 						'show_reset'	=> true,
@@ -526,7 +526,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_1_border_color_hover'	=> array(
 						'type'		=> 'color',
-						'label'		=> __('Border Hover Color', 'bb-powerpack'),
+						'label'		=> __('Border Hover Color', 'bb-powerpack-lite'),
 						'default'	=> 'c6c6c6',
 						'show_alpha'	=> true,
 						'show_reset'	=> true,
@@ -536,7 +536,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_1_font_icon_size'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Icon Size', 'bb-powerpack'),
+                        'label'         => __('Icon Size', 'bb-powerpack-lite'),
 						'default'       => '20',
 						'units'			=> array('px'),
 						'slider'		=> true,
@@ -549,7 +549,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_1_custom_icon_width'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Image Width', 'bb-powerpack'),
+                        'label'         => __('Image Width', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
 						'slider'		=> true,
                         'default'       => '20',
@@ -563,11 +563,11 @@ FLBuilder::register_module('PPDualButtonModule', array(
                 )
             ),
             'button_2_style'       => array( // Section
-                'title'         => __('Button 2', 'bb-powerpack'), // Section Title
+                'title'         => __('Button 2', 'bb-powerpack-lite'), // Section Title
 				'fields'        => array( // Section Fields
 					'button_2_bg_color_default'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Background Color', 'bb-powerpack'),
+						'label'			=> __('Background Color', 'bb-powerpack-lite'),
 						'default'		=> 'dddddd',
 						'show_reset'	=> true,
 						'show_alpha'	=> true,
@@ -579,7 +579,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_2_text_color_default'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Text Color', 'bb-powerpack'),
+						'label'			=> __('Text Color', 'bb-powerpack-lite'),
 						'default'		=> '565656',
 						'show_reset'	=> true,
 						'preview'         => array(
@@ -590,7 +590,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_2_bg_color_hover'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Background Hover Color', 'bb-powerpack'),
+						'label'			=> __('Background Hover Color', 'bb-powerpack-lite'),
 						'default'		=> 'eeeeee',
 						'show_reset'	=> true,
 						'show_alpha'	=> true,
@@ -600,7 +600,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_2_text_color_hover'	=> array(
 						'type'			=> 'color',
-						'label'			=> __('Text Hover Color', 'bb-powerpack'),
+						'label'			=> __('Text Hover Color', 'bb-powerpack-lite'),
 						'default'		=> '565656',
 						'show_reset'	=> true,
 						'preview'         => array(
@@ -609,7 +609,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_2_border_color_default'	=> array(
 						'type'		=> 'color',
-						'label'		=> __('Border Color', 'bb-powerpack'),
+						'label'		=> __('Border Color', 'bb-powerpack-lite'),
 						'default'	=> '333333',
 						'show_alpha'	=> true,
 						'show_reset'	=> true,
@@ -621,7 +621,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
 					'button_2_border_color_hover'	=> array(
 						'type'		=> 'color',
-						'label'		=> __('Border Hover Color', 'bb-powerpack'),
+						'label'		=> __('Border Hover Color', 'bb-powerpack-lite'),
 						'default'	=> 'c6c6c6',
 						'show_alpha'	=> true,
 						'show_reset'	=> true,
@@ -631,7 +631,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
 					),
                     'button_2_font_icon_size'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Icon Size', 'bb-powerpack'),
+                        'label'         => __('Icon Size', 'bb-powerpack-lite'),
 						'default'       => 20,
 						'units'			=> array('px'),
 						'slider'		=> true,
@@ -644,7 +644,7 @@ FLBuilder::register_module('PPDualButtonModule', array(
                     ),
                     'button_2_custom_icon_width'   => array(
                         'type'          => 'unit',
-                        'label'         => __('Image Width', 'bb-powerpack'),
+                        'label'         => __('Image Width', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
 						'slider'		=> true,
                         'default'       => 20,
@@ -660,14 +660,14 @@ FLBuilder::register_module('PPDualButtonModule', array(
         ),
     ),
     'button_typography'        => array(
-        'title'         => __('Typography', 'bb-powerpack'),
+        'title'         => __('Typography', 'bb-powerpack-lite'),
         'sections'      => array(
             'typography'    => array(
                 'title'     => '',
                 'fields'    => array(
 					'button_typography'	=> array(
 						'type'				=> 'typography',
-						'label'				=> __('Typography', 'bb-powerpack'),
+						'label'				=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'		=> true,
 						'preview'         	=> array(
                             'type'            	=> 'font',

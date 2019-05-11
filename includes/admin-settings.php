@@ -14,12 +14,12 @@ $current_tab = isset( $_REQUEST['tab'] ) ? $_REQUEST['tab'] : 'extensions';
 
         <h2 class="nav-tab-wrapper pp-nav-tab-wrapper">
             <?php if ( is_network_admin() || !is_multisite() ) { ?>
-                <a href="<?php echo self::get_form_action( '&tab=extensions' ); ?>" class="nav-tab<?php echo ( $current_tab == 'extensions' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Extensions', 'bb-powerpack' ); ?></a>
+                <a href="<?php echo self::get_form_action( '&tab=extensions' ); ?>" class="nav-tab<?php echo ( $current_tab == 'extensions' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Extensions', 'bb-powerpack-lite' ); ?></a>
             <?php } ?>
-            <a href="<?php echo self::get_form_action( '&tab=modules' ); ?>" class="nav-tab<?php echo ( $current_tab == 'modules' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Modules', 'bb-powerpack' ); ?></a>
-            <a href="<?php echo self::get_form_action( '&tab=templates' ); ?>" class="nav-tab<?php echo ( $current_tab == 'templates' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Templates', 'bb-powerpack' ); ?></a>
-            <a href="<?php echo self::get_form_action( '&tab=integration' ); ?>" class="nav-tab<?php echo ( $current_tab == 'integration' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Integration', 'bb-powerpack' ); ?></a>
-            <a href="https://wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=module-settings&utm_campaign=module-settings" class="nav-tab" target="_blank"><?php _e( 'Upgrade', 'bb-powerpack' ); ?></a>
+            <a href="<?php echo self::get_form_action( '&tab=modules' ); ?>" class="nav-tab<?php echo ( $current_tab == 'modules' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Modules', 'bb-powerpack-lite' ); ?></a>
+            <a href="<?php echo self::get_form_action( '&tab=templates' ); ?>" class="nav-tab<?php echo ( $current_tab == 'templates' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Templates', 'bb-powerpack-lite' ); ?></a>
+            <a href="<?php echo self::get_form_action( '&tab=integration' ); ?>" class="nav-tab<?php echo ( $current_tab == 'integration' ? ' nav-tab-active' : '' ); ?>"><?php _e( 'Integration', 'bb-powerpack-lite' ); ?></a>
+            <a href="https://wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=module-settings&utm_campaign=module-settings" class="nav-tab" target="_blank"><?php _e( 'Upgrade', 'bb-powerpack-lite' ); ?></a>
         </h2>
 
         <?php
@@ -46,7 +46,7 @@ $current_tab = isset( $_REQUEST['tab'] ) ? $_REQUEST['tab'] : 'extensions';
 
     <hr />
 
-    <h2><?php _e('Support', 'bb-powerpack'); ?></h2>
-    <p><?php _e('For submitting any support queries, feedback, bug reports or feature requests, please visit <a href="https://wpbeaveraddons.com/contact/" target="_blank">this link</a>', 'bb-powerpack'); ?></p>
+    <h2><?php _e('Support', 'bb-powerpack-lite'); ?></h2>
+    <p><?php _e('For submitting any support queries, feedback, bug reports or feature requests, please visit <a href="https://wpbeaveraddons.com/contact/" target="_blank">this link</a>', 'bb-powerpack-lite'); ?></p>
 
 </div>

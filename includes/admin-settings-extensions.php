@@ -12,26 +12,26 @@
             <?php if ( ! class_exists( 'FLBuilderUIContentPanel' ) ) { ?>
             <tr valign="top">
                 <th scope="row" valign="top">
-                    <?php _e('Quick Preview', 'bb-powerpack'); ?>
+                    <?php _e('Quick Preview', 'bb-powerpack-lite'); ?>
                 </th>
                 <td>
                     <p>
                         <label>
                             <input type="checkbox" name="bb_powerpack_quick_preview" value="1" <?php echo ( $quick_preview == 1 ) ? 'checked="checked"' : ''; ?> />
-                            <?php _e('Enable Quick Preview', 'bb-powerpack'); ?>
+                            <?php _e('Enable Quick Preview', 'bb-powerpack-lite'); ?>
                         </label>
                     </p>
                 </td>
             </tr>
             <tr valign="top">
                 <th scope="row" valign="top">
-                    <?php _e('Search Box', 'bb-powerpack'); ?>
+                    <?php _e('Search Box', 'bb-powerpack-lite'); ?>
                 </th>
                 <td>
                     <p>
                         <label>
                             <input type="checkbox" name="bb_powerpack_search_box" value="1" <?php echo ( $search_box == 1 ) ? 'checked="checked"' : ''; ?> />
-                            <?php _e('Enable Search Box in panel', 'bb-powerpack'); ?>
+                            <?php _e('Enable Search Box in panel', 'bb-powerpack-lite'); ?>
                         </label>
                     </p>
                 </td>
@@ -39,7 +39,7 @@
             <?php } ?>
             <tr valign="top">
                 <th scope="row" valign="top">
-                    <?php _e('Row Extensions', 'bb-powerpack'); ?>
+                    <?php _e('Row Extensions', 'bb-powerpack-lite'); ?>
                 </th>
                 <td>
                     <?php foreach ( $extensions['row'] as $extension => $name ) :

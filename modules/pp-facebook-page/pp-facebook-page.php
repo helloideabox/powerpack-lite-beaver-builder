@@ -11,8 +11,8 @@ class PPFBPageModule extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'          	=> __( 'Facebook Page', 'bb-powerpack' ),
-			'description'   	=> __( 'A module to embed Facebook page.', 'bb-powerpack' ),
+			'name'          	=> __( 'Facebook Page', 'bb-powerpack-lite' ),
+			'description'   	=> __( 'A module to embed Facebook page.', 'bb-powerpack-lite' ),
 			'group'         	=> pp_get_modules_group(),
 			'category'			=> pp_get_modules_cat( 'creative' ),
 			'dir'           	=> BB_POWERPACK_DIR . 'modules/pp-facebook-page/',
@@ -28,26 +28,26 @@ class PPFBPageModule extends FLBuilderModule {
  */
 FLBuilder::register_module( 'PPFBPageModule', array(
 	'general'       => array( // Tab
-		'title'         => __( 'General', 'bb-powerpack' ), // Tab title
+		'title'         => __( 'General', 'bb-powerpack-lite' ), // Tab title
 		'description'	=> pp_get_fb_module_desc(),
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __( 'Page', 'bb-powerpack' ), // Section Title
+				'title'         => __( 'Page', 'bb-powerpack-lite' ), // Section Title
 				'fields'        => array( // Section Fields
 					'page_url'	=> array(
 						'type'          	=> 'text',
-						'label'         	=> __( 'URL', 'bb-powerpack' ),
-						'placeholder'		=> __( 'https://www.facebook.com/example', 'bb-powerpack' ),
+						'label'         	=> __( 'URL', 'bb-powerpack-lite' ),
+						'placeholder'		=> __( 'https://www.facebook.com/example', 'bb-powerpack-lite' ),
 						'connections'   	=> array( 'url' ),
 					),
 					'layout'  => array(
 						'type'			=> 'select',
-						'label'         => __( 'Layout', 'bb-powerpack' ),
+						'label'         => __( 'Layout', 'bb-powerpack-lite' ),
 						'default'       => 'timeline',
 						'options'       => array(
-							'timeline'		=> __( 'Timeline', 'bb-powerpack' ),
-							'events'       	=> __( 'Events', 'bb-powerpack' ),
-							'messages'      => __( 'Messages', 'bb-powerpack' ),
+							'timeline'		=> __( 'Timeline', 'bb-powerpack-lite' ),
+							'events'       	=> __( 'Events', 'bb-powerpack-lite' ),
+							'messages'      => __( 'Messages', 'bb-powerpack-lite' ),
 						),
 						'multi-select'  => true,
 						'preview'       	=> array(
@@ -56,43 +56,43 @@ FLBuilder::register_module( 'PPFBPageModule', array(
 					),
 					'small_header'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Small Header', 'bb-powerpack' ),
+						'label'         => __( 'Small Header', 'bb-powerpack-lite' ),
 						'default'       => 'no',
 						'options'       => array(
-							'yes'       	=> __( 'Yes', 'bb-powerpack' ),
-							'no'			=> __( 'No', 'bb-powerpack' ),
+							'yes'       	=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'			=> __( 'No', 'bb-powerpack-lite' ),
 						),
 					),
 					'cover'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Cover', 'bb-powerpack' ),
+						'label'         => __( 'Cover', 'bb-powerpack-lite' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'yes'       	=> __( 'Yes', 'bb-powerpack' ),
-							'no'			=> __( 'No', 'bb-powerpack' ),
+							'yes'       	=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'			=> __( 'No', 'bb-powerpack-lite' ),
 						),
 					),
 					'profile_photos'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Profile Photos', 'bb-powerpack' ),
+						'label'         => __( 'Profile Photos', 'bb-powerpack-lite' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'yes'       	=> __( 'Yes', 'bb-powerpack' ),
-							'no'			=> __( 'No', 'bb-powerpack' ),
+							'yes'       	=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'			=> __( 'No', 'bb-powerpack-lite' ),
 						),
 					),
 					'cta'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Custom CTA Button', 'bb-powerpack' ),
+						'label'         => __( 'Custom CTA Button', 'bb-powerpack-lite' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'yes'       	=> __( 'Yes', 'bb-powerpack' ),
-							'no'			=> __( 'No', 'bb-powerpack' ),
+							'yes'       	=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'			=> __( 'No', 'bb-powerpack-lite' ),
 						),
 					),
 					'width'	=> array(
 						'type'			=> 'unit',
-						'label'     	=> __( 'Width', 'bb-powerpack' ),
+						'label'     	=> __( 'Width', 'bb-powerpack-lite' ),
 						'default'		=> '340',
 						'units'			=> array( 'px' ),
 						'slider'		=> array(
@@ -103,7 +103,7 @@ FLBuilder::register_module( 'PPFBPageModule', array(
 					),
 					'height'	=> array(
 						'type'			=> 'unit',
-						'label'     	=> __( 'Height', 'bb-powerpack' ),
+						'label'     	=> __( 'Height', 'bb-powerpack-lite' ),
 						'default'		=> '500',
 						'units'			=> array( 'px' ),
 						'slider'		=> array(

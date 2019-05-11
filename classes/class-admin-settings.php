@@ -91,7 +91,7 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
     	{
             if ( current_user_can( 'manage_options' ) ) {
 
-    			$title = __('PowerPack', 'bb-powerpack');
+    			$title = __('PowerPack', 'bb-powerpack-lite');
     			$cap   = 'manage_options';
     			$slug  = 'pp-settings';
     			$func  = __CLASS__ . '::render';
@@ -101,7 +101,7 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
 
             if ( current_user_can( 'manage_network_plugins' ) ) {
 
-                $title = __('PowerPack', 'bb-powerpack');
+                $title = __('PowerPack', 'bb-powerpack-lite');
         		$cap   = 'manage_network_plugins';
         		$slug  = 'pp-settings';
         		$func  = __CLASS__ . '::render';
@@ -135,7 +135,7 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
     			}
     		}
     		else if( ! empty( $_POST ) && ! isset( $_POST['email'] ) ) {
-    			echo '<div class="updated"><p>' . __( 'Settings updated!', 'bb-powerpack' ) . '</p></div>';
+    			echo '<div class="updated"><p>' . __( 'Settings updated!', 'bb-powerpack-lite' ) . '</p></div>';
     		}
     	}
 
@@ -270,11 +270,11 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
 					$error = '';
 
 					if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
-						$error = __( 'Facebook App ID is not valid.', 'bb-powerpack' );
+						$error = __( 'Facebook App ID is not valid.', 'bb-powerpack-lite' );
 					}
 
 					if ( ! empty( $error ) ) {
-						wp_die( $error, __( 'Facebook SDK', 'bb-powerpack' ), array( 'back_link' => true ) );
+						wp_die( $error, __( 'Facebook SDK', 'bb-powerpack-lite' ), array( 'back_link' => true ) );
 					}
 				}
 

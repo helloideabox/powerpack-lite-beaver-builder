@@ -5,7 +5,7 @@
 
 function cf7_module_form_titles() {
 
-    $options = array( '' => __('None', 'bb-powerpack') );
+    $options = array( '' => __('None', 'bb-powerpack-lite') );
 
     if ( class_exists( 'WPCF7_ContactForm' ) ) {
         $args = array('post_type' => 'wpcf7_contact_form', 'posts_per_page' => -1);

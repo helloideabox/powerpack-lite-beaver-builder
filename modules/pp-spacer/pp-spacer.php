@@ -14,8 +14,8 @@ class PPSpacerModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Spacer', 'bb-powerpack'),
-            'description'   => __('Spacer module.', 'bb-powerpack'),
+            'name'          => __('Spacer', 'bb-powerpack-lite'),
+            'description'   => __('Spacer module.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'creative' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-spacer/',
@@ -31,14 +31,14 @@ class PPSpacerModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPSpacerModule', array(
     'general'       => array( // Tab
-        'title'         => __('General', 'bb-powerpack'), // Tab title
+        'title'         => __('General', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'general'       => array( // Section
-                'title'         => __('Height', 'bb-powerpack'), // Section Title
+                'title'         => __('Height', 'bb-powerpack-lite'), // Section Title
                 'fields'        => array( // Section Fields
                     'spacer_height_lg' => array(
                         'type'          => 'unit',
-                        'label'         => __('Large Device', 'bb-powerpack'),
+                        'label'         => __('Large Device', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
                         'default'       => 15,
                         'slider'		=> true,
@@ -51,7 +51,7 @@ FLBuilder::register_module('PPSpacerModule', array(
                     ),
                     'spacer_height_md' => array(
                         'type'          => 'unit',
-                        'label'         => __('Medium Device', 'bb-powerpack'),
+                        'label'         => __('Medium Device', 'bb-powerpack-lite'),
                         'default'       => 15,
                         'units'			=> array('px'),
                         'slider'		=> true,
@@ -61,7 +61,7 @@ FLBuilder::register_module('PPSpacerModule', array(
                     ),
                     'spacer_height_sm' => array(
                         'type'          => 'unit',
-                        'label'         => __('Small Device', 'bb-powerpack'),
+                        'label'         => __('Small Device', 'bb-powerpack-lite'),
                         'units'			=> array('px'),
                         'default'       => 15,
                         'slider'		=> true,
@@ -72,18 +72,18 @@ FLBuilder::register_module('PPSpacerModule', array(
                 )
             ),
             'visibility'    => array(
-                'title'         => __('Visibility', 'bb-powerpack'),
+                'title'         => __('Visibility', 'bb-powerpack-lite'),
                 'fields'        => array(
                     'hide_on'   => array(
                         'type'      => 'select',
-                        'label'     => __('Hide On', 'bb-powerpack'),
+                        'label'     => __('Hide On', 'bb-powerpack-lite'),
                         'default'   => 'none',
                         'options'   => array(
-                            'none'      => __('None', 'bb-powerpack'),
-                            'large'     => __('Large Device', 'bb-powerpack'),
-                            'medium'    => __('Medium Device', 'bb-powerpack'),
-                            'small'     => __('Small Device', 'bb-powerpack'),
-                            'custom'    => __('Custom', 'bb-powerpack')
+                            'none'      => __('None', 'bb-powerpack-lite'),
+                            'large'     => __('Large Device', 'bb-powerpack-lite'),
+                            'medium'    => __('Medium Device', 'bb-powerpack-lite'),
+                            'small'     => __('Small Device', 'bb-powerpack-lite'),
+                            'custom'    => __('Custom', 'bb-powerpack-lite')
                         ),
                         'toggle'    => array(
                             'large'    => array(
@@ -105,7 +105,7 @@ FLBuilder::register_module('PPSpacerModule', array(
                     ),
                     'custom_breakpoint'     => array(
                         'type'                  => 'unit',
-                        'label'                 => __('Custom Breakpoint', 'bb-powerpack'),
+                        'label'                 => __('Custom Breakpoint', 'bb-powerpack-lite'),
                         'default'               => '',
                         'units'					=> array('px'),
                         'slider'				=> true,
@@ -115,11 +115,11 @@ FLBuilder::register_module('PPSpacerModule', array(
                     ),
                     'breakpoint_condition'  => array(
                         'type'                  => 'select',
-                        'label'                 => __('Condition', 'bb-powerpack'),
+                        'label'                 => __('Condition', 'bb-powerpack-lite'),
                         'default'               => 'lt_equals_to',
                         'options'               => array(
-                            'lt_equals_to'          => __('below or equals to', 'bb-powerpack'),
-                            'gt_equals_to'          => __('above or equals to', 'bb-powerpack'),
+                            'lt_equals_to'          => __('below or equals to', 'bb-powerpack-lite'),
+                            'gt_equals_to'          => __('above or equals to', 'bb-powerpack-lite'),
                         ),
                         'preview'       => array(
                             'type'          => 'none'
@@ -127,11 +127,11 @@ FLBuilder::register_module('PPSpacerModule', array(
                     ),
                     'hide_column'   => array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Hide Entire Column', 'bb-powerpack'),
+                        'label'         => __('Hide Entire Column', 'bb-powerpack-lite'),
                         'default'       => 'no',
                         'options'       => array(
-                            'yes'           => __('Yes', 'bb-powerpack'),
-                            'no'            => __('No', 'bb-powerpack')
+                            'yes'           => __('Yes', 'bb-powerpack-lite'),
+                            'no'            => __('No', 'bb-powerpack-lite')
                         ),
                         'preview'       => array(
                             'type'          => 'none'

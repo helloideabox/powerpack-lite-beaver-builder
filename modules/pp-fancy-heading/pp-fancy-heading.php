@@ -14,8 +14,8 @@ class PPFancyHeadingModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Fancy Heading', 'bb-powerpack'),
-            'description'   => __('Fancy Heading module with animated colors and backgroud cliping.', 'bb-powerpack'),
+            'name'          => __('Fancy Heading', 'bb-powerpack-lite'),
+            'description'   => __('Fancy Heading module with animated colors and backgroud cliping.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'creative' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-fancy-heading/',
@@ -60,15 +60,15 @@ class PPFancyHeadingModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPFancyHeadingModule', array(
     'general'       => array( // Tab
-        'title'         => __('General', 'bb-powerpack'), // Tab title
+        'title'         => __('General', 'bb-powerpack-lite'), // Tab title
         'sections'      => array( // Tab Sections
             'general'       => array( // Section
-                'title'         => __('Heading', 'bb-powerpack'), // Section Title
+                'title'         => __('Heading', 'bb-powerpack-lite'), // Section Title
                 'fields'        => array( // Section Fields
                     'heading_title'		=> array(
                         'type'          => 'text',
-                        'label'         => __('Title', 'bb-powerpack'),
-                        'default'       => __('AWESOME TITLE!', 'bb-powerpack'),
+                        'label'         => __('Title', 'bb-powerpack-lite'),
+                        'default'       => __('AWESOME TITLE!', 'bb-powerpack-lite'),
                         'connections'   => array( 'string', 'html', 'url' ),
                         'preview'         => array(
                             'type'             => 'text',
@@ -77,14 +77,14 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                     ),
                     'heading_type'		=> array(
                         'type'          => 'select',
-                        'label'         => __('Type', 'bb-powerpack'),
+                        'label'         => __('Type', 'bb-powerpack-lite'),
                         'default'       => 'gradient',
                         'options'       => array(
-                            'gradient'      => __('Gradient Animation', 'bb-powerpack'),
-                            'solid'         => __('Color Animation', 'bb-powerpack'),
-                            'fade'          => __('Fade Animation', 'bb-powerpack'),
-                            'rotate'        => __('Rotate/Flip Animation', 'bb-powerpack'),
-                            'clip'          => __('Clip to Image', 'bb-powerpack')
+                            'gradient'      => __('Gradient Animation', 'bb-powerpack-lite'),
+                            'solid'         => __('Color Animation', 'bb-powerpack-lite'),
+                            'fade'          => __('Fade Animation', 'bb-powerpack-lite'),
+                            'rotate'        => __('Rotate/Flip Animation', 'bb-powerpack-lite'),
+                            'clip'          => __('Clip to Image', 'bb-powerpack-lite')
                         ),
                         'toggle'        => array(
                             'gradient'      => array(
@@ -106,80 +106,80 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                     ),
                     'primary_color'		=> array(
                         'type'          => 'color',
-                        'label'         => __('Primary Color', 'bb-powerpack'),
+                        'label'         => __('Primary Color', 'bb-powerpack-lite'),
                         'default'       => '255dea',
                         'show_reset'    => false,
                     ),
                     'secondary_color'	=> array(
                         'type'              => 'color',
-                        'label'             => __('Secondary Color', 'bb-powerpack'),
+                        'label'             => __('Secondary Color', 'bb-powerpack-lite'),
                         'default'           => '34d6e5',
                         'show_reset'        => false,
                     ),
                     'animation_speed'   => array(
                         'type'              => 'unit',
-                        'label'             => __('Animation Speed', 'bb-powerpack'),
+                        'label'             => __('Animation Speed', 'bb-powerpack-lite'),
                         'default'           => 20,
                         'units'       		=> array('seconds'),
                         'slider'			=> true,
                     ),
                     'bg_image'			=> array(
                         'type'          => 'photo',
-                        'label'         => __('Image', 'bb-powerpack'),
+                        'label'         => __('Image', 'bb-powerpack-lite'),
                         'show_remove'   => false
                     ),
                     'bg_repeat'			=> array(
                         'type'      => 'select',
-                        'label'     => __('Repeat', 'bb-powerpack'),
+                        'label'     => __('Repeat', 'bb-powerpack-lite'),
                         'default'   => 'no-repeat',
                         'options'   => array(
-                            'no-repeat' => __('None', 'bb-powerpack'),
-                            'repeat'    => __('Tile', 'bb-powerpack'),
-                            'repeat-x'  => __('Horizontal', 'bb-powerpack'),
-                            'repeat-y'  => __('Vertical', 'bb-powerpack'),
+                            'no-repeat' => __('None', 'bb-powerpack-lite'),
+                            'repeat'    => __('Tile', 'bb-powerpack-lite'),
+                            'repeat-x'  => __('Horizontal', 'bb-powerpack-lite'),
+                            'repeat-y'  => __('Vertical', 'bb-powerpack-lite'),
                         ),
-                        'help'  => __('Repeat applies to how the image should display in the background. Choosing none will display the image as uploaded. Tile will repeat the image as many times as needed to fill the background horizontally and vertically. You can also specify the image to only repeat horizontally or vertically.', 'bb-powerpack')
+                        'help'  => __('Repeat applies to how the image should display in the background. Choosing none will display the image as uploaded. Tile will repeat the image as many times as needed to fill the background horizontally and vertically. You can also specify the image to only repeat horizontally or vertically.', 'bb-powerpack-lite')
                     ),
                     'bg_position'		=> array(
                         'type'              => 'select',
-                        'label'             => __('Position', 'bb-powerpack'),
+                        'label'             => __('Position', 'bb-powerpack-lite'),
                         'default'           => 'center center',
                         'options'           => array(
-                            'left top'          => __('Left Top', 'bb-powerpack'),
-                            'left center'       => __('Left Center', 'bb-powerpack'),
-                            'left bottom'       => __('Left Bottom', 'bb-powerpack'),
-                            'right top'         => __('Right Top', 'bb-powerpack'),
-                            'right center'      => __('Right Center', 'bb-powerpack'),
-                            'right bottom'      => __('Right Bottom', 'bb-powerpack'),
-                            'center top'        => __('Center Top', 'bb-powerpack'),
-                            'center center'     => __('Center Center', 'bb-powerpack'),
-                            'center bottom'     => __('Center Bottom', 'bb-powerpack'),
+                            'left top'          => __('Left Top', 'bb-powerpack-lite'),
+                            'left center'       => __('Left Center', 'bb-powerpack-lite'),
+                            'left bottom'       => __('Left Bottom', 'bb-powerpack-lite'),
+                            'right top'         => __('Right Top', 'bb-powerpack-lite'),
+                            'right center'      => __('Right Center', 'bb-powerpack-lite'),
+                            'right bottom'      => __('Right Bottom', 'bb-powerpack-lite'),
+                            'center top'        => __('Center Top', 'bb-powerpack-lite'),
+                            'center center'     => __('Center Center', 'bb-powerpack-lite'),
+                            'center bottom'     => __('Center Bottom', 'bb-powerpack-lite'),
                         ),
-                        'help'  => __('Position will tell the image where it should sit in the background.', 'bb-powerpack')
+                        'help'  => __('Position will tell the image where it should sit in the background.', 'bb-powerpack-lite')
                     ),
                     'bg_attachment'		=> array(
                         'type'          => 'pp-switch',
-                        'label'         => __('Attachment', 'bb-powerpack'),
+                        'label'         => __('Attachment', 'bb-powerpack-lite'),
                         'default'       => 'scroll',
                         'options'       => array(
-                            'scroll'        => __('Scroll', 'bb-powerpack'),
-                            'fixed'         => __('Fixed', 'bb-powerpack'),
+                            'scroll'        => __('Scroll', 'bb-powerpack-lite'),
+                            'fixed'         => __('Fixed', 'bb-powerpack-lite'),
                         ),
-                        'help'  => __('Attachment will specify how the image reacts when scrolling a page. When scrolling is selected, the image will scroll with page scrolling. This is the default setting. Fixed will allow the image to scroll within the background if fill is selected in the scale setting.', 'bb-powerpack')
+                        'help'  => __('Attachment will specify how the image reacts when scrolling a page. When scrolling is selected, the image will scroll with page scrolling. This is the default setting. Fixed will allow the image to scroll within the background if fill is selected in the scale setting.', 'bb-powerpack-lite')
                     )
                 )
             )
         )
     ),
     'typography'    => array(
-        'title'         => __('Typography', 'bb-powerpack'),
+        'title'         => __('Typography', 'bb-powerpack-lite'),
         'sections'      => array(
             'typography'    => array(
                 'title'         => '',
                 'fields'        => array(
                     'html_tag'      => array(
                         'type'          => 'select',
-                        'label'         => __('HTML Tag', 'bb-powerpack'),
+                        'label'         => __('HTML Tag', 'bb-powerpack-lite'),
                         'default'       => 'h2',
                         'options'       => array(
                             'h1'            => 'h1',
@@ -192,7 +192,7 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
 					),
 					'font_typography'	=> array(
 						'type'        	   => 'typography',
-						'label'       	   => __( 'Typography', 'bb-powerpack' ),
+						'label'       	   => __( 'Typography', 'bb-powerpack-lite' ),
 						'responsive'  	   => true,
 						'preview'          => array(
 							'type'         		=> 'css',

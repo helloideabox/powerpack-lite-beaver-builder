@@ -79,7 +79,7 @@ if ( ! function_exists( 'pp_lite_review_notice' ) ) {
                         ?>
 
                         <p class="review">
-                            <span class="dashicons dashicons-heart"></span><?php echo wp_kses( sprintf( __( 'Are you enjoying <strong>' . $plugin_name . '</strong>? Would you consider a <a href="%s" target="_blank">kind review to help continue development of this plugin?', 'bb-powerpack' ), esc_url( $review_url ) ), array( 'strong' => array(), 'a' => array( 'href' => array(), 'target' => array() ) ) ); ?><a href="<?php echo admin_url( $nag_admin_dismiss_url ); ?>" class="dismiss"><span class="dashicons dashicons-dismiss"></span></a>
+                            <span class="dashicons dashicons-heart"></span><?php echo wp_kses( sprintf( __( 'Are you enjoying <strong>' . $plugin_name . '</strong>? Would you consider a <a href="%s" target="_blank">kind review to help continue development of this plugin?', 'bb-powerpack-lite' ), esc_url( $review_url ) ), array( 'strong' => array(), 'a' => array( 'href' => array(), 'target' => array() ) ) ); ?><a href="<?php echo admin_url( $nag_admin_dismiss_url ); ?>" class="dismiss"><span class="dashicons dashicons-dismiss"></span></a>
                         </p>
                     </div>
 

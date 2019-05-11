@@ -13,10 +13,10 @@ class WPML_PP_Image_Panels extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'title':
-				return esc_html__( 'Image Panel - Title', 'bb-powerpack' );
+				return esc_html__( 'Image Panel - Title', 'bb-powerpack-lite' );
 
 			case 'link':
-				return esc_html__( 'Image Panel - Link', 'bb-powerpack' );
+				return esc_html__( 'Image Panel - Link', 'bb-powerpack-lite' );
 
 			default:
 				return '';

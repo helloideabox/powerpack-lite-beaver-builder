@@ -13,19 +13,19 @@ class WPML_PP_Restaurant_Menu extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'menu_items_title':
-				return esc_html__( 'Restaurant / Services Menu - Title', 'bb-powerpack' );
+				return esc_html__( 'Restaurant / Services Menu - Title', 'bb-powerpack-lite' );
 
 			case 'menu_items_link':
-				return esc_html__( 'Restaurant / Services Menu - Link To', 'bb-powerpack' );
+				return esc_html__( 'Restaurant / Services Menu - Link To', 'bb-powerpack-lite' );
 
 			case 'menu_item_description':
-				return esc_html__( 'Restaurant / Services Menu - Item Description', 'bb-powerpack' );
+				return esc_html__( 'Restaurant / Services Menu - Item Description', 'bb-powerpack-lite' );
 
 			case 'menu_items_price':
-				return esc_html__( 'Restaurant / Services Menu - Price', 'bb-powerpack' );
+				return esc_html__( 'Restaurant / Services Menu - Price', 'bb-powerpack-lite' );
 
 			case 'menu_items_unit':
-				return esc_html__( 'Restaurant / Services Menu - Unit', 'bb-powerpack' );
+				return esc_html__( 'Restaurant / Services Menu - Unit', 'bb-powerpack-lite' );
 
 			default:
 				return '';

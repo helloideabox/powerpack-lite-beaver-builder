@@ -36,7 +36,7 @@ function pp_preview_button()
     if ( FLBuilderModel::is_builder_active() && $quick_preview == 1 ) {
     ?>
 
-    <div class="pp-preview-button" title="<?php _e('Preview', 'bb-powerpack'); ?>">
+    <div class="pp-preview-button" title="<?php _e('Preview', 'bb-powerpack-lite'); ?>">
         <div class="pp-preview-button-wrap">
             <span class="pp-preview-trigger fa fa-eye"></span>
         </div>

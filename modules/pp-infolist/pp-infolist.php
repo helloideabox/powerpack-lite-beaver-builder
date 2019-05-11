@@ -14,8 +14,8 @@ class PPInfoListModule extends FLBuilderModule {
     public function __construct()
     {
         parent::__construct(array(
-            'name'          => __('Info List', 'bb-powerpack'),
-            'description'   => __('Addon to display info list.', 'bb-powerpack'),
+            'name'          => __('Info List', 'bb-powerpack-lite'),
+            'description'   => __('Addon to display info list.', 'bb-powerpack-lite'),
             'group'         => pp_get_modules_group(),
             'category'		=> pp_get_modules_cat( 'content' ),
             'dir'           => BB_POWERPACK_DIR . 'modules/pp-infolist/',
@@ -69,7 +69,7 @@ class PPInfoListModule extends FLBuilderModule {
  */
 FLBuilder::register_module('PPInfoListModule', array(
 	'general'      => array( // Tab
-		'title'         => __('General', 'bb-powerpack'), // Tab title
+		'title'         => __('General', 'bb-powerpack-lite'), // Tab title
 		'sections'      => array(
             'layouts'   => array(
                 'title' => '',
@@ -77,27 +77,27 @@ FLBuilder::register_module('PPInfoListModule', array(
                     'layouts'   => array(
                         'type'  => 'pp-switch',
                         'default'   => '1',
-                        'label'     => __('Icon Position', 'bb-powerpack'),
+                        'label'     => __('Icon Position', 'bb-powerpack-lite'),
                         'options'   => array(
-                            '1'     => __('Left', 'bb-powerpack'),
-                            '2'     => __('Right', 'bb-powerpack'),
-                            '3'     => __('Top', 'bb-powerpack'),
+                            '1'     => __('Left', 'bb-powerpack-lite'),
+                            '2'     => __('Right', 'bb-powerpack-lite'),
+                            '3'     => __('Top', 'bb-powerpack-lite'),
                         ),
                     ),
                 ),
             ),
             'connector'         => array(
-                'title'             => __('Connector Line', 'bb-powerpack'),
+                'title'             => __('Connector Line', 'bb-powerpack-lite'),
                 'fields'            => array(
                     'connector_type'    => array(
                         'type'              => 'pp-switch',
-                        'label'             => __('Style', 'bb-powerpack'),
+                        'label'             => __('Style', 'bb-powerpack-lite'),
                         'default'           => 'dashed',
                         'options'           => array(
-                            'none'              => __('None', 'bb-powerpack'),
-                            'solid'             => __('Solid', 'bb-powerpack'),
-                            'dashed'            => __('Dashed', 'bb-powerpack'),
-                            'dotted'            => __('Dotted', 'bb-powerpack'),
+                            'none'              => __('None', 'bb-powerpack-lite'),
+                            'solid'             => __('Solid', 'bb-powerpack-lite'),
+                            'dashed'            => __('Dashed', 'bb-powerpack-lite'),
+                            'dotted'            => __('Dotted', 'bb-powerpack-lite'),
                         ),
                         'toggle'  => array(
                             'solid'  => array(
@@ -113,14 +113,14 @@ FLBuilder::register_module('PPInfoListModule', array(
                     ),
                     'connector_width'   => array(
                         'type'              => 'unit',
-                        'label'             => __('Width', 'bb-powerpack'),
+                        'label'             => __('Width', 'bb-powerpack-lite'),
                         'default'           => '1',
 						'slider'			=> true,
 						'units'				=> array('px')
                     ),
                     'connector_color'   => array(
                         'type'              => 'color',
-                        'label'             => __('Color', 'bb-powerpack'),
+                        'label'             => __('Color', 'bb-powerpack-lite'),
                         'default'           => '000000',
                         'show_reset'        => true,
                     ),
@@ -129,14 +129,14 @@ FLBuilder::register_module('PPInfoListModule', array(
 		)
 	),
     'list_items'    => array(
-        'title'     => __('List Items', 'bb-powerpack'),
+        'title'     => __('List Items', 'bb-powerpack-lite'),
         'sections'  => array(
             'general'   => array(
                 'title'     => '',
                 'fields'    => array(
                     'list_items'    => array(
                         'type'          => 'form',
-						'label'         => __('List Item', 'bb-powerpack'),
+						'label'         => __('List Item', 'bb-powerpack-lite'),
 						'form'          => 'pp_list_item', // ID from registered form below
 						'preview_text'  => 'title', // Name of a field to use for the preview text
 						'multiple'      => true
@@ -146,15 +146,15 @@ FLBuilder::register_module('PPInfoListModule', array(
         ),
     ),
     'style'     => array(
-        'title' => __('Style', 'bb-powerpack'),
+        'title' => __('Style', 'bb-powerpack-lite'),
         'sections'  => array(
             'style' => array(
-                'title' => __('Sizes', 'bb-powerpack'),
+                'title' => __('Sizes', 'bb-powerpack-lite'),
                 'fields'    => array(
                     'icon_font_size'    => array(
                         'type'          => 'unit',
                         'default'       => '16',
-                        'label'         => __('Icon Size', 'bb-powerpack'),
+                        'label'         => __('Icon Size', 'bb-powerpack-lite'),
                         'units'   		=> array( 'px' ),
 						'slider'		=> true,
 						'responsive'	=> true,
@@ -176,7 +176,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                     ),
                     'icon_box_width'    => array(
                         'type'      	=> 'unit',
-                        'label'     	=> __('Icon Box Size', 'bb-powerpack'),
+                        'label'     	=> __('Icon Box Size', 'bb-powerpack-lite'),
                         'default'       => '40',
                         'units'   		=> array( 'px' ),
 						'slider'		=> true,
@@ -200,16 +200,16 @@ FLBuilder::register_module('PPInfoListModule', array(
                 )
             ),
             'icon_border'   => array(
-                'title'         => __('Border', 'bb-powerpack'),
+                'title'         => __('Border', 'bb-powerpack-lite'),
 				'collapsed'			=> true,
                 'fields'        => array(
                     'show_border'   => array(
                         'type'      => 'pp-switch',
-                        'label'     => __('Show Border', 'bb-powerpack'),
+                        'label'     => __('Show Border', 'bb-powerpack-lite'),
                         'default'   => 'no',
                         'options'   => array(
-                            'yes'    => __('Yes', 'bb-powerpack'),
-                            'no'    => __('No', 'bb-powerpack'),
+                            'yes'    => __('Yes', 'bb-powerpack-lite'),
+                            'no'    => __('No', 'bb-powerpack-lite'),
                         ),
                         'toggle'    => array(
                             'yes'   => array(
@@ -219,18 +219,18 @@ FLBuilder::register_module('PPInfoListModule', array(
                     ),
                     'icon_border_style'     => array(
                         'type'      => 'pp-switch',
-                        'label'     => __('Border Style', 'bb-powerpack'),
+                        'label'     => __('Border Style', 'bb-powerpack-lite'),
                         'default'   => 'solid',
                         'options'   => array(
-                            'solid'      => __('Solid', 'bb-powerpack'),
-                            'dotted'      => __('Dotted', 'bb-powerpack'),
-                            'dashed'      => __('Dashed', 'bb-powerpack'),
-                            'double'      => __('Double', 'bb-powerpack'),
+                            'solid'      => __('Solid', 'bb-powerpack-lite'),
+                            'dotted'      => __('Dotted', 'bb-powerpack-lite'),
+                            'dashed'      => __('Dashed', 'bb-powerpack-lite'),
+                            'double'      => __('Double', 'bb-powerpack-lite'),
                         ),
                     ),
                     'icon_border_width'    => array(
                         'type'          => 'unit',
-                        'label'         => __('Border Width', 'bb-powerpack'),
+                        'label'         => __('Border Width', 'bb-powerpack-lite'),
                         'default'       => 1,
                         'units'   		=> array( 'px' ),
 						'slider'		=> true,
@@ -252,7 +252,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                     ),
                     'icon_border_color'    => array(
                         'type'          => 'color',
-                        'label'         => __('Border Color', 'bb-powerpack'),
+                        'label'         => __('Border Color', 'bb-powerpack-lite'),
                         'show_reset'    => true,
                         'preview'       => array(
                             'type'          => 'css',
@@ -266,7 +266,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                     ),
                     'icon_border_color_hover'    => array(
                         'type'          => 'color',
-                        'label'         => __('Border Color Hover', 'bb-powerpack'),
+                        'label'         => __('Border Color Hover', 'bb-powerpack-lite'),
                         'show_reset'    => true,
                         'preview'       => array(
                             'type'          => 'css',
@@ -284,7 +284,7 @@ FLBuilder::register_module('PPInfoListModule', array(
                     ),
                     'icon_border_radius'    => array(
                         'type'          => 'unit',
-                        'label'         => __('Round Corners', 'bb-powerpack'),
+                        'label'         => __('Round Corners', 'bb-powerpack-lite'),
                         'default'       => '0',
                         'units'  	 	=> array( 'px' ),
 						'slider'		=> true,
@@ -317,14 +317,14 @@ FLBuilder::register_module('PPInfoListModule', array(
                 ),
             ),
             'icon_spacing'   => array(
-                'title'          => __('Spacing', 'bb-powerpack'),
+                'title'          => __('Spacing', 'bb-powerpack-lite'),
 				'collapsed'			=> true,
                 'fields'        => array(
                     'list_spacing'  => array(
                         'type'      => 'unit',
-                        'label'     => __('List Spacing', 'bb-powerpack'),
+                        'label'     => __('List Spacing', 'bb-powerpack-lite'),
                         'default'   => 25,
-                        'help'      => __('Spacing between two list items.', 'bb-powerpack'),
+                        'help'      => __('Spacing between two list items.', 'bb-powerpack-lite'),
                         'units'   		=> array( 'px' ),
 						'slider'		=> true,
 						'responsive'	=> true,
@@ -337,9 +337,9 @@ FLBuilder::register_module('PPInfoListModule', array(
                     ),
                     'icon_gap'  => array(
                         'type'      => 'unit',
-                        'label'     => __('Icon Spacing', 'bb-powerpack'),
+                        'label'     => __('Icon Spacing', 'bb-powerpack-lite'),
                         'default'   => 20,
-                        'help'   => __('Distance between icon and content.', 'bb-powerpack'),
+                        'help'   => __('Distance between icon and content.', 'bb-powerpack-lite'),
                         'units'   		=> array( 'px' ),
 						'slider'		=> true,
 						'responsive'	=> true,
@@ -367,11 +367,11 @@ FLBuilder::register_module('PPInfoListModule', array(
                     'icon_box_size'     => array(
                         'type'          => 'unit',
                         'default'     => '0',
-                        'label'         => __('Inside Spacing', 'bb-powerpack'),
+                        'label'         => __('Inside Spacing', 'bb-powerpack-lite'),
                         'units'   		=> array( 'px' ),
 						'slider'		=> true,
 						'responsive'	=> true,
-                        'help'      => __('Space between icon and the border', 'bb-powerpack'),
+                        'help'      => __('Space between icon and the border', 'bb-powerpack-lite'),
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'           => array(
@@ -393,14 +393,14 @@ FLBuilder::register_module('PPInfoListModule', array(
         ),
     ),
     'typography'      => array( // Tab
-		'title'         => __('Typography', 'bb-powerpack'), // Tab title
+		'title'         => __('Typography', 'bb-powerpack-lite'), // Tab title
 		'sections'      => array( // Tab Sections
             'general'     => array(
-                'title'     => __('Title', 'bb-powerpack'),
+                'title'     => __('Title', 'bb-powerpack-lite'),
                 'fields'    => array(
 					'title_tag'	=> array(
 						'type'		=> 'select',
-						'label'		=> __('HTML Tag', 'bb-powerpack'),
+						'label'		=> __('HTML Tag', 'bb-powerpack-lite'),
 						'default'	=> 'h3',
 						'options'	=> array(
 							'h1'		=> 'h1',
@@ -416,7 +416,7 @@ FLBuilder::register_module('PPInfoListModule', array(
 					),
                     'title_color'    => array(
 						'type'          => 'color',
-						'label'         => __('Color', 'bb-powerpack'),
+						'label'         => __('Color', 'bb-powerpack-lite'),
 						'show_reset'    => true,
                         'preview'       => array(
                             'type'          => 'css',
@@ -434,7 +434,7 @@ FLBuilder::register_module('PPInfoListModule', array(
 					),
                    'title_typography'	=> array(
 						'type'			=> 'typography',
-						'label'			=> __('Typography', 'bb-powerpack'),
+						'label'			=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  	=> true,
 						'preview'		=> array(
 							'type'			=> 'css',
@@ -443,7 +443,7 @@ FLBuilder::register_module('PPInfoListModule', array(
 					),
                     'title_margin'      => array(
                         'type'              => 'pp-multitext',
-                        'label'             => __('Margin', 'bb-powerpack'),
+                        'label'             => __('Margin', 'bb-powerpack-lite'),
                         'description'       => 'px',
                         'default'           => array(
                             'top'               => 0,
@@ -451,8 +451,8 @@ FLBuilder::register_module('PPInfoListModule', array(
                         ),
                         'options'           => array(
                             'top'               => array(
-                                'placeholder'       => __('Top', 'bb-powerpack'),
-                                'tooltip'           => __('Top', 'bb-powerpack'),
+                                'placeholder'       => __('Top', 'bb-powerpack-lite'),
+                                'tooltip'           => __('Top', 'bb-powerpack-lite'),
                                 'icon'              => 'fa-long-arrow-up',
                                 'preview'           => array(
                                     'selector'          => '.pp-infolist-title h3',
@@ -461,8 +461,8 @@ FLBuilder::register_module('PPInfoListModule', array(
                                 ),
                             ),
                             'bottom'            => array(
-                                'placeholder'       => __('Bottom', 'bb-powerpack'),
-                                'tooltip'           => __('Bottom', 'bb-powerpack'),
+                                'placeholder'       => __('Bottom', 'bb-powerpack-lite'),
+                                'tooltip'           => __('Bottom', 'bb-powerpack-lite'),
                                 'icon'              => 'fa-long-arrow-down',
                                 'preview'           => array(
                                     'selector'          => '.pp-infolist-title h3',
@@ -475,12 +475,12 @@ FLBuilder::register_module('PPInfoListModule', array(
                 ),
             ),
             'text_typography'   => array(
-                'title'     => __('Description', 'bb-powerpack'),
+                'title'     => __('Description', 'bb-powerpack-lite'),
 				'collapsed'			=> true,
                 'fields'    => array(
                     'text_color'    => array(
 						'type'          => 'color',
-						'label'         => __('Color', 'bb-powerpack'),
+						'label'         => __('Color', 'bb-powerpack-lite'),
 						'show_reset'    => true,
                         'preview'       => array(
                             'type'          => 'css',
@@ -490,7 +490,7 @@ FLBuilder::register_module('PPInfoListModule', array(
 					),
                    'text_typography'	=> array(
 						'type'			=> 'typography',
-						'label'			=> __('Typography', 'bb-powerpack'),
+						'label'			=> __('Typography', 'bb-powerpack-lite'),
 						'responsive'  	=> true,
 						'preview'		=> array(
 							'type'			=> 'css',
@@ -504,21 +504,21 @@ FLBuilder::register_module('PPInfoListModule', array(
 ));
 
 FLBuilder::register_settings_form('pp_list_item', array(
-	'title' => __('Add Item', 'bb-powerpack'),
+	'title' => __('Add Item', 'bb-powerpack-lite'),
 	'tabs'  => array(
         'general'      => array( // Tab
-			'title'         => __('General', 'bb-powerpack'), // Tab title
+			'title'         => __('General', 'bb-powerpack-lite'), // Tab title
 			'sections'      => array( // Tab Sections
                 'type'      => array(
-                    'title'     => __('Icon', 'bb-powerpack'),
+                    'title'     => __('Icon', 'bb-powerpack-lite'),
                     'fields'    => array(
                         'icon_type'      => array(
                             'type'      => 'select',
-                            'label'     => __('Icon Type', 'bb-powerpack'),
+                            'label'     => __('Icon Type', 'bb-powerpack-lite'),
                             'default'   => 'icon',
                             'options'   => array(
-                                'icon'      => __('Icon', 'bb-powerpack'),
-                                'image'      => __('Image', 'bb-powerpack'),
+                                'icon'      => __('Icon', 'bb-powerpack-lite'),
+                                'image'      => __('Image', 'bb-powerpack-lite'),
                             ),
                             'toggle'        => array(
                                 'icon'      => array(
@@ -532,61 +532,61 @@ FLBuilder::register_settings_form('pp_list_item', array(
                         ),
                         'icon_select'       => array(
                             'type'      => 'icon',
-                            'label'     => __('Icon', 'bb-powerpack'),
+                            'label'     => __('Icon', 'bb-powerpack-lite'),
                             'show_remove'    => true,
                         ),
                         'image_select'       => array(
                             'type'      => 'photo',
-                            'label'     => __('Image Icon', 'bb-powerpack'),
+                            'label'     => __('Image Icon', 'bb-powerpack-lite'),
                             'show_remove'    => true,
                             'connections'   => array( 'photo' ),
                         ),
                         'icon_animation'     => array(
                             'type'      => 'select',
-                            'label'     => __('Animation', 'bb-powerpack'),
+                            'label'     => __('Animation', 'bb-powerpack-lite'),
                             'default'     => 'none',
                             'options'       => array(
-    							'none'          => __('None', 'bb-powerpack'),
-    							'swing'          => __('Swing', 'bb-powerpack'),
-    							'pulse'          => __('Pulse', 'bb-powerpack'),
-    							'flash'          => __('Flash', 'bb-powerpack'),
-    							'fadeIn'          => __('Fade In', 'bb-powerpack'),
-    							'fadeInUp'          => __('Fade In Up', 'bb-powerpack'),
-    							'fadeInDown'          => __('Fade In Down', 'bb-powerpack'),
-    							'fadeInLeft'          => __('Fade In Left', 'bb-powerpack'),
-    							'fadeInRight'          => __('Fade In Right', 'bb-powerpack'),
-                                'slideInUp'          => __('Slide In Up', 'bb-powerpack'),
-    							'slideInDown'          => __('Slide In Down', 'bb-powerpack'),
-                                'slideInLeft'          => __('Slide In Left', 'bb-powerpack'),
-    							'slideInRight'          => __('Slide In Right', 'bb-powerpack'),
-    							'bounceIn'          => __('Bounce In', 'bb-powerpack'),
-                                'bounceInUp'          => __('Bounce In Up', 'bb-powerpack'),
-    							'bounceInDown'          => __('Bounce In Down', 'bb-powerpack'),
-    							'bounceInLeft'          => __('Bounce In Left', 'bb-powerpack'),
-    							'bounceInRight'          => __('Bounce In Right', 'bb-powerpack'),
-    							'flipInX'          => __('Flip In X', 'bb-powerpack'),
-    							'FlipInY'          => __('Flip In Y', 'bb-powerpack'),
-    							'lightSpeedIn'          => __('Light Speed In', 'bb-powerpack'),
-    							'rotateIn'          => __('Rotate In', 'bb-powerpack'),
-                                'rotateInUpLeft'          => __('Rotate In Up Left', 'bb-powerpack'),
-                                'rotateInUpRight'          => __('Rotate In Up Right', 'bb-powerpack'),
-    							'rotateInDownLeft'          => __('Rotate In Down Left', 'bb-powerpack'),
-    							'rotateInDownRight'          => __('Rotate In Down Right', 'bb-powerpack'),
-    							'rollIn'          => __('Roll In', 'bb-powerpack'),
-    							'zoomIn'          => __('Zoom In', 'bb-powerpack'),
-                                'slideInUp'          => __('Slide In Up', 'bb-powerpack'),
-    							'slideInDown'          => __('Slide In Down', 'bb-powerpack'),
-    							'slideInLeft'          => __('Slide In Left', 'bb-powerpack'),
-    							'slideInRight'          => __('Slide In Right', 'bb-powerpack'),
+    							'none'          => __('None', 'bb-powerpack-lite'),
+    							'swing'          => __('Swing', 'bb-powerpack-lite'),
+    							'pulse'          => __('Pulse', 'bb-powerpack-lite'),
+    							'flash'          => __('Flash', 'bb-powerpack-lite'),
+    							'fadeIn'          => __('Fade In', 'bb-powerpack-lite'),
+    							'fadeInUp'          => __('Fade In Up', 'bb-powerpack-lite'),
+    							'fadeInDown'          => __('Fade In Down', 'bb-powerpack-lite'),
+    							'fadeInLeft'          => __('Fade In Left', 'bb-powerpack-lite'),
+    							'fadeInRight'          => __('Fade In Right', 'bb-powerpack-lite'),
+                                'slideInUp'          => __('Slide In Up', 'bb-powerpack-lite'),
+    							'slideInDown'          => __('Slide In Down', 'bb-powerpack-lite'),
+                                'slideInLeft'          => __('Slide In Left', 'bb-powerpack-lite'),
+    							'slideInRight'          => __('Slide In Right', 'bb-powerpack-lite'),
+    							'bounceIn'          => __('Bounce In', 'bb-powerpack-lite'),
+                                'bounceInUp'          => __('Bounce In Up', 'bb-powerpack-lite'),
+    							'bounceInDown'          => __('Bounce In Down', 'bb-powerpack-lite'),
+    							'bounceInLeft'          => __('Bounce In Left', 'bb-powerpack-lite'),
+    							'bounceInRight'          => __('Bounce In Right', 'bb-powerpack-lite'),
+    							'flipInX'          => __('Flip In X', 'bb-powerpack-lite'),
+    							'FlipInY'          => __('Flip In Y', 'bb-powerpack-lite'),
+    							'lightSpeedIn'          => __('Light Speed In', 'bb-powerpack-lite'),
+    							'rotateIn'          => __('Rotate In', 'bb-powerpack-lite'),
+                                'rotateInUpLeft'          => __('Rotate In Up Left', 'bb-powerpack-lite'),
+                                'rotateInUpRight'          => __('Rotate In Up Right', 'bb-powerpack-lite'),
+    							'rotateInDownLeft'          => __('Rotate In Down Left', 'bb-powerpack-lite'),
+    							'rotateInDownRight'          => __('Rotate In Down Right', 'bb-powerpack-lite'),
+    							'rollIn'          => __('Roll In', 'bb-powerpack-lite'),
+    							'zoomIn'          => __('Zoom In', 'bb-powerpack-lite'),
+                                'slideInUp'          => __('Slide In Up', 'bb-powerpack-lite'),
+    							'slideInDown'          => __('Slide In Down', 'bb-powerpack-lite'),
+    							'slideInLeft'          => __('Slide In Left', 'bb-powerpack-lite'),
+    							'slideInRight'          => __('Slide In Right', 'bb-powerpack-lite'),
     						)
                         ),
                         'animation_duration'    => array(
                             'type'      => 'text',
-                            'label'     => __('Animation Duration', 'bb-powerpack'),
+                            'label'     => __('Animation Duration', 'bb-powerpack-lite'),
                             'default'     => '1000',
                             'maxlength'     => '4',
                             'size'      => '5',
-                            'description'   => _x( 'ms', 'Value unit for animation duration. Such as: "1s"', 'bb-powerpack' ),
+                            'description'   => _x( 'ms', 'Value unit for animation duration. Such as: "1s"', 'bb-powerpack-lite' ),
                             'preview'       => array(
                                 'type'      => 'css',
                                 'selector'  => '.animated',
@@ -596,7 +596,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                     ),
                 ),
                 'title'     => array(
-                    'title'     => __('Title', 'bb-powerpack'),
+                    'title'     => __('Title', 'bb-powerpack-lite'),
                     'fields'    => array(
                         'title'     => array(
                             'type'      => 'text',
@@ -611,7 +611,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                     ),
                 ),
                 'description'    => array(
-                    'title'         => __('Description', 'bb-powerpack'),
+                    'title'         => __('Description', 'bb-powerpack-lite'),
                     'fields'        => array(
                         'description'   => array(
                             'type'      => 'editor',
@@ -628,17 +628,17 @@ FLBuilder::register_settings_form('pp_list_item', array(
                     ),
                 ),
                 'link_type'     => array(
-                    'title'     => __('Link', 'bb-powerpack'),
+                    'title'     => __('Link', 'bb-powerpack-lite'),
                     'fields'    => array(
                         'link_type'     => array(
                             'type'      => 'select',
-                            'label'     => __('Link Type', 'bb-powerpack'),
+                            'label'     => __('Link Type', 'bb-powerpack-lite'),
                             'default'     => 'none',
                             'options'   => array(
-                                'none'  => __('None', 'bb-powerpack'),
-                                'box'  => __('Complete Box', 'bb-powerpack'),
-                                'title'  => __('Title Only', 'bb-powerpack'),
-                                'read_more'  => __('Read More', 'bb-powerpack'),
+                                'none'  => __('None', 'bb-powerpack-lite'),
+                                'box'  => __('Complete Box', 'bb-powerpack-lite'),
+                                'title'  => __('Title Only', 'bb-powerpack-lite'),
+                                'read_more'  => __('Read More', 'bb-powerpack-lite'),
                             ),
                             'toggle'    => array(
                                 'box'     => array(
@@ -654,7 +654,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                         ),
                         'link'  => array(
 							'type'          => 'link',
-							'label'         => __('Link', 'bb-powerpack'),
+							'label'         => __('Link', 'bb-powerpack-lite'),
 							'placeholder'   => 'http://www.example.com',
 							'show_target'	=> true,
 							'connections'   => array( 'url' ),
@@ -664,8 +664,8 @@ FLBuilder::register_settings_form('pp_list_item', array(
 						),
                         'read_more_text'     => array(
                             'type'      => 'text',
-                            'label'         => __('Text', 'bb-powerpack'),
-                            'default'       => __('Read More', 'bb-powerpack'),
+                            'label'         => __('Text', 'bb-powerpack-lite'),
+                            'default'       => __('Read More', 'bb-powerpack-lite'),
                             'preview'       => array(
                                 'type'      => 'text',
                                 'selector'  => '.pp-more-link'
@@ -673,7 +673,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                         ),
                         'read_more_color'    => array(
                             'type'      => 'color',
-                            'label'     => __('Link Color', 'bb-powerpack'),
+                            'label'     => __('Link Color', 'bb-powerpack-lite'),
                             'default'   => '000000',
                             'show_reset'    => true,
                             'preview'   => array(
@@ -684,7 +684,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
                         ),
                         'read_more_color_hover'    => array(
                             'type'      => 'color',
-                            'label'     => __('Link Hover Color', 'bb-powerpack'),
+                            'label'     => __('Link Hover Color', 'bb-powerpack-lite'),
                             'default'   => 'dddddd',
                             'show_reset'    => true,
                             'preview'   => array(
@@ -698,14 +698,14 @@ FLBuilder::register_settings_form('pp_list_item', array(
             ),
         ),
         'icon_styles'   => array(
-            'title'     => __('Icon Style', 'bb-powerpack'),
+            'title'     => __('Icon Style', 'bb-powerpack-lite'),
             'sections'  => array(
                 'icon_styles'   => array(
                     'title'     => '',
                     'fields'    => array(
                         'icon_color'    => array(
     						'type'          => 'color',
-    						'label'         => __('Color', 'bb-powerpack'),
+    						'label'         => __('Color', 'bb-powerpack-lite'),
     						'show_reset'    => true,
                             'preview'       => array(
                                 'type'          => 'css',
@@ -715,12 +715,12 @@ FLBuilder::register_settings_form('pp_list_item', array(
     					),
                         'icon_color_hover'    => array(
     						'type'          => 'color',
-    						'label'         => __('Color Hover', 'bb-powerpack'),
+    						'label'         => __('Color Hover', 'bb-powerpack-lite'),
     						'show_reset'    => true
     					),
                         'icon_background'    => array(
     						'type'          => 'color',
-    						'label'         => __('Background', 'bb-powerpack'),
+    						'label'         => __('Background', 'bb-powerpack-lite'),
     						'show_reset'    => true,
 							'show_alpha'	=> true,
                             'preview'       => array(
@@ -731,7 +731,7 @@ FLBuilder::register_settings_form('pp_list_item', array(
     					),
                         'icon_background_hover'    => array(
     						'type'          => 'color',
-    						'label'         => __('Background Hover', 'bb-powerpack'),
+    						'label'         => __('Background Hover', 'bb-powerpack-lite'),
     						'show_reset'    => true,
 							'show_alpha'	=> true
     					),

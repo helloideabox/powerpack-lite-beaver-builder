@@ -13,7 +13,7 @@ class WPML_PP_Filterable_Gallery extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'filter_label':
-				return esc_html__( 'Filterable Gallery - Filter Label', 'bb-powerpack' );
+				return esc_html__( 'Filterable Gallery - Filter Label', 'bb-powerpack-lite' );
 
 			default:
 				return '';

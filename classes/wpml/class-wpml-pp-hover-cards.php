@@ -13,16 +13,16 @@ class WPML_PP_Hover_Cards extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'title':
-                return esc_html__( 'Hover Cards - Title', 'bb-powerpack' );
+                return esc_html__( 'Hover Cards - Title', 'bb-powerpack-lite' );
                 
             case 'hover_content':
-                return esc_html__( 'Hover Cards - Content', 'bb-powerpack' );
+                return esc_html__( 'Hover Cards - Content', 'bb-powerpack-lite' );
 
             case 'button_text':
-                return esc_html__( 'Hover Cards - Button Text', 'bb-powerpack' );
+                return esc_html__( 'Hover Cards - Button Text', 'bb-powerpack-lite' );
 
 			case 'button_link':
-				return esc_html__( 'Hover Cards - Link', 'bb-powerpack' );
+				return esc_html__( 'Hover Cards - Link', 'bb-powerpack-lite' );
 
 			default:
 				return '';

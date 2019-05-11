@@ -42,7 +42,7 @@ if ( file_exists( BB_POWERPACK_DIR . 'includes/sdk/freemius/start.php' ) ) :
     {
         return sprintf(
             __fs( 'hey-x' ) . '<br>' .
-            __( 'Please help us improve %2$s! If you opt-in, some data about your usage of %2$s will be sent to %5$s. If you skip this, that\'s okay! %2$s will still work just fine.', 'bb-powerpack' ),
+            __( 'Please help us improve %2$s! If you opt-in, some data about your usage of %2$s will be sent to %5$s. If you skip this, that\'s okay! %2$s will still work just fine.', 'bb-powerpack-lite' ),
             $user_first_name,
             '<b>' . $plugin_title . '</b>',
             '<b>' . $user_login . '</b>',

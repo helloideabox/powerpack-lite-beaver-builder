@@ -188,20 +188,20 @@ function pp_row_gradient( $form, $id ) {
     //$border_section = $form['tabs']['style']['sections']['border'];
     //unset( $form['tabs']['style']['sections']['border'] );
 
-    $form['tabs']['style']['sections']['background']['fields']['bg_type']['options']['pp_gradient'] = __('Gradient', 'bb-powerpack');
+    $form['tabs']['style']['sections']['background']['fields']['bg_type']['options']['pp_gradient'] = __('Gradient', 'bb-powerpack-lite');
     $form['tabs']['style']['sections']['background']['fields']['bg_type']['toggle']['pp_gradient'] = array(
         'sections'  => array('pp_row_gradient')
     );
     $form['tabs']['style']['sections']['pp_row_gradient'] = array(
-        'title'     => __('Gradient', 'bb-powerpack'),
+        'title'     => __('Gradient', 'bb-powerpack-lite'),
         'fields'    => array(
             'gradient_type' => array(
                 'type'      => 'pp-switch',
-                'label'     => __('Gradient Type', 'bb-powerpack'),
+                'label'     => __('Gradient Type', 'bb-powerpack-lite'),
                 'default'   => 'linear',
                 'options'   => array(
-                    'linear'    => __('Linear', 'bb-powerpack'),
-                    'radial'    => __('Radial', 'bb-powerpack'),
+                    'linear'    => __('Linear', 'bb-powerpack-lite'),
+                    'radial'    => __('Radial', 'bb-powerpack-lite'),
                 ),
                 'toggle'    => array(
                     'linear'    => array(
@@ -211,28 +211,28 @@ function pp_row_gradient( $form, $id ) {
             ),
             'gradient_color'    => array(
                 'type'      => 'pp-color',
-                'label'     => __('Colors', 'bb-powerpack'),
+                'label'     => __('Colors', 'bb-powerpack-lite'),
                 'show_reset'    => true,
                 'default'   => array(
                     'primary'   => 'd81660',
                     'secondary' => '7d22bd',
                 ),
                 'options'   => array(
-                    'primary'   => __('Primary', 'bb-powerpack'),
-                    'secondary'   => __('Secondary', 'bb-powerpack'),
+                    'primary'   => __('Primary', 'bb-powerpack-lite'),
+                    'secondary'   => __('Secondary', 'bb-powerpack-lite'),
                 ),
             ),
             'linear_direction'  => array(
                 'type'      => 'select',
-                'label'     => __('Gradient Direction', 'bb-powerpack'),
+                'label'     => __('Gradient Direction', 'bb-powerpack-lite'),
                 'default'   => 'bottom',
                 'options'   => array(
-                    'bottom' => __('Top to Bottom', 'bb-powerpack'),
-                    'right' => __('Left to Right', 'bb-powerpack'),
-                    'top_right_diagonal' => __('Bottom Left to Top Right', 'bb-powerpack'),
-                    'top_left_diagonal' => __('Bottom Right to Top Left', 'bb-powerpack'),
-                    'bottom_right_diagonal' => __('Top Left to Bottom Right', 'bb-powerpack'),
-                    'bottom_left_diagonal' => __('Top Right to Bottom Left', 'bb-powerpack'),
+                    'bottom' => __('Top to Bottom', 'bb-powerpack-lite'),
+                    'right' => __('Left to Right', 'bb-powerpack-lite'),
+                    'top_right_diagonal' => __('Bottom Left to Top Right', 'bb-powerpack-lite'),
+                    'top_left_diagonal' => __('Bottom Right to Top Left', 'bb-powerpack-lite'),
+                    'bottom_right_diagonal' => __('Top Left to Bottom Right', 'bb-powerpack-lite'),
+                    'bottom_left_diagonal' => __('Top Right to Bottom Left', 'bb-powerpack-lite'),
                 ),
             ),
         )
@@ -247,16 +247,16 @@ function pp_row_gradient( $form, $id ) {
 function pp_row_separators( $sections ) {
 	$separators = array(
 		'pp_separators'	=> array( /** Separator */
-			'title'			=> __('Separators', 'bb-powerpack'),
+			'title'			=> __('Separators', 'bb-powerpack-lite'),
 			'collapsed'		=> false,
 			'fields'		=> array(
 				'enable_separator'          => array(
 					'type'                      => 'pp-switch',
-					'label'                     => __('Enable Separator?', 'bb-powerpack'),
+					'label'                     => __('Enable Separator?', 'bb-powerpack-lite'),
 					'default'                   => 'no',
 					'options'                   => array(
-						'yes'                       => __('Yes', 'bb-powerpack'),
-						'no'                        => __('No', 'bb-powerpack')
+						'yes'                       => __('Yes', 'bb-powerpack-lite'),
+						'no'                        => __('No', 'bb-powerpack-lite')
 					),
 					'toggle'                    => array(
 						'yes'                       => array(
@@ -267,28 +267,28 @@ function pp_row_separators( $sections ) {
 			)
 		),
 		'separator_top'             => array(
-			'title'                     => __('Top Separator', 'bb-powerpack'),
+			'title'                     => __('Top Separator', 'bb-powerpack-lite'),
 			'collapsed'					=> true,
 			'fields'                    => array(
 				'separator_type'            => array(
 					'type'                      => 'select',
-					'label'                     => __('Type', 'bb-powerpack'),
+					'label'                     => __('Type', 'bb-powerpack-lite'),
 					'default'                   => 'none',
 					'options'                   => array(
-						'none'                      => __('None', 'bb-powerpack'),
-						'triangle'                  => __('Big Triangle', 'bb-powerpack'),
-						'triangle_shadow'           => __('Big Triangle with Shadow', 'bb-powerpack'),
-						'triangle_left'             => __('Big Triangle Left', 'bb-powerpack'),
-						'triangle_right'            => __('Big Triangle Right', 'bb-powerpack'),
-						'triangle_small'            => __('Small Triangle', 'bb-powerpack'),
-						'tilt_left'                 => __('Tilt Left', 'bb-powerpack'),
-						'tilt_right'                => __('Tilt Right', 'bb-powerpack'),
-						'curve'                     => __('Curve', 'bb-powerpack'),
-						'wave'                      => __('Wave', 'bb-powerpack'),
-						'cloud'                     => __('Cloud', 'bb-powerpack'),
-						'slit'                      => __('Slit', 'bb-powerpack'),
-						'water'                     => __('Water', 'bb-powerpack'),
-						'zigzag'                    => __('ZigZag', 'bb-powerpack'),
+						'none'                      => __('None', 'bb-powerpack-lite'),
+						'triangle'                  => __('Big Triangle', 'bb-powerpack-lite'),
+						'triangle_shadow'           => __('Big Triangle with Shadow', 'bb-powerpack-lite'),
+						'triangle_left'             => __('Big Triangle Left', 'bb-powerpack-lite'),
+						'triangle_right'            => __('Big Triangle Right', 'bb-powerpack-lite'),
+						'triangle_small'            => __('Small Triangle', 'bb-powerpack-lite'),
+						'tilt_left'                 => __('Tilt Left', 'bb-powerpack-lite'),
+						'tilt_right'                => __('Tilt Right', 'bb-powerpack-lite'),
+						'curve'                     => __('Curve', 'bb-powerpack-lite'),
+						'wave'                      => __('Wave', 'bb-powerpack-lite'),
+						'cloud'                     => __('Cloud', 'bb-powerpack-lite'),
+						'slit'                      => __('Slit', 'bb-powerpack-lite'),
+						'water'                     => __('Water', 'bb-powerpack-lite'),
+						'zigzag'                    => __('ZigZag', 'bb-powerpack-lite'),
 					),
 					'toggle'                    => array(
 						'triangle_shadow'           => array(
@@ -298,7 +298,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_color'           => array(
 					'type'                      => 'color',
-					'label'                     => __('Color', 'bb-powerpack'),
+					'label'                     => __('Color', 'bb-powerpack-lite'),
 					'default'                   => 'ffffff',
 					'preview'                   => array(
 						'type'                      => 'css',
@@ -308,7 +308,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_shadow'          => array(
 					'type'                      => 'color',
-					'label'                     => __('Shadow Color', 'bb-powerpack'),
+					'label'                     => __('Shadow Color', 'bb-powerpack-lite'),
 					'default'                   => 'f4f4f4',
 					'preview'                   => array(
 						'type'                      => 'css',
@@ -318,7 +318,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_height'          => array(
 					'type'                      => 'text',
-					'label'                     => __('Size', 'bb-powerpack'),
+					'label'                     => __('Size', 'bb-powerpack-lite'),
 					'default'                   => 100,
 					'size'                      => 5,
 					'maxlength'                 => 3,
@@ -332,20 +332,20 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_position'        => array(
 					'type'                      => 'pp-switch',
-					'label'                     => __('Position', 'bb-powerpack'),
+					'label'                     => __('Position', 'bb-powerpack-lite'),
 					'default'                   => 'top',
 					'options'                   => array(
-						'top'                       => __('Top', 'bb-powerpack'),
-						'bottom'                    => __('Bottom', 'bb-powerpack')
+						'top'                       => __('Top', 'bb-powerpack-lite'),
+						'bottom'                    => __('Bottom', 'bb-powerpack-lite')
 					)
 				),
 				'separator_tablet'          => array(
 					'type'                      => 'pp-switch',
-					'label'                     => __('Show on Tablet', 'bb-powerpack'),
+					'label'                     => __('Show on Tablet', 'bb-powerpack-lite'),
 					'default'                   => 'no',
 					'options'                   => array(
-						'yes'                       => __('Yes', 'bb-powerpack'),
-						'no'                        => __('No', 'bb-powerpack')
+						'yes'                       => __('Yes', 'bb-powerpack-lite'),
+						'no'                        => __('No', 'bb-powerpack-lite')
 					),
 					'toggle'                    => array(
 						'yes'                       => array(
@@ -355,7 +355,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_height_tablet'   => array(
 					'type'                      => 'text',
-					'label'                     => __('Size', 'bb-powerpack'),
+					'label'                     => __('Size', 'bb-powerpack-lite'),
 					'default'                   => '',
 					'description'               => 'px',
 					'size'                      => 5,
@@ -363,11 +363,11 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_mobile'          => array(
 					'type'                      => 'pp-switch',
-					'label'                     => __('Show on Mobile', 'bb-powerpack'),
+					'label'                     => __('Show on Mobile', 'bb-powerpack-lite'),
 					'default'                   => 'no',
 					'options'                   => array(
-						'yes'                       => __('Yes', 'bb-powerpack'),
-						'no'                        => __('No', 'bb-powerpack')
+						'yes'                       => __('Yes', 'bb-powerpack-lite'),
+						'no'                        => __('No', 'bb-powerpack-lite')
 					),
 					'toggle'                    => array(
 						'yes'                       => array(
@@ -377,7 +377,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_height_mobile'   => array(
 					'type'                      => 'text',
-					'label'                     => __('Size', 'bb-powerpack'),
+					'label'                     => __('Size', 'bb-powerpack-lite'),
 					'default'                   => '',
 					'description'               => 'px',
 					'size'                      => 5,
@@ -386,28 +386,28 @@ function pp_row_separators( $sections ) {
 			)
 		),
 		'separator_bottom'        => array(
-			'title'                     => __('Bottom Separator', 'bb-powerpack'),
+			'title'                     => __('Bottom Separator', 'bb-powerpack-lite'),
 			'collapsed'					=> true,
 			'fields'                    => array(
 				'separator_type_bottom'     => array(
 					'type'                      => 'select',
-					'label'                     => __('Type', 'bb-powerpack'),
+					'label'                     => __('Type', 'bb-powerpack-lite'),
 					'default'                   => 'none',
 					'options'                   => array(
-						'none'                      => __('None', 'bb-powerpack'),
-						'triangle'                  => __('Big Triangle', 'bb-powerpack'),
-						'triangle_shadow'           => __('Big Triangle with Shadow', 'bb-powerpack'),
-						'triangle_left'             => __('Big Triangle Left', 'bb-powerpack'),
-						'triangle_right'            => __('Big Triangle Right', 'bb-powerpack'),
-						'triangle_small'            => __('Small Triangle', 'bb-powerpack'),
-						'tilt_left'                 => __('Tilt Left', 'bb-powerpack'),
-						'tilt_right'                => __('Tilt Right', 'bb-powerpack'),
-						'curve'                     => __('Curve', 'bb-powerpack'),
-						'wave'                      => __('Wave', 'bb-powerpack'),
-						'cloud'                     => __('Cloud', 'bb-powerpack'),
-						'slit'                      => __('Slit', 'bb-powerpack'),
-						'water'                     => __('Water', 'bb-powerpack'),
-						'zigzag'                    => __('ZigZag', 'bb-powerpack'),
+						'none'                      => __('None', 'bb-powerpack-lite'),
+						'triangle'                  => __('Big Triangle', 'bb-powerpack-lite'),
+						'triangle_shadow'           => __('Big Triangle with Shadow', 'bb-powerpack-lite'),
+						'triangle_left'             => __('Big Triangle Left', 'bb-powerpack-lite'),
+						'triangle_right'            => __('Big Triangle Right', 'bb-powerpack-lite'),
+						'triangle_small'            => __('Small Triangle', 'bb-powerpack-lite'),
+						'tilt_left'                 => __('Tilt Left', 'bb-powerpack-lite'),
+						'tilt_right'                => __('Tilt Right', 'bb-powerpack-lite'),
+						'curve'                     => __('Curve', 'bb-powerpack-lite'),
+						'wave'                      => __('Wave', 'bb-powerpack-lite'),
+						'cloud'                     => __('Cloud', 'bb-powerpack-lite'),
+						'slit'                      => __('Slit', 'bb-powerpack-lite'),
+						'water'                     => __('Water', 'bb-powerpack-lite'),
+						'zigzag'                    => __('ZigZag', 'bb-powerpack-lite'),
 					),
 					'toggle'                    => array(
 						'triangle_shadow'           => array(
@@ -417,7 +417,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_color_bottom'           => array(
 					'type'                      => 'color',
-					'label'                     => __('Color', 'bb-powerpack'),
+					'label'                     => __('Color', 'bb-powerpack-lite'),
 					'default'                   => 'ffffff',
 					'preview'                   => array(
 						'type'                      => 'css',
@@ -427,7 +427,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_shadow_bottom'          => array(
 					'type'                      => 'color',
-					'label'                     => __('Shadow Color', 'bb-powerpack'),
+					'label'                     => __('Shadow Color', 'bb-powerpack-lite'),
 					'default'                   => 'f4f4f4',
 					'preview'                   => array(
 						'type'                      => 'css',
@@ -437,7 +437,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_height_bottom'          => array(
 					'type'                      => 'text',
-					'label'                     => __('Size', 'bb-powerpack'),
+					'label'                     => __('Size', 'bb-powerpack-lite'),
 					'default'                   => 100,
 					'size'                      => 5,
 					'maxlength'                 => 3,
@@ -451,11 +451,11 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_tablet_bottom'   => array(
 					'type'                      => 'pp-switch',
-					'label'                     => __('Show on Tablet', 'bb-powerpack'),
+					'label'                     => __('Show on Tablet', 'bb-powerpack-lite'),
 					'default'                   => 'no',
 					'options'                   => array(
-						'yes'                       => __('Yes', 'bb-powerpack'),
-						'no'                        => __('No', 'bb-powerpack')
+						'yes'                       => __('Yes', 'bb-powerpack-lite'),
+						'no'                        => __('No', 'bb-powerpack-lite')
 					),
 					'toggle'                    => array(
 						'yes'                       => array(
@@ -468,7 +468,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_height_tablet_bottom'=> array(
 					'type'                      => 'text',
-					'label'                     => __('Size', 'bb-powerpack'),
+					'label'                     => __('Size', 'bb-powerpack-lite'),
 					'default'                   => '',
 					'description'               => 'px',
 					'size'                      => 5,
@@ -476,11 +476,11 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_mobile_bottom'          => array(
 					'type'                      => 'pp-switch',
-					'label'                     => __('Show on Mobile', 'bb-powerpack'),
+					'label'                     => __('Show on Mobile', 'bb-powerpack-lite'),
 					'default'                   => 'no',
 					'options'                   => array(
-						'yes'                       => __('Yes', 'bb-powerpack'),
-						'no'                        => __('No', 'bb-powerpack')
+						'yes'                       => __('Yes', 'bb-powerpack-lite'),
+						'no'                        => __('No', 'bb-powerpack-lite')
 					),
 					'toggle'                    => array(
 						'yes'                       => array(
@@ -493,7 +493,7 @@ function pp_row_separators( $sections ) {
 				),
 				'separator_height_mobile_bottom'   => array(
 					'type'                      => 'text',
-					'label'                     => __('Size', 'bb-powerpack'),
+					'label'                     => __('Size', 'bb-powerpack-lite'),
 					'default'                   => '',
 					'description'               => 'px',
 					'size'                      => 5,

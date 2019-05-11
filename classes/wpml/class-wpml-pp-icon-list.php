@@ -13,7 +13,7 @@ class WPML_PP_Icon_List extends WPML_Beaver_Builder_Module_With_Items {
 	protected function get_title( $field ) {
 		switch( $field ) {
 			case 'list_items':
-				return esc_html__( 'Icon List - Item', 'bb-powerpack' );
+				return esc_html__( 'Icon List - Item', 'bb-powerpack-lite' );
 
 			default:
 				return '';

@@ -7,7 +7,7 @@ function pp_extensions()
 {
     $extensions = array(
         'row'       => array(
-            'separators'    => __('Separators', 'bb-powerpack'),
+            'separators'    => __('Separators', 'bb-powerpack-lite'),
         ),
     );
 
@@ -20,19 +20,19 @@ function pp_extensions()
 function pp_row_templates_categories()
 {
     $cats = array(
-        'pp-contact-blocks'     => __('Contact Blocks', 'bb-powerpack'),
-        'pp-contact-forms'      => __('Contact Forms', 'bb-powerpack'),
-        'pp-call-to-action'     => __('Call To Action', 'bb-powerpack'),
-        'pp-hero'               => __('Hero', 'bb-powerpack'),
-        'pp-subscribe-forms'    => __('Subscribe Forms', 'bb-powerpack'),
-        'pp-content'            => __('Content', 'bb-powerpack'),
-        'pp-blog-posts'         => __('Blog Posts', 'bb-powerpack'),
-        'pp-lead-generation'    => __('Lead Generation', 'bb-powerpack'),
-        'pp-logos'              => __('Logos', 'bb-powerpack'),
-        'pp-team'               => __('Team', 'bb-powerpack'),
-        'pp-testimonials'       => __('Testimonials', 'bb-powerpack'),
-        'pp-features'           => __('Features', 'bb-powerpack'),
-        'pp-services'           => __('Services', 'bb-powerpack'),
+        'pp-contact-blocks'     => __('Contact Blocks', 'bb-powerpack-lite'),
+        'pp-contact-forms'      => __('Contact Forms', 'bb-powerpack-lite'),
+        'pp-call-to-action'     => __('Call To Action', 'bb-powerpack-lite'),
+        'pp-hero'               => __('Hero', 'bb-powerpack-lite'),
+        'pp-subscribe-forms'    => __('Subscribe Forms', 'bb-powerpack-lite'),
+        'pp-content'            => __('Content', 'bb-powerpack-lite'),
+        'pp-blog-posts'         => __('Blog Posts', 'bb-powerpack-lite'),
+        'pp-lead-generation'    => __('Lead Generation', 'bb-powerpack-lite'),
+        'pp-logos'              => __('Logos', 'bb-powerpack-lite'),
+        'pp-team'               => __('Team', 'bb-powerpack-lite'),
+        'pp-testimonials'       => __('Testimonials', 'bb-powerpack-lite'),
+        'pp-features'           => __('Features', 'bb-powerpack-lite'),
+        'pp-services'           => __('Services', 'bb-powerpack-lite'),
     );
 
     asort($cats);
@@ -71,13 +71,13 @@ function pp_templates_categories( $type )
 function pp_template_filters()
 {
 	$filters = array(
-		'all'				=> __( 'All', 'bb-powerpack' ),
-		'home'				=> __( 'Home', 'bb-powerpack' ),
-		'about'				=> __( 'About', 'bb-powerpack' ),
-		'contact'			=> __( 'Contact', 'bb-powerpack' ),
-		'landing'			=> __( 'Landing', 'bb-powerpack' ),
-		'sales'				=> __( 'Sales', 'bb-powerpack' ),
-		'coming-soon'		=> __( 'Coming Soon', 'bb-powerpack' ),
+		'all'				=> __( 'All', 'bb-powerpack-lite' ),
+		'home'				=> __( 'Home', 'bb-powerpack-lite' ),
+		'about'				=> __( 'About', 'bb-powerpack-lite' ),
+		'contact'			=> __( 'Contact', 'bb-powerpack-lite' ),
+		'landing'			=> __( 'Landing', 'bb-powerpack-lite' ),
+		'sales'				=> __( 'Sales', 'bb-powerpack-lite' ),
+		'coming-soon'		=> __( 'Coming Soon', 'bb-powerpack-lite' ),
 	);
 
 	return $filters;
@@ -202,13 +202,13 @@ function pp_get_color_value( $color )
 function pp_long_day_format( $day = '' )
 {
 	$days = array(
-		'Sunday'        => __('Sunday', 'bb-powerpack'),
-		'Monday'        => __('Monday', 'bb-powerpack'),
-		'Tuesday'       => __('Tuesday', 'bb-powerpack'),
-		'Wednesday'     => __('Wednesday', 'bb-powerpack'),
-		'Thursday'      => __('Thursday', 'bb-powerpack'),
-		'Friday'        => __('Friday', 'bb-powerpack'),
-		'Saturday'      => __('Saturday', 'bb-powerpack'),
+		'Sunday'        => __('Sunday', 'bb-powerpack-lite'),
+		'Monday'        => __('Monday', 'bb-powerpack-lite'),
+		'Tuesday'       => __('Tuesday', 'bb-powerpack-lite'),
+		'Wednesday'     => __('Wednesday', 'bb-powerpack-lite'),
+		'Thursday'      => __('Thursday', 'bb-powerpack-lite'),
+		'Friday'        => __('Friday', 'bb-powerpack-lite'),
+		'Saturday'      => __('Saturday', 'bb-powerpack-lite'),
 	);
 
 	if ( isset( $days[$day] ) ) {
@@ -229,13 +229,13 @@ function pp_long_day_format( $day = '' )
 function pp_short_day_format( $day )
 {
 	$days = array(
-		'Sunday'        => __('Sun', 'bb-powerpack'),
-		'Monday'        => __('Mon', 'bb-powerpack'),
-		'Tuesday'       => __('Tue', 'bb-powerpack'),
-		'Wednesday'     => __('Wed', 'bb-powerpack'),
-		'Thursday'      => __('Thu', 'bb-powerpack'),
-		'Friday'        => __('Fri', 'bb-powerpack'),
-		'Saturday'      => __('Sat', 'bb-powerpack'),
+		'Sunday'        => __('Sun', 'bb-powerpack-lite'),
+		'Monday'        => __('Mon', 'bb-powerpack-lite'),
+		'Tuesday'       => __('Tue', 'bb-powerpack-lite'),
+		'Wednesday'     => __('Wed', 'bb-powerpack-lite'),
+		'Thursday'      => __('Thu', 'bb-powerpack-lite'),
+		'Friday'        => __('Fri', 'bb-powerpack-lite'),
+		'Saturday'      => __('Sat', 'bb-powerpack-lite'),
 	);
 
 	if ( isset( $days[$day] ) ) {
@@ -287,10 +287,10 @@ function pp_get_user_agent()
 function pp_modules_badges( $number = '' )
 {
     $badges = array(
-        1 => __('Unique & Popular', 'bb-powerpack'),
-        2 => __('Unique', 'bb-powerpack'),
-        3 => __('Popular', 'bb-powerpack'),
-        4 => __('Coming Soon', 'bb-powerpack')
+        1 => __('Unique & Popular', 'bb-powerpack-lite'),
+        2 => __('Unique', 'bb-powerpack-lite'),
+        3 => __('Popular', 'bb-powerpack-lite'),
+        4 => __('Coming Soon', 'bb-powerpack-lite')
     );
 
     if ( ! $number || empty( $number ) ) {
@@ -309,10 +309,10 @@ function pp_get_modules_categories( $cat = '' )
 	$admin_label = pp_get_admin_label();
 
 	$cats = array(
-		'creative'		=> sprintf(__('Creative Modules - %s', 'bb-powerpack'), $admin_label),
-		'content'		=> sprintf(__('Content Modules - %s', 'bb-powerpack'), $admin_label),
-		'lead_gen'		=> sprintf(__('Lead Generation Modules - %s', 'bb-powerpack'), $admin_label),
-		'form_style'	=> sprintf(__('Form Styler Modules - %s', 'bb-powerpack'), $admin_label),
+		'creative'		=> sprintf(__('Creative Modules - %s', 'bb-powerpack-lite'), $admin_label),
+		'content'		=> sprintf(__('Content Modules - %s', 'bb-powerpack-lite'), $admin_label),
+		'lead_gen'		=> sprintf(__('Lead Generation Modules - %s', 'bb-powerpack-lite'), $admin_label),
+		'form_style'	=> sprintf(__('Form Styler Modules - %s', 'bb-powerpack-lite'), $admin_label),
 	);
 
 	if ( empty( $cat ) ) {
@@ -345,7 +345,7 @@ function pp_get_modules_cat( $cat )
  */
 function pp_get_modules_group()
 {
-	$group_name = 'PowerPack ' . __('Modules', 'bb-powerpack');
+	$group_name = 'PowerPack ' . __('Modules', 'bb-powerpack-lite');
 
 	return $group_name;
 }
@@ -408,10 +408,10 @@ function pp_get_fb_module_desc()
 
 	if ( ! $app_id ) {
 		// translators: %s: Setting Page link
-		return sprintf( __( 'You can set your Facebook App ID in the <a href="%s" target="_blank">Integrations Settings</a>', 'bb-powerpack' ), BB_PowerPack_Admin_Settings::get_form_action() );
+		return sprintf( __( 'You can set your Facebook App ID in the <a href="%s" target="_blank">Integrations Settings</a>', 'bb-powerpack-lite' ), BB_PowerPack_Admin_Settings::get_form_action() );
 	} else {
 		// translators: %1$s: app_id, %2$s: Setting Page link.
-		return sprintf( __( 'You are connected to Facebook App %1$s, <a href="%2$s" target="_blank">Change App</a>', 'bb-powerpack' ), $app_id, BB_PowerPack_Admin_Settings::get_form_action() );
+		return sprintf( __( 'You are connected to Facebook App %1$s, <a href="%2$s" target="_blank">Change App</a>', 'bb-powerpack-lite' ), $app_id, BB_PowerPack_Admin_Settings::get_form_action() );
 	}
 }
 

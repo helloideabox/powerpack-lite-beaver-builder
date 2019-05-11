@@ -11,8 +11,8 @@ class PPFBButtonModule extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'          	=> __( 'Facebook Button', 'bb-powerpack' ),
-			'description'   	=> __( 'A module for fetch facebook button.', 'bb-powerpack' ),
+			'name'          	=> __( 'Facebook Button', 'bb-powerpack-lite' ),
+			'description'   	=> __( 'A module for fetch facebook button.', 'bb-powerpack-lite' ),
 			'group'         	=> pp_get_modules_group(),
 			'category'			=> pp_get_modules_cat( 'creative' ),
 			'dir'           	=> BB_POWERPACK_DIR . 'modules/pp-facebook-button/',
@@ -28,19 +28,19 @@ class PPFBButtonModule extends FLBuilderModule {
  */
 FLBuilder::register_module( 'PPFBButtonModule', array(
 	'general'       => array( // Tab
-		'title'         => __( 'General', 'bb-powerpack' ), // Tab title
+		'title'         => __( 'General', 'bb-powerpack-lite' ), // Tab title
 		'description'	=> pp_get_fb_module_desc(),
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __( 'Button', 'bb-powerpack' ), // Section Title
+				'title'         => __( 'Button', 'bb-powerpack-lite' ), // Section Title
 				'fields'        => array( // Section Fields
 					'button_type'  => array(
 						'type'			=> 'select',
-						'label'         => __( 'Type', 'bb-powerpack' ),
+						'label'         => __( 'Type', 'bb-powerpack-lite' ),
 						'default'       => 'like',
 						'options'       => array(
-							'like'			=> __( 'Like', 'bb-powerpack' ),
-							'recommend'		=> __( 'Recommend', 'bb-powerpack' ),
+							'like'			=> __( 'Like', 'bb-powerpack-lite' ),
+							'recommend'		=> __( 'Recommend', 'bb-powerpack-lite' ),
 						),
 						'toggle'	=> array(
 							'recommend'	=> array(
@@ -56,13 +56,13 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'layout'  => array(
 						'type'			=> 'select',
-						'label'         => __( 'Layout', 'bb-powerpack' ),
+						'label'         => __( 'Layout', 'bb-powerpack-lite' ),
 						'default'       => 'standard',
 						'options'       => array(
-							'standard'		=> __( 'Standard', 'bb-powerpack' ),
-							'button'		=> __( 'Button', 'bb-powerpack' ),
-							'button_count'	=> __( 'Button Count', 'bb-powerpack' ),
-							'box_count'     => __( 'Box Count', 'bb-powerpack' ),
+							'standard'		=> __( 'Standard', 'bb-powerpack-lite' ),
+							'button'		=> __( 'Button', 'bb-powerpack-lite' ),
+							'button_count'	=> __( 'Button Count', 'bb-powerpack-lite' ),
+							'box_count'     => __( 'Box Count', 'bb-powerpack-lite' ),
 						),
 						'toggle'	=> array(
 							'standard'	=> array(
@@ -75,11 +75,11 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'size'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Size', 'bb-powerpack' ),
+						'label'         => __( 'Size', 'bb-powerpack-lite' ),
 						'default'       => 'small',
 						'options'       => array(
-							'small'       	=> __( 'Small', 'bb-powerpack' ),
-							'large'			=> __( 'Large', 'bb-powerpack' ),
+							'small'       	=> __( 'Small', 'bb-powerpack-lite' ),
+							'large'			=> __( 'Large', 'bb-powerpack-lite' ),
 						),
 						'preview'		=> array(
 							'type'			=> 'none'
@@ -87,11 +87,11 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'color_scheme'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Color Scheme', 'bb-powerpack' ),
+						'label'         => __( 'Color Scheme', 'bb-powerpack-lite' ),
 						'default'       => 'light',
 						'options'       => array(
-							'light'       	=> __( 'Light', 'bb-powerpack' ),
-							'dark'			=> __( 'Dark', 'bb-powerpack' ),
+							'light'       	=> __( 'Light', 'bb-powerpack-lite' ),
+							'dark'			=> __( 'Dark', 'bb-powerpack-lite' ),
 						),
 						'preview'		=> array(
 							'type'			=> 'none'
@@ -99,11 +99,11 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'show_share'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Share Button', 'bb-powerpack' ),
+						'label'         => __( 'Share Button', 'bb-powerpack-lite' ),
 						'default'       => 'no',
 						'options'       => array(
-							'yes'       	=> __( 'Yes', 'bb-powerpack' ),
-							'no'			=> __( 'No', 'bb-powerpack' ),
+							'yes'       	=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'			=> __( 'No', 'bb-powerpack-lite' ),
 						),
 						'preview'		=> array(
 							'type'			=> 'none'
@@ -111,11 +111,11 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'show_faces'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Faces', 'bb-powerpack' ),
+						'label'         => __( 'Faces', 'bb-powerpack-lite' ),
 						'default'       => 'no',
 						'options'       => array(
-							'yes'       	=> __( 'Yes', 'bb-powerpack' ),
-							'no'			=> __( 'No', 'bb-powerpack' ),
+							'yes'       	=> __( 'Yes', 'bb-powerpack-lite' ),
+							'no'			=> __( 'No', 'bb-powerpack-lite' ),
 						),
 						'preview'		=> array(
 							'type'			=> 'none'
@@ -123,11 +123,11 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'url_type'  => array(
 						'type'			=> 'pp-switch',
-						'label'         => __( 'Target URL', 'bb-powerpack' ),
+						'label'         => __( 'Target URL', 'bb-powerpack-lite' ),
 						'default'       => 'current_page',
 						'options'       => array(
-							'current_page'	=> __( 'Current Page', 'bb-powerpack' ),
-							'custom'		=> __( 'Custom', 'bb-powerpack' ),
+							'current_page'	=> __( 'Current Page', 'bb-powerpack-lite' ),
+							'custom'		=> __( 'Custom', 'bb-powerpack-lite' ),
 						),
 						'toggle'	=> array(
 							'custom'	=> array(
@@ -140,8 +140,8 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'url'	=> array(
 						'type'          	=> 'text',
-						'label'         	=> __( 'URL', 'bb-powerpack' ),
-						'placeholder'		=> __( 'http://your-link.com', 'bb-powerpack' ),
+						'label'         	=> __( 'URL', 'bb-powerpack-lite' ),
+						'placeholder'		=> __( 'http://your-link.com', 'bb-powerpack-lite' ),
 						'connections'   	=> array( 'url' ),
 						'preview'			=> array(
 							'type'				=> 'none'
@@ -149,7 +149,7 @@ FLBuilder::register_module( 'PPFBButtonModule', array(
 					),
 					'alignment'	=> array(
 						'type'		=> 'align',
-						'label'		=> __('Alignment', 'bb-powerpack'),
+						'label'		=> __('Alignment', 'bb-powerpack-lite'),
 						'default'	=> 'left',
 						'preview'	=> array(
 							'type'		=> 'css',
