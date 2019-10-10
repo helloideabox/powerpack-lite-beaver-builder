@@ -36,7 +36,9 @@ $title_tag = ( isset( $settings->title_tag ) ) ? $settings->title_tag : 'h3';
 									<?php if( $items->icon_type == 'icon' ) { ?>
 										<span class="pp-icon <?php echo $items->icon_select; ?>"></span>
 									<?php } else { ?>
-										<img src="<?php echo wp_get_attachment_url( absint($items->image_select) ); ?>" alt="<?php echo get_the_title(absint($items->image_select)); ?>" />
+										<?php if ( isset( $items->image_select_src ) && ! empty( $items->image_select_src ) ) { ?>
+										<img src="<?php echo $items->image_select_src; ?>" alt="<?php echo get_the_title(absint($items->image_select)); ?>" />
+										<?php } ?>
 									<?php } ?>
 								</div>
 							</div>

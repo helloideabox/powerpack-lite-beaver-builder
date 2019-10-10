@@ -112,9 +112,11 @@ if ( isset( $settings->dual_heading ) && 'yes' == $settings->dual_heading && ! e
 
 		</div>
 	<?php } ?>
-	<div class="pp-sub-heading">
-		<?php echo $settings->heading_sub_title; ?>
-	</div>
+	<?php if ( isset( $settings->heading_sub_title ) && ! empty( $settings->heading_sub_title ) ) { ?>
+		<div class="pp-sub-heading">
+			<?php echo $settings->heading_sub_title; ?>
+		</div>
+	<?php } ?>
 
 	<?php if ( 'bottom' == $settings->heading_separator_postion && 'no_spacer' != $settings->heading_separator && 'inline' != $settings->heading_separator ) { ?>
 		<div class="pp-heading-separator <?php echo $settings->heading_separator; ?> pp-<?php echo $settings->heading_alignment; ?>">

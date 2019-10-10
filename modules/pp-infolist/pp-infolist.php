@@ -122,7 +122,8 @@ FLBuilder::register_module('PPInfoListModule', array(
                         'type'              => 'color',
                         'label'             => __('Color', 'bb-powerpack-lite'),
                         'default'           => '000000',
-                        'show_reset'        => true,
+						'show_reset'        => true,
+						'connections'		=> array('color'),
                     ),
                 ),
             ),
@@ -253,7 +254,8 @@ FLBuilder::register_module('PPInfoListModule', array(
                     'icon_border_color'    => array(
                         'type'          => 'color',
                         'label'         => __('Border Color', 'bb-powerpack-lite'),
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'     => array(
@@ -267,7 +269,8 @@ FLBuilder::register_module('PPInfoListModule', array(
                     'icon_border_color_hover'    => array(
                         'type'          => 'color',
                         'label'         => __('Border Color Hover', 'bb-powerpack-lite'),
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'     => array(
@@ -418,6 +421,7 @@ FLBuilder::register_module('PPInfoListModule', array(
 						'type'          => 'color',
 						'label'         => __('Color', 'bb-powerpack-lite'),
 						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'       => array(
                             'type'          => 'css',
                             'rules'     => array(
@@ -482,6 +486,7 @@ FLBuilder::register_module('PPInfoListModule', array(
 						'type'          => 'color',
 						'label'         => __('Color', 'bb-powerpack-lite'),
 						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'       => array(
                             'type'          => 'css',
                             'selector'      => '.pp-infolist-description',
@@ -675,7 +680,8 @@ FLBuilder::register_settings_form('pp_list_item', array(
                             'type'      => 'color',
                             'label'     => __('Link Color', 'bb-powerpack-lite'),
                             'default'   => '000000',
-                            'show_reset'    => true,
+							'show_reset'    => true,
+							'connections'	=> array('color'),
                             'preview'   => array(
                                 'type'  => 'css',
                                 'selector'  => '.pp-more-link',
@@ -686,7 +692,8 @@ FLBuilder::register_settings_form('pp_list_item', array(
                             'type'      => 'color',
                             'label'     => __('Link Hover Color', 'bb-powerpack-lite'),
                             'default'   => 'dddddd',
-                            'show_reset'    => true,
+							'show_reset'    => true,
+							'connections'	=> array('color'),
                             'preview'   => array(
                                 'type'  => 'css',
                                 'selector'  => '.pp-more-link:hover',
@@ -706,7 +713,8 @@ FLBuilder::register_settings_form('pp_list_item', array(
                         'icon_color'    => array(
     						'type'          => 'color',
     						'label'         => __('Color', 'bb-powerpack-lite'),
-    						'show_reset'    => true,
+							'show_reset'    => true,
+							'connections'	=> array('color'),
                             'preview'       => array(
                                 'type'          => 'css',
                                 'selector'      => '.pp-infolist-icon-inner',
@@ -716,13 +724,15 @@ FLBuilder::register_settings_form('pp_list_item', array(
                         'icon_color_hover'    => array(
     						'type'          => 'color',
     						'label'         => __('Color Hover', 'bb-powerpack-lite'),
-    						'show_reset'    => true
+							'show_reset'    => true,
+							'connections'	=> array('color'),
     					),
                         'icon_background'    => array(
     						'type'          => 'color',
     						'label'         => __('Background', 'bb-powerpack-lite'),
     						'show_reset'    => true,
 							'show_alpha'	=> true,
+							'connections'	=> array('color'),
                             'preview'       => array(
                                 'type'          => 'css',
                                 'selector'      => '.pp-infolist-icon-inner .pp-icon',
@@ -733,7 +743,8 @@ FLBuilder::register_settings_form('pp_list_item', array(
     						'type'          => 'color',
     						'label'         => __('Background Hover', 'bb-powerpack-lite'),
     						'show_reset'    => true,
-							'show_alpha'	=> true
+							'show_alpha'	=> true,
+							'connections'	=> array('color'),
     					),
                     ),
                 ),

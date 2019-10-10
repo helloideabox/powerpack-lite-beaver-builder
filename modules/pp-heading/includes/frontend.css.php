@@ -410,13 +410,17 @@ div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading-separator.line_wi
 		<?php } ?>
 	}
 	div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading-separator .pp-separator-line {
-		<?php if ( isset( $settings->heading_alignment_medium ) && 'right' == $settings->heading_alignment_medium ) { ?>
-		float: right;
-		<?php } elseif ( isset( $settings->heading_alignment_medium ) && 'left' == $settings->heading_alignment_medium ) { ?>
-		float: left;
-		<?php } else { ?>
-		margin: 0 auto;
-		float: none;
+		<?php if ( isset( $settings->heading_alignment_medium ) ) { ?>
+			<?php if ( 'right' == $settings->heading_alignment_medium ) { ?>
+				float: right;
+			<?php } ?>
+			<?php if ( 'left' == $settings->heading_alignment_medium ) { ?>
+				float: left;
+			<?php } ?>
+			<?php if ( 'center' == $settings->heading_alignment_medium ) { ?>
+				margin: 0 auto;
+				float: none;
+			<?php } ?>
 		<?php } ?>
 	}
 }
@@ -429,13 +433,17 @@ div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading-separator.line_wi
 		<?php } ?>
 	}
 	div.fl-node-<?php echo $id; ?> .pp-heading-content .pp-heading-separator .pp-separator-line {
-		<?php if ( isset( $settings->heading_alignment_responsive ) && 'right' == $settings->heading_alignment_responsive ) { ?>
-		float: right;
-		<?php } elseif ( isset( $settings->heading_alignment_responsive ) && 'left' == $settings->heading_alignment_responsive ) { ?>
-		float: left;
-		<?php } else { ?>
-		margin: 0 auto;
-		float: none;
+		<?php if ( isset( $settings->heading_alignment_responsive ) ) { ?>
+			<?php if ( 'right' == $settings->heading_alignment_responsive ) { ?>
+				float: right;
+			<?php } ?>
+			<?php if ( 'left' == $settings->heading_alignment_responsive ) { ?>
+				float: left;
+			<?php } ?>
+			<?php if ( 'center' == $settings->heading_alignment_responsive ) { ?>
+				margin: 0 auto;
+				float: none;
+			<?php } ?>
 		<?php } ?>
 	}
 }

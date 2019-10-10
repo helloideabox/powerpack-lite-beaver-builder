@@ -4,6 +4,7 @@ $wrap_class 	= 'pp-infobox-wrap';
 $main_class 	= 'pp-infobox layout-' . $layout;
 $button_class 	= ( 'button' == $settings->pp_infobox_link_type && '' != $settings->link_css_class ) ? ' ' . $settings->link_css_class : '';
 $nofollow		= ( isset( $settings->link_nofollow ) && 'yes' == $settings->link_nofollow ) ? ' rel="nofollow"' : '';
+$title_prefix_tag = ( isset( $settings->title_prefix_tag ) ) ? $settings->title_prefix_tag : 'span';
 ?>
 <div class="<?php echo $wrap_class; ?>">
 	<?php

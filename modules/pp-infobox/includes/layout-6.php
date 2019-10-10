@@ -1,5 +1,5 @@
 <div class="<?php echo $main_class; ?>">
-	<span class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></span>
+	<<?php echo $title_prefix_tag; ?> class="pp-infobox-title-prefix"><?php echo $settings->title_prefix; ?></<?php echo $title_prefix_tag; ?>>
 
 	<?php if( $settings->pp_infobox_link_type == 'title' ) { ?>
 		<a class="pp-more-link" href="<?php echo $settings->link; ?>" target="<?php echo $settings->link_target; ?>">

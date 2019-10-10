@@ -240,7 +240,8 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         'type'          => 'color',
                         'label'         => __('Line Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'         => array(
                             'type'            => 'css',
                             'rules'     => array(
@@ -299,7 +300,8 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         'type'          => 'color',
                         'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '000000',
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'         => array(
                             'type'            => 'css',
                             'selector'        => '.pp-line-separator.pp-icon-wrap span.pp-icon',
@@ -310,7 +312,8 @@ FLBuilder::register_module('PPLineSeparatorModule', array(
                         'type'          => 'color',
                         'label'         => __('Background Color', 'bb-powerpack-lite'),
                         'default'       => '',
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'         => array(
                             'type'            => 'css',
                             'rules'           => array(

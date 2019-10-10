@@ -45,6 +45,7 @@ FLBuilder::register_module( 'PPFBPageModule', array(
 						'label'         => __( 'Layout', 'bb-powerpack-lite' ),
 						'default'       => 'timeline',
 						'options'       => array(
+							'none'			=> __('None', 'bb-powerpack-lite'),
 							'timeline'		=> __( 'Timeline', 'bb-powerpack-lite' ),
 							'events'       	=> __( 'Events', 'bb-powerpack-lite' ),
 							'messages'      => __( 'Messages', 'bb-powerpack-lite' ),

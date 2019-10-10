@@ -18,7 +18,7 @@
 .fl-node-<?php echo $id; ?> .pp-infolist-wrap .pp-list-item:last-child {
 	margin-bottom: 0;
 }
-.fl-node-<?php echo $id; ?> .pp-infolist-title h3.pp-infolist-title-text {
+.fl-node-<?php echo $id; ?> .pp-infolist-title .pp-infolist-title-text {
 	<?php if( $settings->title_color ) { ?>color: #<?php echo $settings->title_color; ?>;<?php } ?>
 	margin-top: <?php echo $settings->title_margin['top']; ?>px;
 	margin-bottom: <?php echo $settings->title_margin['bottom']; ?>px;
@@ -29,7 +29,7 @@
 	FLBuilderCSS::typography_field_rule( array(
 		'settings'		=> $settings,
 		'setting_name' 	=> 'title_typography',
-		'selector' 		=> ".fl-node-$id .pp-infolist-title h3.pp-infolist-title-text",
+		'selector' 		=> ".fl-node-$id .pp-infolist-title .pp-infolist-title-text",
 	) );
 ?>
 

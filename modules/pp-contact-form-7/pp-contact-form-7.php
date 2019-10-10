@@ -554,7 +554,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'button_bg_color'       => array(
                         'type'                  => 'color',
                         'label'                 => __('Background Color', 'bb-powerpack-lite'),
-                        'default'               => '333333',
+                        'default'               => '',
                         'show_reset'            => true,
                         'show_alpha'            => true,
                         'preview'               => array(
@@ -566,7 +566,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'button_hover_bg_color' => array(
                         'type'                  => 'color',
                         'label'                 => __('Background Color Hover', 'bb-powerpack-lite'),
-                        'default'               => '000000',
+                        'default'               => '',
                         'show_reset'            => true,
                         'show_alpha'            => true,
                         'preview'               => array(
@@ -578,7 +578,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'button_text_color'     => array(
                         'type'                  => 'color',
                         'label'                 => __('Text Color', 'bb-powerpack-lite'),
-                        'default'               => 'ffffff',
+                        'default'               => '',
                         'show_reset'            => true,
                         'preview'               => array(
                             'type'                  => 'css',
@@ -589,7 +589,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'button_hover_text_color'   => array(
                         'type'                      => 'color',
                         'label'                     => __('Text Color Hover', 'bb-powerpack-lite'),
-                        'default'                   => 'eeeeee',
+                        'default'                   => '',
                         'show_reset'                => true,
                         'preview'                   => array(
                             'type'                      => 'css',
@@ -622,7 +622,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                         'label'                 => __('Button Width', 'bb-powerpack-lite'),
                         'units'           		=> array('px'),
                         'slider'				=> true,
-                        'default'               => 100,
+                        'default'               => '',
                         'preview'               => array(
                             'type'                  => 'css',
                             'selector'              => '.pp-cf7-content .wpcf7-submit',
@@ -646,7 +646,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                         'label'                     => __('Top/Bottom Padding', 'bb-powerpack-lite'),
                         'units'						=> array('px'),
                         'slider'                    => true,
-                        'default'                   => 10,
+                        'default'                   => '',
                         'preview'                   => array(
                             'type'                      => 'css',
                             'rules'                     => array(
@@ -668,7 +668,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                         'label'                     => __('Left/Right Padding', 'bb-powerpack-lite'),
                         'units'						=> array('px'),
                         'slider'                    => true,
-                        'default'                   => 10,
+                        'default'                   => '',
                         'preview'                   => array(
                             'type'                      => 'css',
                             'rules'                     => array(
@@ -703,7 +703,7 @@ FLBuilder::register_module('PPContactForm7Module', array(
                     'button_border_color_hover' => array(
                         'type'                      => 'color',
                         'label'                     => __('Border Color Hover', 'bb-powerpack-lite'),
-                        'default'                   => '333333',
+                        'default'                   => '',
                         'show_reset'                => true,
                         'preview'                   => array(
                             'type'                      => 'css',

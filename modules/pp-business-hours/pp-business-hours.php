@@ -166,6 +166,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'label'         => __( 'Color 1', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'show_alpha'		=> true,
+						'connections'		=> array('color'),
 						'preview'              => array(
 							'type'				=> 'css',
 							'selector'			=> '.pp-business-hours-content .pp-bh-row:nth-of-type(odd):not(.pp-highlight-row)',
@@ -178,6 +179,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'label'         => __( 'Color 2', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
 						'show_alpha'		=> true,
+						'connections'		=> array('color'),
 						'preview'              => array(
 							'type'				=> 'css',
 							'selector'			=> '.pp-business-hours-content .pp-bh-row:nth-of-type(even):not(.pp-highlight-row)',
@@ -232,6 +234,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'default'       => '',
 						'label'         => __( 'Separator Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
+						'connections'		=> array('color'),
 						'preview'              => array(
 							'type'				=> 'css',
 							'selector'			=> '.pp-business-hours-content .pp-bh-row',
@@ -249,6 +252,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'default'			=> 'f5f5f5',
 						'show_reset'   		=> true,
 						'show_alpha'   		=> true,
+						'connections'		=> array('color'),
 						'preview'           => array(
 							'type'				=> 'css',
 							'selector'			=> '.pp-business-hours-content',
@@ -279,6 +283,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'default'       => '',
 						'label'         => __( 'Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
+						'connections'		=> array('color'),
 						'preview'	=> array(
 							'type'		=> 'css',
 							'selector'	=> '.pp-business-hours-content .pp-bh-row .pp-bh-title',
@@ -304,6 +309,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'default'       => '',
 						'label'         => __( 'Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
+						'connections'		=> array('color'),
 						'preview'	=> array(
 							'type'		=> 'css',
 							'selector'	=> '.pp-business-hours-content .pp-bh-row .pp-bh-timing',
@@ -315,6 +321,7 @@ FLBuilder::register_module('PPBusinessHoursModule', array(
 						'default'       => '',
 						'label'         => __( 'Status Text Color', 'bb-powerpack-lite' ),
 						'show_reset'		=> true,
+						'connections'		=> array('color'),
 						'preview'	=> array(
 							'type'		=> 'css',
 							'selector'	=> '.pp-business-hours-content .pp-bh-row.pp-closed .pp-bh-timing',

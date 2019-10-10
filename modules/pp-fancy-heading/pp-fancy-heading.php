@@ -108,13 +108,15 @@ FLBuilder::register_module('PPFancyHeadingModule', array(
                         'type'          => 'color',
                         'label'         => __('Primary Color', 'bb-powerpack-lite'),
                         'default'       => '255dea',
-                        'show_reset'    => false,
+						'show_reset'    => false,
+						'connections'	=> array('color'),
                     ),
                     'secondary_color'	=> array(
                         'type'              => 'color',
                         'label'             => __('Secondary Color', 'bb-powerpack-lite'),
                         'default'           => '34d6e5',
-                        'show_reset'        => false,
+						'show_reset'        => false,
+						'connections'		=> array('color'),
                     ),
                     'animation_speed'   => array(
                         'type'              => 'unit',

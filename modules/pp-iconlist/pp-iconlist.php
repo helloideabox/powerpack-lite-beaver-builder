@@ -149,6 +149,7 @@ FLBuilder::register_module('PPIconListModule', array(
                         'default'       => '',
                         'show_reset'    => true,
 						'show_alpha'	=> true,
+						'connections'	=> array('color'),
                         'preview'       => array(
                             'type'          => 'css',
                             'property'      => 'background-color',
@@ -160,12 +161,15 @@ FLBuilder::register_module('PPIconListModule', array(
                         'label'         => __('Background Hover Color', 'bb-powerpack-lite'),
                         'default'       => '',
                         'show_reset'    => true,
-						'show_alpha'	=> true
+						'show_alpha'	=> true,
+						'connections'	=> array('color'),
                     ),
                     'icon_color'    => array(
                         'type'          => 'color',
                         'label'         => __('Color', 'bb-powerpack-lite'),
-                        'default'       => '444444',
+						'default'       => '444444',
+						'show_reset'	=> true,
+						'connections'	=> array('color'),
                         'preview'       => array(
                             'type'          => 'css',
                             'property'      => 'color',
@@ -175,7 +179,9 @@ FLBuilder::register_module('PPIconListModule', array(
                     'icon_color_hover'  => array(
                         'type'              => 'color',
                         'label'             => __('Hover Color', 'bb-powerpack-lite'),
-                        'default'           => '111111',
+						'default'           => '111111',
+						'show_reset'		=> true,
+						'connections'		=> array('color'),
                     ),
                     'field_separator_0' => array(
                         'type'              => 'pp-separator',
@@ -194,7 +200,9 @@ FLBuilder::register_module('PPIconListModule', array(
                     'icon_border_color_hover'   => array(
                         'type'                      => 'color',
                         'label'                     => __('Border Hover Color', 'bb-powerpack-lite'),
-                        'default'                   => ''
+						'default'                   => '',
+						'show_reset'				=> true,
+						'connections'				=> array('color'),
                     ),
                     'field_separator_1' => array(
                         'type'              => 'pp-separator',
@@ -244,7 +252,8 @@ FLBuilder::register_module('PPIconListModule', array(
                         'type'          => 'color',
                         'label'         => __('Color', 'bb-powerpack-lite'),
                         'default'       => '',
-                        'show_reset'    => true,
+						'show_reset'    => true,
+						'connections'	=> array('color'),
                         'preview'       => array(
                             'type'          => 'css',
                             'property'      => 'color',

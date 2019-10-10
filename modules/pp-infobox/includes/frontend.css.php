@@ -242,6 +242,19 @@ FLBuilderCSS::typography_field_rule( array(
 			'enabled'		=> 'button' == $settings->pp_infobox_link_type
 		) );
 	?>
+	.fl-node-<?php echo $id; ?> .pp-infobox .pp-more-link .pp-button-icon {
+		font-size: <?php echo $settings->button_icon_size; ?>px;
+		color: <?php echo pp_get_color_value( $settings->button_icon_color ); ?>;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox .pp-more-link:hover .pp-button-icon {
+		color: <?php echo pp_get_color_value( $settings->button_icon_color_hover ); ?>;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox .pp-more-link .pp-button-icon-left {
+		margin-right: <?php echo $settings->button_icon_spacing; ?>px;
+	}
+	.fl-node-<?php echo $id; ?> .pp-infobox .pp-more-link .pp-button-icon-right {
+		margin-left: <?php echo $settings->button_icon_spacing; ?>px;
+	}
 <?php } ?>
 
 .fl-node-<?php echo $id; ?> .pp-infobox .animated {
