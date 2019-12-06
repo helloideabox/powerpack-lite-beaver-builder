@@ -195,6 +195,9 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 == Changelog ==
 
+= 1.2.8.1 - December 6, 2019 =
+*	Fix: Dual Button - Font icon was not loading
+
 = 1.2.8 - October 10, 2019 =
 *	Enhancement: Dual Button - Added option to set title HTML attribute
 *	Enhancement: Info Box - Added HTML tag option for title prefix
