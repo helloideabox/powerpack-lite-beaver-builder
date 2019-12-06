@@ -19,19 +19,19 @@ if ( isset( $settings->enable_title_attr_2 ) && 'yes' === $settings->enable_titl
 		<div class="pp-dual-button-1 pp-dual-button pp-button-effect-<?php echo $settings->button_1_effect; ?>">
 			<a href="<?php echo $settings->button_1_link; ?>" class="pp-button <?php echo $settings->button_1_css_class; ?>" role="button"<?php echo $target_1; ?><?php echo $nofollow_1; ?><?php echo $attr1; ?>>
 				<?php if ( 'left' === $settings->button_1_icon_aligment ) { ?>
-					<?php if ( 'font_icon' === $settings->button_font_icon_1 && $settings->button_icon_select_1 ) { ?>
+					<?php if ( 'font_icon' === $settings->button_icon_select_1 && isset( $settings->button_font_icon_1 ) && ! empty( $settings->button_font_icon_1 ) ) { ?>
 						<span class="pp-font-icon <?php echo $settings->button_font_icon_1; ?>"></span>
 					<?php } ?>
-					<?php if ( 'custom_icon' === $settings->button_custom_icon_1 && $settings->button_icon_select_1 ) { ?>
+					<?php if ( 'custom_icon' === $settings->button_icon_select_1 && isset( $settings->button_custom_icon_1 ) && ! empty( $settings->button_custom_icon_1 ) ) { ?>
 						<img class="pp-custom-icon" src="<?php echo $settings->button_custom_icon_1_src; ?>" />
 					<?php } ?>
 				<?php } ?>
 				<span class="pp-button-1-text"><?php echo $settings->button_1_title; ?></span>
 				<?php if ( 'right' === $settings->button_1_icon_aligment ) { ?>
-					<?php if ( 'font_icon' === $settings->button_font_icon_1 && $settings->button_icon_select_1 ) { ?>
+					<?php if ( 'font_icon' === $settings->button_icon_select_1 && isset( $settings->button_font_icon_1 ) && ! empty( $settings->button_font_icon_1 ) ) { ?>
 						<span class="pp-font-icon <?php echo $settings->button_font_icon_1; ?>"></span>
 					<?php } ?>
-					<?php if ( 'custom_icon' === $settings->button_custom_icon_1 && $settings->button_icon_select_1 ) { ?>
+					<?php if ( 'custom_icon' === $settings->button_icon_select_1 && isset( $settings->button_custom_icon_1 ) && ! empty( $settings->button_custom_icon_1 ) ) { ?>
 						<img class="pp-custom-icon" src="<?php echo $settings->button_custom_icon_1_src; ?>" />
 					<?php } ?>
 				<?php } ?>
@@ -41,19 +41,19 @@ if ( isset( $settings->enable_title_attr_2 ) && 'yes' === $settings->enable_titl
 		<div class="pp-dual-button-2 pp-dual-button pp-button-effect-<?php echo $settings->button_2_effect; ?>">
 			<a href="<?php echo $settings->button_2_link; ?>" class="pp-button <?php echo $settings->button_2_css_class; ?>" role="button"<?php echo $target_2; ?><?php echo $nofollow_2; ?><?php echo $attr1; ?>>
 				<?php if ( 'left' === $settings->button_2_icon_aligment ) { ?>
-					<?php if ( 'font_icon' === $settings->button_font_icon_2 && $settings->button_icon_select_2 ) { ?>
+					<?php if ( 'font_icon' === $settings->button_icon_select_2 && isset( $settings->button_font_icon_2 ) && ! empty( $settings->button_font_icon_2 ) ) { ?>
 						<span class="pp-font-icon <?php echo $settings->button_font_icon_2; ?>"></span>
 					<?php } ?>
-					<?php if ( 'custom_icon' === $settings->button_custom_icon_2 && $settings->button_icon_select_2 ) { ?>
+					<?php if ( 'custom_icon' === $settings->button_icon_select_2 && isset( $settings->button_custom_icon_2 ) && ! empty( $settings->button_custom_icon_2 ) ) { ?>
 						<img class="pp-custom-icon" src="<?php echo $settings->button_custom_icon_2_src; ?>" />
 					<?php } ?>
 				<?php } ?>
 				<span class="pp-button-2-text"><?php echo $settings->button_2_title; ?></span>
 				<?php if ( 'right' === $settings->button_2_icon_aligment ) { ?>
-					<?php if ( 'font_icon' === $settings->button_font_icon_2 && $settings->button_icon_select_2 ) { ?>
+					<?php if ( 'font_icon' === $settings->button_icon_select_2 && isset( $settings->button_font_icon_2 ) && ! empty( $settings->button_font_icon_2 ) ) { ?>
 						<span class="pp-font-icon <?php echo $settings->button_font_icon_2; ?>"></span>
 					<?php } ?>
-					<?php if ( 'custom_icon' === $settings->button_custom_icon_2 && $settings->button_icon_select_2 ) { ?>
+					<?php if ( 'custom_icon' === $settings->button_icon_select_2 && isset( $settings->button_custom_icon_2 ) && ! empty( $settings->button_custom_icon_2 ) ) { ?>
 						<img class="pp-custom-icon" src="<?php echo $settings->button_custom_icon_2_src; ?>" />
 					<?php } ?>
 				<?php } ?>

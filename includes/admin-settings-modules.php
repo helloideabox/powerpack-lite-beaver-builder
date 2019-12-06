@@ -108,6 +108,9 @@ $modules = array(
 							</a>
 						</li>
 					<?php endforeach; ?>
+					<li class="pp-module">
+						<a href="https://wpbeaveraddons.com/" target="_blank"><?php echo esc_html__( 'More...', 'bb-powerpack-lite' ); ?></a>
+					</li>
 				</ul>
 			</div>
 		<?php endforeach; ?>
