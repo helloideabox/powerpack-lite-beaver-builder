@@ -3,7 +3,7 @@
  * Plugin Name: PowerPack Lite for Beaver Builder
  * Plugin URI: https://wpbeaveraddons.com
  * Description: A set of custom, creative, unique modules for Beaver Builder to speed up your web design and development process.
- * Version: 1.2.8.1
+ * Version: 1.2.8.2
  * Author: Beaver Addons
  * Author URI: https://wpbeaveraddons.com
  * Copyright: (c) 2016 IdeaBox Creations
@@ -66,7 +66,7 @@ final class BB_PowerPack_Lite {
 	private function define_constants() {
 		define( 'BB_POWERPACK_LITE', true );
 		define( 'BB_POWERPACK_PRO', 'https://wpbeaveraddons.com/upgrade/?utm_medium=bb-powerpack-lite&utm_source=module-settings&utm_campaign=module-settings' );
-		define( 'BB_POWERPACK_VER', '1.2.8.1' );
+		define( 'BB_POWERPACK_VER', '1.2.8.2' );
 		define( 'BB_POWERPACK_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'BB_POWERPACK_URL', plugins_url( '/', __FILE__ ) );
 		define( 'BB_POWERPACK_PATH', plugin_basename( __FILE__ ) );
@@ -156,6 +156,7 @@ final class BB_PowerPack_Lite {
 	 */
 	public function register_scripts() {
 		wp_register_script( 'modernizr-custom', BB_POWERPACK_URL . 'assets/js/modernizr.custom.53451.js', array(), '3.6.0', true );
+		wp_register_script( 'pp-twitter-widgets', BB_POWERPACK_URL . 'assets/js/twitter-widgets.js', array(), BB_POWERPACK_VER, true );
 	}
 
 	/**
