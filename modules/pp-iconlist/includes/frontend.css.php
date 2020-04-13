@@ -49,10 +49,12 @@
 	transition: all 0.3s ease-in-out;
 }
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items.pp-list-type-number .pp-icon-list-item .pp-list-item-icon {
-	 <?php if( $settings->text_typography['font_family'] != 'Default' ) { ?>
-    font-family: <?php echo $settings->text_typography['font_family']; ?>;
-	font-weight: <?php echo $settings->text_typography['font_weight']; ?>;
-    <?php } ?>
+	<?php if ( isset( $settings->text_typography['font_family'] ) && 'Default' != $settings->text_typography['font_family'] ) { ?>
+		font-family: <?php echo $settings->text_typography['font_family']; ?>;
+		<?php if ( isset( $settings->text_typography['font_weight'] ) ) { ?>
+			font-weight: <?php echo $settings->text_typography['font_weight']; ?>;
+		<?php } ?>
+	<?php } ?>
 }
 .fl-node-<?php echo $id; ?> .pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-text {
 	display: table-cell;

@@ -10,7 +10,7 @@ FLBuilderCSS::typography_field_rule( array(
     text-align: <?php echo $settings->font_typography['text_align']; ?>;
 }
 .fl-node-<?php echo $id; ?> .pp-fancy-heading-title {
-    display: inline-block;
+	padding: 0 15px;
     <?php if ( $settings->heading_type == 'gradient' ) { ?>
         color: #<?php echo $settings->primary_color; ?>;
         background-image: -webkit-linear-gradient(92deg, #<?php echo $settings->primary_color; ?>, #<?php echo $settings->secondary_color; ?>);

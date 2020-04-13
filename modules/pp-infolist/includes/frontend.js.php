@@ -1,13 +1,16 @@
 (function($) {
 
-	<?php if( $settings->layouts == '1' ) { ?>
-		$('.fl-node-<?php echo $id; ?> .pp-list-connector').css('left', ( $('.fl-node-<?php echo $id; ?> .pp-icon-wrapper').width() )/2 + "px");
-	<?php } ?>
-	<?php if( $settings->layouts == '2' ) { ?>
-		$('.fl-node-<?php echo $id; ?> .pp-list-connector').css('right', ( $('.fl-node-<?php echo $id; ?> .pp-icon-wrapper').width() )/2 + "px");
-	<?php } ?>
-	<?php if( $settings->layouts == '3' ) { ?>
-		$('.fl-node-<?php echo $id; ?> .pp-list-connector').css('top', ( $('.fl-node-<?php echo $id; ?> .pp-icon-wrapper').height() )/2 + "px");
-		$('.fl-node-<?php echo $id; ?> .pp-list-connector').css('left', ( $('.fl-node-<?php echo $id; ?> .pp-list-item').outerWidth() )/2 + "px");
-	<?php } ?>
+	new PPInfoList( {
+		id: '<?php echo $id; ?>',
+		layout: {
+			large: '<?php echo $settings->layouts; ?>',
+			medium: '<?php echo isset( $settings->layouts_medium ) ? $settings->layouts_medium : ''; ?>',
+			responsive: '<?php echo isset( $settings->layouts_responsive ) ? $settings->layouts_responsive : ''; ?>',
+		},
+		breakpoints: {
+			medium: '<?php echo $global_settings->medium_breakpoint; ?>',
+			responsive: '<?php echo $global_settings->responsive_breakpoint; ?>',
+		},
+	} );
+
 })(jQuery);

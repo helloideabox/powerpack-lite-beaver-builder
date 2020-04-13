@@ -194,6 +194,14 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 
 == Changelog ==
+= 1.2.8.3 - April 13, 2020 =
+*	Enhancement: Info List - Added responsive options for icon position field
+*	Enhancement: Smart Headings - Added new separator position
+*	Fix: Fancy Heading - Text alignment was not working for tablet and mobile devices
+*	Fix: Fancy Heading - Curved script fonts cropping out
+*	Fix: Info List - Icons alignment issue
+*	Fix: Info List - Minor CSS and JS issues
+*	Fix: Icon List - PHP warning
 
 = 1.2.8.2 - January 20, 2020 =
 *	Fix: Added missing Twitter widgets JS
@@ -315,6 +323,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 *   Initial Release
 
 == Upgrade Notice ==
-
-= 1.2.7 =
-Bug fixes and enhancement
+= 1.2.8.3 =
+Bug fixes and enhancements

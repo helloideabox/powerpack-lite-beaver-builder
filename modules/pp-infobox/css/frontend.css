@@ -12,7 +12,7 @@
 	text-decoration: none;
 	display: block;
 }
-/*.fl-col-group-equal-height .fl-module-pp-infobox,*/
+.fl-col-group-equal-height .fl-module-pp-infobox,
 .fl-col-group-equal-height .fl-module-pp-infobox .fl-module-content,
 .fl-col-group-equal-height .fl-module-pp-infobox .fl-module-content .pp-infobox-wrap,
 .fl-col-group-equal-height .fl-module-pp-infobox .fl-module-content .pp-infobox-wrap .pp-infobox,
@@ -32,6 +32,15 @@
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
+}
+.fl-col-group-equal-height.fl-col-group-align-center .fl-module-pp-infobox .fl-module-content .pp-infobox-wrap .pp-infobox {
+	justify-content: center;
+}
+.fl-col-group-equal-height.fl-col-group-align-top .fl-module-pp-infobox .fl-module-content .pp-infobox-wrap .pp-infobox {
+	justify-content: flex-start;
+}
+.fl-col-group-equal-height.fl-col-group-align-bottom .fl-module-pp-infobox .fl-module-content .pp-infobox-wrap .pp-infobox {
+	justify-content: flex-end;
 }
 
 .fl-builder-settings-section select[name="image_select_src"] {

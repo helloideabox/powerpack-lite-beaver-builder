@@ -1,11 +1,3 @@
-/**
- * This file should contain frontend styles that
- * will be applied to individual module instances.
- *
- * $module An instance of your module class.
- * $id The module's ID.
- * $settings The module's settings.
- */
 
 <?php
 $medium_breakpoint = $global_settings->medium_breakpoint;
@@ -29,6 +21,12 @@ $width_type = 'lt_equals_to' == $breakpoint_condition ? 'max' : 'min';
     height: <?php echo $settings->spacer_height_lg; ?>px;
     width: 100%;
 }
+
+<?php if ( FLBuilderModel::is_builder_active() ) { ?>
+	.fl-node-<?php echo $id; ?> .pp-spacer-module:before {
+		content: "<?php esc_html_e( 'Click here to edit Spacer module.', 'bb-powerpack-lite' ); ?>";
+	}
+<?php } ?>
 
 @media only screen and (max-width: <?php echo $medium_breakpoint; ?>px) {
     <?php if ( 'medium' == $hide_on && ! FLBuilderModel::is_builder_active() ) { ?>

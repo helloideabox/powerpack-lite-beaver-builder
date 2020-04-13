@@ -75,14 +75,18 @@ FLBuilder::register_module('PPInfoListModule', array(
                 'title' => '',
                 'fields'    => array(
                     'layouts'   => array(
-                        'type'  => 'pp-switch',
+                        'type'  => 'select',
                         'default'   => '1',
                         'label'     => __('Icon Position', 'bb-powerpack-lite'),
                         'options'   => array(
                             '1'     => __('Left', 'bb-powerpack-lite'),
                             '2'     => __('Right', 'bb-powerpack-lite'),
                             '3'     => __('Top', 'bb-powerpack-lite'),
-                        ),
+						),
+						'responsive' => true,
+						'preview'	=> array(
+							'type'	=> 'none',
+						),
                     ),
                 ),
             ),
