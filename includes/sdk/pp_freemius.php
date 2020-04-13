@@ -20,7 +20,7 @@ if ( file_exists( BB_POWERPACK_DIR . 'includes/sdk/freemius/start.php' ) ) :
                 'has_addons'          => false,
                 'has_paid_plans'      => false,
                 'menu'                => array(
-                    'slug'           	=> 'pp-settings',
+                    'slug'           	=> 'ppbb-settings',
                     'account'        	=> false,
                     'contact'        	=> false,
                     'support'        	=> false,

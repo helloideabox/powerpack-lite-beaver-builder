@@ -63,7 +63,7 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
             add_action( 'admin_menu',           __CLASS__ . '::menu' );
             add_action( 'network_admin_menu',   __CLASS__ . '::menu' );
 
-    		if ( isset( $_REQUEST['page'] ) && 'pp-settings' == $_REQUEST['page'] ) {
+    		if ( isset( $_REQUEST['page'] ) && 'ppbb-settings' == $_REQUEST['page'] ) {
                 add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
     			self::save();
     		}
@@ -93,7 +93,7 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
 
     			$title = __('PowerPack', 'bb-powerpack-lite');
     			$cap   = 'manage_options';
-    			$slug  = 'pp-settings';
+    			$slug  = 'ppbb-settings';
     			$func  = __CLASS__ . '::render';
 
     			add_submenu_page( 'options-general.php', $title, $title, $cap, $slug, $func );
@@ -103,7 +103,7 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
 
                 $title = __('PowerPack', 'bb-powerpack-lite');
         		$cap   = 'manage_network_plugins';
-        		$slug  = 'pp-settings';
+        		$slug  = 'ppbb-settings';
         		$func  = __CLASS__ . '::render';
 
         		add_submenu_page( 'settings.php', $title, $title, $cap, $slug, $func );
@@ -149,10 +149,10 @@ if ( !class_exists( 'BB_PowerPack_Admin_Settings' ) ) {
     	static public function get_form_action( $type = '' )
     	{
     		if ( is_network_admin() ) {
-    			return network_admin_url( '/settings.php?page=pp-settings' . $type );
+    			return network_admin_url( '/settings.php?page=ppbb-settings' . $type );
     		}
     		else {
-    			return admin_url( '/options-general.php?page=pp-settings' . $type );
+    			return admin_url( '/options-general.php?page=ppbb-settings' . $type );
     		}
     	}
 
