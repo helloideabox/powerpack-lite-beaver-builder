@@ -326,5 +326,5 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 *   Initial Release
 
 == Upgrade Notice ==
-= 1.2.8.3 =
-Bug fixes and enhancements
+= 1.2.9 =
+Added Breadcrumbs module
