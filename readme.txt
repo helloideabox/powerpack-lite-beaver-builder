@@ -3,7 +3,7 @@ Contributors: ideaboxcreations, puneetsahalot, ibachal, jainnidhi
 Tags: beaver builder, beaver builder free, beaver addons, beaver builder addon, beaver builder add ons, beaver builder lite, beaver builder modules, beaver builder addons, beaver builder extensions, beaver addon, beaver builder plugin, beaver builder wordpress
 Requires at least: 4.6
 Requires PHP: 5.6
-Tested up to: 5.4
+Tested up to: 5.4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -194,6 +194,9 @@ Not at all! All the modules and settings are easy to use with drag & drop interf
 
 
 == Changelog ==
+= 1.2.9 - May 11, 2020 =
+*	New: Added Breadcrumbs module
+
 = 1.2.8.3 - April 13, 2020 =
 *	Enhancement: Info List - Added responsive options for icon position field
 *	Enhancement: Smart Headings - Added new separator position
