@@ -17,7 +17,7 @@ if ( isset( $settings->enable_title_attr_2 ) && 'yes' === $settings->enable_titl
 <div class="pp-dual-button-content clearfix">
 	<div class="pp-dual-button-inner">
 		<div class="pp-dual-button-1 pp-dual-button pp-button-effect-<?php echo $settings->button_1_effect; ?>">
-			<a href="<?php echo $settings->button_1_link; ?>" class="pp-button <?php echo $settings->button_1_css_class; ?>" role="button"<?php echo $target_1; ?><?php echo $nofollow_1; ?><?php echo $attr1; ?>>
+			<a href="<?php echo $settings->button_1_link; ?>" class="pp-button <?php echo $settings->button_1_css_class; ?>" role="button"<?php echo $target_1; ?><?php echo $nofollow_1; ?><?php echo $attr1; ?> onclick="">
 				<?php if ( 'left' === $settings->button_1_icon_aligment ) { ?>
 					<?php if ( 'font_icon' === $settings->button_icon_select_1 && isset( $settings->button_font_icon_1 ) && ! empty( $settings->button_font_icon_1 ) ) { ?>
 						<span class="pp-font-icon <?php echo $settings->button_font_icon_1; ?>"></span>
@@ -39,7 +39,7 @@ if ( isset( $settings->enable_title_attr_2 ) && 'yes' === $settings->enable_titl
 		</div>
 		<div class="pp-spacer"></div>
 		<div class="pp-dual-button-2 pp-dual-button pp-button-effect-<?php echo $settings->button_2_effect; ?>">
-			<a href="<?php echo $settings->button_2_link; ?>" class="pp-button <?php echo $settings->button_2_css_class; ?>" role="button"<?php echo $target_2; ?><?php echo $nofollow_2; ?><?php echo $attr1; ?>>
+			<a href="<?php echo $settings->button_2_link; ?>" class="pp-button <?php echo $settings->button_2_css_class; ?>" role="button"<?php echo $target_2; ?><?php echo $nofollow_2; ?><?php echo $attr1; ?> onclick="">
 				<?php if ( 'left' === $settings->button_2_icon_aligment ) { ?>
 					<?php if ( 'font_icon' === $settings->button_icon_select_2 && isset( $settings->button_font_icon_2 ) && ! empty( $settings->button_font_icon_2 ) ) { ?>
 						<span class="pp-font-icon <?php echo $settings->button_font_icon_2; ?>"></span>
