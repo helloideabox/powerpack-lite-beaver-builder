@@ -20,6 +20,7 @@ $modules = array(
     'modules/pp-twitter-grid/pp-twitter-grid.php',
     'modules/pp-twitter-timeline/pp-twitter-timeline.php',
     'modules/pp-twitter-buttons/pp-twitter-buttons.php',
+    'modules/pp-breadcrumbs/pp-breadcrumbs.php',
 );
 
 /* Form Modules */
